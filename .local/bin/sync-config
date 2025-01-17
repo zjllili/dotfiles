@@ -16,11 +16,11 @@ if [ $choice = "y" ] || [ $choice = "Y" ]; then
     grep -n "##############################below-are-private##############################" $HOME/doc/heart/.local/share/bookmarks/bookmarks | cut -d: -f1 | xargs -I {} sed -n '1,{}p' $HOME/doc/heart/.local/share/bookmarks/bookmarks > $HOME/doc/heart/.local/share/bookmarks/bookmarks-record && echo "bookmarks-record updated" || echo "bookmarks-record update failed"
 
     # unixchad
-    if [ ! -d "$HOME/doc/.heart" ]; then
-        git clone "$HEART" "$HOME/doc/.heart"
+    if [ ! -d "$DOTFILES" ]; then
+        git clone "$HEART" "$DOTFILES"
     fi
-    git --git-dir $HOME/doc/.heart/.git --work-tree $HOME/doc/.heart pull && echo "heart is pulled" || echo "heart pulling failed"
-    rsync -a --delete --exclude ".git" --exclude ".local/sbin" --exclude "arch.list" --exclude "aur.list" "$HOME/doc/.heart/" "$DOTFILES" && chmod 755 "$DOTFILES"
+    git --git-dir $DOTFILES/.git --work-tree $DOTFILES pull && echo "heart is pulled" || echo "heart pulling failed"
+    chmod 750 "$DOTFILES"
 else
     echo "aborted"
     exit 0
