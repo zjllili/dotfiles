@@ -1,9 +1,9 @@
 # ignore everything
 *
-!.gitignore
-!.stow-local-ignore
 
 #exception
+!.gitignore
+!.stow-local-ignore
 !LICENSE
 !install.md
 !README.md
@@ -65,8 +65,8 @@ aur.list
 !.config/dircolors
 !.config/dunst/
 !.config/dunst/dunstrc
-!/.config/fcitx5/
-!/.config/fcitx5/config
+!.config/fcitx5/
+!.config/fcitx5/config
 !.config/firejail
 !.config/firejail/*
 !.config/foot/
@@ -102,8 +102,7 @@ aur.list
 !.config/nvim/colors/
 !.config/nvim/colors/unixchad.lua
 !.config/nvim/init.vim
-!.config/nvim/init.vim~
-!.config/nvim/init.lua
+!.config/nvim/init.lua~
 !.config/pipewire/
 !.config/pipewire/pipewire.conf.d/
 !.config/pipewire/pipewire.conf.d/99-input-denoising.conf
@@ -137,9 +136,6 @@ aur.list
 !.config/tmux/tmux.fancy.conf
 !.config/vim/
 !.config/vim/vimrc
-!.config/waybar/
-!.config/waybar/config.jsonc
-!.config/waybar/style.css
 !.config/wget/
 !.config/wget/wgetrc
 !.config/wikiman/
