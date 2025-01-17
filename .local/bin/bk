@@ -1,0 +1,7 @@
+#!/usr/bin/sh
+# create a backup of the file
+# @authoer natezhou
+# @since 2023,2025
+
+echo "creating a backup as $1~"
+cp -i "$1" "./$1~"

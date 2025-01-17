@@ -1,0 +1,307 @@
+// keybindings.json
+// @author nate zhou
+// @since 2023,2024,2025
+
+[
+	// # vim extension
+	// ## toggle vim extension
+    {
+        "key": "ctrl+alt+`",
+        "command": "toggleVim"
+    },
+
+    	// ## disable rarely used key bindings for conflicting
+    {
+        "key": "ctrl+w",
+        "command": "-extension.vim_ctrl+w",
+        "when": "editorTextFocus && vim.active && vim.use<C-w> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+shift+w",
+        "command": "-workbench.action.closeWindow"
+    },
+
+    {
+        "key": "ctrl+b",
+        "command": "-extension.vim_ctrl+b",
+        "when": "editorTextFocus && vim.active && vim.use<C-b> && !inDebugRepl && vim.mode != 'Insert'"
+    },
+
+    	// # terminal
+    	// ## toggle terminal
+    {
+        "key": "ctrl+enter",
+        "command": "workbench.action.terminal.toggleTerminal",
+        "when": "terminal.active"
+    },
+    	// ## new terminal session
+    {
+        "key": "ctrl+shift+enter",
+        "command": "workbench.action.terminal.new",
+        "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+    },
+
+    	// ## kill current terminal session when focused on terminal
+    {
+        "key": "ctrl+q",
+        "command": "workbench.action.terminal.kill",
+        "when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    },
+        // ## terminal scrolling
+    {
+        "key": "ctrl+n",
+        "command": "workbench.action.terminal.scrollDownPage",
+        "when": "terminalFocusInAny && terminalHasBeenCreated && !terminalAltBufferActive || terminalFocusInAny && terminalProcessSupported && !terminalAltBufferActive"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "workbench.action.terminal.scrollUpPage",
+        "when": "terminalFocusInAny && terminalHasBeenCreated && !terminalAltBufferActive || terminalFocusInAny && terminalProcessSupported && !terminalAltBufferActive"
+    },
+        // ## resize terminal
+    {
+        "key": "ctrl+i",
+        "command": "workbench.action.terminal.resizePaneUp"
+    },
+    {
+        "key": "ctrl+u",
+        "command": "workbench.action.terminal.resizePaneDown"
+    },
+
+    	// ## focus previous terminal session
+    {
+        "key": "ctrl+h",
+        "command": "workbench.action.terminal.focusPrevious",
+        "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+    },
+
+    	// ## focus next terminal session
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.terminal.focusNext",
+        "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+    },
+    	// ## move focus from terminal to editor
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "terminalFocus"
+    },
+
+
+    	// # split editor && workbenchs
+	    // an editor group is like a tabed window in i3wm, it has tabs, and can be tilled with other editor groups
+
+	    // ## vertical split
+    {
+        "key": "ctrl+space v",
+        "command": "workbench.action.newGroupRight"
+    },
+        // ## horizontal split
+    {
+        "key": "ctrl+space x",
+        "command": "workbench.action.newGroupBelow"
+    },
+        // ## close a split
+    {
+        "key": "ctrl+w",
+        "command": "workbench.action.closeEditorsAndGroup"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "workbench.action.closeActiveEditor"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "workbench.action.closeGroup",
+        "when": "activeEditorGroupEmpty && multipleEditorGroups"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "-workbench.action.closeGroup",
+        "when": "activeEditorGroupEmpty && multipleEditorGroups"
+    },
+        // ## unbind default
+    {
+        "key": "ctrl+q",
+        "command": "-workbench.action.quit"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "-workbench.action.closeActiveEditor"
+    },
+
+
+    	// ## move focus to a split of editor group, when not focusing on terminal
+	// ## could use default `ctrl + 1/2/3/4` as well
+    {
+        "key": "ctrl+h",
+        "command": "workbench.action.focusLeftGroup",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.focusBelowGroup",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.focusAboveGroup",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.focusRightGroup",
+        "when": "!terminalFocus"
+    },
+
+	// ## move editor group's position with `ctrl+k` `h/j/k/l`
+	// m for Move
+    {
+        "key": "ctrl+space h",
+        "command": "workbench.action.moveActiveEditorGroupLeft"
+    },
+    {
+        "key": "ctrl+space j",
+        "command": "workbench.action.moveActiveEditorGroupDown"
+    },
+    {
+        "key": "ctrl+space k",
+        "command": "workbench.action.moveActiveEditorGroupUp"
+    },
+    {
+        "key": "ctrl+space l",
+        "command": "workbench.action.moveActiveEditorGroupRight"
+    },
+
+
+    	// ## move an editor to another editor group split
+	// ### to next group
+    {
+        "key": "ctrl+space n",
+        "command": "workbench.action.moveEditorToNextGroup"
+    },
+    	// ### to previous group
+    {
+        "key": "ctrl+space p",
+        "command": "workbench.action.moveEditorToPreviousGroup"
+    },
+
+
+    	// #UI
+	// focus on side bar
+    {
+        "key": "ctrl+space b",
+        "command": "workbench.action.focusSideBar"
+    },
+
+    	// open && focuse console: PROBLEMS
+    {
+        "key": "ctrl+space p",
+        "command": "workbench.panel.markers.view.focus"
+    },
+    	// open && focus console: OUTPUT
+    {
+        "key": "ctrl+space o",
+        "command": "workbench.panel.output.focus"
+    },
+    	// open && focus console: DEBUG CONSOLE
+    {
+        "key": "ctrl+space d",
+        "command": "workbench.panel.repl.view.focus"
+    },
+
+	// # coding 
+	// ## code Fix
+	// o for Open
+    {
+        "key": "ctrl+o f",
+        "command": "editor.action.quickFix",
+        "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
+    },
+    	// ## code Hover
+    {
+        "key": "ctrl+o h",
+        "command": "editor.action.showHover",
+        "when": "editorTextFocus"
+    },
+    	// ## code floating Definition
+    {
+        "key": "ctrl+o d",
+        "command": "editor.action.revealDefinition",
+        "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+    },
+    	// ## code open Reference file
+    {
+        "key": "ctrl+o r",
+        "command": "editor.action.goToReferences",
+        "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+    },
+
+
+	// # code suggestion
+	// ## use tab select suggestion, instead of up/down
+    {
+        "key": "ctrl+n",
+        "command": "selectNextSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+      },
+        {
+        "key": "ctrl+p",
+        "command": "selectPrevSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
+
+    // # RUN and Debug
+    {
+        "key": "ctrl+space r",
+        "command": "workbench.action.debug.start",
+        "when": "debuggersAvailable && debugState == 'inactive'"
+    },
+
+    // # sidebar EXPLORER file management
+        // ## delete file
+    {
+        "key": "shift+d",
+        "command": "deleteFile",
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceReadonly && !inputFocus"
+    },
+        // ## create new file
+    {
+        "key": "shift+n",
+        "command": "explorer.newFile",
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceReadonly && !inputFocus"
+    },
+        // ## make directory
+    {
+        "key": "shift+m",
+        "command": "explorer.newFolder",
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceReadonly && !inputFocus"
+    },
+        // ## rename file
+    {
+        "key": "shift+r",
+        "command": "renameFile",
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    // # fold
+    {
+        "key": "z f",
+        "command": "editor.toggleFold",
+        "when": "editorTextFocus && foldingEnabled && vim.active && !inDebugRepl && vim.mode != 'Insert'"
+    },
+    {
+        "key": "z o",
+        "command": "editor.unfoldAll",
+        "when": "editorTextFocus && foldingEnabled && vim.active && !inDebugRepl && vim.mode != 'Insert'"
+    },
+    // # activity bar
+    {
+        "key": "ctrl+shift+b",
+        "command": "workbench.action.toggleActivityBarVisibility"
+    },
+    {
+        "key": "ctrl+.",
+        "command": "workbench.action.openGlobalKeybindings"
+    }
+]

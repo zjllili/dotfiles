@@ -1,0 +1,33 @@
+#!/usr/bin/sh
+# @author nate zhou
+# @since 2024,2025
+# list output
+
+# -p, --pretty output, friendly for grep
+msg="$(swaymsg -t get_outputs -p)"
+
+get_name() {
+    echo "$msg" | grep 'Output'
+}
+
+get_res() {
+    echo "$msg" | grep -e 'Output' -e 'Current mode'
+}
+
+# check if on sway (sway process exists and currently in a wayland session)
+if  pgrep -x "sway" > /dev/null  && [ ! -z $WAYLAND_DISPLAY ]; then
+    while [ -n "$1" ]; do
+        case "$1" in
+            -r | --res):
+                get_res
+                exit 0
+                ;;
+        esac
+        shift
+    done
+
+    get_name
+else
+    # if not on sway, check edid
+    find /sys/devices/ -name "edid" | awk -F '/' '{print $8}' | awk -F'-' '{ for (i=2; i<=NF; i++) { printf "%s", $i (i==NF ? RS : FS) } }'
+fi

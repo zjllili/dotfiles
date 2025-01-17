@@ -1,0 +1,9 @@
+#!/usr/bin/sh
+# @author nate zhou
+# @since 2024,2025
+
+# DON't add `--delete`
+# source path must have an ending `/`
+
+# yay cache
+rsync -avh --progress $HOME/pkg/yay/ $HOME/.cache/yay/

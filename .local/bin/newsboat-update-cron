@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# @author nate zhou
+# @since 2024,2025
+
+NEWS_CACHE="$HOME/.local/share/newsboat/cache.db"
+
+# modified time in seconds since the Epoch
+update_time=$(stat -c "%Y" "$NEWS_CACHE")
+# seconds since the Epoch
+current_time=$(date +%s)
+#update_frequency=86400 # in seconds, 86400s = 1d
+UPDATE_FREQUENCY=14400 # 4H
+
+update_newsboat() {
+    /usr/bin/newsboat -x reload
+}
+
+if [ ! -f "$NEWS_CACHE" ]; then
+    update_newsboat
+    exit 0
+fi
+
+if (( current_time - update_time > UPDATE_FREQUENCY )) ; then
+    update_newsboat
+else
+    echo "Already updated within past $(($UPDATE_FREQUENCY/3600)) hours"
+    exit 1
+fi

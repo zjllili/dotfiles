@@ -1,0 +1,13 @@
+#!/usr/bin/sh
+# @author nate zhou
+# @since 2024,2025
+# used in sway's brightness/volume keybindings
+
+WOBFIFO="/tmp/i3status/wob.fifo"
+[ -p "$WOBFIFO" ] || mkfifo "$WOBFIFO"
+
+if pgrep -f "tail -f $WOBFIFO" > /dev/null; then
+    pkill -f "tail -f $WOBFIFO"
+fi
+
+tail -f "$WOBFIFO" | wob

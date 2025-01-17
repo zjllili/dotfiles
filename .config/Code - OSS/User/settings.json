@@ -1,0 +1,34 @@
+// settings.json
+// @author nate zhou
+// @since 2023,2024,2025
+
+{
+    "extensions.autoUpdate": false,
+    "redhat.telemetry.enabled": false,
+    // use system keymap, fixing vscodevim not using the swapped ESC and CAPSLOCK on Linux
+    "keyboard.dispatch": "keyCode",
+    // always turn on word wrap
+    "editor.wordWrap": "on",
+    "editor.fontFamily": "Source Code Pro",
+    "editor.fontSize": 16,
+    "editor.cursorBlinking": "solid",
+    "editor.scrollbar.verticalScrollbarSize": 1,
+    "editor.scrollbar.horizontalScrollbarSize": 1,
+    "editor.lineDecorationsWidth": 0,
+    "editor.minimap.enabled": false,
+    // break point
+    "editor.glyphMargin": false,
+
+    // vim extension
+    "vim.neovimConfigPath": "~/.config/nvim/init.vim",
+    "vim.neovimPath": "/usr/bin/nvim",
+    "vim.neovimUseConfigFile": true,
+    "vim.useSystemClipboard": true,
+    "vim.foldfix": true,
+
+    "explorer.confirmDelete": false,
+    "workbench.startupEditor": "newUntitledFile",
+    "window.menuBarVisibility": "toggle",
+    "workbench.colorTheme": "Adwaita Dark & Github syntax highlighting",
+    "workbench.activityBar.location": "hidden"
+}

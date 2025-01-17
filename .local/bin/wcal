@@ -1,0 +1,5 @@
+#!/usr/bin/sh
+# @author nate zhou
+# @since 2024,2025
+
+notify-send -u low -r 179 -t 20000 "$(cal | sed '/^[[:space:]]*$/d')"

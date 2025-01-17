@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# @author nate zhou
+# @since 2025
+# wayland color picker
+# select a single 1x1 pixel with slurp, use grim to take a screenshot on it
+# and pipe to imagemagick to parse color
+# @depends slurp grim imagemagick libnotify dunst
+# @bug WLR_NO_HARDWARE_CURSORS=1 cause grim's output image having wrong color
+# for single pixel
+
+if [ "$WLR_NO_HARDWARE_CURSORS" -eq "1" ]; then
+    msg="grim conflicts with: WLR_NO_HARDWARE_CURSORS=1"
+    echo "$msg"
+    notify-send -u critical -r 922 "$(basename $0)" "$msg"
+    exit 1
+fi
+
+SWAYSOCK=/run/user/$(id -u)/sway-ipc.$(id -u).$(pgrep -x sway).sock
+
+# get current touchpad status
+status="$(swaymsg -t get_inputs | grep 'touchpad' -A3 | grep 'send_events')"
+[[ "$status" =~ "disabled" ]] && status="disabled" || status="enabled"
+
+# enable touchpad tap
+[ "$status" = "disabled" ] && swaymsg "input type:touchpad events enabled"
+
+grim -g "$(slurp -p)" -t ppm - | magick - -format '%[pixel:p{0,0}]' txt:- | cut -d' ' -f3- | xargs -I {} notify-send -u low -r 3581 "$(basename $0)" "{}"
+
+[ "$status" = "disabled" ] && swaymsg "input type:touchpad events disabled"
