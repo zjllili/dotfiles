@@ -12,7 +12,7 @@ app_id = swayimg
 
 [viewer]
 window = #191919
-transparency = grid
+transparency = #191919
 scale = optimal
 fixed = yes
 antialiasing = yes
@@ -28,7 +28,7 @@ fill = no
 antialiasing = yes
 window = #191919
 background = #191919
-select = #191919
+select = #6f3f89
 border = #6f3f89
 shadow = #000000ff
 
