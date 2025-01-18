@@ -2,5 +2,6 @@
 # @author nate zhou
 # @since 2025
 
-sudo rsync -a --delete --progress $HOME/doc/heart/{.bash_aliases,.bash_profile,.bashrc,.inputrc,.stow-local-ignore} /root/heart
+sudo rsync -a --delete --progress $HOME/doc/heart/{.bash_profile,.bashrc,.inputrc,.stow-local-ignore} /root/heart
+sudo rsync -a --delete --progress $HOME/doc/heart/.config/bash/{aliases.sh,functions.sh} /root/heart/.config/bash
 sudo rsync -a --delete --progress $HOME/doc/heart/.config/{fzf,ranger,tmux,vim,dircolors} /root/heart/.config
