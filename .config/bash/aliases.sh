@@ -45,6 +45,7 @@ alias sync="~/.local/bin/sync-notify"
 alias .r=". ~/.bash_profile && . ~/.bashrc"
 alias ..="cd .."
 alias ...="cd ../.."
+alias Gi="cd /run/media/$USER/ && pwd"
 alias ?="pwd"
 alias ??="realpath"
 alias heartstow='cd ~/doc/heart && stow --adopt -t ~ . && cd - &>/dev/null && echo "heart is stowed"'
@@ -90,14 +91,15 @@ alias gd="git diff"
 alias gds="git diff --staged"
 alias gdw="git diff --word-diff"
 alias gl="git log --graph --all --abbrev-commit"
-alias gln="git log --pretty=oneline --name-only"
+alias gll="git log --graph --all"
+alias gln="git log --graph --abbrev-commit --name-only"
 alias glf="git log --follow -p"
 alias gac="git add . && git commit -m update"
 alias gb="git branch"
 alias fgl="git log | grep '^commit ' | cut -d' ' -f2 | fzf --bind=ctrl-j:preview-down,ctrl-k:preview-up --preview 'git show {} | bat --color=always --style=plain,changes ' --preview-window=90% | wl-copy"
 alias fgln="git log | grep '^commit '| cut -d' ' -f2 | fzf --bind=ctrl-j:preview-down,ctrl-k:preview-up --preview 'git log --name-only {} | bat --color=always --style=plain,changes' | wl-copy"
 alias fglf=" fzf --bind=ctrl-j:preview-down,ctrl-k:preview-up --preview 'git log --follow -p {} | bat --color=always --style=plain,changes' "
-### echo
+### echo ###
 alias Er="echo RANGER_LEVEL=$RANGER_LEVEL"
 
 ### legacy ###
