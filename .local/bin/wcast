@@ -4,6 +4,8 @@
 # record-output record the selected output on wayland -a audio, -g geometry; -ro requires selecting one of the predefined rectangles for all outputs
 # also create an indicator for i3stauts
 
+SWAYSOCK=/run/user/$(id -u)/sway-ipc.$(id -u).$(pgrep -x sway).sock
+
 selected_output="$(swaymsg -t get_outputs -p | grep Output | wmenu -p "wcast: " -l 3 -f "SourceCodePro medium 13" -S 6f3f89 -s ffffff -M 6f3f89 -m ffffff | awk '{print $2}' )"
 
 TMP_DIR="/tmp/i3status"
