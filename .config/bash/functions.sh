@@ -3,12 +3,12 @@
 # @since 2025
 
 # cd into parent
-Cd () {
+Cd() {
     cd "$(dirname $1)"
 }
 
 # read help with a pager
-help () {
+help() {
     help_output=$(command help "$@")
     [ "$?" -eq 0 ] && echo "$help_output" | /usr/bin/less -i
 }
@@ -33,7 +33,7 @@ colors() {
 }
 
 # offline dictionary with wordnet
-dict () {
+dict() {
     /usr/bin/dict -d wn "$@" | /usr/bin/less -i -F
 }
 
