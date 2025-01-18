@@ -28,10 +28,16 @@ aur.list
 !usr/local/share/kbd/keymaps/
 !usr/local/share/kbd/keymaps/us-custom.map.gz
 
+!.inputrc
 !.bashrc
 !.bash_aliases
 !.bash_profile
-!.inputrc
+!.config/bash/
+!.config/bash/aliases.sh
+!.config/bash/teleport.sh
+!.config/bash/teleport.conf
+!.config/bash/functions.sh
+
 !.ssh/
 !.ssh/config.example
 !.gnupg/
@@ -47,10 +53,6 @@ aur.list
 !.mozilla/example
 !.mozilla/user.js.example
 !.config/
-!.config/bash/
-!.config/bash/aliases.sh
-!.config/bash/teleport.sh
-!.config/bash/functions.sh
 !.config/btop/
 !.config/btop/btop.conf.example
 !.config/calcurse/
