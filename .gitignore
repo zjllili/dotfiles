@@ -114,6 +114,7 @@ aur.list
 !.config/ranger/colorschemes/
 !.config/ranger/colorschemes/unixchad.py
 !.config/ranger/rc.conf
+!.config/ranger/teleport.conf
 !.config/ranger/rifle.conf
 !.config/ranger/scope.sh
 !.config/ranger/commands.py
