@@ -1,0 +1,31 @@
+# bash/teleport.sh
+# @author nate zhou
+# @since 2025
+
+### teleport ###
+alias Gi="cd /run/media/$USER/ && pwd"
+alias Bh="cd ~/doc/heart && pwd"
+alias Bc="cd ~/.config && pwd"
+alias Bf="cd ~/.config/firejail && pwd"
+alias BC="cd ~/.cache && pwd"
+alias By="cd ~/.cache/yay && pwd"
+alias Bl="cd ~/.local && pwd"
+alias Bb="cd ~/.local/bin && pwd"
+alias Bs="cd ~/smb && pwd"
+alias Bt="cd ~/tmp && pwd"
+alias BD="cd ~/dls && pwd"
+alias Bd="cd ~/doc && pwd"
+alias BB="cd ~/.local/share/bookmarks && pwd"
+alias Be="cd ~/doc/ebook && pwd"
+alias BE="cd ~/doc/code && pwd"
+alias Bg="cd ~/doc/git && pwd"
+alias B.="cd ~/doc/unixchad/dotfiles && pwd"
+alias BG="cd ~/doc/gimp && pwd"
+alias Bn="cd ~/doc/note && pwd"
+alias Bm="cd ~/mus && pwd"
+alias BP="cd ~/mus/podcasts && pwd"
+alias Bp="cd ~/pic && pwd"
+alias Bw="cd ~/pic/wallpapers && pwd"
+alias Bv="cd ~/vid && pwd"
+alias Bu="cd ~/vid/unixchad && pwd"
+alias BV="cd ~/virt && pwd"
