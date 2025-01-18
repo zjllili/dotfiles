@@ -47,6 +47,10 @@ aur.list
 !.mozilla/example
 !.mozilla/user.js.example
 !.config/
+!.config/bash/
+!.config/bash/aliases.sh
+!.config/bash/teleport.sh
+!.config/bash/functions.sh
 !.config/btop/
 !.config/btop/btop.conf.example
 !.config/calcurse/

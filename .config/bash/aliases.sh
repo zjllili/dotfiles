@@ -1,4 +1,4 @@
-# .bash_aliases
+# bash/aliases.sh
 # @author nate zhou
 # @since 2023,2024,2025
 
@@ -42,7 +42,7 @@ alias fpinfo="pacman -Qq | fzf --bind=ctrl-j:preview-down,ctrl-k:preview-up --pr
 alias fpcache="pacman -Qq | fzf --bind=ctrl-j:preview-down,ctrl-k:preview-up --prompt='package cache: ' --preview-window=70%:bottom: --preview 'ls /var/cache/pacman/pkg/{}-[0-9]*.pkg.tar.zst'"
 alias sync="~/.local/bin/sync-notify"
 ### abbreviation ###
-alias .r=". ~/.bash_profile && . ~/.bashrc && . ~/.bash_aliases"
+alias .r=". ~/.bash_profile && . ~/.bashrc"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ?="pwd"
@@ -98,33 +98,6 @@ alias gb="git branch"
 alias fgl="git log | grep '^commit ' | cut -d' ' -f2 | fzf --bind=ctrl-j:preview-down,ctrl-k:preview-up --preview 'git show {} | bat --color=always --style=plain,changes ' --preview-window=90% | wl-copy"
 alias fgln="git log | grep '^commit '| cut -d' ' -f2 | fzf --bind=ctrl-j:preview-down,ctrl-k:preview-up --preview 'git log --name-only {} | bat --color=always --style=plain,changes' | wl-copy"
 alias fglf=" fzf --bind=ctrl-j:preview-down,ctrl-k:preview-up --preview 'git log --follow -p {} | bat --color=always --style=plain,changes' "
-### teleport ###
-alias Gi="cd /run/media/$USER/ && pwd"
-alias Bh="cd ~/doc/heart && pwd"
-alias Bc="cd ~/.config && pwd"
-alias Bf="cd ~/.config/firejail && pwd"
-alias BC="cd ~/.cache && pwd"
-alias By="cd ~/.cache/yay && pwd"
-alias Bl="cd ~/.local && pwd"
-alias Bb="cd ~/.local/bin && pwd"
-alias Bs="cd ~/smb && pwd"
-alias Bt="cd ~/tmp && pwd"
-alias BD="cd ~/dls && pwd"
-alias Bd="cd ~/doc && pwd"
-alias BB="cd ~/.local/share/bookmarks && pwd"
-alias Be="cd ~/doc/ebook && pwd"
-alias BE="cd ~/doc/code && pwd"
-alias Bg="cd ~/doc/git && pwd"
-alias B.="cd ~/doc/unixchad/dotfiles && pwd"
-alias BG="cd ~/doc/gimp && pwd"
-alias Bn="cd ~/doc/note && pwd"
-alias Bm="cd ~/mus && pwd"
-alias BP="cd ~/mus/podcasts && pwd"
-alias Bp="cd ~/pic && pwd"
-alias Bw="cd ~/pic/wallpapers && pwd"
-alias Bv="cd ~/vid && pwd"
-alias Bu="cd ~/vid/unixchad && pwd"
-alias BV="cd ~/virt && pwd"
 ### echo
 alias Er="echo RANGER_LEVEL=$RANGER_LEVEL"
 
@@ -135,29 +108,3 @@ alias Er="echo RANGER_LEVEL=$RANGER_LEVEL"
 #alias fim="fim -a --no-commandline --no-etc-rc-file --no-stat-push"
 #alias ed="ed -p :"
 #alias mutt="neomutt"
-
-### SHELL FUNCTIONS ###
-# cd into parent
-Cd () {
-    cd "$(dirname $1)"
-}
-# read help with a pager
-help () {
-    help_output=$(command help "$@")
-    [ "$?" -eq 0 ] && echo "$help_output" | /usr/bin/less -i
-}
-# avoid nested ranger
-ranger() {
-    [ -z "$RANGER_LEVEL" ] && /usr/bin/ranger "$@" || exit &>/dev/null
-}
-# print the 16 terminal colors
-colors() {
-    for i in {0..15}; do
-        printf "\e[48;5;${i}m  \e[0m"
-        [ $((($i + 1) % 8)) -eq 0 ] && printf "\n"
-    done
-}
-# offline dictionary with wordnet
-dict () {
-    /usr/bin/dict -d wn "$@" | /usr/bin/less -i -F
-}
