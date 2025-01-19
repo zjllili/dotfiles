@@ -70,6 +70,12 @@ map <leader>cr :ColorizerReloadAllBuffers<CR>
 " don't comment on new line
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
+" Enable spell check for Git commit
+augroup git_commit_spell
+    autocmd!
+    autocmd FileType gitcommit setlocal spell spelllang=en_us
+augroup END
+
 " vim-plug
 call plug#begin()
 "Plug 'ap/vim-css-color' " CSS color preview
