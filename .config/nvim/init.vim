@@ -76,6 +76,12 @@ augroup git_commit_spell
     autocmd FileType gitcommit setlocal spell spelllang=en_us
 augroup END
 
+" Set column count to 72 for Git commit
+augroup git_commit_cc
+    autocmd!
+    autocmd FileType gitcommit setlocal cc=72
+augroup END
+
 " vim-plug
 call plug#begin()
 "Plug 'ap/vim-css-color' " CSS color preview
