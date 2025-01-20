@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# @author nate zhou
+# @since 2025
+# display calcurse event and calculate the days left
+
+set +x
+days=14
+[ "$#" -eq 1 ] && (( days )) && days="$1"
+
+calcurse -d "$days" | while IFS= read -r line; do
+    if [[ $line =~ ^[0-9]{2}/[0-9]{2}/[0-9]{2} ]]; then
+        date_parsed="${line%:}"
+        date_event="$(date -d $date_parsed +%s)"
+        date_today="$(date +%s)"
+        days_left="$(( (date_event - date_today) / 86400 ))"
+        echo "$line ($days_left d)"
+    else
+        echo "$line"
+    fi
+done
+

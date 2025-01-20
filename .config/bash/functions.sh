@@ -37,11 +37,6 @@ dict() {
     /usr/bin/dict -d wn "$@" | /usr/bin/less -i -F
 }
 
-# calcurse event
-calen() {
-    [ "$#" -eq 0 ] && calcurse -d 14 || calcurse -d "$@"
-}
-
 # new footclient in current working directory
 osc7_cwd() {
     local strlen=${#PWD}
