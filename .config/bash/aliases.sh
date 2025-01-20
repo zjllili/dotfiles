@@ -93,7 +93,6 @@ alias vim="nvim"
 alias brn="brn2 -s"
 
 alias ts="task";
-alias event="calcurse -d";
 
 alias yt-dlp="yt-dlp --embed-metadata --cookies-from-browser firefox"
 
