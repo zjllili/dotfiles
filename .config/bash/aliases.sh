@@ -60,7 +60,6 @@ alias fptree="pacman -Qq | fzf --bind=ctrl-j:preview-down,ctrl-k:preview-up --pr
 alias fpcache="pacman -Qq | fzf --bind=ctrl-j:preview-down,ctrl-k:preview-up --prompt='package cache: ' --preview-window=70%:bottom: --preview 'ls /var/cache/pacman/pkg/{}-[0-9]*.pkg.tar.zst'"
 ### fzf git previews
 alias fgl="git log | grep '^commit ' | cut -d' ' -f2 | fzf --bind=ctrl-j:preview-down,ctrl-k:preview-up --preview 'git show {} | bat --color=always --style=plain,changes ' --preview-window=90% | wl-copy"
-alias fgln="git log | grep '^commit '| cut -d' ' -f2 | fzf --bind=ctrl-j:preview-down,ctrl-k:preview-up --preview 'git log --name-only {} | bat --color=always --style=plain,changes' | wl-copy"
 alias fglf=" fzf --bind=ctrl-j:preview-down,ctrl-k:preview-up --preview 'git log --follow -p {} | bat --color=always --style=plain,changes' "
 
 # abbreviation
@@ -123,6 +122,7 @@ alias gsh="git show"
 
 alias gb="git branch"
 alias gck="git checkout"
+alias gcm="git checkout master"
 
 alias ga="git add"
 alias gac="git add . && git commit -m update"
