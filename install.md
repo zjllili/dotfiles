@@ -1,22 +1,22 @@
 @author: nate zhou  
-@since: 2024-08-07  
+@since: 2024,2025  
 
 # 0.install info
-partition:  LVM on LUKS
-boot:       GRUB, UEFI, Secure Boot disabled)
+partition:  LVM on LUKS, hibernation to swap partition  
+boot:       UEFI, GRUB, Secure Boot disabled
 ```
-lsblk example:
+$ lsblk
     NAME              SIZE  TYPE  MOUNTPOINTS
-    nvme1n1         931.5G  disk  
-    └─nvme1n1p1     931.5G  part  
+    nvme1n1         931.5G  disk
+    └─nvme1n1p1     931.5G  part
       └─cryptdata   931.5G  crypt /data
-    nvme0n1         476.9G  disk  
+    nvme0n1         476.9G  disk
     ├─nvme0n1p1         1G  part  /boot
-    ├─nvme0n1p2        76G  part  
-    │ └─cryptlvm       76G  crypt 
+    ├─nvme0n1p2        76G  part
+    │ └─cryptlvm       76G  crypt
     │   ├─vg0-swap     16G  lvm   [SWAP]
     │   └─vg0-root     60G  lvm   /
-    └─nvme0n1p3     399.9G  part  
+    └─nvme0n1p3     399.9G  part
       └─crypthome   399.9G  crypt /home
 ```
 # 1. archiso
@@ -25,7 +25,7 @@ lsblk example:
 ## 1.2 increase console font
     `setfont /usr/share/kbd/consolefonts/iso01-12x22.psfu.gz`
 ## 1.3 connect to wifi (hidden)
-    (optional) get full manual of iwctl
+    get full manual of iwctl
     `iwctl help | less`
 
     list network interface(s)
@@ -34,19 +34,19 @@ lsblk example:
     connect hidden wifi
     `iwctl --passphrase <passphrase> station <device> connect-hidden <ssid>`
 
-    (optional) check connection
+    check connection
     `ip a`
     `ping -c 3 archlinux.org`
 ## 1.4 update the system clock
     `timedatectl set-timezon Region/City`
 
-    (optional) check NTP
+    check NTP
     `timedatectl`
-## 1.5 (optional) partition disk(s)
-    (optional) read `fdisk`'s manual
+## 1.5 partition disk(s)
+    read `fdisk`'s manual
     `fdisk /dev/nvme0n1 <<< m | less`
     `<<<` is the "here string", this command send `m` to `fdisk /dev/nvme0n1` and piping to `less`, useful when console screen isn't enough
-    
+
     subcommands
     `p` print
     `F` Free
@@ -56,7 +56,7 @@ lsblk example:
     `w` write
     `q` quit
 
-## 1.6 (optional) format partition(s)
+## 1.6 format partition(s)
     format the bootloader's partition
     `mkfs.fat -F 32 /dev/nvme0n1p1`
 
@@ -88,13 +88,13 @@ lsblk example:
     'mkfs.ext4 /dev/mapper/crypthome'
 ## 1.7 mount partitions
     mount root (ext4 on lvm on luks)
-    `mount /dev/vg0/root /mnt` 
+    `mount /dev/vg0/root /mnt`
 
     create mount points for other partitions
     `mkdir -p /mnt/{boot,home,data}`
 
     mount boot (esp, not encrypted)
-    `mount /dev/nvme0n1p1 /mnt/boot` 
+    `mount /dev/nvme0n1p1 /mnt/boot`
 
     mount home (ext4 on luks)
     `mount /dev/mapper/crypthome /mnt/home`
@@ -126,7 +126,7 @@ lsblk example:
         lvm2            if this package is not installed, root filesystem on the logical volume won't be able to be used
         man-db          database for `man`
         bash-completion completion for sub-commands
-    )  
+    )
 ## 1.9 generate fstab
     `genfstab -U /mnt >> /mnt/etc/fstab`
 ## 1.10 chroot into the new system
@@ -134,7 +134,7 @@ lsblk example:
 ## 1.11 configure timezone and clock
     make a symbolic link to a timezone
         `ln -sf /usr/share/zoneinfo/Region/City /etc/localtime`
-    
+
     sync system time to the hardware clock on the computer's motherboard
         `hwclock --systohc`
 ## 1.12 configure locale
@@ -171,11 +171,11 @@ lsblk example:
     blkid >> /etc/crypttab
 
     vim /etc/crypttab
-    
+
     modify to
         crypthome <uuid> /root/cryptkey luks,discard
         (uuid of the luks containers)
-## 1.15.1 (optional) kill no longer used key slot
+## 1.15.1 kill no longer used key slot
     cryptsetup luksDump /dev/nvme0n1p3 | less
     cryptsetup luksKillSlot /dev/nvme0n1p3 1
 ## 1.16 create initial ramdisk environment
@@ -256,7 +256,7 @@ login as root
     (or from /etc/skel/.bashrc)
     add `set -o vi` to it
 
-    (optional) remove the `~/.bash_profile` if exist 
+    remove the `~/.bash_profile` if exist 
     as `~/.bash_profile` would override `~/.profile`
 ## 2.4 enable networkmanager and connect to hidden wifi
     `systemctl enable --now NetworkManager.service` (`.service` can be omitted)
@@ -371,7 +371,7 @@ login as root
 
     restart sshd
         systemctl enable --now sshd.service
-#### 2.6.8.1 (optional) import ssh pub key (on nuc11)
+#### 2.6.8.1 import ssh pub key (on nuc11)
     entering the directory where the pub key locates
         cd ~/.ssh
     use smbclient to move pub key to nuc11
@@ -394,16 +394,16 @@ login as root
 
     on termux copy `~/.ssh/id_rsa.pub`, write to clipboard.txt on smb share
 
-    (optional) if on wayland, copy to paste
+    if on wayland, copy to paste
         cat ~/smb/clipboard.txt | wl-copy
-        
+
     change user to termux with sudo (never create password for the termux user)
         sudo su - termux
         mkdir ~/.ssh
 
     import pub key to sshd
         echo "<paste pub key here>" > .ssh/authorized_keys
-    
+
     restart sshd
         sudo systemctl restart sshd.service
 #### 2.6.9.1 check home directory permission for sharing files
@@ -430,7 +430,7 @@ login as root
         sudo ufw enable
         sudo systemctl enable --now ufw.service
 ### 2.6.11 firejail sandbox
-    (optional) comment out `mkdir` lines to disable creating empty directories on starting up softwares
+    comment out `mkdir` lines to disable creating empty directories on starting up softwares
         sudo vim /etc/firejail/newsboat.profile
         sudo vim /etc/firejail/neomutt.profile
 
@@ -449,12 +449,12 @@ login as root
 ### 2.6.13 electron software (code/codium) themes on wayland
     make sure xdg-desktop-portal package is installed and run:
         gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
-### 2.6.14 (optional) nvidia fix hibernation
+### 2.6.14 nvidia fix hibernation
     sudo systemctl enable nvidia-suspend.service
     sudo systemctl enable nvidia-hibernate.service
     sudo systemctl enable nvidia-resume.service
     sudo systemctl enable nvidia-powerd.service
-### 2.6.15 (optional) change default power button behavior
+### 2.6.15 change default power button behavior
     sudo cp /etc/systemd/logind.conf /etc/systemd/logind.conf~
     sudo vim /etc/systemd/logind.conf
 
@@ -463,15 +463,25 @@ login as root
 ### 2.6.16 firefox
     user.js, userChrome.css
     tridactyl
-        :bind j scrollline 1
-        :bind k scrollline -1
+        # change scroll steps
+        :bind j scrollline 2
+        :bind k scrollline -2
+
+        # add new bindings
+        :bind n scrollline 10
+        :bind p scrollline -10
+
+        # focus movement actions on elements
+        :bind i hint -; *
+
+        # make hint mode actually readable
         :set hintstyle.bg none
         :set hintstyle.fg none
         :set hintstyle.outline all
 ### 2.6.17 /usr/bin/sh
     sudo ln -sf /usr/bin/dash /usr/bin/sh
 
-# 3.0 (optional) restore files from a backup media
+# 3.0 restore files from a backup media
     unlock and mount the backup disk
         udisksctl unlock -b /dev/sdx1
         udisksctl mount -b /dev/dm-x
