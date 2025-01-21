@@ -43,16 +43,16 @@ gen_bash() {
 gen_ranger() {
     echo "clearing old bash bindings..."
     clear_up > "$TELEPORT_RANGER"
+    local LEADER_CHAR="." # leader key for open in new tab
 
     while IFS= read -r line; do
         if [[ -n "$line" && "$line" != \#* ]]; then
             parsed_key="$(echo $line | cut -d'=' -f1)"
-            parsed_key_lower="${parsed_key,}"
+            parsed_key_tab="${LEADER_CHAR}${parsed_key:1}"
             # remove backslashes: Ranger and Bash expect the exact opposite
             parsed_dir="$(echo $line | cut -d'"' -f2 | sed 's/\\//g')"
-            #printf "map $parsed_key_lower cd $parsed_dir\\nmap $parsed_key chain tab_new; cd $parsed_dir\\n" >> "$TELEPORT_RANGER"
-            printf "map %s cd %s\\n" "$parsed_key_lower" "$parsed_dir" >> "$TELEPORT_RANGER"
-            printf "map %s chain tab_new; cd %s\\n" "$parsed_key" "$parsed_dir" >> "$TELEPORT_RANGER"
+            printf "map %s cd %s\\n" "$parsed_key" "$parsed_dir" >> "$TELEPORT_RANGER"
+            printf "map %s chain tab_new; cd %s\\n" "$parsed_key_tab" "$parsed_dir" >> "$TELEPORT_RANGER"
         fi
     done <$TELEPORT_CONF
 
