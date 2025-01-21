@@ -126,9 +126,9 @@ bindsym $mod+Control+r exec swaymsg "output * bg ~/.local/share/wallpaper fill"
 bindsym $mod+Shift+e exec ~/.local/bin/swayexit
 bindsym $mod+Shift+q exec ~/.local/bin/swayhibe
 # clipboard & bookmarks
-bindsym $mod+z exec 'cliphist list | $wmenu -p "cliphist: " -l 6 | cliphist decode | wl-copy'
-bindsym $mod+a exec cat ~/.local/share/bookmarks/bookmarks | grep -vE "^#|^[[:space:]]*$" | $wmenu -p "bookmarks: " -l 6 | awk ' {sub(/[^|]*\|/, ""); print}' | xargs wtype
-bindsym $mod+Shift+a exec cat ~/.local/share/bookmarks/bookmarks-record | grep -vE "^#|^[[:space:]]*$" | $wmenu -p "bookmarks-record" -l 6 | awk ' {sub(/[^|]*\|/, ""); print}' | xargs wtype
+bindsym $mod+z exec ~/.local/bin/wclip
+bindsym $mod+a exec ~/.local/bin/wbookmark
+bindsym $mod+Shift+a exec ~/.local/bin/wbookmark-record
 # notification
 bindsym $mod+n exec "dunstctl history-pop"
 bindsym $mod+Shift+n exec "dunstctl close"

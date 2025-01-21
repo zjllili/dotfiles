@@ -1,0 +1,9 @@
+#!/usr/bin/sh
+# @author nate zhou
+# @since 2025
+# wayland clipboard manager
+# @depends wmenu wl-copy cliphist
+
+source $HOME/.local/bin/wmenu-color 2>/dev/null
+
+cliphist list | wmenu-color -p "[$(basename $0)] " -l 6 | cliphist decode | wl-copy
