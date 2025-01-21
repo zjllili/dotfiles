@@ -29,11 +29,13 @@ gen_bash() {
     echo "clearing old bash bindings..."
     clear_up > "$TELEPORT_BASH"
 
-    for i in $(grep '^[^#]' "$TELEPORT_CONF" | tr ' ' '\n'); do
-        parsed_key="$(echo $i | cut -d'=' -f1)"
-        parsed_dir="$(echo $i | cut -d'"' -f2)"
-        printf "alias $parsed_key=\"$parsed_dir\"\\n" >> "$TELEPORT_BASH"
-    done
+    while IFS= read -r line; do
+        if [[ -n "$line" && "$line" != \#* ]]; then
+            parsed_key="$(echo "$line" | cut -d'=' -f1)"
+            parsed_dir="$(echo "$line" | cut -d'"' -f2)"
+            printf "alias %s=\"%s\"\\n" "$parsed_key" "$parsed_dir" >> "$TELEPORT_BASH"
+        fi
+    done <$TELEPORT_CONF
 
     echo "teleport.sh generated for bash"
 }
@@ -42,12 +44,17 @@ gen_ranger() {
     echo "clearing old bash bindings..."
     clear_up > "$TELEPORT_RANGER"
 
-    for i in $(grep '^[^#]' "$TELEPORT_CONF" | tr ' ' '\n'); do
-        parsed_key="$(echo $i | cut -d'=' -f1)"
-        parsed_key_lower="${parsed_key,}"
-        parsed_dir="$(echo $i | cut -d'"' -f2)"
-        printf "map $parsed_key_lower cd $parsed_dir\\nmap $parsed_key chain tab_new; cd $parsed_dir\\n" >> "$TELEPORT_RANGER"
-    done
+    while IFS= read -r line; do
+        if [[ -n "$line" && "$line" != \#* ]]; then
+            parsed_key="$(echo $line | cut -d'=' -f1)"
+            parsed_key_lower="${parsed_key,}"
+            # remove backslashes: Ranger and Bash expect the exact opposite
+            parsed_dir="$(echo $line | cut -d'"' -f2 | sed 's/\\//g')"
+            #printf "map $parsed_key_lower cd $parsed_dir\\nmap $parsed_key chain tab_new; cd $parsed_dir\\n" >> "$TELEPORT_RANGER"
+            printf "map %s cd %s\\n" "$parsed_key_lower" "$parsed_dir" >> "$TELEPORT_RANGER"
+            printf "map %s chain tab_new; cd %s\\n" "$parsed_key" "$parsed_dir" >> "$TELEPORT_RANGER"
+        fi
+    done <$TELEPORT_CONF
 
     echo "teleport.conf generated for ranger"
 }
