@@ -3,6 +3,7 @@
 # @since 2025
 
 alias ,.="~/doc/heart"
+alias ,h="~/doc/heart"
 alias ,n="~/doc/note"
 alias ,.d="~/dls"
 alias ,.s="~/smb"
