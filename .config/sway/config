@@ -14,7 +14,7 @@ set $fcitix /tmp/i3status/fcitix
 set $mode_cursor ";: num:F[n] | [d]Del | [HJKL]:Slow | Mod[hjkl]:Arrow | [n]PageUp | [p]PageDn"
 set $mode_app "': news[b]oat [c]alcurse cod[e] [g]imp [k]denlive [n]cmpcpp b[t]op [f]irefox thunderbir[d]"
 set $mode_wmenu "w: w[w]iki w[h]eart w[b]ook [a]mount [f]locks [p]off w[s]hot w[c]ast w[m]ulti"
-set $mode_z "z: enable[t]ap disable[T]ap enable[p]ad disable[P]ad clip[h]ist-wipe [l]supdates d[w] w[c]al"
+set $mode_b "b: enable[t]ap disable[T]ap enable[p]ad disable[P]ad clip[h]ist-wipe [l]supdates d[w] w[c]al"
 
 bar {
     status_command ~/.local/bin/i3status-mpd
@@ -126,7 +126,7 @@ bindsym $mod+Control+r exec swaymsg "output * bg ~/.local/share/wallpaper fill"
 bindsym $mod+Shift+e exec ~/.local/bin/swayexit
 bindsym $mod+Shift+q exec ~/.local/bin/swayhibe
 # clipboard & bookmarks
-bindsym $mod+b exec 'cliphist list | $wmenu -p "cliphist: " -l 6 | cliphist decode | wl-copy'
+bindsym $mod+z exec 'cliphist list | $wmenu -p "cliphist: " -l 6 | cliphist decode | wl-copy'
 bindsym $mod+a exec cat ~/.local/share/bookmarks/bookmarks | grep -vE "^#|^[[:space:]]*$" | $wmenu -p "bookmarks: " -l 6 | awk ' {sub(/[^|]*\|/, ""); print}' | xargs wtype
 bindsym $mod+Shift+a exec cat ~/.local/share/bookmarks/bookmarks-record | grep -vE "^#|^[[:space:]]*$" | $wmenu -p "bookmarks-record" -l 6 | awk ' {sub(/[^|]*\|/, ""); print}' | xargs wtype
 # notification
@@ -176,7 +176,7 @@ mode $mode_cursor {
     bindsym $mod+semicolon mode "default"; seat seat0 hide_cursor when-typing enable
     bindsym $mod+apostrophe mode $mode_app; seat seat0 hide_cursor when-typing enable
     bindsym $mod+w mode $mode_wmenu; seat seat0 hide_cursor when-typing enable
-    bindsym $mod+z mode $mode_z; seat seat0 hide_cursor when-typing enable
+    bindsym $mod+b mode $mode_b; seat seat0 hide_cursor when-typing enable
 
     bindsym 1 exec wtype -k "F1" ; mode "default"; seat seat0 hide_cursor when-typing enable
     bindsym 2 exec wtype -k "F2" ; mode "default"; seat seat0 hide_cursor when-typing enable
@@ -225,7 +225,7 @@ mode $mode_app {
     bindsym $mod+apostrophe mode "default"
     bindsym $mod+semicolon mode $mode_cursor ; seat seat0 hide_cursor when-typing disable
     bindsym $mod+w mode $mode_wmenu
-    bindsym $mod+z mode $mode_z
+    bindsym $mod+b mode $mode_b
 
     bindsym b exec $term newsboat ; mode "default"
     bindsym c exec $term calcurse ; mode "default"
@@ -245,7 +245,7 @@ mode $mode_wmenu {
     bindsym $mod+w mode "default"
     bindsym $mod+semicolon mode $mode_cursor ; seat seat0 hide_cursor when-typing disable
     bindsym $mod+apostrophe mode $mode_app
-    bindsym $mod+z mode $mode_z
+    bindsym $mod+b mode $mode_b
 
     bindsym w exec ~/.local/bin/wwiki ; mode "default"
     bindsym h exec ~/.local/bin/wheart ; mode "default"
@@ -258,11 +258,11 @@ mode $mode_wmenu {
     bindsym m exec ~/.local/bin/wmulti ; mode "default"
 }
 
-bindsym $mod+z mode $mode_z
-mode $mode_z {
+bindsym $mod+b mode $mode_b
+mode $mode_b {
     bindsym Escape mode "default"
     bindsym Space mode "default"
-    bindsym $mod+z mode "default"
+    bindsym $mod+b mode "default"
     bindsym $mod+semicolon mode $mode_cursor ; seat seat0 hide_cursor when-typing disable
     bindsym $mod+apostrophe mode $mode_app
     bindsym $mod+w mode $mode_wmenu
