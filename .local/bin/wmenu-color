@@ -1,0 +1,6 @@
+#!/usr/bin/sh
+# @author nate zhou
+# @since 2025
+# menu colorscheme, to be sourced by other scripts
+
+wmenu -f "SourceCodePro medium 13" -S 6f3f89 -s ffffff -M 6f3f89 -m ffffff "$@"
