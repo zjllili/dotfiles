@@ -13,12 +13,6 @@ help() {
     [ "$?" -eq 0 ] && echo "$help_output" | /usr/bin/less -i
 }
 
-# teleport-genesis keybindings search
-BBB() {
-    TELEPORT_CONF="$HOME/.config/bash/teleport.conf"
-    [ "$#" -eq 0 ] && less "$TELEPORT_CONF" || grep "$@" "$TELEPORT_CONF"
-}
-
 # avoid nested ranger
 ranger() {
     [ -z "$RANGER_LEVEL" ] && /usr/bin/ranger "$@" || exit &>/dev/null
