@@ -3,9 +3,11 @@
 # @since 2024,2025
 # open ebooks with zathura with wmenu
 
+source $HOME/.local/bin/wmenu-color 2>/dev/null
+
 SEARCH_PATH="$HOME/doc/ebook"
 
-selected_file="$(find "$SEARCH_PATH" -type f | grep -e .epub$ -e .pdf$  | wmenu -p "wbook" -i -l 6 -f "SourceCodePro bold 13" -S 6f3f89 -s ffffff -M 6f3f89 -m ffffff)"
+selected_file="$(find "$SEARCH_PATH" -type f | grep -e .epub$ -e .pdf$  | wmenu-color -p "wbook" -i -l 6)"
 
 # don't open zathura if none file selected
 [ -n "$selected_file" ] && zathura "$selected_file"
