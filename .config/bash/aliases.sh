@@ -131,6 +131,7 @@ alias gac="git add . && git commit -m update"
 alias gd="git diff"
 alias gds="git diff --staged"
 alias gdw="git diff --word-diff"
+alias gdws="git diff --word-diff --staged"
 
 alias gl="git log --graph --all --abbrev-commit"
 alias gll="git log --graph --all"
