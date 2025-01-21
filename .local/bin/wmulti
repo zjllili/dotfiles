@@ -1,15 +1,12 @@
-#!/usr/bin/env bash
+#!/usr/bin/sh
 # @author nate zhou
 # @since 2024,2025
 # bookmark with multiple paragraphs for wmenu
 
+source $HOME/.local/bin/wmenu-color 2>/dev/null
+
 MULTI_DIR="$HOME/.local/share/bookmarks/multi/"
-selected=$(ls "$MULTI_DIR" | wmenu  -p "wmulti: " -l 5 -f "SourceCodePro Medium 13" -i -S 6f3f89 -s ffffff -M 6f3f89 -m ffffff )
+selected=$(ls "$MULTI_DIR" | wmenu-color -p "wmulti: " -l 5 -i)
 echo $selected
 
-if [[ "$selected" == *"author-year" ]]; then
-    this_year="$(date +%G)"
-    cat "$MULTI_DIR""$selected" | sed "s/YEAR/$this_year/" | wl-copy
-else
-    cat "$MULTI_DIR""$selected" | wl-copy
-fi
+cat "$MULTI_DIR""$selected" | wl-copy

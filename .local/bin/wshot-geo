@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # @author nate zhou
 # @since 2024,2025
-# wmenu script to take a screenshot with selected geometry in sway
+# script to take a screenshot with selected geometry in sway
 
 SWAYSOCK=/run/user/$(id -u)/sway-ipc.$(id -u).$(pgrep -x sway).sock
 
