@@ -45,6 +45,7 @@ alias mpv="mpv --loop"
 ## fuzzy menu
 alias wmenu="wmenu -f 'SourceCodePro Medium 13' -i -S 6f3f89 -s ffffff -M 6f3f89 -m ffffff"
 alias fzf="/usr/bin/fzf --bind=ctrl-j:preview-down,ctrl-k:preview-up --reverse --color=16 --preview-window=65%:wrap:border-sharp: --preview 'bat --color=always --style=plain,changes {}'"
+alias ,,="~/.local/bin/teleport-genesis-search"
 
 ### fzf text editor
 alias fvi="fzf --bind='enter:execute(nvim {+}),ctrl-j:preview-down,ctrl-k:preview-up'"
