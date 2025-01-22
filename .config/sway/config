@@ -59,7 +59,7 @@ for_window [class=".*"] border pixel 1
 
 default_orientation auto
 
-floating_maximum_size 1596 x 872
+floating_maximum_size 1600 x 875
 popup_during_fullscreen smart
 focus_wrapping yes
 force_display_urgency_hint 1000 ms
@@ -326,14 +326,15 @@ bindsym $mod+CONTROL+period focus output right
 bindsym $mod+x splitv
 bindsym $mod+v splith
 
-bindsym $mod+s layout stacking
-bindsym $mod+t layout tabbed
+bindsym $mod+s layout toggle stacking split
+bindsym $mod+t layout toggle tabbed split
 bindsym $mod+e layout toggle split
 
-bindsym $mod+f fullscreen
+bindsym $mod+f floating toggle, resize set width 1600 px, resize set height 900 px
+bindsym $mod+CONTROL+f fullscreen
 
 bindsym $mod+Shift+f floating toggle
-bindsym $mod+Shift+c resize set width 1590 px, resize set height 860 px, move position center
+bindsym $mod+Shift+c resize set width 1600 px, resize set height 900 px, move position center
 bindsym $mod+CONTROL+c move position center
 bindsym $mod+Shift+s sticky toggle
 bindsym $mod+grave focus mode_toggle
