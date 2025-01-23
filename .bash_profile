@@ -2,8 +2,8 @@
 # @author nate zhou
 # @since 2023,2024,2025
 
-# default file permission: root 700/600, user 750/640
-[ "$UID" -eq 0 ] && umask 077 || umask 027
+# default file permission: dir/file:750/640
+[ "$UID" -eq 0 ] || umask 027
 
 [[ -n "$BASH_VERSION" && -f "$HOME/.bashrc" ]] && . "$HOME/.bashrc"
 
