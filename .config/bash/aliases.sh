@@ -116,6 +116,10 @@ alias ckkn="$HOME/.local/bin/checkkernels"
 alias lsud="$HOME/.local/bin/lsupdates"
 alias rmcc="$HOME/.local/bin/rmcache"
 alias rmop="$HOME/.local/bin/rmorphan"
+alias pl="pacman -Ql"
+alias po="pacman -Qo"
+alias pd="pactree -d1"
+alias pv="pactree -rd1"
 
 ## git
 alias gs="git status"

@@ -47,3 +47,13 @@ osc7_cwd() {
     printf '\e]7;file://%s%s\e\\' "${HOSTNAME}" "${encoded}"
 }
 PROMPT_COMMAND=${PROMPT_COMMAND:+${PROMPT_COMMAND%;}; }osc7_cwd
+
+# package management
+## list binaries
+plb() {
+    pacman -Ql "$@" | grep -E '/usr/bin/.+$'
+}
+## list licenses
+pll() {
+    pacman -Qi "$@" | grep '^Licenses' | cut -d' ' -f10-
+}
