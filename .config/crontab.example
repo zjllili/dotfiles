@@ -1,10 +1,21 @@
 # minute hour day_of_month month day_of_week command
+
+*/15 * * * * $HOME/.local/bin/sync-config-cron
+*/15 * * * * $HOME/.local/bin/newsboat-update-cron
+
+# i3status
 */5 * * * * $HOME/.local/bin/updw-cron
 */5 * * * * $HOME/.local/bin/uptime-cron
 */15 * * * * $HOME/.local/bin/checkupdates-cron
-*/15 * * * * $HOME/.local/bin/sync-config-cron
-*/15 * * * * $HOME/.local/bin/newsboat-update-cron
-#*/15 * * * * $HOME/.local/bin/randwall-cron
+*/15 * * * * $HOME/.local/bin/newsboat-num-cron
+*/15 * * * * $HOME/.local/bin/calcurse-num-cron
+
 @reboot $HOME/.local/bin/uptime-reset
 @reboot $HOME/.local/bin/updw
 @reboot $HOME/.local/bin/checkupdates-cron --now
+@reboot $HOME/.local/bin/newsboat-update-cron
+@reboot $HOME/.local/bin/newsboat-num-cron
+@reboot $HOME/.local/bin/calcurse-num-cron
+
+#*/15 * * * * $HOME/.local/bin/randwall-cron
+#*/10 * * * * $HOME/.local/bin/mpvpaperd
