@@ -18,6 +18,7 @@ order += "read_file wttr"
 order += "read_file calcurse"
 order += "read_file newsboat"
 order += "read_file pacman"
+order += "read_file tty"
 order += "read_file uptime"
 order += "ethernet _first_"
 order += "wireless _first_"
@@ -76,6 +77,14 @@ read_file pacman {
     format = "[ %content]"
     format_bad = ""
     path = "~/.cache/checkupdates-cron.num"
+    separator = false
+    separator_block_width = 4
+}
+
+read_file tty {
+    format ="[ %content]"
+    format_bad = ""
+    path = "/tmp/i3status/tty.num"
     separator = false
     separator_block_width = 4
 }
