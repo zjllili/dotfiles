@@ -1,10 +1,15 @@
 #!/usr/bin/env bash
 # @author nate zhou
 # @since 2024,2025
+# @depends ~/.local/bin/sync-config
 
-HEART="$HOME/doc/heart"
-DOTFILES="$HOME/doc/unixchad/dotfiles"
+# compare crontab.backup modified timestamp with update frequency
 CRONTAB="$HOME/.config/crontab.backup"
+
+if [ ! -f "$CRONTAB" ]; then
+    ~/.local/bin/sync-config
+    exit 0
+fi
 
 # modified time in seconds since the Epoch
 update_time=$(stat -c "%Y" "$CRONTAB")
@@ -13,26 +18,8 @@ current_time=$(date +%s)
 #update_frequency=86400 # in seconds, 86400s = 1d
 UPDATE_FREQUENCY=43200 # in seconds, 43200s = 12H
 
-sync_config() {
-    git --git-dir ~/doc/.heart/.git --work-tree ~/doc/.heart pull && echo "heart is pulled" || echo "heart pulling failed"
-
-    crontab -l > "$CRONTAB" && echo "crontab backup done" || echo "crontab backup failed"
-
-    # censor bookmarks for screen casting
-    grep -n "##############################below-are-private##############################" ~/doc/heart/.local/share/bookmarks/bookmarks | cut -d: -f1 | xargs -I {} sed -n '1,{}p' ~/doc/heart/.local/share/bookmarks/bookmarks > ~/doc/heart/.local/share/bookmarks/bookmarks-record && echo "bookmarks-record updated" || echo "bookmarks-record update failed"
-
-    # unixchad
-    rsync -a --delete "$HEART"/../.heart/ --exclude .git "$DOTFILES" && chmod 755 "$DOTFILES"
-
-}
-
-if [ ! -f "$CRONTAB" ]; then
-    sync_config
-    exit 0
-fi
-
 if ((current_time - update_time > UPDATE_FREQUENCY )); then
-    sync_config
+    ~/.local/bin/sync-config
 else
     echo "Already updated within past $(($UPDATE_FREQUENCY/3600)) hours"
     exit 1
