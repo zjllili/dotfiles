@@ -86,7 +86,7 @@ output 'Lenovo Group Limited LEN LS2023wA 05559D4930167' resolution 1600x900@60.
 
 input "type:touchpad" tap disabled
 input "type:touchpad" events enabled
-bindsym $mod+backslash input "type:touchpad" tap disabled, exec notify-send -u low -r 242 "tap enabled"
+bindsym $mod+backslash input "type:touchpad" tap enabled, exec notify-send -u low -r 242 "tap enabled"
 bindsym $mod+Shift+backslash input "type:touchpad" tap disabled, exec notify-send -u low -r 242 "tap disabled"
 input "type:keyboard" {
 	repeat_delay 200
