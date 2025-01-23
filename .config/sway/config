@@ -84,10 +84,10 @@ output 'Chimei Innolux Corporation 0x1540 Unknown' scale 1 mode --custom 1600x90
 output 'AU Optronics 0x243D Unknown' scale 1 mode --custom 1600x900@60.000Hz pos 0 0
 output 'Lenovo Group Limited LEN LS2023wA 05559D4930167' resolution 1600x900@60.000Hz pos 0 -900
 
-input "type:touchpad" tap enabled
-input "type:touchpad" events disabled
-bindsym $mod+backslash input "type:touchpad" events enabled, exec notify-send -u low -r 242 "touchpad enabled"
-bindsym $mod+Shift+backslash input "type:touchpad" events disabled, exec notify-send -u low -r 242 "touchpad disabled"
+input "type:touchpad" tap disabled
+input "type:touchpad" events enabled
+bindsym $mod+backslash input "type:touchpad" tap disabled, exec notify-send -u low -r 242 "tap enabled"
+bindsym $mod+Shift+backslash input "type:touchpad" tap disabled, exec notify-send -u low -r 242 "tap disabled"
 input "type:keyboard" {
 	repeat_delay 200
 	repeat_rate 30
@@ -95,6 +95,7 @@ input "type:keyboard" {
 }
 
 # autostart
+exec_always swaymsg seat - cursor set 9999 9999
 exec_always "$HOME"/.local/bin/foots
 exec_always "$HOME"/.local/bin/wobd
 exec swayidle -w \
