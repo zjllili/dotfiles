@@ -20,7 +20,7 @@ fi
 while [ -n "$1" ]; do
     case "$1" in
         -n | --now)
-            echo "update now"
+            echo "[$(basename $0)] update now"
             update_num
             exit 0
             ;;

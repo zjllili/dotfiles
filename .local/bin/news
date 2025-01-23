@@ -1,0 +1,15 @@
+#!/usr/bin/sh
+# @author nate zhou
+# @since 2025
+# update newsboat unread count for i3status
+
+update() {
+    $HOME/.local/bin/newsboat-num-cron --now
+    # refresh i3status if it is running
+    pgrep i3status >/dev/null && killall -SIGUSR1 i3status
+}
+
+# update count on exit, interrupted or terminated
+trap update EXIT INT TERM
+
+command newsboat

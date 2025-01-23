@@ -11,7 +11,7 @@ set $bookmarks ~/.local/bin/share/bookmarks
 set $bright ~/.cache/brightness
 set $wobfifo /tmp/i3status/wob.fifo
 set $mode_cursor ";: num:F[n] | [d]Del | [HJKL]:Slow | Mod[hjkl]:Arrow | [n]PageUp | [p]PageDn"
-set $mode_app "': news[b]oat [c]alcurse cod[e] [g]imp [k]denlive [n]cmpcpp b[t]op [f]irefox thunderbir[d]"
+set $mode_app "': [n]ews [c]alcurse cod[e] [g]imp [k]denlive nc[m]pcpp b[t]op [f]irefox thunderbir[d]"
 set $mode_wmenu "w: w[w]iki w[h]eart w[b]ook [a]mount [f]locks [p]off w[s]hot w[c]ast w[m]ulti"
 set $mode_b "b: enable[t]ap disable[T]ap enable[p]ad disable[P]ad clip[h]ist-wipe [l]supdates d[w] w[c]al"
 
@@ -227,13 +227,13 @@ mode $mode_app {
     bindsym $mod+w mode $mode_wmenu
     bindsym $mod+b mode $mode_b
 
-    bindsym b exec $term newsboat ; mode "default"
+    bindsym n exec $term ~/.local/bin/news ; mode "default"
     bindsym c exec $term calcurse ; mode "default"
     bindsym e exec code ; mode "default"
     bindsym f exec firefox ; mode "default"
     bindsym g exec gimp ; mode "default"
     bindsym k exec kdenlive ; mode "default"
-    bindsym n exec $term ncmpcpp ; mode "default"
+    bindsym m exec $term ncmpcpp ; mode "default"
     bindsym t exec $term btop ; mode "default"
     bindsym d exec thunderbird ; mode "default"
     }
