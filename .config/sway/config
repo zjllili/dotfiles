@@ -43,7 +43,6 @@ bar {
 	binding_mode        #191919 #6f3f89 #eeeeee
 	}
 }
-include /etc/sway/config.d/*
 
 #<colorclass> <border> <background> <text> <indicator> <child_border>
 client.focused		        #9962b7 #9962b7 #f1f1f1 #e6da00
