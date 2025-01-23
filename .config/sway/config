@@ -51,7 +51,7 @@ client.focused_inactive     #0092cc #0092cc #f1f1f1 #0092cc
 client.unfocused            #191919 #191919 #f1f1f1 #191919
 client.urgent               #e6da00 #e6da00 #f1f1f1 #9962b7
 client.background           #191919
-font pango:monospace 0.01
+font pango:monospace 0.001
 titlebar_padding 1
 titlebar_border_thickness 0
 #default_border pixel 1
