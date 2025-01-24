@@ -1,0 +1,14 @@
+#!/usr/bin/sh
+# @author nate zhou
+# @since 2025
+
+status="$(wpctl get-volume @DEFAULT_AUDIO_SINK@)"
+volume="$(echo $status | sed 's/[^0-9]*//g; s/^0//' )"
+muted="$(echo $status | grep 'MUTED')"
+
+[ -z "$muted" ] && icon="" color="#eeeeee"|| icon="" color="#777777"
+
+echo ["$icon" "$volume"%]
+echo
+
+echo "$color"

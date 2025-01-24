@@ -1,0 +1,9 @@
+#!/usr/bin/sh
+# @author nate zhou
+# @since 2025
+
+tty_count="$(w -h | wc -l )"
+[ "$tty_count" -eq 1 ] && exit 1
+
+icon=""
+echo ["$icon" "$tty_count"]

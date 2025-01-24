@@ -27,7 +27,7 @@ if [ -f "$HOME/.cache/city" ]; then
             msg="updw done"
             notify-send -u low -r 22 "$msg"
             echo $msg
-            pgrep i3status >/dev/null && killall -SIGUSR1 i3status
+            pkill -SIGRTMIN+7 i3blocks
         else
             msg="updw failed, check network ?"
             notify-send -u low -r 21 "$msg"

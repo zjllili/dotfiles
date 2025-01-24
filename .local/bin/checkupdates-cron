@@ -25,7 +25,7 @@ else
     echo "" > "$LOG_CACHE"
 fi
 wc -w "$LOG_CACHE" | awk '{print $1}' > "$NUM_CACHE"
-pgrep i3status >/dev/null && killall -SIGUSR1 i3status
+pkill -SIGRTMIN+4 i3blocks
 }
 
 while [ -n "$1" ]; do

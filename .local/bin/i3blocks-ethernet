@@ -1,0 +1,13 @@
+#!/usr/bin/sh
+# @author nate zhou
+# @since 2025
+
+status="$(cat /sys/class/net/e*/operstate 2>/dev/null)"
+color="#eeeeee"
+
+[ "$status" = "up" ] && icon="" || exit 0
+
+echo ["$icon"]
+echo
+
+echo "$color"

@@ -1,0 +1,9 @@
+#!/usr/bin/sh
+# @author nate
+# @since 2025
+
+level="$(brightnessctl | awk -F'[()]' 'NR==2 {print $2}' | sed 's/%$//')"
+
+icon="󱩎 "
+
+echo ["$icon""$level"%]

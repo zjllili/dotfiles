@@ -1,0 +1,15 @@
+#!/usr/bin/sh
+# @author nate zhou
+# @since 2025
+
+result="$(cat $HOME/.cache/newsboat.num)"
+
+icon="󰡠"
+color="#eeeeee"
+
+echo ["$icon" "$result"]
+echo
+
+[ "$result" -eq 0 ] || [ -z "$result" ] && color="#777777"
+
+echo "$color"
