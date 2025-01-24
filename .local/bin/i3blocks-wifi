@@ -1,0 +1,16 @@
+#!/usr/bin/sh
+# @author nate zhou
+# @since 2025
+
+status="$(cat /sys/class/net/w*/operstate 2>/dev/null)"
+color="#eeeeee"
+
+[ "$status" = "up" ] && icon="󰖩" || icon="󰖪" color="#777777"
+
+level="$(nmcli -f IN-USE,SIGNAL dev wifi | grep '*' | awk '{print $2}'
+)"
+
+echo ["$icon" "$level"%]
+echo
+
+echo "$color"

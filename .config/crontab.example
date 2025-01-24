@@ -3,8 +3,6 @@
 */15 * * * * $HOME/.local/bin/sync-config-cron
 */15 * * * * $HOME/.local/bin/newsboat-update-cron
 
-# i3status
-*/1 * * * * $HOME/.local/bin/tty-cron
 */5 * * * * $HOME/.local/bin/updw-cron
 */5 * * * * $HOME/.local/bin/uptime-cron
 */15 * * * * $HOME/.local/bin/checkupdates-cron

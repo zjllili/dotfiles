@@ -1,0 +1,6 @@
+#!/usr/bin/sh
+# @author nate zhou
+# @since 2025
+
+
+echo ["" "$(cat /tmp/i3status/uptime)"]

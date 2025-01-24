@@ -1,0 +1,29 @@
+#!/usr/bin/sh
+# @author nate zhou
+# @since 2025
+
+BAT="BAT1"
+POWER="/sys/class/power_supply"
+
+status="$(cat $POWER/$BAT/status)"
+level="$(cat $POWER/$BAT/capacity)"
+color="#eeeeee"
+
+case "$status" in
+    "Discharging")
+        [ "$level" -gt 80 ] && icon="" && break
+        [ "$level" -gt 60 ] && icon="" && break
+        [ "$level" -lt 20 ] && icon="" color="#777777" && break
+        ;;
+    "Not charging")
+        icon=""
+        ;;
+    "Charging")
+        icon=""
+        ;;
+esac
+
+echo ["$icon" "$level"%]
+echo
+
+echo "$color"

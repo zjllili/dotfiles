@@ -1,0 +1,9 @@
+#!/usr/bin/sh
+# @author nate zhou
+# @since 2025
+
+
+usage="$(free | grep Mem | awk '{printf $3/$2 * 100}' | sed 's/\..*$//')"
+
+icon=""
+echo ["$icon" "${usage}"%]
