@@ -30,5 +30,6 @@
     "workbench.startupEditor": "newUntitledFile",
     "window.menuBarVisibility": "toggle",
     "workbench.colorTheme": "Adwaita Dark & Github syntax highlighting",
-    "workbench.activityBar.location": "hidden"
+    "workbench.activityBar.location": "hidden",
+    "editor.lineNumbers": "relative"
 }
