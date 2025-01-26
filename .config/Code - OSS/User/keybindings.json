@@ -26,6 +26,10 @@
         "command": "-extension.vim_ctrl+b",
         "when": "editorTextFocus && vim.active && vim.use<C-b> && !inDebugRepl && vim.mode != 'Insert'"
     },
+    {
+        "key": "ctrl+n",
+        "command": "-workbench.action.files.newUntitledFile"
+    },
 
     	// # terminal
     	// ## toggle terminal
@@ -213,7 +217,6 @@
 
 	// # coding 
 	// ## code Fix
-	// o for Open
     {
         "key": "ctrl+o f",
         "command": "editor.action.quickFix",
@@ -239,8 +242,7 @@
     },
 
 
-	// # code suggestion
-	// ## use tab select suggestion, instead of up/down
+	// # select code suggestion
     {
         "key": "ctrl+n",
         "command": "selectNextSuggestion",
@@ -250,6 +252,17 @@
         "key": "ctrl+p",
         "command": "selectPrevSuggestion",
         "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
+	// # select code action (for fix)
+    {
+        "key": "ctrl+n",
+        "command": "selectNextCodeAction",
+        "when": "codeActionMenuVisible"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "selectPrevCodeAction",
+        "when": "codeActionMenuVisible"
     },
 
     // # RUN and Debug
