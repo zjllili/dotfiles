@@ -332,8 +332,8 @@ bindsym $mod+s layout toggle stacking split
 bindsym $mod+t layout toggle tabbed split
 bindsym $mod+e layout toggle split
 
-bindsym $mod+f floating toggle, resize set width 1600 px, resize set height 900 px
-bindsym $mod+CONTROL+f fullscreen
+bindsym $mod+f fullscreen
+bindsym $mod+CONTROL+f floating toggle, resize set width 1600 px, resize set height 900 px
 
 bindsym $mod+Shift+f floating toggle
 bindsym $mod+Shift+c resize set width 1600 px, resize set height 900 px, move position center
