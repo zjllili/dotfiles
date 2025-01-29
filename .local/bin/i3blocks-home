@@ -1,0 +1,9 @@
+#!/usr/bin/sh
+# @author nate zhou
+# @since 2025
+
+usage="$(command df /home | grep home | cut -d' ' -f6)"
+
+icon=""
+
+echo ["$icon" "$usage"]

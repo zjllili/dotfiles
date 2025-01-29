@@ -48,6 +48,10 @@ interval=10
 command= i3blocks-wifi
 interval=10
 
+[home]
+command= i3blocks-home
+interval=60
+
 [root]
 command= i3blocks-root
 interval=60
