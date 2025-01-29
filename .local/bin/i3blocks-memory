@@ -3,7 +3,7 @@
 # @since 2025
 
 
-usage="$(free | grep Mem | awk '{printf $3/$2 * 100}' | sed 's/\..*$//')"
+usage="$(command free | awk '/Mem:/ {printf "%.0f\n", $3/$2 * 100}')"
 
 icon=""
 echo ["$icon" "${usage}"%]
