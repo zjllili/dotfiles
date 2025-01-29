@@ -2,7 +2,7 @@
 # @author nate zhou
 # @since 2025
 
-usage="$(df / | grep root | cut -d' ' -f8)"
+usage="$(command df -h / | grep root | cut -d' ' -f12)"
 
 icon="🗁"
 
