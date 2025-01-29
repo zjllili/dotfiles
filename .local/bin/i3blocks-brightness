@@ -2,7 +2,7 @@
 # @author nate
 # @since 2025
 
-level="$(brightnessctl | awk -F'[()]' 'NR==2 {print $2}' | sed 's/%$//')"
+level="$(brightnessctl | awk '/%/{gsub("[()]", "", $4); print $4}')"
 
 icon="󱩎 "
 
