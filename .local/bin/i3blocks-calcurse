@@ -7,9 +7,9 @@ result="$(cat $HOME/.cache/calcurse.num)"
 icon="󰅎"
 color="#eeeeee"
 
+[ "$result" -eq 0 ] || [ -z "$result" ] && exit 0
+
 echo ["$icon" "$result"]
 echo
-
-[ "$result" -eq 0 ] || [ -z "$result" ] && color="#777777"
 
 echo "$color"

@@ -12,10 +12,10 @@ command= i3blocks-mpd
 interval=5
 signal=8
 
-#[wttr]
-#command= i3blocks-wttr
-#interval=once
-#signal=7
+[wttr]
+command= i3blocks-wttr
+interval=once
+signal=7
 
 [calcurse]
 command= i3blocks-calcurse
