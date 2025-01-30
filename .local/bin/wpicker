@@ -18,12 +18,12 @@ fi
 SWAYSOCK=/run/user/$(id -u)/sway-ipc.$(id -u).$(pgrep -x sway).sock
 
 # get current touchpad status
-status="$(swaymsg -t get_inputs | grep 'touchpad' -A3 | grep 'send_events')"
+status="$(swaymsg -t get_inputs | grep 'touchpad' -A4 | grep 'tap')"
 [[ "$status" =~ "disabled" ]] && status="disabled" || status="enabled"
 
 # enable touchpad tap
-[ "$status" = "disabled" ] && swaymsg "input type:touchpad events enabled"
+[ "$status" = "disabled" ] && swaymsg "input type:touchpad tap enabled"
 
 grim -g "$(slurp -p)" -t ppm - | magick - -format '%[pixel:p{0,0}]' txt:- | cut -d' ' -f3- | xargs -I {} notify-send -u low -r 3581 "$(basename $0)" "{}"
 
-[ "$status" = "disabled" ] && swaymsg "input type:touchpad events disabled"
+[ "$status" = "disabled" ] && swaymsg "input type:touchpad tap disabled"
