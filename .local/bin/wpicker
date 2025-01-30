@@ -24,6 +24,10 @@ status="$(swaymsg -t get_inputs | grep 'touchpad' -A4 | grep 'tap')"
 # enable touchpad tap
 [ "$status" = "disabled" ] && swaymsg "input type:touchpad tap enabled"
 
-grim -g "$(slurp -p)" -t ppm - | magick - -format '%[pixel:p{0,0}]' txt:- | cut -d' ' -f3- | xargs -I {} notify-send -u low -r 3581 "$(basename $0)" "{}"
+color=$(grim -g "$(slurp -p)" -t ppm - | magick - -format '%[pixel:p{0,0}]' txt:- | cut -d' ' -f4-)
+
+notify-send -u low -r 3581 "$(basename $0)" "$color"
+
+echo $color | grep -o '#......' | tr 'A-Z' 'a-z' | wl-copy
 
 [ "$status" = "disabled" ] && swaymsg "input type:touchpad tap disabled"
