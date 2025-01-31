@@ -8,7 +8,7 @@ current_time="$(date +%s)"
 
 result="$(sed 's/^.//; s/\+//' $WTTR_CACHE)"
 color="#eeeeee"
-icon=""
+icon="󰅟"
 
 
 (( current_time - update_time > 86400 )) && result=""
