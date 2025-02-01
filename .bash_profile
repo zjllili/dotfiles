@@ -51,9 +51,9 @@ export GRIM_DEFAULT_DIR="$HOME/tmp"
 
 ### IME ###
 # fcitx
-export GTK_IM_MODULE=wayland
-export XMODIFIERS=@im=fcitx
-export QT_IM_MODULE="wayland;fcitx;ibus"
+#export GTK_IM_MODULE=wayland
+#export XMODIFIERS=@im=fcitx
+#export QT_IM_MODULE="wayland;fcitx;ibus"
 # ibus
 #export GTK_IM_MODULE=ibus
 #export XMODIFIERS=@im=ibus
@@ -67,7 +67,7 @@ export QT_STYLE_OVERRIDE=adwaita-dark
 export GTK_THEME=Adwaita-dark # for firejail'ed libreoffice
 
 ### WAYLAND ###
-export ELECTRON_OZONE_PLATFORM_HINT=wayland # electron
+#export ELECTRON_OZONE_PLATFORM_HINT=wayland # electron, disabled to run in xwayland for fcitx5 support
 #export WLR_NO_HARDWARE_CURSORS=1 # external monitor cursor on nvidia
 # sway terminal freezes
 export WLR_DRM_NO_ATOMIC=1
