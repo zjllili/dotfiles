@@ -34,7 +34,7 @@ signal=4
 
 [uptime]
 command= i3blocks-uptime
-interval=600
+interval=900
 
 [login]
 command= i3blocks-login

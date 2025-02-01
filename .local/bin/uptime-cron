@@ -9,7 +9,7 @@ TMP_DIR="/tmp/i3status"
 
 UPTIME_STATE="$TMP_DIR/uptime"
 
-result="$(uptime -p | sed 's/up //; s/ day\(s\)\?/d/; s/ hour\(s\)\?/h/; s/[0-9]* minute.*//; s/,//g; s/ $//')"
+result="$(uptime -p | sed 's/up //; s/ week\(s\)\?/w/; s/ day\(s\)\?/d/; s/ hour\(s\)\?/h/; s/[0-9]* minute.*//; s/,//g; s/ $//')"
 update_time="$(stat -c "%Y" "$UPTIME_STATE")"
 current_time="$(date +%s)"
 UPDATE_FREQUENCY=600 # in seconds
