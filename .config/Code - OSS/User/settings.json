@@ -32,5 +32,6 @@
     "workbench.colorTheme": "Adwaita Dark & Github syntax highlighting",
     "workbench.activityBar.location": "hidden",
     "editor.lineNumbers": "relative",
-    "workbench.editor.showTabs": "none"
+    "workbench.editor.showTabs": "none",
+    "editor.renderWhitespace": "trailing"
 }
