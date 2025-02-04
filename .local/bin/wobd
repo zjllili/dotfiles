@@ -3,7 +3,7 @@
 # @since 2024,2025
 # used in sway's brightness/volume keybindings
 
-WOBFIFO="/tmp/i3status/wob.fifo"
+WOBFIFO="/tmp/wob.fifo"
 [ -p "$WOBFIFO" ] || mkfifo "$WOBFIFO"
 
 if pgrep -f "tail -f $WOBFIFO" > /dev/null; then
