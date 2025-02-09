@@ -4,7 +4,7 @@
 # checkkernels
 # Compare running kernel with installed kernel package versions
 KERNELS="linux linux-lts linux-zen"
-kernel_running=$(uname -r | sed 's/-lts//; s/-arch1-1//; s/-zen//;')
+kernel_running=$(uname -r | sed 's/-lts//; s/-arch/\.arch/; s/-zen//')
 kernel_installed=$(pacman -Q --color never $KERNELS 2> /dev/null | awk '{print $2}') # no quotes on $KERNELS
 
 usage() {
@@ -13,7 +13,7 @@ usage() {
 }
 
 print_kernels() {
-echo "running:\t$(uname -r)"
+echo "running:\t$kernel_running"
 echo "installed:\t$kernel_installed"
 }
 
