@@ -304,7 +304,7 @@ login as root
     virt-manager qemu-base libvirt virt-install dnsmasq openbsd-netcat bridge-utils
 
     ### input method engine
-    fcitx5 fcitx5-chinese-addons fcitx5-configtool fcitx5-gtk fcitx5-qt
+    fcitx5 fcitx5-chinese-addons fcitx5-configtool fcitx5-gtk fcitx5-qt fcitx5-anthy
 
     ### downloader & torrent
     yt-dlp transmission-cli httrack
