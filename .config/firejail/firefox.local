@@ -17,5 +17,7 @@ read-only ${HOME}/doc/code
 
 whitelist ${HOME}/vid/unixchad
 read-only ${HOME}/vid/unixchad
+whitelist ${HOME}/vid/unixchat
+read-only ${HOME}/vid/unixchat
 
 novideo
