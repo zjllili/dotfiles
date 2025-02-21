@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/usr/bin/env bash
 # @author nate zhou
 # @since 2024,2025
 # decrypt the .gpg file and pipe to fim, without writing to the disk
@@ -31,7 +31,11 @@ if  [ -z "$gpg_passphrase" ]; then
     exit 1
 fi
 
+if [[ $1 == *".pdf.gpg" ]]; then
+    echo "$gpg_passphrase" | gpg --batch --passphrase-fd 0 -d "$1" | zathura -
+else
     echo "$gpg_passphrase" | gpg --batch --passphrase-fd 0 -d "$1" | mpv - --loop --no-resume-playback
+fi
 
 # clean cached passphrase
 gpg-connect-agent reloadagent /bye
