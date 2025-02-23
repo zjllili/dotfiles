@@ -10,6 +10,9 @@
 arch.list
 aur.list
 
+!mus/
+!mus/.mpdignore
+
 !etc/
 !etc/libvirt/
 !etc/libvirt/network.conf
