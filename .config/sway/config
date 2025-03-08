@@ -13,7 +13,7 @@ set $mode_cursor ";: num:F[n] | [d]Del | [HJKL]:Slow | Mod[hjkl]:Arrow | [n]Page
 set $mode_app "': [n]ews [c]alcurse cod[e] [g]imp [k]denlive nc[m]pcpp b[t]op [f]irefox thunderbir[d]"
 set $mode_wmenu "w: w[w]iki w[h]eart w[b]ook [a]mount [f]locks [p]off w[s]hot w[c]ast w[m]ulti"
 set $mode_b "b: enable[t]ap disable[T]ap enable[p]ad disable[P]ad clip[h]ist-wipe [l]supdates d[w] w[c]al"
-set $mode_space "[p]inyin keyboard-[us] [a]nthy"
+set $mode_space "[p]inyin keyboard-[u]s [a]nthy [h]angul"
 
 bar {
     #status_command ~/.local/bin/i3status-mpd
@@ -79,10 +79,12 @@ for_window [title="Floating Term"] floating enable, resize set width 800 px, res
 for_window [title="Scratchpad Tmux"]  move scratchpad
 for_window [app_id=swayimgapp] border pixel 0
 
-#output * bg ~/.local/share/wallpaper fill
-output * bg #191919 solid_color
-output 'eDP-1' mode --custom 1792x1008@60.000Hz pos 0 0
-output  'DP-1' mode --custom 1792x1008@60.000Hz pos 1792 0
+output * bg ~/.local/share/wallpaper fill
+#output * bg #191919 solid_color
+#output 'eDP-1' mode --custom 1792x1008@60.000Hz pos 0 0
+#output  'DP-1' mode --custom 1792x1008@60.000Hz pos 1792 0
+output 'eDP-1' mode --custom 1600x900@60.000Hz pos 0 0
+output  'DP-1' mode --custom 1600x900@60.000Hz pos 1600 0
 workspace 1 output eDP-1
 workspace 2 output eDP-1
 workspace 3 output eDP-1
@@ -132,6 +134,7 @@ mode $mode_space {
     bindsym p exec swaymsg mode "default" && fcitx5-remote -s pinyin && notify-send -u normal -r 3289 -t 1100 "$(fcitx5-remote -n)"
     bindsym u exec swaymsg mode "default" && fcitx5-remote -s keyboard-us && notify-send -u normal -r 3289 -t 1100 "$(fcitx5-remote -n)"
     bindsym a exec swaymsg mode "default" && fcitx5-remote -s anthy && notify-send -u normal -r 3289 -t 1100 "$(fcitx5-remote -n)"
+    bindsym h exec swaymsg mode "default" && fcitx5-remote -s hangul && notify-send -u normal -r 3289 -t 1100 "$(fcitx5-remote -n)"
 }
 
 bindsym $mod+q kill
@@ -354,7 +357,7 @@ bindsym $mod+f fullscreen
 bindsym $mod+CONTROL+f floating toggle, resize set width 1600 px, resize set height 900 px
 
 bindsym $mod+Shift+f floating toggle
-bindsym $mod+Shift+c resize set width 1600 px, resize set height 900 px, move position center
+bindsym $mod+Shift+c resize set width 1580 px, resize set height 860 px, move position center
 bindsym $mod+CONTROL+c move position center
 bindsym $mod+Shift+s sticky toggle
 bindsym $mod+grave focus mode_toggle
