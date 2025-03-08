@@ -4,7 +4,7 @@
 # display calcurse event and calculate the days left
 
 set +x
-days=14
+days=28
 [ "$#" -eq 1 ] && (( days )) && days="$1"
 
 calcurse -d "$days" | while IFS= read -r line; do
