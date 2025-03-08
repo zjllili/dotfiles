@@ -31,4 +31,4 @@ killall -SIGUSR1 i3status
 
 # Start the recorder
 notify-send -u low -r 1257 "$(basename "$0")" "Recording on $selected_output..."
-wf-recorder -r 30 -a -o "$selected_output" -f "$HOME/tmp/wcast-$(date +%Y-%m-%d-%H-%M).mp4"
+wf-recorder -r 30 --audio=rnnoise_source -o "$selected_output" -f "$HOME/tmp/wcast-$(date +%Y-%m-%d-%H-%M).mp4"
