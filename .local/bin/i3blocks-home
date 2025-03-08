@@ -2,7 +2,7 @@
 # @author nate zhou
 # @since 2025
 
-usage="$(command df /home | grep home | cut -d' ' -f6)"
+usage="$(command df /home | awk 'NR==2 {print $5}')"
 
 icon=""
 
