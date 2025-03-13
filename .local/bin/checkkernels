@@ -3,18 +3,27 @@
 # @since 2024,2025
 # checkkernels
 # Compare running kernel with installed kernel package versions
+
 KERNELS="linux linux-lts linux-zen"
 kernel_running=$(uname -r | sed 's/-lts//; s/-arch/\.arch/; s/-zen//')
 kernel_installed=$(pacman -Q --color never $KERNELS 2> /dev/null | awk '{print $2}') # no quotes on $KERNELS
 
 usage() {
-    echo "usage"
-    echo "usage:\t$(basename "$0") [OPTIONS]\n[OPTIONS]:\t-h\tprint this help info\n\t-v\tverbose, print kernel versions"
+cat << _EOF_
+USAGE
+        $(basename "$0") [OPTIONS]
+OPTIONS
+        -h  print this help info
+        -v  verbose, print kernel versions
+_EOF_
 }
 
 print_kernels() {
-echo "running:\t$kernel_running"
-echo "installed:\t$kernel_installed"
+cat << _EOF_
+VERSION
+        running:   $kernel_running
+        installed: $kernel_installed
+_EOF_
 }
 
 # parse options
@@ -45,4 +54,3 @@ echo "$msg"
 if [ "$XDG_SESSION_TYPE" != "tty" ]; then
     notify-send -u low -r 388 "checkkernels" "$msg"
 fi
-
