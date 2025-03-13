@@ -18,7 +18,7 @@ aur.list
 !etc/libvirt/network.conf
 !etc/pacman.d/
 !etc/pacman.d/hooks
-!etc/pacman.d/hooks/checkupdates-cron.hook
+!etc/pacman.d/hooks/*
 !etc/systemd/
 !etc/systemd/logind.conf
 !etc/tlp.conf
