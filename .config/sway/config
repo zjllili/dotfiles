@@ -79,7 +79,8 @@ for_window [title="Floating Term"] floating enable, resize set width 800 px, res
 for_window [title="Scratchpad Tmux"]  move scratchpad
 for_window [app_id=swayimgapp] border pixel 0
 
-output * bg ~/.local/share/wallpaper fill
+# `man 5 sway-output`
+output * bg ~/.local/share/wallpaper fit
 #output * bg #191919 solid_color
 #output 'eDP-1' mode --custom 1792x1008@60.000Hz pos 0 0
 #output  'DP-1' mode --custom 1792x1008@60.000Hz pos 1792 0
