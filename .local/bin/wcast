@@ -10,9 +10,8 @@ SWAYSOCK=/run/user/$(id -u)/sway-ipc.$(id -u).$(pgrep -x sway).sock
 selected_output="$(swaymsg -t get_outputs -p | grep Output | wmenu-color "-p[$(basename $0)] " "-l 3" | awk '{print $2}')"
 selected_source="$(pw-dump | grep "\"node.name\":" | sort | wmenu-color "-p[choose source] " -l 6 | cut -d'"' -f4)"
 
-TMP_DIR="/tmp/i3status"
+[ -z "$selected_output" ] || [ -z "$selected_source" ] && exit 1
 
-[ -d "$TMP_DIR" ] || mkdir "$TMP_DIR"
 [ -d "$HOME/tmp" ] || mkdir "$HOME/tmp"
 
 # Start the recorder
