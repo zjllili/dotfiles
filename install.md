@@ -302,7 +302,7 @@ login as root
 
     ### virtualization
     virt-manager qemu-base libvirt virt-install dnsmasq openbsd-netcat bridge-utils
-    qemu-hw-display-qxl qemu-hw-display-virtio-gpu qemu-hw-display-virtio-gpu-pci
+    qemu-hw-display-qxl qemu-hw-display-virtio-gpu qemu-hw-display-virtio-gpu-pci qemu-chardev-spice qemu-audio-spice
 
     ### input method engine
     fcitx5 fcitx5-chinese-addons fcitx5-configtool fcitx5-gtk fcitx5-qt fcitx5-anthy
