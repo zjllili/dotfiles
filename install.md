@@ -267,7 +267,7 @@ login as root
     ### basic tools
     dash vim neovim ranger fzf tmux git rsync openssh openbsd-netcat udisks2 zip unzip tree bc calc pacman-contrib archlinux-contrib reuild-detector arch-install-scripts dosfstools exfat-utils jq
     ### system configuration
-    networkmanager brightnessctl tlp ntp ufw firejail cronie
+    networkmanager brightnessctl tlp ntp ufw firejail cronie bluez-utils bluetui
 
     ### system monitoring
     btop ncdu iftop sysstat smartmontools
