@@ -44,10 +44,6 @@ interval=60
 command= i3blocks-ethernet
 interval=10
 
-[wifi]
-command= i3blocks-wifi
-interval=10
-
 [home]
 command= i3blocks-home
 interval=60
@@ -82,6 +78,14 @@ signal=2
 command= i3blocks-volume
 interval=once
 signal=1
+
+[bluetooth]
+command= i3blocks-bluetooth
+interval=10
+
+[wifi]
+command= i3blocks-wifi
+interval=10
 
 [battery]
 command= i3blocks-battery
