@@ -17,7 +17,41 @@ set $mode_space "[p]inyin keyboard-[u]s [a]nthy [h]angul"
 
 bar {
     #status_command ~/.local/bin/i3status-mpd
+    id bar-1
+    output eDP-1
     status_command i3blocks
+	position top
+    height 24
+	font pango:Source Code Pro normal 10.5
+	tray_output none
+	tray_padding 0
+    status_edge_padding 0
+	separator_symbol ""
+    #workspace_min_width 30
+	# disable mouse
+	# 4/5/6/7 scroll up/down/right/left (touchpad)
+	bindsym button4 nop
+	bindsym button5 nop
+	bindsym button6 nop
+	bindsym button7 nop
+
+	colors {
+	background          #191919
+	separator           #777777
+    statusline          #eeeeee
+	#workspace color    border  backgr  text
+	focused_workspace   #191919 #6f3f89 #eeeeee
+	active_workspace    #191919 #005577 #eeeeee
+	inactive_workspace  #191919 #222222 #eeeeee
+	urgent_workspace    #191919 #e6da00 #000000
+	binding_mode        #191919 #6f3f89 #eeeeee
+	}
+}
+
+bar {
+    id bar-2
+    output DP-1
+    status_command i3blocks -c ~/.config/i3blocks/config-2
 	position top
     height 24
 	font pango:Source Code Pro normal 10.5
@@ -84,7 +118,7 @@ output * bg ~/.local/share/wallpaper fill
 #output 'eDP-1' mode --custom 1792x1008@60.000Hz pos 0 0
 #output  'DP-1' mode --custom 1792x1008@60.000Hz pos 1792 0
 output 'eDP-1' mode --custom 1600x900@60.000Hz pos 0 0
-output  'DP-1' mode --custom 1600x900@60.000Hz pos -1600 0
+output  'DP-1' mode --custom 1600x900@60.000Hz pos -900 0 transform 270
 workspace 1 output DP-1
 workspace 2 output DP-1
 workspace 3 output DP-1
