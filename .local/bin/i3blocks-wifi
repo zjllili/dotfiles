@@ -7,9 +7,9 @@ color="#eeeeee"
 
 level="$(echo $(nmcli -f IN-USE,SIGNAL dev wifi | grep '*' | awk '{print $2}')%)"
 
-[ "$status" = "up" ] && icon="󰖩 " || icon="󰖪" color="#777777" level=""
+[ "$status" = "up" ] && icon="󰖩" || icon="󰖪" color="#777777" level=""
 
-echo ["$icon""$level"]
+echo '|'"$icon" "$level"
 echo
 
 echo "$color"

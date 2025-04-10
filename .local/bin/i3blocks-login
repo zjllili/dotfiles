@@ -6,4 +6,4 @@ tty_count="$(w -h | wc -l )"
 [ "$tty_count" -eq 1 ] && exit 1
 
 icon=""
-echo ["$icon" "$tty_count"]
+echo '|'"$icon" "$tty_count"

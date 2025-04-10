@@ -9,7 +9,7 @@ color="#eeeeee"
 
 [ "$result" -eq 0 ] || [ -z "$result" ] && exit 0
 
-echo ["$icon" "$result"]
+echo '|'"$icon" "$result"
 echo
 
 
