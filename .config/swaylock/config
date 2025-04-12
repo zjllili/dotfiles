@@ -6,7 +6,7 @@ show-failed-attempts
 daemonize
 
 image="$HOME/.local/share/lockscreen"
-scaling=fit
+scaling=fill
 indicator-caps-lock
 
 indicator-radius=60
