@@ -1,0 +1,18 @@
+#!/usr/bin/sh
+# @author nate zhou
+# @since 2025
+# wmenu/fzf script for selecting pipewire default sink (choose speaker)
+
+source $HOME/.local/bin/wmenu-color 2>/dev/null
+
+if [ "$XDG_SESSION_TYPE" != "tty" ]; then
+    selected_sink="$(pactl list short sinks | awk '{print $2}' | wmenu-color '-p[change sink] ' -l 6)"
+else
+    selected_sink="$(pactl list short sinks | awk '{print $2}' | command fzf --prompt '[change sink] ')"
+fi
+
+[ -z "$selected_sink" ] && exit 0
+
+notify-send -u low -r 1259 "$(basename "$0")" "Default sink changed to $selected_sink"
+
+pactl set-default-sink "$selected_sink"
