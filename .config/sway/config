@@ -11,7 +11,7 @@ set $bookmarks ~/.local/bin/share/bookmarks
 set $wobfifo /tmp/wob.fifo
 set $mode_cursor ";: num:F[n] | [d]Del | [HJKL]:Slow | Mod[hjkl]:Arrow | [n]PageUp | [p]PageDn"
 set $mode_app "': [n]ews [c]alcurse cod[e] [g]imp [k]denlive nc[m]pcpp b[t]op [f]irefox thunderbir[d]"
-set $mode_wmenu "w: w[w]iki w[h]eart w[b]ook [a]mount [f]locks [p]off w[s]hot w[c]ast w[m]ulti"
+set $mode_wmenu "w: w[w]iki w[h]eart w[b]ook [a]mount [f]locks [p]off w[s]hot w[c]ast w[m]ulti wsin[k] w[v]oice"
 set $mode_b "b: enable[t]ap disable[T]ap enable[p]ad disable[P]ad clip[h]ist-wipe [l]supdates d[w] w[c]al"
 set $mode_space "[p]inyin keyboard-[u]s [a]nthy [h]angul"
 
@@ -312,6 +312,8 @@ mode $mode_wmenu {
     bindsym s exec ~/.local/bin/wshot ; mode "default"
     bindsym c exec $term ~/.local/bin/wcast ; mode "default"
     bindsym m exec ~/.local/bin/wmulti ; mode "default"
+    bindsym k exec ~/.local/bin/wsink ; mode "default"
+    bindsym v exec ~/.local/bin/wvoice ; mode "default"
 }
 
 bindsym $mod+b mode $mode_b
