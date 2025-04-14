@@ -33,5 +33,7 @@
     "workbench.activityBar.location": "hidden",
     "editor.lineNumbers": "relative",
     "workbench.editor.showTabs": "none",
-    "editor.renderWhitespace": "trailing"
+    "editor.renderWhitespace": "trailing",
+    "window.titleBarStyle": "native",
+    "window.customTitleBarVisibility": "never"
 }
