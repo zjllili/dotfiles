@@ -282,7 +282,7 @@ login as root
     foot sway swaybg swayidle swaylock i3blocks wmenu wtype wl-clipboard cliphist dunst gammastep slurp grim wf-recorder wl-mirror wob xorg-xwayland
 
     ### audio server
-    pipewire pipewire-alsa pipewire-pulse pipewire-jack noise-suppression-for-voice
+    pipewire pipewire-alsa pipewire-pulse pipewire-jack noise-suppression-for-voice pulsemixer
 
     ### fonts
     adobe-source-code-pro-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-font-awesome ttf-nerd-fonts-symbols
