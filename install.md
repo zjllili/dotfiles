@@ -331,6 +331,7 @@ login as root
     brn2-git
     gimp-devel
     adwaita-qt5 adwaita-qt5
+    wshowkeys-git
 ### [example] compile and install
     git clone https://aur.archlinux.org/yay.git
     makepkg
