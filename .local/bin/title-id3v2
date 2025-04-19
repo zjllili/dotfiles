@@ -1,10 +1,9 @@
 #!/usr/bin/sh
 # @author nate zhou
 # @since 2024,2025
-# depends on id3v2
+# depends on python-mutagen for unicode and CJK support
 # add title tags to audio files, using the file name except the extension
 
-# ATTENTION: doesn't work as expected on CJK characters
 echo "Only perform on music that has empty title id3 tags."
 
 add_title() {
@@ -17,7 +16,7 @@ add_title() {
     # characters followed by a dot) from the value of the filename variable.
     title="${filename%.*}"
 
-    id3v2 -t "$title" "$file"
+    mid3v2 -t "$title" "$file"
 }
 
 for file in "$@"; do
