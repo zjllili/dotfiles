@@ -171,8 +171,8 @@ bindsym $mod+minus exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%- && wpctl get-v
 bindsym $mod+equal exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+ && wpctl get-volume @DEFAULT_AUDIO_SINK@ | sed 's/[^0-9]//g; s/^0//' > $wobfifo && pkill -SIGRTMIN+1 i3blocks
 bindsym $mod+m exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && pkill -SIGRTMIN+1 i3blocks
 # audio input
-bindsym $mod+Shift+minus exec wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 2%- && pkill -SIGRTMIN+2 i3blocks
-bindsym $mod+Shift+equal exec wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 2%+ && pkill -SIGRTMIN+2 i3blocks
+bindsym $mod+Shift+minus exec wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 2%- &&  wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | sed 's/[^0-9]//g; s/^0//' > $wobfifo && pkill -SIGRTMIN+2 i3blocks
+bindsym $mod+Shift+equal exec wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 2%+ &&  wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | sed 's/[^0-9]//g; s/^0//' > $wobfifo && pkill -SIGRTMIN+2 i3blocks
 bindsym $mod+Shift+m exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle && pkill -SIGRTMIN+2 i3blocks
 
 bindsym $mod+CONTROL+p exec mpc toggle
