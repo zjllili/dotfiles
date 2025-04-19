@@ -6,4 +6,4 @@ level="$(brightnessctl | awk '/%/{gsub("[()]", "", $4); print $4}')"
 
 icon="󱩎"
 
-echo '|'"$icon" "$level"
+echo "$icon" "$level"

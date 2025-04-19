@@ -24,8 +24,8 @@ bar {
 	font pango:Source Code Pro normal 10.5
 	tray_output none
 	tray_padding 0
-    status_edge_padding 0
-	separator_symbol ""
+    status_edge_padding 2
+	separator_symbol "|"
     #workspace_min_width 30
 	# disable mouse
 	# 4/5/6/7 scroll up/down/right/left (touchpad)

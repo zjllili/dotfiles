@@ -8,7 +8,7 @@ muted="$(echo $status | grep 'MUTED')"
 
 [ -z "$muted" ] && icon="" color="#eeeeee"|| icon="" color="#777777"
 
-echo '|'"$icon" "$volume"%
+echo "$icon" "$volume"%
 echo
 
 echo "$color"

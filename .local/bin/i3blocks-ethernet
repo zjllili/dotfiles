@@ -7,7 +7,7 @@ color="#eeeeee"
 
 [ "$status" = "up" ] && icon="" || exit 0
 
-echo '|'"$icon"
+echo "$icon"
 echo
 
 echo "$color"

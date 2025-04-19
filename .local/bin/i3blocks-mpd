@@ -5,7 +5,7 @@
 title="$(mpc current -f "[%title%]" | cut -c1-40 | sed 's/[^a-zA-Z0-9)]*$//')"
 [ -z "$title" ] && exit 0
 
-echo '|'"" "$title"
+echo "" "$title"
 echo
 
 color="#eeeeee"

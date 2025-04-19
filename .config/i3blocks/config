@@ -4,7 +4,7 @@
 
 # Global properties
 separator=true
-separator_block_width=0
+separator_block_width=9
 
 # modules
 [mpd]
@@ -92,5 +92,5 @@ command= i3blocks-battery
 interval=5
 
 [time]
-command= echo '|'$(date '+%b-%d %a %H:%M')
+command= echo $(date '+%b-%d %a %H:%M')
 interval=5

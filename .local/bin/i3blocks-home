@@ -6,4 +6,4 @@ usage="$(command df /home | awk 'NR==2 {print $5}')"
 
 icon=""
 
-echo '|'"$icon" "$usage"
+echo "$icon" "$usage"
