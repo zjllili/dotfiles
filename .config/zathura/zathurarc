@@ -3,11 +3,13 @@
 # @since 2023,2024,2025
 
 set font 'SourceCodePro normal 11'
-set guioptions ''
+set guioptions 'sv'
 set selection-clipboard clipboard
 set selection-notification false
 set statusbar-h-padding 0
 set statusbar-v-padding 0
+set statusbar-home-tilde true
+set statusbar-page-percent true
 set page-padding 1
 set database 'sqlite'
 set zoom-step 2
