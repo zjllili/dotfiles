@@ -21,7 +21,7 @@ bar {
     status_command i3blocks
 	position top
     height 24
-	font pango:Source Code Pro normal 10.5
+	font pango:Source Code Pro normal 11
 	tray_output none
 	tray_padding 0
     status_edge_padding 2
@@ -53,7 +53,7 @@ client.focused_inactive     #0092cc #0092cc #f1f1f1 #0092cc
 client.unfocused            #191919 #191919 #f1f1f1 #191919
 client.urgent               #e6da00 #e6da00 #f1f1f1 #9962b7
 client.background           #191919
-font pango:monospace 9
+font pango:monospace 10
 titlebar_padding 1
 titlebar_border_thickness 0
 #default_border pixel 1
