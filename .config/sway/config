@@ -35,7 +35,7 @@ bar {
 	bindsym button7 nop
 
 	colors {
-	background          #191919
+	background          #111111
 	separator           #777777
     statusline          #eeeeee
 	#workspace color    border  backgr  text
