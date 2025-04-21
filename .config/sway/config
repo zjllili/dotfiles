@@ -39,20 +39,20 @@ bar {
 	separator           #777777
     statusline          #eeeeee
 	#workspace color    border  backgr  text
-	focused_workspace   #191919 #6f3f89 #eeeeee
-	active_workspace    #191919 #005577 #eeeeee
-	inactive_workspace  #191919 #222222 #eeeeee
-	urgent_workspace    #191919 #e6da00 #000000
-	binding_mode        #191919 #6f3f89 #eeeeee
+	focused_workspace   #111111 #6f3f89 #ffffff
+	active_workspace    #111111 #005577 #ffffff
+	inactive_workspace  #111111 #222222 #ffffff
+	urgent_workspace    #111111 #e6da00 #000000
+	binding_mode        #111111 #6f3f89 #ffffff
 	}
 }
 
 #<colorclass> <border> <background> <text> <indicator> <child_border>
-client.focused		        #9962b7 #9962b7 #f1f1f1 #e6da00
-client.focused_inactive     #0092cc #0092cc #f1f1f1 #0092cc
-client.unfocused            #191919 #191919 #f1f1f1 #191919
-client.urgent               #e6da00 #e6da00 #f1f1f1 #9962b7
-client.background           #191919
+client.focused		        #9962b7 #6f3f89 #ffffff #e6da00
+client.focused_inactive     #0092cc #005577 #ffffff #0092cc
+client.unfocused            #111111 #111111 #ffffff #111111
+client.urgent               #e6da00 #e6da00 #ffffff #9962b7
+client.background           #111111
 font pango:monospace 10
 titlebar_padding 1
 titlebar_border_thickness 0
