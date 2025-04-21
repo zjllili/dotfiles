@@ -92,5 +92,5 @@ command= i3blocks-battery
 interval=5
 
 [time]
-command= echo $(date '+%b-%d %a %H:%M')
+command= date '+%b-%d %a %H:%M'
 interval=5
