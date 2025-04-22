@@ -27,6 +27,8 @@ esac
 case $BLOCK_BUTTON in
     1) notify-send -u low -r 3301 "$icon $(basename $0)" "$status ($level%)"
         ;;
+    2) footclient -T "Floating Term" -H upower -d
+        ;;
 esac
 
 # ` `(U+2009) is the Thin Space

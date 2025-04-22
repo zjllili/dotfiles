@@ -8,7 +8,7 @@ color="#eeeeee"
 [ "$status" = "up" ] && icon="" || exit 0
 
 case $BLOCK_BUTTON in
-    2) footclient nmtui>/dev/null &
+    2) footclient -T "Floating Term" nmtui>/dev/null &
         ;;
 
 esac
