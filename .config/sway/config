@@ -5,7 +5,7 @@ include /etc/sway/config.d/*
 # Mod4=super Mod1=alt
 set $mod Mod4
 set $term /usr/bin/footclient
-set $menu wmenu-run -f "SourceCodePro Medium 13" -i -N 191919 -S 6f3f89 -s ffffff -M 6f3f89 -m ffffff | xargs swaymsg exec --
+set $menu wmenu-run -f "SourceCodePro Medium 13" -i -N 111111 -S 6f3f89 -s ffffff -M 6f3f89 -m ffffff | xargs swaymsg exec --
 set $wmenu ~/.local/bin/wmenu-color
 set $bookmarks ~/.local/bin/share/bookmarks
 set $wobfifo /tmp/wob.fifo
