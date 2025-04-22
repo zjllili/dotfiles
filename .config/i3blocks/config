@@ -4,8 +4,10 @@
 
 # Global properties
 separator=true
-separator_block_width=8
+separator_block_width=4
 markup=pango
+background=#005577
+border=#005577
 
 # modules
 [mpdd]
@@ -37,8 +39,6 @@ signal=5
 command= i3blocks-pacman
 interval=once
 signal=4
-separator=false
-separator_block_width=8
 
 [uptime]
 command= i3blocks-uptime
@@ -51,8 +51,6 @@ interval=60
 [home]
 command= i3blocks-home
 interval=60
-separator=false
-separator_block_width=8
 
 [root]
 command= i3blocks-root
@@ -65,8 +63,6 @@ interval=5
 [cpu]
 command= i3blocks-cpu
 interval=5
-separator=false
-separator_block_width=8
 
 [temperature]
 command= i3blocks-temperature
@@ -81,8 +77,6 @@ signal=3
 command= i3blocks-microphone
 interval=once
 signal=2
-separator=false
-separator_block_width=8
 
 [volume]
 command= i3blocks-volume
@@ -92,8 +86,6 @@ signal=1
 [bluetooth]
 command= i3blocks-bluetooth
 interval=10
-separator=false
-separator_block_width=8
 
 [wifi]
 command= i3blocks-wifi
