@@ -6,7 +6,7 @@
 source $HOME/.local/bin/wmenu-color 2>/dev/null
 
 if [ "$XDG_SESSION_TYPE" != "tty" ]; then
-    selected_sink="$(pactl list short sinks | awk '{print $2}' | wmenu-color '-p[change sink] ' -l 6)"
+    selected_sink="$(pactl list short sinks | awk '{print $2}' | wmenu-color '-p[change sink] ' -l 3)"
 else
     selected_sink="$(pactl list short sinks | awk '{print $2}' | command fzf --prompt '[change sink] ')"
 fi

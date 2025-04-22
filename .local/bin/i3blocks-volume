@@ -17,7 +17,7 @@ case $BLOCK_BUTTON in
         ;;
     5) wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%- && wpctl get-volume @DEFAULT_AUDIO_SINK@ | sed 's/[^0-9]//g; s/^0//' > $wobfifo && pkill -SIGRTMIN+1 i3blocks &
         ;;
-    2) footclient -T "Floating Term" pulsemixer>/dev/null &
+    2) wsink >/dev/null &
         ;;
     4) wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+ && wpctl get-volume @DEFAULT_AUDIO_SINK@ | sed 's/[^0-9]//g; s/^0//' > $wobfifo && pkill -SIGRTMIN+1 i3blocks &
         ;;
