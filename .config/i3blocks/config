@@ -7,9 +7,15 @@ separator=true
 separator_block_width=9
 
 # modules
+[mpdd]
+command= i3blocks-mpdd
+#The interval value repeat (or -2) will respawn the command as soon as it terminates.
+interval=-2
+
 [mpd]
+markup=pango
 command= i3blocks-mpd
-interval=5
+interval=once
 signal=8
 
 [wttr]
@@ -60,10 +66,10 @@ interval=5
 command= i3blocks-temperature
 interval=5
 
-[brightness]
-command= i3blocks-brightness
-interval=once
-signal=3
+#[brightness]
+#command= i3blocks-brightness
+#interval=once
+#signal=3
 
 [microphone]
 command= i3blocks-microphone
