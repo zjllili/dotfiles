@@ -4,5 +4,6 @@
 
 set -x
 temperature="$(cat /sys/devices/platform/coretemp.0/hwmon/hwmon*/temp1_input)"
-icon=""
-echo "$icon" "${temperature::-3}"°C
+icon="<b></b>"
+# ` `(U+2009) is the Thin Space
+echo "$icon" "${temperature::-3}""<small>℃</small>"

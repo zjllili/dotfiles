@@ -6,4 +6,5 @@ tty_count="$(w -h | wc -l )"
 [ "$tty_count" -eq 1 ] && exit 1
 
 icon=""
-echo "$icon" "$tty_count"
+# ` `(U+2009) is the Thin Space
+echo "$icon" "$tty_count"

@@ -24,7 +24,8 @@ case "$status" in
         ;;
 esac
 
-echo "$icon" "$level"%
+# ` `(U+2009) is the Thin Space
+echo "$icon" "$level"%
 echo
 
 echo "$color"

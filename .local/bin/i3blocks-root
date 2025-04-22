@@ -6,4 +6,5 @@ usage="$(command df / | awk 'NR==2 {print $5}')"
 
 icon="🗁"
 
-echo "$icon" "$usage"
+# ` `(U+2009) is the Thin Space
+echo "$icon" "$usage"

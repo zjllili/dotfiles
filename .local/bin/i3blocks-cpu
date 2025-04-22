@@ -4,6 +4,6 @@
 
 usage="$(mpstat --dec=0 | awk 'NR==4 {print 100 - $NF}')"
 
-icon=""
+icon="<b></b>"
 
-echo "$icon" "$usage"%
+echo "$icon" "$usage"%

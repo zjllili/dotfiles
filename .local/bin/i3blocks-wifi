@@ -5,11 +5,12 @@
 status="$(cat /sys/class/net/w*/operstate 2>/dev/null)"
 color="#eeeeee"
 
-level="$(echo $(nmcli -f IN-USE,SIGNAL dev wifi | grep '*' | awk '{print $2}')%)"
+level="$(nmcli -f IN-USE,SIGNAL dev wifi | grep '*' | awk '{print $2}')"
 
 [ "$status" = "up" ] && icon="󰖩" || icon="󰖪" color="#777777" level=""
 
-echo "$icon" "$level"
+# ` `(U+2009) is the Thin Space
+echo "<b>$icon</b>" "$level"%
 echo
 
 echo "$color"

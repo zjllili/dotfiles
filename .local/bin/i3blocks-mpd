@@ -2,10 +2,11 @@
 # @author nate zhou
 # @since 2025
 
-title="$(mpc current -f "[%title%]" | cut -c1-40 )"
+title="<small>$(mpc current -f "[%title%]" | cut -c1-40 )</small>"
 [ -z "$title" ] && exit 0
 
-echo "" "<small>$title</small>"
+# ` `(U+2009) is the Thin Space
+echo "" "$title"
 echo
 
 color="#eeeeee"

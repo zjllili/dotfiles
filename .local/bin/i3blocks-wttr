@@ -13,7 +13,7 @@ icon="󰅟"
 
 (( current_time - update_time > 86400 )) && result=""
 
-echo "$icon $result"
+echo "$icon" "$result"
 echo
 
 [ -z "$result" ] && color="#777777"

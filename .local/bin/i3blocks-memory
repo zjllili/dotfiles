@@ -6,4 +6,5 @@
 usage="$(command free | awk '/Mem:/ {printf "%.0f\n", $3/$2 * 100}')"
 
 icon=""
-echo "$icon" "${usage}"%
+# ` `(U+2009) is the Thin Space
+echo "$icon" "$usage""%"
