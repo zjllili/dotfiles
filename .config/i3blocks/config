@@ -72,10 +72,10 @@ separator_block_width=12
 command= i3blocks-temperature
 interval=5
 
-#[brightness]
-#command= i3blocks-brightness
-#interval=once
-#signal=3
+[brightness]
+command= i3blocks-brightness
+interval=once
+signal=3
 
 [microphone]
 command= i3blocks-microphone
@@ -109,5 +109,5 @@ interval=5
 
 [time]
 # ` `(U+2009) is the Thin Space
-command= date '+%b-%d <small>%a</small> %H:%M'
+command= i3blocks-time
 interval=5

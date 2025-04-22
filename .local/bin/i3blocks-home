@@ -6,5 +6,10 @@ usage="$(command df /home | awk 'NR==2 {print $5}')"
 
 icon=""
 
+case $BLOCK_BUTTON in
+    2) footclient ncdu --disable-delete $HOME>/dev/null &
+        ;;
+esac
+
 # ` `(U+2009) is the Thin Space
 echo "$icon" "$usage"

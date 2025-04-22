@@ -2,12 +2,26 @@
 # @author nate zhou
 # @since 2025
 
-title="<small>$(mpc current -f "[%title%]" | cut -c1-40 )</small>"
+icon=""
+title="$(mpc current -f "[%title%]" | cut -c1-40 )"
 [ -z "$title" ] && exit 0
 
 # ` `(U+2009) is the Thin Space
-echo "" "$title"
+echo "$icon" "<small>$title</small>"
 echo
+
+case $BLOCK_BUTTON in
+    1) mpc toggle>/dev/null &
+        ;;
+    2) footclient ncmpcpp>/dev/null &
+        ;;
+    3) notify-send -u low -r 3301 "$icon $(basename $0)" "$(mpc current)"
+        ;;
+    4) mpc prev>/dev/null &
+        ;;
+    5) mpc next>/dev/null &
+        ;;
+esac
 
 color="#eeeeee"
 if [[ -z "$title" || "$(mpc status | sed -n '2p' )" =~ '[paused]' ]]; then

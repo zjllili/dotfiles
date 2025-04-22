@@ -98,7 +98,7 @@ workspace 8 output eDP-1
 workspace 9 output eDP-1
 workspace 10 output eDP-1
 
-input "type:touchpad" tap disabled
+input "type:touchpad" tap enabled
 input "type:touchpad" events enabled
 bindsym $mod+backslash input "type:touchpad" tap enabled, exec notify-send -u low -r 242 "tap enabled"
 bindsym $mod+Shift+backslash input "type:touchpad" tap disabled, exec notify-send -u low -r 242 "tap disabled"

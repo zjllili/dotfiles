@@ -9,6 +9,11 @@ level=$(bluetoothctl info | grep -m1 'Battery Percentage' | awk -F'[()]' '{print
 
 [ -z "$level" ] && (echo "$icon"; echo; echo "#777777") && exit 0
 
+case $BLOCK_BUTTON in
+    2) footclient bluetui>/dev/null &
+        ;;
+esac
+
 # ` `(U+2009) is the Thin Space
 echo "$icon" "$level"%
 echo

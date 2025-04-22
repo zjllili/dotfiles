@@ -3,8 +3,18 @@
 # @since 2025
 
 level="$(brightnessctl | awk '/%/{gsub("[()]", "", $4); print $4}')"
+#exec_always "$HOME"/.local/bin/wobd
+wobfifo="/tmp/wob.fifo"
 
 icon="󱩎"
+
+case $BLOCK_BUTTON in
+    4) brightnessctl set 1%+ | awk -F'[()]' 'NR==3 {print $2}'| sed 's/%//' > $wobfifo && pkill -SIGTMIN+3 i3blocks &
+        ;;
+
+    5) brightnessctl set 1%- | awk -F'[()]' 'NR==3 {print $2}'| sed 's/%//' > $wobfifo  && pkill -SIGTMIN+3 i3blocks &
+        ;;
+esac
 
 # ` `(U+2009) is the Thin Space
 echo "$icon" "$level"

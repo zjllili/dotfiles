@@ -7,6 +7,11 @@ color="#eeeeee"
 
 [ "$status" = "up" ] && icon="" || exit 0
 
+case $BLOCK_BUTTON in
+    2) footclient nmtui>/dev/null &
+        ;;
+
+esac
 echo "$icon"
 echo
 

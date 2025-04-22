@@ -5,8 +5,21 @@
 status="$(wpctl get-volume @DEFAULT_AUDIO_SOURCE@)"
 volume="$(echo $status | sed 's/[^0-9]*//g; s/^0//' )"
 muted="$(echo $status | grep 'MUTED')"
+#exec_always "$HOME"/.local/bin/wobd
+wobfifo="/tmp/wob.fifo"
 
 [ -z "$muted" ] && icon="" color="#eeeeee" || icon="" color="#777777"
+
+case $BLOCK_BUTTON in
+    1) wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle && pkill -SIGRTMIN+2 i3blocks &
+        ;;
+    5) wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 1%- &&  wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | sed 's/[^0-9]//g; s/^0//' > $wobfifo && pkill -SIGRTMIN+2 i3blocks &
+        ;;
+    2) footclient pulsemixer>/dev/null &
+        ;;
+    4) wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 1%+ &&  wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | sed 's/[^0-9]//g; s/^0//' > $wobfifo && pkill -SIGRTMIN+2 i3blocks &
+        ;;
+esac
 
 # ` `(U+2009) is the Thin Space
 echo "$icon" "$volume"%

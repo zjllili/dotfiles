@@ -9,6 +9,11 @@ level="$(nmcli -f IN-USE,SIGNAL dev wifi | grep '*' | awk '{print $2}')"
 
 [ "$status" = "up" ] && icon="󰖩" || icon="󰖪" color="#777777" level=""
 
+case $BLOCK_BUTTON in
+    2) footclient nmtui>/dev/null &
+        ;;
+esac
+
 # ` `(U+2009) is the Thin Space
 echo "<b>$icon</b>" "$level"%
 echo

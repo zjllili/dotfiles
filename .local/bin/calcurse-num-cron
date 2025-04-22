@@ -32,7 +32,7 @@ done
 update_time=$(stat -c "%Y" "$NUM")
 # seconds since the Epoch
 current_time=$(date +%s)
-UPDATE_FREQUENCY=86400 # 24H
+UPDATE_FREQUENCY=3600 # 1H
 
 
 if (( current_time - update_time > UPDATE_FREQUENCY )) ; then

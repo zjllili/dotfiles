@@ -9,6 +9,13 @@ color="#eeeeee"
 
 [ "$result" -eq 0 ] || [ -z "$result" ] && exit 0
 
+case $BLOCK_BUTTON in
+    1) notify-send -u low -r 3301 "$icon $(basename $0)" "$(calen)"
+        ;;
+    2) footclient calcurse>/dev/null &
+        ;;
+esac
+
 # ` `(U+2009) is the Thin Space
 echo "$icon" "$result"
 echo
