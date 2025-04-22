@@ -6,7 +6,7 @@ result="$(uptime -p | sed 's/up //; s/ week\(s\)\?/w/; s/ day\(s\)\?/d/; s/ hour
 icon=""
 
 case $BLOCK_BUTTON in
-    1) notify-send -u low -r 3301 "$icon $(basename $0)" "$(uptime -p)"
+    1) notify-send -u low -r 3301 "$icon $(basename $0)" "$(uptime -p | cut -d' ' -f2-)"
 esac
 
 # ` `(U+2009) is the Thin Space

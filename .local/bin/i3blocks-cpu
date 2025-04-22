@@ -4,6 +4,13 @@
 
 usage="$(mpstat --dec=0 | awk 'NR==4 {print 100 - $NF}')"
 
-icon="<b></b>"
+icon=""
 
-echo "$icon" "$usage"%
+case $BLOCK_BUTTON in
+    1) notify-send -u low -r 3301 "$icon $(basename $0)" "$(mpstat | awk 'NR > 2{print $4 "\t" $6 "\t" $13}')"
+        ;;
+    2) footclient btop >/dev/null &
+        ;;
+esac
+
+echo "<b>$icon</b>" "$usage"%

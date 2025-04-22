@@ -2,8 +2,26 @@
 # @author nate zhou
 # @since 2025
 
-set -x
+policy=/sys/devices/platform/asus-nb-wmi/throttle_thermal_policy
+mode=""
 temperature="$(cat /sys/devices/platform/coretemp.0/hwmon/hwmon*/temp1_input)"
-icon="<b></b>"
+icon=""
+
+# only enable click if file exist
+if [ -e $policy ]; then
+    case "$(cat $policy)" in
+        0) mode="0 (default)"
+            ;;
+        1) mode="1 (boost)"
+            ;;
+        2) mode="2 (silent)"
+            ;;
+    esac
+    case $BLOCK_BUTTON in
+        1) notify-send -u low -r 3301 "$icon $(basename $0)" "fanmode: $mode"
+            ;;
+    esac
+fi
+
 # ` `(U+2009) is the Thin Space
 echo "$icon" "${temperature::-3}""<small>℃</small>"

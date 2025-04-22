@@ -11,7 +11,9 @@ wobfifo="/tmp/wob.fifo"
 [ -z "$muted" ] && icon="" color="#eeeeee" || icon="" color="#777777"
 
 case $BLOCK_BUTTON in
-    1) wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle && pkill -SIGRTMIN+2 i3blocks &
+    1) notify-send -u low -r 3301 "$icon $(basename $0)" "$(wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | sed 's/[^0-9]//g; s/^0//')% $(pactl get-default-source)"
+        ;;
+    3) wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle && pkill -SIGRTMIN+2 i3blocks &
         ;;
     5) wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 1%- &&  wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | sed 's/[^0-9]//g; s/^0//' > $wobfifo && pkill -SIGRTMIN+2 i3blocks &
         ;;

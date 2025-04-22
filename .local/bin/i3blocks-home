@@ -7,6 +7,8 @@ usage="$(command df /home | awk 'NR==2 {print $5}')"
 icon=""
 
 case $BLOCK_BUTTON in
+    1) notify-send -u low -r 3301 "$icon $(basename $0)" "$(df -h -x tmpfs -x efivarfs -x devtmpfs | awk 'NR=2 {print $6 "\t" $2 "\t" $3 "\t" $4}')"
+        ;;
     2) footclient ncdu --disable-delete $HOME>/dev/null &
         ;;
 esac

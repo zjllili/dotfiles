@@ -11,11 +11,11 @@ echo "$icon" "<small>$title</small>"
 echo
 
 case $BLOCK_BUTTON in
-    1) mpc toggle>/dev/null &
+    3) mpc toggle>/dev/null &
         ;;
     2) footclient ncmpcpp>/dev/null &
         ;;
-    3) notify-send -u low -r 3301 "$icon $(basename $0)" "$(mpc current)"
+    1) notify-send -u low -r 3301 "$icon $(basename $0)" "$(mpc current)"
         ;;
     4) mpc prev>/dev/null &
         ;;

@@ -10,6 +10,8 @@ level="$(nmcli -f IN-USE,SIGNAL dev wifi | grep '*' | awk '{print $2}')"
 [ "$status" = "up" ] && icon="󰖩" || icon="󰖪" color="#777777" level=""
 
 case $BLOCK_BUTTON in
+    1) notify-send -u low -r 3301 "$icon $(basename $0)" "$(nmcli connection show --active | awk 'NR >1 {print $3,$4}')"
+        ;;
     2) footclient nmtui>/dev/null &
         ;;
 esac
