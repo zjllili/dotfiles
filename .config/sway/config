@@ -33,7 +33,7 @@ bar {
 	#bindsym button5 nop
 	#bindsym button6 nop
 	#bindsym button7 nop
-    bindsym button2 scratchpad show
+    bindsym button8 scratchpad show
     strip_workspace_numbers yes
 
 	colors {
