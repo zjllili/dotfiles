@@ -5,7 +5,7 @@
 result="$(cat $HOME/.cache/newsboat.num)"
 
 icon="󰡠"
-color="#eeeeee"
+color="#ffffff"
 
 [ "$result" -eq 0 ] || [ -z "$result" ] && exit 0
 

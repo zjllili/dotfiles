@@ -21,6 +21,6 @@ esac
 echo "$icon""$result"
 echo
 
-[ -z "$result" ] && color="#777777"
+[ -z "$result" ] && color="#888888"
 
 echo "$color"

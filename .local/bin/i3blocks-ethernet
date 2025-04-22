@@ -3,7 +3,7 @@
 # @since 2025
 
 status="$(cat /sys/class/net/e*/operstate 2>/dev/null)"
-color="#eeeeee"
+color="#ffffff"
 
 [ "$status" = "up" ] && icon="" || exit 0
 

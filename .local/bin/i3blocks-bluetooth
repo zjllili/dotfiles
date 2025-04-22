@@ -2,12 +2,12 @@
 # @author nate zhou
 # @since 2025
 
-color="#eeeeee"
+color="#ffffff"
 icon=""
 
 level=$(bluetoothctl info | grep -m1 'Battery Percentage' | awk -F'[()]' '{print $2}')
 
-[ -z "$level" ] && (echo "$icon"; echo; echo "#777777") && exit 0
+[ -z "$level" ] && (echo "$icon"; echo; echo "#888888") && exit 0
 
 case $BLOCK_BUTTON in
     1) notify-send -u low -r 3301 "$icon $(basename $0)" "$level% $(bluetoothctl info | grep 'Name: ' | cut -d' ' -f2-)"

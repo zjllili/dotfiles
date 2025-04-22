@@ -5,7 +5,7 @@
 result="$(cat $HOME/.cache/checkupdates-cron.num)"
 
 icon=""
-color="#eeeeee"
+color="#ffffff"
 
 case $BLOCK_BUTTON in
     1) notify-send -u low -r 3301 "$icon $(basename $0)" "$(cat $HOME/.cache/checkupdates-cron.log)"

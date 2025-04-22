@@ -8,7 +8,7 @@ muted="$(echo $status | grep 'MUTED')"
 #exec_always "$HOME"/.local/bin/wobd
 wobfifo="/tmp/wob.fifo"
 
-[ -z "$muted" ] && icon="" color="#eeeeee" || icon="" color="#777777"
+[ -z "$muted" ] && icon="" color="#ffffff" || icon="" color="#888888"
 
 case $BLOCK_BUTTON in
     1) notify-send -u low -r 3301 "$icon $(basename $0)" "$(wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | sed 's/[^0-9]//g; s/^0//')% $(pactl get-default-source)"

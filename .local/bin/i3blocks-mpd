@@ -23,9 +23,9 @@ case $BLOCK_BUTTON in
         ;;
 esac
 
-color="#eeeeee"
+color="#ffffff"
 if [[ -z "$title" || "$(mpc status | sed -n '2p' )" =~ '[paused]' ]]; then
-    color="#777777"
+    color="#888888"
 fi
 
 echo "$color"
