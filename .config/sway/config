@@ -33,6 +33,7 @@ bar {
 	#bindsym button5 nop
 	#bindsym button6 nop
 	#bindsym button7 nop
+    bindsym button2 scratchpad show
 
 	colors {
 	background          #111111
