@@ -8,7 +8,9 @@ case $BLOCK_BUTTON in
         ;;
     2) footclient -T "Floating Term" calcurse >/dev/null &
         ;;
+    3) echo $(date '+%b-%d <small>%a</small> %H:%M')
+        ;;
 esac
 
 
-echo $(date '+%b-%d <small>%a</small> %H:%M')
+echo $(date '+%H:%M')
