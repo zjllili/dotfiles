@@ -12,7 +12,7 @@ color="#ffffff"
 case $BLOCK_BUTTON in
     1) notify-send -u low -r 3301 "$icon $(basename $0)" "$(calen)"
         ;;
-    2) footclient calcurse>/dev/null &
+    2) footclient -T "Floating Term" calcurse>/dev/null &
         ;;
 esac
 
