@@ -4,13 +4,11 @@
 
 
 case $BLOCK_BUTTON in
-    1) notify-send -u low -r 3301 "$icon $(basename $0)" "$(cal | sed '/^[[:space:]]*$/d')"
+    1) notify-send -u low -r 3301 "$(cal | sed '/^[[:space:]]*$/d')"
         ;;
     2) footclient -T "Floating Term" calcurse >/dev/null &
-        ;;
-    3) echo $(date '+%b-%d <small>%a</small> %H:%M')
         ;;
 esac
 
 
-echo $(date '+%H:%M')
+echo $(date '+%b-%d <small>%a</small> %H:%M')
