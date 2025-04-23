@@ -9,7 +9,7 @@ icon="🗁"
 case $BLOCK_BUTTON in
     1) notify-send -u low -r 3301 "$icon $(basename $0)" "$(df -h -x tmpfs -x efivarfs -x devtmpfs | awk 'NR=2 {print $6 "\t" $2 "\t" $3 "\t" $4}')"
         ;;
-    2) footclient -T "Floating Term" ncdu --disable-delete --exclude /home />/dev/null &
+    2) footclient -T "Floating Term" ncdu --disable-delete --exclude /home --exclude /data />/dev/null &
         ;;
 esac
 
