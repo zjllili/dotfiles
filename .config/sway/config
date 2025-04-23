@@ -71,8 +71,8 @@ focus_on_window_activation urgent
 
 seat seat0 hide_cursor 3000
 seat seat0 hide_cursor when-typing enable
-focus_follows_mouse no
-mouse_warping none
+focus_follows_mouse yes
+#mouse_warping none
 workspace_auto_back_and_forth yes
 
 floating_modifier $mod
@@ -383,3 +383,8 @@ bindsym $mod+Shift+y resize shrink width 10px
 bindsym $mod+Shift+u resize grow height 10px
 bindsym $mod+Shift+i resize shrink height 10px
 bindsym $mod+Shift+o resize grow width 10px
+
+# mouse bindings
+bindsym --whole-window --border $mod+button2 kill
+bindsym --whole-window --border $mod+button4 workspace prev_on_output
+bindsym --whole-window --border $mod+button5 workspace next_on_output
