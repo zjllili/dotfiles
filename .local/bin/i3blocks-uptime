@@ -10,4 +10,4 @@ case $BLOCK_BUTTON in
 esac
 
 # ` `(U+2009) is the Thin Space
-[ -n "$result"  ] && echo "$icon" "$result" || echo "[$icon <1h]"
+[ -n "$result"  ] && echo "$icon" "$result" || echo "$icon <1h"
