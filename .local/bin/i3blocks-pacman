@@ -9,6 +9,9 @@ color="#ffffff"
 
 case $BLOCK_BUTTON in
     1) notify-send -u low -r 3301 "$icon $(basename $0)" "$(cat $HOME/.cache/checkupdates-cron.log)"
+        ;;
+    3) checkupdates-cron -n >/dev/null & # This script send signal 9 to update i3blocks module
+        ;;
 esac
 
 [ "$result" -eq 0 ] || [ -z "$result" ] && exit 0

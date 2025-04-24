@@ -43,6 +43,7 @@ signal=4
 [uptime]
 command= i3blocks-uptime
 interval=900
+signal=9
 
 [login]
 command= i3blocks-login
@@ -86,10 +87,12 @@ signal=1
 [bluetooth]
 command= i3blocks-bluetooth
 interval=10
+signal=10
 
 [wifi]
 command= i3blocks-wifi
 interval=10
+signal=11
 
 [ethernet]
 command= i3blocks-ethernet

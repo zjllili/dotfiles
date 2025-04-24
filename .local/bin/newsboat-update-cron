@@ -20,6 +20,17 @@ if [ ! -f "$NEWS_CACHE" ]; then
     exit 0
 fi
 
+while [ -n "$1" ]; do
+    case "$1" in
+        -n | --now)
+            echo "[$(basename $0)] update now"
+            update_newsboat
+            exit 0
+            ;;
+    esac
+    shift
+done
+
 if (( current_time - update_time > UPDATE_FREQUENCY )) ; then
     update_newsboat
 else

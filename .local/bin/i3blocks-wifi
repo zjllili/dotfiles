@@ -14,6 +14,8 @@ case $BLOCK_BUTTON in
         ;;
     2) footclient -T "Floating Term" nmtui>/dev/null &
         ;;
+    3) pkill -SIGRTMIN+11 >/dev/null &
+        ;;
 esac
 
 # ` `(U+2009) is the Thin Space

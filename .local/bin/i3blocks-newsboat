@@ -7,12 +7,15 @@ result="$(cat $HOME/.cache/newsboat.num)"
 icon="󰡠"
 color="#ffffff"
 
-[ "$result" -eq 0 ] || [ -z "$result" ] && exit 0
+#[ "$result" -eq 0 ] || [ -z "$result" ] && exit 0
+[ "$result" -eq 0 ] || [ -z "$result" ] && color="#888888"
 
 case $BLOCK_BUTTON in
     1) notify-send -u low -r 3301 "$icon $(basename $0)" "$(newsboat -x print-unread)"
         ;;
     2) footclient -T "Floating Term" news >/dev/null &
+        ;;
+    3) newsboat-update-cron --now >/dev/null && newsboat-num-cron --now >/dev/null &
         ;;
 esac
 
