@@ -14,6 +14,8 @@ aur.list
 !mus/.mpdignore
 
 !etc/
+!etc/firejail/
+!etc/firejail/firecfg.config
 !etc/libvirt/
 !etc/libvirt/network.conf
 !etc/pacman.d/
