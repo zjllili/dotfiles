@@ -389,6 +389,6 @@ bindsym $mod+Shift+i resize shrink height 10px
 bindsym $mod+Shift+o resize grow width 10px
 
 # mouse bindings
-bindsym --whole-window --border $mod+button2 kill
+bindsym --whole-window --border $mod+button2 exec wtype -k "Return"
 bindsym --whole-window --border $mod+button4 exec wtype -k "Left"
 bindsym --whole-window --border $mod+button5 exec wtype -k "Right"
