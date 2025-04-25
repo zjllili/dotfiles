@@ -390,5 +390,5 @@ bindsym $mod+Shift+o resize grow width 10px
 
 # mouse bindings
 bindsym --whole-window --border $mod+button2 kill
-bindsym --whole-window --border Shift+button8 exec wtype -k "Right"
-bindsym --whole-window --border Shift+button9 exec wtype -k "Left"
+bindsym --whole-window --border $mod+button4 exec wtype -k "Left"
+bindsym --whole-window --border $mod+button5 exec wtype -k "Right"
