@@ -60,7 +60,7 @@ font pango:monospace 10
 titlebar_padding 1
 titlebar_border_thickness 0
 #default_border pixel 1
-for_window [class=".*"] border pixel 1
+for_window [class=".*"] border pixel 2
 
 default_orientation auto
 
