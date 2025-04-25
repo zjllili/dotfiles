@@ -52,6 +52,11 @@ command= i3blocks-uptime
 interval=900
 signal=9
 
+[usb]
+command= i3blocks-usb
+interval=5
+signal=16
+
 [root]
 command= i3blocks-root
 interval=60
