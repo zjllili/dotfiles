@@ -5,7 +5,7 @@
 status="$(cat /sys/class/net/w*/operstate 2>/dev/null)"
 color="#eeeeee"
 
-level="$(nmcli -f IN-USE,SIGNAL dev wifi | grep '*' | awk '{print $2 "%"}')"
+level="$(awk '/^\s*w/ {print int($3 * 100 / 70)"%"}' /proc/net/wireless)"
 
 [ "$status" = "up" ] && icon="󰖩" || icon="󰖪" color="#888888" level=""
 
