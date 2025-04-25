@@ -121,6 +121,7 @@ signal=12
 [time]
 command= i3blocks-time
 interval=5
+signal=17
 
 [newsboat]
 command= i3blocks-newsboat
