@@ -311,7 +311,7 @@ login as root
     yt-dlp transmission-cli httrack
 
     ### personal tools
-    newsboat task calcurse thunderbird thunderbird-dark-reader
+    newsboat task taskwarrior-tui calcurse thunderbird thunderbird-dark-reader
 
     ### coding
     jdk-openjdk openjdk-src code

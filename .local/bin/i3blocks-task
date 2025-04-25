@@ -2,20 +2,18 @@
 # @author nate zhou
 # @since 2025
 
-result="$(cat $HOME/.cache/calcurse.num)"
+result="$(task count +ACTIVE)"
 
-icon=""
+icon="󰅎"
 color="#ffffff"
 
 #[ "$result" -eq 0 ] || [ -z "$result" ] && exit 0
 [ "$result" -eq 0 ] || [ -z "$result" ] && color="#888888"
 
 case $BLOCK_BUTTON in
-    1) notify-send -u low -r 3301 "$icon $(basename $0)" "$(calen)"
+    2) footclient -T "Floating Term" -H taskwarrior-tui >/dev/null &
         ;;
-    2) footclient -T "Floating Term" calcurse>/dev/null &
-        ;;
-    3) notify-send -u low -r 3301 -t 1100 "$icon $(basename $0)" "" && calcurse-num-cron --now >/dev/null &
+    3) notify-send -u low -r 3301 -t 1100 "$icon $(basename $0)" "" && pkill -SIGRTMIN +15 i3blocks &
         ;;
 esac
 

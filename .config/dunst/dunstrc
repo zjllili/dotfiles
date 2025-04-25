@@ -5,7 +5,7 @@
 [global]
     monitor = 0
     follow = keyboard
-    width = (0, 600)
+    width = (0, 350)
     height = (0, 600)
     origin = top-center
     offset = 0x0

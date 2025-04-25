@@ -2,14 +2,16 @@
 # @author nate zhou
 # @since 2025
 
+#icon=""
+
 case $BLOCK_BUTTON in
     1) notify-send -u low -r 3301 "$(cal | sed '/^[[:space:]]*$/d')"
         ;;
     2) footclient -T "Floating Term" calcurse >/dev/null &
         ;;
-    3) echo $(date '+%b-%d <small>%a</small> %H:%M')
+    3) notify-send -u low -r 3301 -t 1100 "$icon $(basename $0)" "" && echo "$icon" "$(date '+%b-%d %a %H:%M')"
         ;;
 esac
 
-
-echo $(date '+%b-%d <small>%a</small> %H:%M')
+# ` `(U+2009) is the Thin Space
+echo "$icon" "$(date '+%b-%d <small>%a</small> %H:%M')"

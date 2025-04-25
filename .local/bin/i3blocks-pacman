@@ -14,7 +14,8 @@ case $BLOCK_BUTTON in
         ;;
 esac
 
-[ "$result" -eq 0 ] || [ -z "$result" ] && exit 0
+#[ "$result" -eq 0 ] || [ -z "$result" ] && exit 0
+[ "$result" -eq 0 ] || [ -z "$result" ] && color="#888888"
 
 # ` `(U+2009) is the Thin Space
 echo "<b>$icon</b>" "$result"

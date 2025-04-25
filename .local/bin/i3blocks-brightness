@@ -11,6 +11,8 @@ icon="󱩎"
 case $BLOCK_BUTTON in
     1) notify-send -u low -r 3301 "$icon $(basename $0)" "$(brightnessctl | awk 'NR==2 {$2=""; print $0}')"
         ;;
+    3) notify-send -u low -r 3301 -t 1100 "$icon $(basename $0)" "" && pkill -SIGRTMIN+3 i3blocks &
+        ;;
     4) brightnessctl set 1%+ | awk -F'[()]' 'NR==3 {print $2}'| sed 's/%//' > $wobfifo && pkill -SIGTMIN+3 i3blocks &
         ;;
 

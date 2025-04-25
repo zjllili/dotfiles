@@ -11,6 +11,8 @@ case $BLOCK_BUTTON in
         ;;
     2) footclient -T "Floating Term" ncdu --disable-delete --exclude /home --exclude /data />/dev/null &
         ;;
+    3) notify-send -u low -r 3301 -t 1100 "$icon $(basename $0)" "" && pkill -SIGRTMIN+13 i3blocks &
+        ;;
 esac
 
 # ` `(U+2009) is the Thin Space
