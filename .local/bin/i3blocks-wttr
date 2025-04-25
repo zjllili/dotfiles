@@ -13,7 +13,10 @@ icon="󰅟"
 case $BLOCK_BUTTON in
     1) notify-send -u low -r 3301 "$icon $(basename $0)" "$(cat $HOME/.cache/wttr)"
         ;;
+    2) footclient -T "Floating Term" -H wttr >/dev/null &
+        ;;
     3) updw>/dev/null & # This script send signal 7 to update i3blocks module
+        ;;
 esac
 
 (( current_time - update_time > 86400 )) && result=""
