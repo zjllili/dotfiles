@@ -6,6 +6,7 @@
 # running with dmenu/wmenu is recommended
 
 WTTR_CACHE="$HOME/.cache/wttr"
+WTTR_CACHE2="$HOME/.cache/wttr2"
 # if cache doesn't exist, init by calling updw
 [ -f "$HOME/.cache/wttr" ] || $HOME/.local/bin/updw
 
@@ -29,6 +30,7 @@ if [ -f "$HOME/.cache/city" ]; then
         if (( current_time - update_time > UPDATE_FREQUENCY )); then
         # try to download weather info
         wttr_temp="$(curl wttr.in/$CITY?format=1)"
+        wttr_temp2="$(wttr)"
         else
             echo "Already updated within past $(($UPDATE_FREQUENCY/3600)) hours"
             exit 1
@@ -37,7 +39,8 @@ if [ -f "$HOME/.cache/city" ]; then
         # check if curl returns a temperature
         if [[ "$wttr_temp" == *°C* ]] ; then
             # remove potential repeating spaces
-            echo "$wttr_temp" | sed 's/[[:space:]]\+/ /g' > "$HOME/.cache/wttr"
+            echo "$wttr_temp" | sed 's/[[:space:]]\+/ /g' > "$WTTR_CACHE"
+            [[ "$wttr_temp" == *°C* ]] && echo "$wttr_temp2" > "$WTTR_CACHE2"
             # adding update timestamp
             #echo "($(date +'%b-%d %a %H:%M'))" >> $HOME/.cache/wttr
             msg="updw done"
