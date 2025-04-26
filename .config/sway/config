@@ -142,6 +142,7 @@ mode $mode_space {
 }
 
 bindsym $mod+q kill
+bindsym $mod+delete kill
 bindsym $mod+d exec $menu
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+Return exec $term -T "Floating Term"
