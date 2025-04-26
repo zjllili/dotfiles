@@ -4,7 +4,7 @@
 
 icon=""
 title="$(mpc current -f "[%title%]" | cut -c1-40 )"
-[ -z "$title" ] && exit 0
+[ -z "$title" ] && color="#888888"
 
 # ` `(U+2009) is the Thin Space
 echo "$icon" "<small>$title</small>"
