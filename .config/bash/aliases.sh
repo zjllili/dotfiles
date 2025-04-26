@@ -30,6 +30,9 @@ alias bat="bat --style='plain,changes,rule,snip'"
 alias whatis="whatis -l"
 alias sync="~/.local/bin/sync-notify"
 
+## GUI
+alias wshowkeys="wshowkeys -a bottom -b '#11111188'"
+
 ## hardware
 alias du="du -h -d 1"
 alias dU="du -h -d 1 | sort -rh"
