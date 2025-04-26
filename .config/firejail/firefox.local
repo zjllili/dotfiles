@@ -6,6 +6,9 @@ ignore disable-mnt
 # whitelist httrack
 whitelist ${HOME}/doc/httrack
 read-only ${HOME}/doc/httrack
+# whitelist git
+whitelist ${HOME}/doc/git
+read-only ${HOME}/doc/git
 
 whitelist ${HOME}/dls
 whitelist ${HOME}/tmp
