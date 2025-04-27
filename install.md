@@ -3,7 +3,7 @@
 
 # 0.install info
 partition:  LVM on LUKS, hibernation to swap partition  
-boot:       UEFI, systemd-boot, Secure Boot disabled
+boot:       UEFI, systemd-boot, Secure Boot Enabled (sbctl)  
 ```
 $ lsblk
     NAME              SIZE  TYPE  MOUNTPOINTS
@@ -267,7 +267,7 @@ login as root
     ### basic tools
     dash vim neovim ranger fzf tmux git rsync openssh openbsd-netcat udisks2 zip unzip tree bc calc pacman-contrib archlinux-contrib reuild-detector arch-install-scripts dosfstools exfat-utils jq
     ### system configuration
-    networkmanager brightnessctl tlp ntp ufw firejail cronie bluez-utils bluetui efibootmgr
+    networkmanager brightnessctl tlp ntp ufw firejail cronie bluez-utils bluetui efibootmgr sbctl
 
     ### system monitoring
     btop ncdu iftop sysstat smartmontools
@@ -337,6 +337,34 @@ login as root
     makepkg
     sudo pacman -U yay-*.pkg.tar.zst
 ## 2.6 config softwares
+### 2.6.-1 sbctl (secure boot)
+    1. reboot into UEFI utilities, restore secure boot's factory keys, and enter `setup mode`
+    2. boot into system, check `sbctl status`, you should see:
+    ```
+    Installed:    ✘ Sbctl is not installed
+    Setup Mode:   ✘ Enabled
+    Secure Boot:  ✘ Disabled
+    ```
+    3. create your own keys
+    `sbctl create-keys`
+    4. enroll the keys, along with microsoft keys if need dual boot with Windows
+    `sbctl enroll-keys --microsoft`
+    5. sign files:
+    ```
+    sudo sbctl sign-all
+    sudo sbctl sign -s /boot/EFI/systemd/systemd-bootx64.efi
+    sudo sbctl sign -s /boot/EFI/BOOT/BOOTX64.EFI
+    sudo sbctl sign -s /boot/vmlinuz-linux
+    ```
+    6. reboot into UEFI utilities, secure boot should be enabled automatically, if not, do it manually instead
+    7. boot into system, check `sbctl status`, you should see:
+    ```
+    Installed:	✓ sbctl is installed
+    Setup Mode:	✓ Disabled
+    Secure Boot:	✓ Enabled
+    Vendor Keys:	microsoft
+    ```
+    8. make sure `systemd-boot-update.service` is enabled for auto signing the future bootloaders and kernels
 ### 2.6.0 pacman
     remove unused packages weekly by `paccache` command from `pacman-contrib` package. (default keeps the last 3 versions of a package)
     systemctl enable --now paccache.timer
