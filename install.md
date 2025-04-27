@@ -3,7 +3,7 @@
 
 # 0.install info
 partition:  LVM on LUKS, hibernation to swap partition  
-boot:       UEFI, GRUB, Secure Boot disabled
+boot:       UEFI, systemd-boot, Secure Boot disabled
 ```
 $ lsblk
     NAME              SIZE  TYPE  MOUNTPOINTS
@@ -207,29 +207,29 @@ $ lsblk
 
     uncomment:
     `# %wheel ALL=(ALL:ALL) ALL`
-## 1.18 install and config GRUB
-    install grub
-    `pacman -Syu grub efibootmgr`
-
-    backup the default grub config
-    `cp /etc/default/grub /etc/default/grub~`
-
-    tell grub where the encrypted root partition is
-    `blkid >> /etc/default/grub`
-
-    modify the line
-    `GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet"`
-
-    into
-    `GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 cryptdevice=UUID=<uuid>:cryptlvm root=UUID=<uuid>"`
-        - cryptdevice is the partition of luks container (in this case /dev/nvme0n1p2)
-        - root is the logical volume partition (in this case /dev/vg0/root)
-
-    install GRUB to the /boot
-    `grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB`
-
-    generate the GRUB configuration file
-    `grub-mkconfig -o /boot/grub/grub.cfg`
+## 1.18 install and config systemd-boot
+    1. install systemd-boot to `/boot`
+    `bootctl install`
+    2. config bootloder
+    `vim /boot/loader/loader.conf`, edit to:
+    ```
+    default arch.conf
+    timeout 3
+    console-mode keep
+    ```
+    3. get encrypted device and root partition UUID
+    `blkid >> /boot/loader/entries/arch.conf`
+    5. `vim /boot/loader/entries/arch.conf`, edit to:
+    ```
+    title Arch Linux
+    linux /vmlinuz-linux
+    initrd /initramfs-linux.img
+    options cryptdevice=UUID=<UUID-OF-PHYSICAL-PARTITION>:cryptlvm root=UUID=<UUID-OF-ROOT-LOGICAL-VOLUME>
+    ```
+    - cryptdevice is the partition of luks container (in this case /dev/nvme0n1p2)
+    - root is the logical volume partition (in this case /dev/vg0/root)
+    6. enable auto update
+    `systemctl enable systemd-boot-update.service`
 ## 1.19 finish arch install
     leave chroot
     `exit`
@@ -267,7 +267,7 @@ login as root
     ### basic tools
     dash vim neovim ranger fzf tmux git rsync openssh openbsd-netcat udisks2 zip unzip tree bc calc pacman-contrib archlinux-contrib reuild-detector arch-install-scripts dosfstools exfat-utils jq
     ### system configuration
-    networkmanager brightnessctl tlp ntp ufw firejail cronie bluez-utils bluetui
+    networkmanager brightnessctl tlp ntp ufw firejail cronie bluez-utils bluetui efibootmgr
 
     ### system monitoring
     btop ncdu iftop sysstat smartmontools
@@ -346,9 +346,6 @@ login as root
     sudo systemctl enable --now tlp.service
 ### 2.6.2 mandb database update
     sudo mandb
-### 2.6.3 grub resolution
-    sudo vim /etc/default/grub
-    GRUB_GFXMODE=1366x768
 ### 2.6.5 calcurse import calendar
     import calendar data file
         calcurse -i ~/.config/calcurse/calendar.ical
