@@ -267,7 +267,7 @@ login as root
     ### basic tools
     dash vim neovim ranger fzf tmux git rsync openssh openbsd-netcat udisks2 zip unzip tree bc calc pacman-contrib archlinux-contrib reuild-detector arch-install-scripts dosfstools exfat-utils jq
     ### system configuration
-    networkmanager brightnessctl tlp ntp ufw firejail cronie bluez-utils bluetui efibootmgr sbctl
+    networkmanager brightnessctl tlp ufw firejail cronie bluez-utils bluetui efibootmgr sbctl
 
     ### system monitoring
     btop ncdu iftop sysstat smartmontools
@@ -386,8 +386,8 @@ login as root
 
     enable smb service
         sudo systemctl enable --now smb.service
-### 2.6.7 ntp time sync
-    systemctl enable --now ntpd.service
+### 2.6.7 enable time sync
+    systemctl enable --now systemd-timesyncd.service
     timedatectl set-ntp true
 ### 2.6.8 sshd force loggin in with key file
     `sudo vim /etc/ssh/sshd_config`
