@@ -25,7 +25,7 @@ case "$status" in
 esac
 
 case $BLOCK_BUTTON in
-    1) notify-send -u low -r 3301 "$icon $(basename $0)" "$status ($level%)"
+    1) notify-send -u low -r 3301 "$icon $(basename $0)" "$status $level%\n$(upower -i /org/freedesktop/UPower/devices/battery_$BAT | grep  'time to empty:' | sed -E 's/[ \t]+/ /g')"
         ;;
     2) footclient -T "Floating Term" -H upower -i /org/freedesktop/UPower/devices/battery_$BAT
         ;;
