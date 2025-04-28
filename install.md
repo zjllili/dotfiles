@@ -223,9 +223,19 @@ $ lsblk
     ```
     title Arch Linux
     linux /vmlinuz-linux
+    initrd /intel-ucode.img
     initrd /initramfs-linux.img
     options cryptdevice=UUID=<UUID-OF-PHYSICAL-PARTITION>:cryptlvm root=UUID=<UUID-OF-ROOT-LOGICAL-VOLUME>
     ```
+    optionally, `cp /boot/loader/entries/arch.conf /boot/loader/entries/arch-fallback.conf`, edit to fallback initramfs:
+    ```
+    title Arch Linux
+    linux /vmlinuz-linux
+    initrd /intel-ucode.img
+    initrd /initramfs-linux-fallback.img
+    options cryptdevice=UUID=<UUID-OF-PHYSICAL-PARTITION>:cryptlvm root=UUID=<UUID-OF-ROOT-LOGICAL-VOLUME>
+    ```
+
     - cryptdevice is the partition of luks container (in this case /dev/nvme0n1p2)
     - root is the logical volume partition (in this case /dev/vg0/root)
     6. enable auto update
