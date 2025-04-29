@@ -11,8 +11,8 @@ sigusr2 = next_file
 app_id = swayimg
 
 [viewer]
-window = #191919
-transparency = #191919
+window = #111111
+transparency = #111111
 scale = optimal
 fixed = yes
 antialiasing = yes
@@ -26,8 +26,8 @@ size = 200
 cache = 100
 fill = no
 antialiasing = yes
-window = #191919
-background = #191919
+window = #111111
+background = #111111
 select = #6f3f89
 border = #6f3f89
 shadow = #000000ff
