@@ -98,6 +98,7 @@ alias brn="brn2 -s"
 alias ts="task";
 
 alias yt-dlp="yt-dlp --embed-metadata --cookies-from-browser firefox"
+alias id3v2="mid3v2"
 
 alias epr="firejail --profile=$HOME/.config/firejail/epr.local epr"
 alias epr-zh="firejail --profile=$HOME/.config/firejail/epr-zh.local epr-zh"
