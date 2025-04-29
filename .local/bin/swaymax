@@ -1,0 +1,19 @@
+#!/usr/bin/sh
+# @author nate zhou
+# @since 2025
+
+output_count="$(swaymsg -t get_outputs -p | grep -c 'Output')"
+focused_output="$(swaymsg -t get_workspaces | jq -r '.[] | select(.focused == true) | .output')"
+
+
+if [ "$output_count" != 1 ]; then
+    case "$focused_output" in
+        DP-1)
+            swaymsg swap container with mark "_placeholder_window1", workspace "-"
+            ;;
+        eDP-1)
+            swaymsg swap container with mark "_placeholder_window2", workspace "="
+    esac
+else
+            swaymsg swap container with mark "_placeholder_window2", workspace "="
+fi
