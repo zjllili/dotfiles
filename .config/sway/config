@@ -9,10 +9,9 @@ set $menu wmenu-run -f "SourceCodePro Medium 13" -i -N 111111 -S 6f3f89 -s fffff
 set $wmenu ~/.local/bin/wmenu-color
 set $bookmarks ~/.local/bin/share/bookmarks
 set $wobfifo /tmp/wob.fifo
-set $mode_cursor ";: num:F[n] | [d]Del | [HJKL]:Slow | Mod[hjkl]:Arrow | [n]PageUp | [p]PageDn"
-set $mode_app "': [n]ews [c]alcurse cod[e] [g]imp [k]denlive nc[m]pcpp b[t]op [f]irefox thunderbir[d]"
-set $mode_wmenu "w: w[w]iki w[h]eart w[b]ook [a]mount [f]locks [p]off w[s]hot w[c]ast w[m]ulti wsin[k] w[v]oice"
-set $mode_b "b: enable[t]ap disable[T]ap enable[p]ad disable[P]ad clip[h]ist-wipe [l]supdates d[w] w[c]al"
+set $mode_cursor "[;] num:F[n] | [d]Del | [HJKL]:Slow | Mod[hjkl]:Arrow | [n]PageUp | [p]PageDn"
+set $mode_wmenu "[w] w[w]iki w[h]eart w[b]ook [a]mount [f]locks [p]off w[s]hot w[c]ast w[m]ulti wsin[k] w[v]oice"
+set $mode_apostrophe "[:] enable[t]ap disable[T]ap enable[p]ad disable[P]ad clip[h]ist-wipe [l]supdates d[w] w[c]al"
 set $mode_space "[p]inyin keyboard-[u]s [a]nthy [h]angul"
 
 bar {
@@ -201,9 +200,8 @@ mode $mode_cursor {
     bindsym Escape mode "default" ; seat seat0 hide_cursor when-typing enable
     bindsym Space mode "default" ; seat seat0 hide_cursor when-typing enable
     bindsym $mod+semicolon mode "default"; seat seat0 hide_cursor when-typing enable
-    bindsym $mod+apostrophe mode $mode_app; seat seat0 hide_cursor when-typing enable
+    bindsym $mod+apostrophe mode $mode_apostrophe; seat seat0 hide_cursor when-typing enable
     bindsym $mod+w mode $mode_wmenu; seat seat0 hide_cursor when-typing enable
-    bindsym $mod+b mode $mode_b; seat seat0 hide_cursor when-typing enable
 
     bindsym 1 exec wtype -k "F1" ; mode "default"; seat seat0 hide_cursor when-typing enable
     bindsym 2 exec wtype -k "F2" ; mode "default"; seat seat0 hide_cursor when-typing enable
@@ -244,26 +242,6 @@ mode $mode_cursor {
     bindsym n exec wtype -k "Page_down"
     }
 
-# app launcher
-bindsym $mod+apostrophe mode $mode_app
-mode $mode_app {
-    bindsym Escape mode "default"
-    bindsym Space mode "default"
-    bindsym $mod+apostrophe mode "default"
-    bindsym $mod+semicolon mode $mode_cursor ; seat seat0 hide_cursor when-typing disable
-    bindsym $mod+w mode $mode_wmenu
-    bindsym $mod+b mode $mode_b
-
-    bindsym n exec $term ~/.local/bin/news ; mode "default"
-    bindsym c exec $term calcurse ; mode "default"
-    bindsym e exec code ; mode "default"
-    bindsym f exec firefox ; mode "default"
-    bindsym g exec gimp ; mode "default"
-    bindsym k exec kdenlive ; mode "default"
-    bindsym m exec $term ncmpcpp ; mode "default"
-    bindsym t exec $term btop ; mode "default"
-    bindsym d exec thunderbird ; mode "default"
-    }
 
 bindsym $mod+w mode $mode_wmenu
 mode $mode_wmenu {
@@ -271,8 +249,7 @@ mode $mode_wmenu {
     bindsym Space mode "default"
     bindsym $mod+w mode "default"
     bindsym $mod+semicolon mode $mode_cursor ; seat seat0 hide_cursor when-typing disable
-    bindsym $mod+apostrophe mode $mode_app
-    bindsym $mod+b mode $mode_b
+    bindsym $mod+apostrophe mode $mode_apostrophe
 
     bindsym w exec ~/.local/bin/wwiki ; mode "default"
     bindsym h exec ~/.local/bin/wheart ; mode "default"
@@ -287,13 +264,15 @@ mode $mode_wmenu {
     bindsym v exec ~/.local/bin/wvoice ; mode "default"
 }
 
-bindsym $mod+b mode $mode_b
-mode $mode_b {
+#bindsym $mod+b move container to workspace =, workspace =
+
+bindsym $mod+apostrophe mode $mode_apostrophe
+mode $mode_apostrophe {
     bindsym Escape mode "default"
     bindsym Space mode "default"
     bindsym $mod+b mode "default"
     bindsym $mod+semicolon mode $mode_cursor ; seat seat0 hide_cursor when-typing disable
-    bindsym $mod+apostrophe mode $mode_app
+    bindsym $mod+apostrophe mode $mode_apostrophe
     bindsym $mod+w mode $mode_wmenu
 
     bindsym t input type:touchpad tap enabled, exec notify-send "tap enabled" ; mode "default"
