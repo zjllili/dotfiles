@@ -1,6 +1,10 @@
 #!/usr/bin/sh
 # @author nate zhou
 # @since 2025
+# use this script to mimic maximizing a window in sway
+# a placeholder window will be spawned and be swapped with the focuse window
+# @depends `./swaymaxd`, `../../.config/sway/config`, jq, foot
+
 
 output_count="$(swaymsg -t get_outputs -p | grep -c 'Output')"
 focused_output="$(swaymsg -t get_workspaces | jq -r '.[] | select(.focused == true) | .output')"
