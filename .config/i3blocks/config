@@ -2,12 +2,18 @@
 # @author nate zhou
 # @since 2025
 
+
 # Global properties
 separator=true
 separator_block_width=4
 markup=pango
 background=#005577
 border=#005577
+
+# use i3blocks to do cronjob
+[swaymaxd]
+command= swaymaxd>/dev/null
+interval=60
 
 # modules
 [mpdd]

@@ -347,7 +347,7 @@ assign [title="_placeholder_window1"] workspace -
 assign [title="_placeholder_window2"] workspace =
 workspace - output DP-1
 workspace = output eDP-1
-exec_always "~/.local/bin/swaymaxd"
+# use i3blocks as a GUI crontab to execute swaymaxd
 bindsym $mod+b exec "~/.local/bin/swaymaxd"
 bindsym $mod+f exec "~/.local/bin/swaymax"
 

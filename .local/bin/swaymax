@@ -3,7 +3,8 @@
 # @since 2025
 # use this script to mimic maximizing a window in sway
 # a placeholder window will be spawned and be swapped with the focuse window
-# @depends `./swaymaxd`, `../../.config/sway/config`, jq, foot
+# @depends `./swaymaxd`, `../../.config/sway/config`,
+# `../../.config/i3blocks/config`, jq, foot
 
 
 output_count="$(swaymsg -t get_outputs -p | grep -c 'Output')"
