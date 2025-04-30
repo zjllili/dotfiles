@@ -110,10 +110,12 @@ $ lsblk
     uncomment
     `#ParallelDownloads = 5`
 
-    add a mirrorlist
-    `vim /etc/pacman.d/mirrorlist`
-    add on top
-    `Server = https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch`
+    change mirrorlist
+    `reflactor --save /etc/pacman.d/mirrorlist`
+
+    update keyring
+    `pacman -Sy && pacman -S archlinux-keyring`
+    (When you use an Arch Linux ISO that was released months ago, the included keyring may be outdated. The Arch Linux keyring contains the public keys used to verify the signatures of packages)
 
     install packages
     `pacstrap -K /mnt base base-devel linux linux-headers linux-firmware intel-ucode cryptsetup lvm2 vim neovim networkmanager man-db bash-completion`
