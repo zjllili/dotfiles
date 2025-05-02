@@ -3,6 +3,9 @@
 # @since 2025
 # 1. allow pop in mail server settings
 # 2. install an XOAUTH2 SASL plugin, like: `yay -S cyrus-sasl-xoauth2-git`
+# 3. add cronjob:
+#    @reboot msmtp -a
+#    */15 * * * * msmtp -a
 
 ## Account1
 IMAPAccount account1
