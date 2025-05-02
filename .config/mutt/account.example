@@ -14,7 +14,9 @@
 ## oauth2 authentication for outlook
 ## https://www.vanormondt.net/~peter/blog/2021-03-16-mutt-office365-mfa.html
 ## 1. generate gpg key `gpg --full-gen-key`
-## 2. `/usr/share/neomutt/oauth2/mutt_oauth2.py ~/.cache/mutt_oauth_account1 --verbose --authorize`
+# https://wiki.archlinux.org/title/Isync#Using_XOAUTH2
+## 2.a (gpg key pair)"    `/usr/share/neomutt/oauth2/mutt_oauth2.py ~/.cache/mutt_oauth_account1 --verbose --authorize`
+## 2.b (gpg passphrase):  `/usr/share/neomutt/oauth2/mutt_oauth2.py --verbose --authorize ~/.cache/mutt/oauth-account1 --encryption-pipe 'gpg -c --cipher-algo aes256'`
 ## 3. choose `microsoft` provider, `authcode` OAuth2 flow, `client-secret` can be empty
 ## https://blog.gtz.dk/posts/how-to-2famutt/
 ## 4. use thunderbird's client-id "9e5f94bc-e8a4-4e73-b8be-63364c29d753"
