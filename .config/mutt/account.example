@@ -13,7 +13,7 @@
 
 ## oauth2 authentication for outlook
 ## https://www.vanormondt.net/~peter/blog/2021-03-16-mutt-office365-mfa.html
-## 1. generate gpg key `gpg --full-key-gen`
+## 1. generate gpg key `gpg --full-gen-key`
 ## 2. `/usr/share/neomutt/oauth2/mutt_oauth2.py ~/.cache/mutt_oauth_account1 --verbose --authorize`
 ## 3. choose `microsoft` provider, `authcode` OAuth2 flow, `client-secret` can be empty
 ## https://blog.gtz.dk/posts/how-to-2famutt/

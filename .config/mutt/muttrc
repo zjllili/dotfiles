@@ -3,6 +3,7 @@
 
 # source the user and password
 source "~/.config/mutt/account1"
+source "~/.config/mutt/account2"
 
 #unset record
 
@@ -11,7 +12,7 @@ folder-hook 'account1' 'source ~/.config/mutt/account1'
 
 # Macros to switch accounts
 macro index <f2> "<enter-command>unmailboxes *<enter><enter-command>source ~/.config/mutt/account1<enter><sync-mailbox><change-folder>!<enter>"
-#macro index <f3> "<enter-command>unmailboxes *<enter><enter-command>source ~/.config/mutt/account2<enter><sync-mailbox><change-folder>!<enter>"
+macro index <f3> "<enter-command>unmailboxes *<enter><enter-command>source ~/.config/mutt/account2<enter><sync-mailbox><change-folder>!<enter>"
 
 # Allow mutt to open a new IMAP connection automatically
 unset imap_passive
@@ -66,9 +67,9 @@ set sidebar_short_path
 set sidebar_folder_indent
 set sidebar_format = "%B %* [%?N?%N / ?%S]"
 set mail_check_stats
-bind index,pager \CJ sidebar-prev
-bind index,pager \CK sidebar-next
-bind index,pager \CE sidebar-open
+bind index,pager \CK sidebar-prev
+bind index,pager \CJ sidebar-next
+bind index,pager \CL sidebar-open
 # B to toggle side bar
 bind index,pager B sidebar-toggle-visible
 
