@@ -46,7 +46,7 @@ set ssl_starttls = yes
 
 ## MAILBOX
 ## for mbsync local mail:
-set folder = "~/mail/account1"
+set folder = "~/doc/mail/account1"
 #set folder = "imaps://imap.aliyun.com"
 #set folder = "imaps://outlook.office365.com"
 set spoolfile = "+INBOX"

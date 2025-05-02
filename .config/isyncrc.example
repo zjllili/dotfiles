@@ -17,8 +17,8 @@ IMAPStore account1-remote
 Account account1
 
 MaildirStore account1-local
-Path ~/mail/account1/
-Inbox ~/mail/account1/INBOX
+Path ~/doc/mail/account1/
+Inbox ~/doc/mail/account1/INBOX
 SubFolders Verbatim
 
 Channel account1
@@ -44,8 +44,8 @@ IMAPStore account2-remote
 Account account2
 
 MaildirStore account2-local
-Path ~/mail/account2/
-Inbox ~/mail/account2/INBOX
+Path ~/doc/mail/account2/
+Inbox ~/doc/mail/account2/INBOX
 SubFolders Verbatim
 
 Channel account2
