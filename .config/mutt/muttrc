@@ -8,7 +8,7 @@ source "~/.config/mutt/account2"
 #unset record
 
 folder-hook 'account1' 'source ~/.config/mutt/account1'
-#folder-hook 'account2' 'source ~/.config/mutt/account2'
+folder-hook 'account2' 'source ~/.config/mutt/account2'
 
 # Macros to switch accounts
 macro index <f2> "<enter-command>unmailboxes *<enter><enter-command>source ~/.config/mutt/account1<enter><sync-mailbox><change-folder>!<enter>"
