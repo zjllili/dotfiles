@@ -323,7 +323,7 @@ login as root
     yt-dlp transmission-cli httrack
 
     ### personal tools
-    newsboat task taskwarrior-tui calcurse thunderbird thunderbird-dark-reader
+    newsboat task taskwarrior-tui calcurse neomutt isync
 
     ### coding
     jdk-openjdk openjdk-src code
@@ -344,6 +344,7 @@ login as root
     gimp-devel
     adwaita-qt5 adwaita-qt5
     wshowkeys-git
+    cyrus-sasl-xoauth2-git
 ### [example] compile and install
     git clone https://aur.archlinux.org/yay.git
     makepkg
