@@ -23,7 +23,7 @@
 set imap_user = "<USER>@<DOMAIN>.com"
 set imap_pass = $my_pass
 set imap_authenticators = "xoauth2"
-set imap_oauth_refresh_command = "/usr/share/neomutt/oauth2/mutt_oauth2.py /home/nate/.cache/mutt_oauth_account1"
+set imap_oauth_refresh_command = "/usr/share/neomutt/oauth2/mutt_oauth2.py --decryption-pipe 'gpg --decrypt --pinentry-mode default' /home/nate/.cache/mutt_oauth_account1"
 set folder = "imaps://outlook.office365.com"
 
 ## send options
