@@ -1,0 +1,18 @@
+#!/usr/bin/sh
+# @author nate zhou
+# @since 2025
+# i3blocks module to count unread emails in mutt
+
+MAIL_DIR="$HOME/doc/mail"
+
+icon="󰊫"
+color="#ffffff"
+
+result="$(find "$MAIL_DIR"/*/INBOX/new/ -type f | wc -l)"
+
+
+# ` `(U+2009) is the Thin Space
+echo "$icon" "$result"
+echo
+
+echo "$color"

@@ -42,6 +42,11 @@ command= i3blocks-calcurse
 interval=once
 signal=6
 
+[mutt]
+command= i3blocks-mutt
+interval=60
+signal=18
+
 [pacman]
 command= i3blocks-pacman
 interval=once
