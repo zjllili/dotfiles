@@ -56,6 +56,6 @@ if [ -f "$HOME/.cache/city" ]; then
 
 else
     msg="~/.cache/city does not exist, write the city name to it"
-    notify-send -u low -r 21 "$msg"
+    [ "$XDG_SESSION_TYPE" != "tty" ] && notify-send -u low -r 21 "$msg"
     echo $msg
 fi

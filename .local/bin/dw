@@ -13,22 +13,22 @@ if [ $# -eq 0 ]; then
         wttr=$(cat $HOME/.cache/wttr)
 
         # check if the file is empty
-        if [ -z $wttr ]; then
+        if [ -z "$wttr" ]; then
             msg="~/.cache/wttr is empty, try running updw ?"
-            notify-send -u low -r 23 "$msg"
+            [ "$XDG_SESSION_TYPE" != "tty" ] && notify-send -u low -r 23 "$msg"
             echo $msg
         else
             msg=$wttr
-            notify-send -u low -r 24 "$msg"
+            [ "$XDG_SESSION_TYPE" != "tty" ] && notify-send -u low -r 24 "$msg"
             echo $msg
         fi
 
     else
         msg="~/.cache/wttr does not exist, try running updw ?"
-        notify-send -u low -r 23 "$msg"
+        [ "$XDG_SESSION_TYPE" != "tty" ] && notify-send -u low -r 23 "$msg"
         echo $msg
     fi
 else
     msg=$(curl wttr.in/$1?format=4)
-    notify-send -u low -r 24 "$msg"
+    [ "$XDG_SESSION_TYPE" != "tty" ] && notify-send -u low -r 24 "$msg"
 fi
