@@ -31,16 +31,17 @@ set imap_authenticators = "xoauth2"
 set imap_oauth_refresh_command = "/usr/share/neomutt/oauth2/mutt_oauth2.py --decryption-pipe 'gpg --decrypt --pinentry-mode default' ~/.cache/mutt/oauth-account1"
 
 ## SMTP
+## for SMTP server:
 #set smtp_url = "smtps://<user>@smtp.aliyun.com:465/"
 #set smtp_url = "smtps://<user>@smtp.office365.com:587/"
-set smtp_url    = "smtp://<user>@smtp.office365.com:587"
-set realname='<user>'
-set imap_authenticators = "xoauth2"
+## for SMTPS-based SMTP server:
+set smtp_url = smtp://$imap_user@smtp.office365.com:587
+set realname = '<user>'
 set smtp_authenticators = ${imap_authenticators}
 set smtp_oauth_refresh_command = ${imap_oauth_refresh_command}
 set from=<user>@outlook.com
 set ssl_force_tls = yes
-unset ssl_starttls
+set ssl_starttls = yes
 
 ## MAILBOX
 ## for mbsync local mail:
