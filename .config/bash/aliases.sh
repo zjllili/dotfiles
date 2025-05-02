@@ -93,6 +93,7 @@ alias reboot="systemctl reboot"
 
 ## cli/tui
 alias vim="nvim"
+alias mutt="neomutt"
 alias brn="brn2 -s"
 
 alias ts="task";
@@ -165,6 +166,5 @@ alias Er="echo RANGER_LEVEL=$RANGER_LEVEL"
 #alias x="startx"
 #alias ed="ed -p :"
 #alias fim="fim -a --no-commandline --no-etc-rc-file --no-stat-push"
-#alias mutt="neomutt"
 #alias mupdf="mupdf -I -C cccccc -r 140 -S13"
 #alias transmission-cli="transmission-cli -w /data/tmp"
