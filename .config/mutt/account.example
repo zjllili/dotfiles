@@ -41,6 +41,7 @@ set smtp_authenticators = ${imap_authenticators}
 set smtp_oauth_refresh_command = ${imap_oauth_refresh_command}
 set from=<user>@outlook.com
 set ssl_force_tls = yes
+set smtp_url=smtp://$imap_user@smtp.office365.com:587
 set ssl_starttls = yes
 
 ## MAILBOX

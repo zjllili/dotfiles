@@ -1,7 +1,10 @@
 # isyncrc
 # @author nate zhou
 # @since 2025
+# 1. allow pop in mail server settings
+# 2. install an XOAUTH2 SASL plugin, like: `yay -S cyrus-sasl-xoauth2-git`
 
+## Account1
 IMAPAccount account1
 Host outlook.office365.com
 Port 993
@@ -28,7 +31,7 @@ Sync All
 Create Near
 SyncState *
 
-
+## Account 2
 IMAPAccount account2
 Host outlook.office365.com
 Port 993
