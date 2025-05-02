@@ -95,6 +95,7 @@ aur.list
 !.config/gtk-3.0/settings.ini
 !.config/gtk-4.0/
 !.config/gtk-4.0/settings.ini
+!.config/isyncrc.example
 !.config/i3status/
 !.config/i3status/config
 !.config/i3blocks/

@@ -1,0 +1,56 @@
+# isyncrc
+# @author nate zhou
+# @since 2025
+
+IMAPAccount account1
+Host outlook.office365.com
+Port 993
+User <user1>@outlook.com
+PassCmd "/usr/share/neomutt/oauth2/mutt_oauth2.py --decryption-pipe 'gpg --decrypt --pinentry-mode default' -t ~/.cache/mutt/oauth-account1"
+TLSType IMAPS
+AuthMechs XOAUTH2
+
+IMAPStore account1-remote
+Account account1
+
+MaildirStore account1-local
+Path ~/mail/account1/
+Inbox ~/mail/account1/INBOX
+SubFolders Verbatim
+
+Channel account1
+Far :account1-remote:
+Near :account1-local:
+Patterns *
+Expunge both
+CopyArrivalDate yes
+Sync All
+Create Near
+SyncState *
+
+
+IMAPAccount account2
+Host outlook.office365.com
+Port 993
+User <user2>@outlook.com
+PassCmd "/usr/share/neomutt/oauth2/mutt_oauth2.py --decryption-pipe 'gpg --decrypt --pinentry-mode default' -t ~/.cache/mutt/oauth-account2"
+TLSType IMAPS
+AuthMechs XOAUTH2
+
+IMAPStore account2-remote
+Account account2
+
+MaildirStore account2-local
+Path ~/mail/account2/
+Inbox ~/mail/account2/INBOX
+SubFolders Verbatim
+
+Channel account2
+Far :account2-remote:
+Near :account2-local:
+Patterns *
+Expunge both
+CopyArrivalDate yes
+Sync All
+Create Near
+SyncState *
