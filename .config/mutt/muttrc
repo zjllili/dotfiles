@@ -75,3 +75,6 @@ bind index,pager B sidebar-toggle-visible
 
 ## editor
 set editor = "nvim"
+
+## colorscheme
+source /usr/share/neomutt/colorschemes/neonwolf-256.neomuttrc
