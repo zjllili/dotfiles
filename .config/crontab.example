@@ -4,7 +4,7 @@
 */15 * * * * $HOME/.local/bin/sync-config-cron
 
 @reboot mbsync -a && pkill -SIGRTMIN+18 i3blocks
-*/1 * * * * mbsync -a && pkill -SIGRTMIN+18 i3blocks
+*/15 * * * * mbsync -a && pkill -SIGRTMIN+18 i3blocks
 
 @reboot $HOME/.local/bin/updw
 */5 * * * * $HOME/.local/bin/updw-cron
