@@ -59,6 +59,7 @@ auto_view text/html
 
 ## group conversation
  set sort=threads
+ set sort=reverse-date
  set sort_aux=last-date-received
 
 ## sidebar
