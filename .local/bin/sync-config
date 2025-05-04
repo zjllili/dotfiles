@@ -3,6 +3,7 @@
 # @since 2024,2025
 
 HEART="$HOME/doc/heart"
+chmod 700 "$HEART" # deny go permission to exclude for termux syncing
 DOTFILES="$HOME/doc/unixchad/dotfiles"
 
 read -p "Continue? (y/n): " choice
