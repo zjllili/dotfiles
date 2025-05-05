@@ -146,6 +146,7 @@ bindsym $mod+Return exec $term
 bindsym $mod+Shift+Return exec $term -T "Floating Term"
 bindsym $mod+Control+Return exec $term -T "Scratchpad Tmux" $HOME/.local/bin/tmuxd
 bindsym $mod+r exec $term ranger
+bindsym $mod+CONTROL+m exec $term neomutt
 
 bindsym $mod+Shift+r reload
 bindsym $mod+Control+r exec swaymsg "output * bg ~/.local/share/wallpaper fill"
