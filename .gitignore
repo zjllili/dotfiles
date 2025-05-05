@@ -50,6 +50,7 @@ aur.list
 !.ssh/config.example
 !.gnupg/
 !.gnupg/gpg.conf
+!.gnupg/gpg-agent.conf
 !.local/
 !.local/bin
 !.local/bin/*
