@@ -88,6 +88,9 @@ aur.list
 !.config/foot/*
 !.config/fzf/
 !.config/fzf/*
+!.config/GIMP/
+!.config/GIMP/*.*/
+!.config/GIMP/*.*/shortcutsrc
 !.config/git/
 !.config/git/config.example
 !.config/gtk-2.0/
