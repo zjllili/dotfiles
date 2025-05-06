@@ -49,6 +49,9 @@ export GOMODCACHE="$XDG_CACHE_HOME/go/mod"
 export GRIM_DEFAULT_DIR="$HOME/tmp"
 #export OLLAMA_MODELS="$XDG_DATA_HOME/ollama/models"
 
+# ssh-agent
+export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
+
 ### IME ###
 # fcitx
 #export GTK_IM_MODULE=wayland
