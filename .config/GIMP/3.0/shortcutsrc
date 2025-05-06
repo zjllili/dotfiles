@@ -565,7 +565,7 @@
 # (action "context-colormap-background-previous")
 # (action "image-merge-layers" "<Primary>m")
 # (action "filters-high-pass")
-# (action "tools-move" "m")
+(action "tools-move" "v")
 # (action "context-pattern-select-previous")
 # (action "context-background-hue-maximum")
 # (action "script-fu-guides-remove")
