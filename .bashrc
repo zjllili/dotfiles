@@ -60,3 +60,6 @@ else
 fi
 
 export PS4='+ ${LINENO}: '
+
+# gpg with pinentry-curses and pinentry-tty
+export GPG_TTY=$(tty)
