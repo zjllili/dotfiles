@@ -96,7 +96,8 @@ alias vim="nvim"
 alias mutt="neomutt"
 alias brn="brn2 -s"
 
-alias ts="task";
+alias tsk="task";
+alias twt="taskwarrior-tui"
 
 alias yt-dlp="yt-dlp --embed-metadata --cookies-from-browser firefox"
 alias id3v2="mid3v2"
