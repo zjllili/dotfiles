@@ -13,6 +13,11 @@ aur.list
 !mus/
 !mus/.mpdignore
 
+!boot/
+!boot/loader/
+!boot/loader/loader.conf.example
+!boot/loader/entries
+!boot/loader/entries/arch.conf.example
 !etc/
 !etc/firejail/
 !etc/firejail/firecfg.config
