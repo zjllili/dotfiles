@@ -85,8 +85,8 @@ output * bg ~/.local/share/wallpaper fill
 #output * bg #191919 solid_color
 #output 'eDP-1' mode --custom 1792x1008@60.000Hz pos 0 0
 #output  'DP-1' mode --custom 1792x1008@60.000Hz pos 1792 0
-output 'eDP-1' mode --custom 1600x900@60.000Hz pos 0 0
-output  'DP-1' mode --custom 1600x900@60.000Hz pos -1600 0
+output 'eDP-1' mode --custom 1664x936@60.000Hz pos 0 0
+output  'DP-1' mode --custom 1664x936@60.000Hz pos -1664 0
 workspace 1 output DP-1
 workspace 2 output DP-1
 workspace 3 output DP-1
