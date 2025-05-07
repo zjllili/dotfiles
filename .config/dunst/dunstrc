@@ -5,9 +5,9 @@
 [global]
     monitor = 0
     follow = keyboard
-    width = (0, 350)
+    width = 250
     height = (0, 600)
-    origin = top-center
+    origin = top-right
     offset = 0x0
     scale = 0
     notification_limit = 30
@@ -18,7 +18,7 @@
     horizontal_padding = 6
     frame_width = 2
     frame_color = "#3399ff"
-    gap_size = 1
+    gap_size = 2
     separator_color = frame
     sort = update
     font = SourceCodePro 12.5
@@ -26,7 +26,7 @@
     markup = full
     format = "<b>%s</b>\n%b"
     alignment = center
-    vertical_alignment = center
+    vertical_alignment = top
     show_age_threshold = -1
     ellipsize = middle
     ignore_newline = no
