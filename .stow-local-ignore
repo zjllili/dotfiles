@@ -6,6 +6,7 @@
 ^/LICENSE.*
 
 .mozilla
+boot
 etc
 usr
 install.md
