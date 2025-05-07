@@ -217,7 +217,7 @@ $ lsblk
     ```
     default arch.conf
     timeout 3
-    console-mode keep
+    console-mode 0
     ```
     3. get encrypted device and root partition UUID
     `blkid >> /boot/loader/entries/arch.conf`
