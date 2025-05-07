@@ -28,6 +28,9 @@ aur.list
 !etc/samba/smb.conf.example
 !etc/skel/
 !etc/skel/*
+!etc/udev/
+!etc/udev/rules.d/
+!etc/udev/rules.d/99-lowbat.rules
 !etc/vconsole.conf
 !usr/
 !usr/local/

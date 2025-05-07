@@ -1,0 +1,4 @@
+# https://wiki.archlinux.org/title/Laptop#Hibernate_on_low_battery_level
+# Suspend the system when battery level drops to 3% or lower
+# [0-3] is shell-like single character matching, [0-20] doesn't mean 0~20%
+SUBSYSTEM=="power_supply", ATTR{status}=="Discharging", ATTR{capacity}=="[0-3]", RUN+="/usr/bin/systemctl hibernate"
