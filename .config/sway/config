@@ -52,7 +52,7 @@ bar {
 #<colorclass> <border> <background> <text> <indicator> <child_border>
 client.focused		        #9962b7 #6f3f89 #ffffff #e6da00
 client.focused_inactive     #0092cc #005577 #ffffff #0092cc
-client.unfocused            #111111 #111111 #ffffff #111111
+client.unfocused            #111111 #191919 #ffffff #111111
 client.urgent               #e6da00 #e6da00 #ffffff #9962b7
 client.background           #111111
 font pango:monospace 10
