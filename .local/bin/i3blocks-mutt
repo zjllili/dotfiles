@@ -10,6 +10,11 @@ color="#ffffff"
 
 result="$(find "$MAIL_DIR"/*/INBOX/new/ -type f | wc -l)"
 
+case $BLOCK_BUTTON in
+    2) footclient -T "Floating Term" neomutt &
+        ;;
+esac
+
 
 # ` `(U+2009) is the Thin Space
 echo "$icon" "$result"
