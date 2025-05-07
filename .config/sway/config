@@ -342,8 +342,8 @@ bindsym $mod+e layout toggle split
 bindsym $mod+CONTROL+f fullscreen
 # mimic maximize
 workspace_auto_back_and_forth yes
-for_window [title="_placeholder_window1"] mark "_placeholder_window1", border pixel 0
-for_window [title="_placeholder_window2"] mark "_placeholder_window2", border pixel 0
+for_window [title="_placeholder_window1"] mark "_placeholder_window1"
+for_window [title="_placeholder_window2"] mark "_placeholder_window2"
 assign [title="_placeholder_window1"] workspace -
 assign [title="_placeholder_window2"] workspace =
 workspace - output DP-1
