@@ -1,3 +1,6 @@
+## How Do I Setup Arch Linux?
+[install.md](./install.md)
+
 ## What Is This Repository?
 ![screenshot01](./misc/screenshot01.png)
 
@@ -15,9 +18,6 @@ A few software need manually setup:
 - Software whose config files named to `*.example` for privacy reasons
 - Software whose config files located outside of the `$HOME`
 - Software listed in `./.stow-local-ignore`
-
-## How Do I Setup Arch Linux?
-[install.md](./install.md)
 
 ## Software I Use
 - Distro:               Arch Linux
