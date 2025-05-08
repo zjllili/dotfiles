@@ -153,7 +153,7 @@ $ lsblk
     `LANG=en_US.UTF-8`
 ## 1.13 create hostname
     `echo fx507 >> /etc/hostname`
-## 1.14 configure localhost
+## 1.14.1 configure localhost
     `vim /etc/hosts`
     add
     ```
@@ -161,6 +161,12 @@ $ lsblk
     ::1             localhost
     127.0.1.1       fx507.localdomain fx507
     ```
+## 1.14.2 configure DNS resolution
+```sh
+vim /etc/resolv.conf
+# add CloudFlare's DNS
+nameserver 1.1.1.1
+```
 ## 1.15 add a key file to luks container
     cd /root
 
