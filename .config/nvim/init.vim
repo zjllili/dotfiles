@@ -66,6 +66,7 @@ map <leader>dv :Gvdiffsplit<CR>
 map <leader><Tab> :NERDTreeToggle<CR>
 map <leader>ct :ColorizerToggle<CR>
 map <leader>cr :ColorizerReloadAllBuffers<CR>
+map <leader>H :TSToggle highlight<CR>
 
 " don't comment on new line
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -88,9 +89,20 @@ call plug#begin()
 Plug 'norcalli/nvim-colorizer.lua' " better color support
 Plug 'tpope/vim-fugitive' " Git integration
 Plug 'preservim/nerdtree'
+Plug 'nvim-treesitter/nvim-treesitter'
 call plug#end()
 
 " nvim-colorizer
 set termguicolors
 "lua require'colorizer'.setup()
 autocmd VimEnter * ColorizerToggle
+
+" treesitter syntax highlight
+lua << EOF
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = false,
+  },
+}
+EOF
