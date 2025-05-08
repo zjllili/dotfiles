@@ -10,6 +10,8 @@
 arch.list
 aur.list
 !unixchad.asc
+!misc/
+!misc/*
 
 !mus/
 !mus/.mpdignore
