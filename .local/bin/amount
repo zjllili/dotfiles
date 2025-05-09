@@ -16,7 +16,7 @@ a_unlock()
     if [ "$XDG_SESSION_TYPE" = "tty" ]; then
         udisksctl unlock -b "$selected_partition"
     else # use wmenu as passphrase prompt if not in tty
-       wmenu_passphrase=$(echo "" | wmenu -P -f "SourceCodePro medium 13" -p "[udisksctl] passphrase for $selected_partition: " -S 6f3f89 -s ffffff -M 6f3f89 -m ffffff)
+       wmenu_passphrase=$(echo "" | wmenu-color -P -p "[udisksctl] passphrase for $selected_partition: ")
        udisksctl unlock -b "$selected_partition" --key-file <(echo -n "$wmenu_passphrase")
     fi
 }
@@ -38,10 +38,10 @@ send_msg()
 lsblk_result=$(lsblk -rpo "name,type,size,uuid,label,mountpoint,fstype" | tail -n +2 | grep -ve ' disk ' -ve SWAP -ve /boot -ve /mapper/ )
 
 if [ "$XDG_SESSION_TYPE" != "tty" ]; then
-    selected=$(echo "$lsblk_result" | wmenu -p "amount: " -l 6 -f "SourceCodePro medium 13" -S 6f3f89 -s ffffff -M 6f3f89 -m ffffff)
+    selected=$(echo "$lsblk_result" | wmenu-color -l 6 -p "$(basename $0): ")
 else
     # use fzf to select a partition if in tty
-    selected=$(echo "$lsblk_result" | command fzf --prompt 'amount: ')
+    selected=$(echo "$lsblk_result" | command fzf --prompt "$(basename): ")
 fi
 msg="$selected_partition mounted"
 
