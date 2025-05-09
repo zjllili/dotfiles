@@ -2,7 +2,8 @@
 [install.md](./install.md)
 
 ## What Is This Repository?
-![screenshot01](./misc/screenshot01.png)
+<img src="./misc/screenshot01.png" alt="drawing" width="480"/>
+<img src="./misc/screenshot02.png" alt="drawing" width="480"/>
 
 ## How To Use This Repository?
 ```sh
