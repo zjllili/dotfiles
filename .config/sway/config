@@ -69,7 +69,7 @@ focus_on_window_activation urgent
 seat seat0 hide_cursor 3000
 seat seat0 hide_cursor when-typing enable
 focus_follows_mouse no
-#mouse_warping none
+mouse_warping none
 
 floating_modifier $mod
 
