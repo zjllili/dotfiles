@@ -82,12 +82,12 @@ aur.list
 !.config/Code - OSS/
 !.config/Code - OSS/User
 !.config/Code - OSS/User/keybindings.json
-!.config/Code - OSS/User/settings.json
+!.config/Code - OSS/User/settings.json.example
 !.config/crontab.example
 !.config/VSCodium/
 !.config/VSCodium/User
 !.config/VSCodium/User/keybindings.json
-!.config/VSCodium/User/settings.json
+!.config/VSCodium/User/settings.json.example
 !.config/dircolors
 !.config/dunst/
 !.config/dunst/dunstrc
@@ -101,7 +101,7 @@ aur.list
 !.config/fzf/*
 !.config/GIMP/
 !.config/GIMP/*.*/
-!.config/GIMP/*.*/shortcutsrc
+!.config/GIMP/*.*/shortcutsrc.example
 !.config/git/
 !.config/git/config.example
 !.config/gtk-2.0/

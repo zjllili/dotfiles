@@ -29,11 +29,11 @@
     "explorer.confirmDelete": false,
     "workbench.startupEditor": "newUntitledFile",
     "window.menuBarVisibility": "toggle",
-    "workbench.colorTheme": "Adwaita Dark & Github syntax highlighting",
-    "workbench.activityBar.location": "hidden",
     "editor.lineNumbers": "relative",
     "workbench.editor.showTabs": "none",
     "editor.renderWhitespace": "trailing",
     "window.titleBarStyle": "native",
-    "window.customTitleBarVisibility": "never"
+    "window.customTitleBarVisibility": "never",
+    "workbench.iconTheme": "vs-minimal",
+    "workbench.activityBar.location": "hidden"
 }
