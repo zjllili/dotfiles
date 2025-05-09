@@ -16,7 +16,7 @@ icon="󰅟"
 echo "$icon""$result"
 echo ""
 
-[ -z "$result" ] && color="#777777"
+[ -z "$result" ] && color="#a8a196"
 
 echo "$color"
 

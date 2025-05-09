@@ -35,6 +35,7 @@ bar {
     strip_workspace_numbers yes
 
 	colors {
+    background #000000
     #workspace color    border  backgr  text
     focused_workspace  #005577 #005577 #ffffff
     active_workspace   #333333 #333333 #ffffff

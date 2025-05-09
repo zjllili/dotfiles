@@ -4,11 +4,11 @@
 
 # Global properties
 separator=true
-separator_block_width=4
+separator_block_width=3
 markup=pango
 color=#ffffff
-background=#222222
-border=#222222
+background=#00435e
+border=#00435e
 
 # use i3blocks to do cronjob
 [swaymaxd]

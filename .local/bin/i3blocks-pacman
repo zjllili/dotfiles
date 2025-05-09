@@ -7,7 +7,7 @@ result="$(cat $HOME/.cache/checkupdates-cron.num)"
 icon=""
 color="#ffffff"
 
-[ "$result" -eq 0 ] || [ -z "$result" ] && color="#777777"
+[ "$result" -eq 0 ] || [ -z "$result" ] && color="#a8a196"
 
 # ` `(U+2009) is the Thin Space
 echo "$icon" "$result"
