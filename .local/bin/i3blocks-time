@@ -2,16 +2,16 @@
 # @author nate zhou
 # @since 2025
 
-#icon=""
-
-case $BLOCK_BUTTON in
-    1) notify-send -u low -r 3301 "$(cal | sed '/^[[:space:]]*$/d')"
-        ;;
-    2) footclient -T "Floating Term" calcurse >/dev/null &
-        ;;
-    3) notify-send -u low -r 3301 -t 5500 "$icon $(basename $0)" "$(date '+%Y-%m-%d %H:%M:%S')" && calcurse-num-cron --now >/dev/null && pkill -SINRTMIN+17  &
-        ;;
-esac
+#icon="󰥔"
 
 # ` `(U+2009) is the Thin Space
-echo "$icon" "$(date '+%b-%d <small>%a</small> %H:%M')"
+echo "$(date '+%b-%d <small>%a</small> %H:%M')"
+
+case $BLOCK_BUTTON in
+    3) notify-send -u low -r 3301 "$(cal | sed '/^[[:space:]]*$/d')"
+        ;;
+    4) dunstctl close >/dev/null &
+        ;;
+    5) dunstctl history-pop >/dev/null &
+        ;;
+esac

@@ -7,6 +7,9 @@ mode=""
 temperature="$(cat /sys/devices/platform/coretemp.0/hwmon/hwmon*/temp1_input)"
 icon=""
 
+# ` `(U+2009) is the Thin Space
+echo "$icon" "${temperature::-3}""<small>℃</small>"
+
 # only enable click if file exist
 if [ -e $policy ]; then
     case "$(cat $policy)" in
@@ -18,10 +21,8 @@ if [ -e $policy ]; then
             ;;
     esac
     case $BLOCK_BUTTON in
-        1) notify-send -u low -r 3301 "$icon $(basename $0)" "fanmode: $mode"
+        3) notify-send -u low -r 3301 "$icon $(basename $0)" "fanmode: $mode"
             ;;
     esac
 fi
 
-# ` `(U+2009) is the Thin Space
-echo "$icon" "${temperature::-3}""<small>℃</small>"

@@ -7,11 +7,10 @@ POWER="/sys/class/power_supply"
 
 status="$(cat $POWER/$BAT/status)"
 level="$(cat $POWER/$BAT/capacity)"
-color="#ffffff"
 
 case "$status" in
     "Discharging")
-        [ "$level" -lt 20 ] && icon="" color="#888888" && break
+        [ "$level" -lt 20 ] && icon="" color="#777777" && break
         [ "$level" -ge 20 ] && icon="" && break
         [ "$level" -gt 40 ] && icon="" && break
         [ "$level" -gt 80 ] && icon="" && break
@@ -24,17 +23,15 @@ case "$status" in
         ;;
 esac
 
-case $BLOCK_BUTTON in
-    1) notify-send -u low -r 3301 "$icon $(basename $0)" "$status $level%\n$(upower -i /org/freedesktop/UPower/devices/battery_$BAT | grep  'time to empty:' | sed -E 's/[ \t]+/ /g')"
-        ;;
-    2) footclient -T "Floating Term" -H upower -i /org/freedesktop/UPower/devices/battery_$BAT
-        ;;
-    3) notify-send -u low -r 3301 -t 1100 "$icon $(basename $0)" "" && pkill +SIGRTMIN+12 i3blocks &
-        ;;
-esac
 
 # ` `(U+2009) is the Thin Space
 echo "$icon" "$level"%
 echo
-
 echo "$color"
+
+case $BLOCK_BUTTON in
+    3) notify-send -u low -r 3301 "$icon $(basename $0)" "$status $level%\n$(upower -i /org/freedesktop/UPower/devices/battery_$BAT | grep  'time to empty:' | sed -E 's/[ \t]+/ /g')"
+        ;;
+    1) pkill +SIGRTMIN+12 i3blocks &
+        ;;
+esac

@@ -7,20 +7,17 @@ result="$(lsblk -o 'tran' | grep usb | wc -l)"
 icon=""
 color="#ffffff"
 
-#[ "$result" -eq 0 ] || [ -z "$result" ] && exit 0
-[ "$result" -eq 0 ] || [ -z "$result" ] && color="#888888"
+[ "$result" -eq 0 ] || [ -z "$result" ] && color="#777777"
 
-case $BLOCK_BUTTON in
-    1) notify-send -u low -r 3301 "$icon $(basename $0)" "$(lsblk -rpo 'name,type,size,label,mountpoint,fstype,tran' | grep 'usb' | sed 's/\ +/\ /')"
-        ;;
-    2) poff >/dev/null &
-        ;;
-    3) notify-send -u low -r 3301 -t 1100 "$icon $(basename $0)" "" && pkill -SIGRTMIN +16 i3blocks &
-        ;;
-esac
 
 # ` `(U+2009) is the Thin Space
 echo "<b>$icon</b>" "$result"
 echo
-
 echo "$color"
+
+case $BLOCK_BUTTON in
+    3) notify-send -u low -r 3301 "$icon $(basename $0)" "$(lsblk -rpo 'name,type,size,label,mountpoint,fstype,tran' | grep 'usb' | sed 's/\ +/\ /')"
+        ;;
+    1) pkill -SIGRTMIN +16 i3blocks &
+        ;;
+esac
