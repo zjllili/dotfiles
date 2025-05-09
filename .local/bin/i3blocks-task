@@ -7,7 +7,7 @@ result="$(task count +ACTIVE)"
 icon="󰅎"
 color="#ffffff"
 
-[ "$result" -eq 0 ] || [ -z "$result" ] && color="#a8a196"
+[ "$result" -eq 0 ] || [ -z "$result" ] && color="#888888"
 
 # ` `(U+2009) is the Thin Space
 echo "$icon" "$result"

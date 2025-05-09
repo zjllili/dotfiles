@@ -4,7 +4,7 @@
 
 tty_count="$(w -h | wc -l )"
 color="#ffffff"
-[ "$tty_count" -eq 1 ] && color="#a8a196"
+[ "$tty_count" -eq 1 ] && color="#888888"
 
 icon=""
 # ` `(U+2009) is the Thin Space

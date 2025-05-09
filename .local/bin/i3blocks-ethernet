@@ -7,7 +7,7 @@ status="$(cat /sys/class/net/e*/operstate 2>/dev/null)"
 icon=""
 color="#ffffff"
 
-[ "$status" != "up" ] && color="#a8a196"
+[ "$status" != "up" ] && color="#888888"
 
 echo "$icon"
 echo

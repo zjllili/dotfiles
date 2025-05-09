@@ -10,10 +10,20 @@ level="$(cat $POWER/$BAT/capacity)"
 
 case "$status" in
     "Discharging")
-        [ "$level" -lt 20 ] && icon="" color="#a8a196" && break
-        [ "$level" -ge 20 ] && icon="" && break
-        [ "$level" -gt 40 ] && icon="" && break
-        [ "$level" -gt 80 ] && icon="" && break
+        case "$level" in
+            [0-5]) icon="󰂎" ;;
+            [6-9]) icon="󰁺" ;;
+            1[0-9]) icon="󰁻" ;;
+            2[0-9]) icon="󰁼" ;;
+            3[0-9]) icon="󰁽" ;;
+            4[0-9]) icon="󰁽" ;;
+            5[0-9]) icon="󰁾" ;;
+            6[0-9]) icon="󰁿" ;;
+            7[0-9]) icon="󰂀" ;;
+            8[0-9]) icon="󰂁" ;;
+            9[0-9]) icon="󰂂" ;;
+            100)    icon="󰁹" ;;
+        esac
         ;;
     "Not charging")
         icon=""

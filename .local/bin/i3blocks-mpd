@@ -5,7 +5,7 @@
 icon=""
 # sed: remove parentheses`()`, trailing spaces, and ampersand `&` because they break pango
 title="$(mpc current -f "[%title%]" | sed 's/([^()]*)//g; s/[[:space:]-]*$//; s/[&]//g' | cut -c1-40 )"
-[ -z "$title" ] && color="#a8a196"
+[ -z "$title" ] && color="#888888"
 
 # ` `(U+2009) is the Thin Space
 echo "$icon" "<small>$title</small>"
@@ -13,7 +13,7 @@ echo
 
 color="#ffffff"
 if [[ -z "$title" || "$(mpc status | sed -n '2p' )" =~ '[paused]' ]]; then
-    color="#a8a196"
+    color="#888888"
 fi
 
 echo "$color"

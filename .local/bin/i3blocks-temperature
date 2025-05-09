@@ -5,7 +5,13 @@
 policy=/sys/devices/platform/asus-nb-wmi/throttle_thermal_policy
 mode=""
 temperature="$(cat /sys/devices/platform/coretemp.0/hwmon/hwmon*/temp1_input)"
-icon=""
+
+case "$temperature" in
+    [0-9]|[1-2][0-9]000) icon="" ;;
+    [2-4][0-9]000) icon="" ;;
+    [5-7][0-9]000) icon="" ;;
+    [7-9][0-9]000) icon="" ;;
+esac
 
 # ` `(U+2009) is the Thin Space
 echo "$icon" "${temperature::-3}""<small>℃</small>"

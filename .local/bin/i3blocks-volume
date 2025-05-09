@@ -8,7 +8,7 @@ muted="$(echo $status | grep 'MUTED')"
 #exec_always "$HOME"/.local/bin/wobd
 wobfifo="/tmp/wob.fifo"
 
-[ -z "$muted" ] && icon="" color="#ffffff"|| icon="" color="#a8a196"
+[ -z "$muted" ] && icon="" color="#ffffff"|| icon="" color="#888888"
 
 # ` `(U+2009) is the Thin Space
 echo "$icon" "$volume"%

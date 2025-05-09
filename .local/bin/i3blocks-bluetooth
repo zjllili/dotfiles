@@ -7,7 +7,7 @@ color="#ffffff"
 
 level=$(bluetoothctl info | grep -m1 'Battery Percentage' | awk -F'[()]' '{print $2}')
 
-[ -z "$level" ] && color="#a8a196" level="" || level=$level%
+[ -z "$level" ] && color="#888888" level="" || level=$level%
 
 # ` `(U+2009) is the Thin Space
 echo "$icon" "$level"
