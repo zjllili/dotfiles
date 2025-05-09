@@ -25,7 +25,7 @@ if [ -f "$HOME/.cache/city" ]; then
         # check if curl returns a temperature
         if [[ "$wttr_temp" == *°C* ]] ; then
             # remove potential repeating spaces
-            echo "$wttr_temp" | sed 's/[[:space:]]\+/ /g' > "$WTTR_CACHE"
+            echo "$wttr_temp" | sed 's/[[:space:]]\+/ /g; s/°C/<small>℃<\/small>/' > "$WTTR_CACHE"
             #[[ "$wttr_temp" == *°C* ]] && echo "$wttr_temp2" > "$WTTR_CACHE2"
             # adding update timestamp
             #echo "($(date +'%b-%d %a %H:%M'))" >> $HOME/.cache/wttr
