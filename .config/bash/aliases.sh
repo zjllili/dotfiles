@@ -23,6 +23,7 @@ alias la="ls -A"
 alias lla="ls -lhA --time-style=long-iso"
 alias l.="ls -d .*"
 alias ll.="ls -lh -d --time-style=long-iso .*"
+alias lt="ls -lt --time-style=long-iso"
 
 alias less="less -i -F"
 alias bat="bat --style='plain,changes,rule,snip'"
