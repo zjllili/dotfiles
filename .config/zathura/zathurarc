@@ -19,7 +19,7 @@ set recolor true
 set recolor-keephue true
 set statusbar-basename
 set default-bg "#111111"
-set statusbar-bg "#6f3f89"
+set statusbar-bg "#005577"
 set recolor-lightcolor "#111111"
 set recolor-darkcolor "#dddddd"
 set highlight-fg '#005577'

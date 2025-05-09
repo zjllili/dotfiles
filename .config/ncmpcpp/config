@@ -27,6 +27,6 @@ fetch_lyrics_for_current_song_in_background = yes
 
 ### color ###
 main_window_color = 188
-##af5fff
-current_item_prefix = $(135)$r 
-current_item_inactive_column_prefix = $(75)$r
+##005577
+current_item_prefix = $(blue)$r 
+current_item_inactive_column_prefix = $(blue)$r

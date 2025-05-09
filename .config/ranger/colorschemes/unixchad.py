@@ -100,7 +100,7 @@ class Unixchad(ColorScheme):
         elif context.in_titlebar:
             if context.hostname:
                 fg = red if context.bad else white
-                bg = magenta
+                bg = blue
             elif context.directory:
                 fg = 2
                 attr |= bold
@@ -131,7 +131,7 @@ class Unixchad(ColorScheme):
             if context.loaded:
                 bg = self.progress_bar_color
             if context.vcsinfo:
-                fg = blue
+                fg = green
                 attr &= ~bold
             if context.vcscommit:
                 fg = yellow

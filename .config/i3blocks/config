@@ -2,13 +2,13 @@
 # @author nate zhou
 # @since 2025
 
-
 # Global properties
 separator=true
 separator_block_width=4
 markup=pango
-background=#005577
-border=#005577
+color=#ffffff
+background=#222222
+border=#222222
 
 # use i3blocks to do cronjob
 [swaymaxd]
@@ -31,6 +31,17 @@ command= i3blocks-wttr
 interval=once
 signal=7
 
+[mutt]
+command= i3blocks-mutt
+interval=60
+signal=18
+separator_block_width=0
+
+[newsboat]
+command= i3blocks-newsboat
+interval=once
+signal=5
+
 [task]
 command= i3blocks-task
 interval=60
@@ -42,15 +53,11 @@ command= i3blocks-calcurse
 interval=once
 signal=6
 
-[mutt]
-command= i3blocks-mutt
-interval=60
-signal=18
-
 [pacman]
 command= i3blocks-pacman
 interval=once
 signal=4
+separator_block_width=0
 
 [login]
 command= i3blocks-login
@@ -67,6 +74,7 @@ signal=9
 command= i3blocks-usb
 interval=5
 signal=16
+separator_block_width=0
 
 [root]
 command= i3blocks-root
@@ -82,6 +90,7 @@ signal=13
 [memory]
 command= i3blocks-memory
 interval=5
+separator_block_width=0
 
 [cpu]
 command= i3blocks-cpu
@@ -103,11 +112,6 @@ command= i3blocks-ethernet
 interval=10
 signal=11
 
-[bluetooth]
-command= i3blocks-bluetooth
-interval=10
-signal=10
-
 [brightness]
 command= i3blocks-brightness
 interval=once
@@ -124,6 +128,12 @@ command= i3blocks-volume
 interval=once
 signal=1
 
+[bluetooth]
+command= i3blocks-bluetooth
+interval=10
+signal=10
+separator_block_width=0
+
 [battery]
 command= i3blocks-battery
 interval=5
@@ -133,8 +143,3 @@ signal=12
 command= i3blocks-time
 interval=5
 signal=17
-
-[newsboat]
-command= i3blocks-newsboat
-interval=once
-signal=5

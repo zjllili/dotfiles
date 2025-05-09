@@ -7,19 +7,19 @@
 
 color error         bold  red       color235                        # message line error text
 color tilde               color81   color233                        # vi-like tildes marking blank lines
-color message             white     magenta
+color message             white     color4
 color markers       bold  color232  color222                        # wrapped-line /^\+/ markers
 color attachment    bold  blue      color235                        # attachment headers
 color search              color232  color154                        # search patterns in pager
-color status              white     magenta
-color indicator           white     magenta                        # selected email in index
+color status              white     color4
+color indicator           white     color4                        # selected email in index
 color tree          bold  white     color233                        # arrow in threads (`-->')
 
 # message headers ------------------------------------------------------
 
 color hdrdefault          color222  black
 color header              white     black           "^(Date)"
-color header              white     magenta         "^(Subject)"
+color header              white     color4         "^(Subject)"
 
 # body -----------------------------------------------------------------
 

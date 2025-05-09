@@ -5,7 +5,7 @@
 [global]
     monitor = 0
     follow = keyboard
-    width = 250
+    width = 270
     height = (0, 600)
     origin = top-right
     offset = 0x0
@@ -56,13 +56,13 @@
     background = "#111111"
     foreground = "#ffffff"
     frame_color= "#005577"
-    timeout = 10
+    timeout = 5
 
 [urgency_normal]
     background = "#111111"
     foreground = "#ffffff"
-    frame_color = "#6f3f89"
-    timeout = 15
+    frame_color = "#005577"
+    timeout = 12
     override_pause_level = 15
 
 [urgency_critical]

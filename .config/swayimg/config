@@ -28,8 +28,8 @@ fill = no
 antialiasing = yes
 window = #111111
 background = #111111
-select = #6f3f89
-border = #6f3f89
+select = #005577
+border = #005577
 shadow = #000000ff
 
 [list]
