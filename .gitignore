@@ -39,6 +39,7 @@ aur.list
 !etc/udev/
 !etc/udev/rules.d/
 !etc/udev/rules.d/99-lowbat.rules
+!etc/udev/rules.d/99-i3blocks-usb.rules
 !etc/vconsole.conf
 !usr/
 !usr/local/
