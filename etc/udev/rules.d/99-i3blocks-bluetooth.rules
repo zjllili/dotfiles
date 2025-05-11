@@ -1,0 +1,9 @@
+# udev rules to refresh i3blocks-bluetooth module
+# @author nate zhou
+# @since 2025
+# whenever a bluetooth device is added or removed, works fine with audio devices
+
+# for `add` action, subsystem=="bluetooth" doesn't work on my system
+ACTION=="add", SUBSYSTEM=="input", RUN+="/usr/bin/pkill -SIGRTMIN+10 i3blocks"
+# for `remove` action, subsystem=="bluetooth" works but there's also a delay
+ACTION=="remove", SUBSYSTEM=="bluetooth", RUN+="/usr/bin/pkill -SIGRTMIN+10 i3blocks"

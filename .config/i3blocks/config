@@ -130,7 +130,7 @@ signal=1
 
 [bluetooth]
 command= i3blocks-bluetooth
-interval=10
+interval=once
 signal=10
 separator_block_width=0
 
