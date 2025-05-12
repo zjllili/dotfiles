@@ -1,6 +1,8 @@
 #!/usr/bin/sh
 # @author nate zhou
 # @since 2025
+# use udev rules to refresh this i3blocks module
+# `dotfiles/etc/udev/rules.d/99-i3blocks-usb.`
 
 result="$(lsblk -o 'tran' | grep usb | wc -l)"
 

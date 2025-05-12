@@ -72,6 +72,8 @@ signal=9
 
 [usb]
 command= i3blocks-usb
+# use udev rules to refresh this i3blocks module
+# `dotfiles/etc/udev/rules.d/99-i3blocks-usb.`
 interval=once
 signal=16
 separator_block_width=0
@@ -130,6 +132,8 @@ signal=1
 
 [bluetooth]
 command= i3blocks-bluetooth
+# use udev rules to refresh this i3blocks module
+# `dotfiles/etc/udev/rules.d/99-i3blocks-bluetooth.`
 interval=once
 signal=10
 separator_block_width=0
