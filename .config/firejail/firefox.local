@@ -1,5 +1,5 @@
 # @author nate zhou
-# @since 2023,2024
+# @since 2023,2024,2025
 
 # allow access to /media, must use with whitelist to ensure security
 ignore disable-mnt
@@ -22,5 +22,8 @@ whitelist ${HOME}/vid/unixchad
 read-only ${HOME}/vid/unixchad
 whitelist ${HOME}/vid/unixchat
 read-only ${HOME}/vid/unixchat
+
+whitelist /usr/share/doc/arch-wiki
+read-only /usr/share/doc/arch-wiki
 
 novideo
