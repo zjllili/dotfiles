@@ -56,7 +56,7 @@ map o :push %touch<space>
 map O :push %mkdir<space>
 map w $$SHELL
 map i $less "$f"
-map U !du -csh *
+map U !du -csh $f
 map L &footclient nvim $f
 
 map gr cd /
