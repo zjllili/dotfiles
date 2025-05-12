@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # @author nate zhou
 # @since 2025
-# generate keybindings for bash aliases and ranger
+# generate keybindings for bash aliases and ranger & lf
 
 set +x
 author="nate zhou"
@@ -10,6 +10,7 @@ year="2025"
 TELEPORT_CONF="$HOME/.config/bash/teleport.conf"
 TELEPORT_BASH="$HOME/.config/bash/teleport.sh"
 TELEPORT_RANGER="$HOME/.config/ranger/teleport.conf"
+TELEPORT_LF="$HOME/.config/lf/teleport.conf"
 
 usage() {
 cat << _EOF_
@@ -59,9 +60,25 @@ gen_ranger() {
     echo "teleport.conf generated for ranger"
 }
 
+gen_lf() {
+    echo "clearing old bash bindings..."
+    clear_up > "$TELEPORT_LF"
+
+    while IFS= read -r line; do
+        if [[ -n "$line" && "$line" != \#* ]]; then
+            parsed_key="$(echo $line | cut -d'=' -f1)"
+            parsed_dir="$(echo "$line" | cut -d'"' -f2)"
+            printf "map %s cd %s\\n" "$parsed_key" "$parsed_dir" >> "$TELEPORT_LF"
+        fi
+    done <$TELEPORT_CONF
+
+    echo "teleport.conf generated for lf"
+}
+
 gen_all() {
     gen_bash
-    gen_ranger
+    #gen_ranger
+    gen_lf
 }
 
 if [ ! -f "$TELEPORT_CONF" ]; then
@@ -93,6 +110,9 @@ while [ -n "$1" ]; do
             ;;
         -r | --ranger)
             gen_ranger
+            ;;
+        -l | --lf)
+            gen_lf
             ;;
         *)
             echo "invalid option"

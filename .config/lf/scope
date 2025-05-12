@@ -1,0 +1,33 @@
+#!/usr/bin/sh
+# @author nate zhou
+# @since 2025
+# previewer for lf
+# @depends chafa
+
+show_img(){
+    if [ "$XDG_SESSION_TYPE" != "tty" ]; then
+        chafa -f sixel -s "$2x$3" --animate off --polite on -t 1 --bg '#111111' "$1"
+    else
+        catimg -t -w "$2" "$1"
+    fi
+}
+
+case "$(file -Lb --mime-type -- "$1")" in
+    image/*)
+        show_img "$1" "$2" "$3"
+        ;;
+    text/html)
+        w3m "$1"
+        ;;
+    audio/*)
+        mediainfo "$1"
+        ;;
+    */pdf)
+        pdftotext -l 10 -nopgbrk -q -- "$1" -
+        ;;
+    text/*)
+        bat --color always --style="plain" "$1"
+        ;;
+esac
+
+exit1

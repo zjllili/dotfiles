@@ -1,0 +1,183 @@
+# lfrc
+# @author nate zhou
+# since 2025
+
+# nested instances warning
+&[ "$LF_LEVEL" -eq 1 ] || lf -remote "send $id echoerr \"Warning: You're in a nested lf instance!\""
+
+source ~/.config/lf/scope
+source ~/.config/lf/rifle
+source ~/.config/lf/teleport.conf
+
+
+set promptfmt "\033[44m%u@%h\033[00m \033[40m%w/%f"
+set numberfmt "\033[32m"
+set borderfmt "\033[34m"
+set cursoractivefmt "\033[30;43m"
+set cursorparentfmt "\033[30;46m"
+set cursorpreviewfmt "\033[30;46m"
+
+set shell /usr/bin/sh
+set shellopts '-eu'
+set ifs "\n"
+set info size
+set dircounts true
+set dirfirst true
+set relativenumber true
+
+setlocal ~/dls sortby time
+setlocal ~/dls reverse
+setlocal ~/.cache/yay sortby time
+setlocal ~/.cache/yay reverse
+
+# preview
+set preview true
+set sixel true
+set previewer ~/.config/lf/scope
+
+# theme
+set drawbox
+
+# bindings
+## built-in
+map <c-n> half-down
+map <c-p> half-up
+map zp toggle-preview
+map ','
+map '.'
+
+map D delete
+
+map a :rename
+map A :rename; cmd-end
+map I :rename; cmd-home
+map r push A<c-u>
+map o :push %touch<space>
+map O :push %mkdir<space>
+map w $$SHELL
+map i $less "$f"
+map U !du -csh *
+map L &footclient nvim $f
+
+map gr cd /
+map gh cd ~
+map ge cd /etc
+map gu cd /usr
+map gd cd /dev
+map go cd /opt
+map gv cd /var
+map gm cd /mnt
+map gs cd /srv
+map gt cd /tmp
+
+map W $~/.local/bin/setwall $f
+
+map xc $~/.local/bin/gpg-cipher $f
+map xd $~/.local/bin/gpg-doc $f
+map xp $~/.local/bin/gpg-pic $f
+map xv $~/.local/bin/gpg-vid $f
+
+map xi $mid3v2 -l $f | less -i
+map xm $mediainfo $f | less -i
+map xe $exiftool $f | less -i
+map xs $swayimg -r
+
+map xR $~/.local/bin/rename-dlp $fx
+map xL $~/.local/bin/rename-lowercase $fx
+map xS $~/.local/bin/rename-space $fx
+map xI $~/.local/bin/rename-title-id3v2 $fx
+
+## commands
+cmd toggle-preview %{{
+    if [ "$lf_preview" = true ]; then
+        lf -remote "send $id :set preview false; set ratios 1:5"
+    else
+        lf -remote "send $id :set preview true; set ratios 1:2:3"
+    fi
+}}
+
+cmd fzf_jump ${{
+    res="$(find . | fzf --reverse --prompt "lf >")"
+    if [ -n "$res" ]; then
+        if [ -d "$res" ]; then
+            cmd="cd"
+        else
+            cmd="select"
+        fi
+        res="$(printf '%s' "$res" | sed 's/\\/\\\\/g;s/"/\\"/g')"
+        lf -remote "send $id $cmd \"$res\""
+    fi
+}}
+map xf fzf_jump
+
+cmd bulk-rename ${{
+    old="$(mktemp)"
+    new="$(mktemp)"
+    if [ -n "$fs" ]; then
+        fs="$(basename -a -- $fs)"
+    else
+        fs="$(ls)"
+    fi
+    printf '%s\n' "$fs" > "$old"
+    printf '%s\n' "$fs" > "$new"
+    $EDITOR "$new"
+    [ "$(wc -l < "$new")" -ne "$(wc -l < "$old")" ] && exit
+    paste "$old" "$new" | while IFS= read -r names; do
+        src="$(printf '%s' "$names" | cut -f1)"
+        dst="$(printf '%s' "$names" | cut -f2)"
+        if [ "$src" = "$dst" ] || [ -e "$dst" ]; then
+            continue
+        fi
+        mv -- "$src" "$dst"
+    done
+    rm -- "$old" "$new"
+    lf -remote "send $id unselect"
+}}
+map xb bulk-rename
+
+# y (select for copy) and P to paste symlink
+# d (select for cut) and P to paste hard link
+cmd link %{{
+    set -- $(cat ~/.local/share/lf/files)
+    mode="$1"
+    shift
+    if [ "$#" -lt 1 ]; then
+        lf -remote "send $id echoerr no files to link"
+        exit
+    fi
+    case "$mode" in
+        # 'copy' mode indicates a symlink
+        copy) ln -sr -t . -- "$@";;
+        # while 'move' mode indicates a hard link
+        move)
+            ln -t . -- "$@"
+            lf -remote "send clear"
+            ;;
+    esac
+}}
+map P :link
+
+cmd on-cd &{{
+    bash -c '
+    # display git repository status in your prompt
+    source /usr/share/git/completion/git-prompt.sh
+
+    GIT_PS1_SHOWDIRTYSTATE=1        # + for staged, * if unstaged
+    GIT_PS1_SHOWSTASHSTATE=1        # $ if something is stashed.
+    GIT_PS1_SHOWUNTRACKEDFILES=1    # % if there are untracked files
+    GIT_PS1_SHOWUPSTREAM=1 	        # <, >, <> behind, ahead, or diverged from upstream.
+    GIT_PS1_STATESEPARATOR=" " 	    # separator between branch name and state symbols
+    GIT_PS1_DESCRIBE_STYLE=1 	    # show commit relative to tag or branch, when detached HEAD
+    GIT_PS1_SHOWCOLORHINTS=1        # display in color
+
+    git=$(__git_ps1 " %s")
+    # set promptfmt "\033[44m%u@%h\033[00m \033[40m%w/%f"
+    fmt="\033[44m%u@%h\033[00m \033[40m%w/%f$git\033[0m"
+    lf -remote "send $id set promptfmt \"$fmt\""
+    '
+}}
+
+cmd lf-mirror &{{
+    footclient lf
+}}
+map xl lf-mirror

@@ -1,0 +1,34 @@
+#!/usr/bin/sh
+# @author nate zhou
+# @since 2025
+# file opener for lf
+
+cmd open &{{
+    case $(file --mime-type -Lb $f) in
+        image/x-xcf)
+            gimp $fx
+            ;;
+        image/*)
+            swayimg $fx
+            ;;
+        video/*|audio/*)
+            mpv --loop $fx
+            ;;
+        */pdf|*/epub)
+            zathura $fx
+            ;;
+		doc|docx|xls|xlsx|odt|ppt|pptx)
+            libreoffice $fx
+            ;;
+        text/html)
+            firejail firefox $fx
+            ;;
+        text/*)
+            lf -remote "send $id \$$EDITOR \$fx"
+            #footclient nvim $fx
+            ;;
+        *)
+            for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done
+            ;;
+    esac
+}}

@@ -164,7 +164,7 @@ alias vm="virt-manager"
 alias swayimg="swayimg --class swayimgapp" # sway window border per app_id
 
 # env
-alias Er="echo RANGER_LEVEL=$RANGER_LEVEL"
+#alias Er="echo RANGER_LEVEL=$RANGER_LEVEL"
 
 # legacy
 #alias x="startx"

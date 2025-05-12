@@ -28,9 +28,10 @@ A few software need manually setup:
 - Terminal Emulator:    foot
 - Editor:               neovim
 - Email Client:         neomutt + isync
-- File manager:         ranger
+- File manager:         lf
 - Music player:         ncmpcpp
-- Video player:         mpv Image Viewer:         swayimg
+- Video player:         mpv
+- Image Viewer:         swayimg
 - Ebook Reader:         zathura
 - Rss Feeder:           newsboat
 - Calender:             calcurse

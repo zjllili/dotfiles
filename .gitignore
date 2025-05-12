@@ -116,6 +116,11 @@ aur.list
 !.config/i3blocks/
 !.config/i3blocks/config
 !.config/i3blocks/config-2
+!.config/lf/
+!.config/lf/lfrc
+!.config/lf/scope
+!.config/lf/commands
+!.config/lf/rifle
 !.config/mpd/
 !.config/mpd/mpd.conf
 !.config/mpv/

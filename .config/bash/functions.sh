@@ -13,9 +13,9 @@ help() {
     [ "$?" -eq 0 ] && echo "$help_output" | /usr/bin/less -i
 }
 
-# avoid nested ranger
-ranger() {
-    [ -z "$RANGER_LEVEL" ] && /usr/bin/ranger "$@" || exit &>/dev/null
+# avoid nested lf
+lf() {
+    [ -z "$LF_LEVEL" ] && /usr/bin/lf "$@" || exit &>/dev/null
 }
 
 # print the 16 terminal colors
