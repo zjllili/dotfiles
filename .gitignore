@@ -121,6 +121,8 @@ aur.list
 !.config/lf/scope
 !.config/lf/commands
 !.config/lf/rifle
+!.config/lf/colors
+!.config/lf/teleport.conf
 !.config/mpd/
 !.config/mpd/mpd.conf
 !.config/mpv/
