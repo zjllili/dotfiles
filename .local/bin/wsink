@@ -13,6 +13,7 @@ fi
 
 [ -z "$selected_sink" ] && exit 0
 
-notify-send -u low -r 1259 "$(basename "$0")" "Default sink changed to $selected_sink"
+[ "$XDG_SESSION_TYPE" != "tty" ] && notify-send -u low -r 1259 "$(basename "$0")" "Default sink changed to $selected_sink"
 
 pactl set-default-sink "$selected_sink"
+pkill -SIGRTMIN+1 i3blocks >/dev/null &
