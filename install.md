@@ -416,7 +416,7 @@ ttyper
 mpv ncmpcpp mpd mpc
 
 ### multi-media editor
-ffmpeg python-mutagen imagemagick mediainfo perl-image-exiftool perl-rename
+ffmpeg ffmpegthumbnailer python-mutagen imagemagick mediainfo perl-image-exiftool perl-rename
 kdenlive gimp
 
 ### virtualization

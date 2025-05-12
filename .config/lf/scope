@@ -4,9 +4,11 @@
 # previewer for lf
 # @depends chafa
 
+CACHE="$HOME/.cache/lf/tmp"
+
 show_img(){
     if [ "$XDG_SESSION_TYPE" != "tty" ]; then
-        chafa -f sixel -s "$2x$3" --animate off --polite on -t 1 --bg '#111111' "$1"
+        /usr/bin/chafa -f sixel -s "$2x$3" --animate off --polite on -t 1 --bg '#111111' "$1"
     else
         catimg -t -w "$2" "$1"
     fi
@@ -16,6 +18,10 @@ case "$(file -Lb --mime-type -- "$1")" in
     image/*)
         show_img "$1" "$2" "$3"
         ;;
+    video/*)
+        /usr/bin/ffmpegthumbnailer -i "$1" -s 240 -q 5 -o "$CACHE"
+        /usr/bin/chafa "$CACHE" "$@" -f sixel -s "$2x$3"
+        ;;
     text/html)
         w3m "$1"
         ;;
@@ -23,7 +29,7 @@ case "$(file -Lb --mime-type -- "$1")" in
         mediainfo "$1"
         ;;
     */pdf)
-        pdftotext -l 10 -nopgbrk -q -- "$1" -
+        /usr/bin/pdftotext -l 10 -nopgbrk -q -- "$1" -
         ;;
     text/*)
         bat --color always --style="plain" "$1"
