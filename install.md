@@ -384,7 +384,7 @@ nmcli device wifi connect <ssid> password <password> hidden yes
 ## 2.5 install user packages
 ```markdown
 ### basic tools
-dash vim neovim ranger fzf tmux git rsync openssh openbsd-netcat udisks2 zip unzip unrar-free tree bc calc pacman-contrib archlinux-contrib reuild-detector arch-install-scripts dosfstools exfat-utils jq
+dash vim neovim lf fzf tmux git rsync openssh openbsd-netcat udisks2 zip unzip unrar-free tree bc calc pacman-contrib archlinux-contrib reuild-detector arch-install-scripts dosfstools exfat-utils jq
 ### system configuration
 networkmanager brightnessctl tlp ufw firejail cronie bluez-utils bluetui efibootmgr sbctl
 
@@ -449,8 +449,6 @@ libreoffice-still
 ```markdown
 ### helper
 yay
-### fix
-ranger-git brn2-git
 
 ### xoauth2 for isync
 cyrus-sasl-xoauth2-git
