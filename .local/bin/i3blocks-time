@@ -8,7 +8,7 @@
 echo "$(date '+%b-%d <small>%a</small> %H:%M')"
 
 case $BLOCK_BUTTON in
-    3) notify-send -u low -r 3301 "$(cal | sed '/^[[:space:]]*$/d')"
+    3) $HOME/.local/bin/wcal
         ;;
     4) dunstctl close >/dev/null &
         ;;
