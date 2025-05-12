@@ -24,6 +24,7 @@ set info size
 set dircounts true
 set dirfirst true
 set relativenumber true
+set truncatepct 50
 
 setlocal ~/dls sortby time
 setlocal ~/dls reverse
