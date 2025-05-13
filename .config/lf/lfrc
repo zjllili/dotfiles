@@ -8,7 +8,7 @@
 source ~/.config/lf/scope
 source ~/.config/lf/rifle
 source ~/.config/lf/teleport.conf
-
+source ~/.config/lf/local.conf
 
 set promptfmt "\033[44m%u@%h\033[00m \033[40m%w/%f"
 set numberfmt "\033[32m"
@@ -27,11 +27,6 @@ set relativenumber true
 set truncatepct 50
 set watch true
 set ratios 1:3:4
-
-setlocal ~/dls sortby time
-setlocal ~/dls reverse
-setlocal ~/.cache/yay sortby time
-setlocal ~/.cache/yay reverse
 
 # preview
 set preview true

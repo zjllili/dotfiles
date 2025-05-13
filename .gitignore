@@ -119,10 +119,10 @@ aur.list
 !.config/lf/
 !.config/lf/lfrc
 !.config/lf/scope
-!.config/lf/commands
 !.config/lf/rifle
 !.config/lf/colors
 !.config/lf/teleport.conf
+!.config/lf/local.conf
 !.config/mpd/
 !.config/mpd/mpd.conf
 !.config/mpv/
