@@ -4,7 +4,10 @@
 # previewer for lf
 # @depends chafa
 
-CACHE="$HOME/.cache/lf/tmp"
+# move temp file to memory instead of writting to disk
+CACHE_DIR="/tmp/$USER"
+CACHE="/tmp/$USER/lf-scope"
+[ -d "$CACHE_DIR" ] || mkdir -m 700 "$CACHE"
 
 show_img(){
     if [ "$XDG_SESSION_TYPE" != "tty" ]; then
@@ -23,13 +26,18 @@ case "$(file -Lb --mime-type -- "$1")" in
         ;;
     video/*)
         /usr/bin/ffmpegthumbnailer -i "$1" -s 240 -q 5 -o "$CACHE"
-        /usr/bin/chafa "$CACHE" "$@" -f sixel -s "$2x$3"
-        ;;
-    text/html)
-        w3m "$1"
+        show_img "$CACHE" "$2" "$3"
         ;;
     audio/*)
         mediainfo "$1"
+        ;;
+    application/epub+zip)
+        /usr/bin/gnome-epub-thumbnailer "$1" "$CACHE".png
+        show_img "$CACHE".png "$2" "$3"
+        ;;
+    application/pdf)
+        /usr/bin/pdftoppm -f 1 -l 1 -singlefile -jpeg "$1" "$CACHE"
+        show_img "$CACHE".jpg "$2" "$3"
         ;;
     application/zip)
         zipinfo "$1" | "$PAGER"
@@ -37,8 +45,8 @@ case "$(file -Lb --mime-type -- "$1")" in
     application/*tar|application/*zip*|application/zstd|application/*xz)
         tar vvtf "$1" | "$PAGER"
         ;;
-    */pdf)
-        /usr/bin/pdftotext -l 10 -nopgbrk -q -- "$1" -
+    text/html)
+        w3m "$1"
         ;;
     text/*)
         bat --color always --style="plain" "$1"
