@@ -26,6 +26,7 @@ set dirfirst true
 set relativenumber true
 set truncatepct 50
 set watch true
+set ratios 1:3:4
 
 setlocal ~/dls sortby time
 setlocal ~/dls reverse
@@ -48,7 +49,12 @@ map '.'
 ## built-in
 map <c-n> half-down
 map <c-p> half-up
+map H jump-prev
+map L jump-next
+map J half-down
+map K half-up
 map zp toggle-preview
+map ` !true
 
 cmap <tab> cmd-menu-complete
 cmap <backtab> cmd-menu-complete-back
@@ -63,8 +69,8 @@ map o :push %touch<space>
 map O :push %mkdir<space>
 map w $$SHELL
 map i $less "$f"
-map U !du -csh $f
-map L &footclient nvim $f
+map U !du -csh $fx
+map E &footclient nvim $f
 
 map gr cd /
 map gh cd ~
