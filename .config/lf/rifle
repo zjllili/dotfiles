@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+# vim:ft=lf
 # @author nate zhou
 # @since 2025
 # file opener for lf
@@ -14,17 +14,17 @@ cmd open &{{
         video/*|audio/*)
             mpv --loop $fx
             ;;
+        */pdf|*/epub*)
+            zathura $fx
+            ;;
+		doc|docx|xls|xlsx|odt|ppt|pptx)
+            libreoffice $fx
+            ;;
         application/zip)
             lf -remote "send $id \$zipinfo \$f | less -i"
             ;;
         application/*tar|application/*zip*|application/zstd|application/*xz)
             lf -remote "send $id \$tar vvtf \$f | less -i"
-            ;;
-        */pdf|*/epub)
-            zathura $fx
-            ;;
-		doc|docx|xls|xlsx|odt|ppt|pptx)
-            libreoffice $fx
             ;;
         text/html)
             firejail firefox $fx
