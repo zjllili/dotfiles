@@ -41,12 +41,17 @@ set previewer ~/.config/lf/scope
 set drawbox
 
 # bindings
+## unmap
+map ','
+map '.'
+
 ## built-in
 map <c-n> half-down
 map <c-p> half-up
 map zp toggle-preview
-map ','
-map '.'
+
+cmap <tab> cmd-menu-complete
+cmap <backtab> cmd-menu-complete-back
 
 map D delete
 
