@@ -384,7 +384,7 @@ nmcli device wifi connect <ssid> password <password> hidden yes
 ## 2.5 install user packages
 ```markdown
 ### basic tools
-dash vim neovim lf chafa fzf tmux git rsync openssh openbsd-netcat udisks2 zip unzip unrar-free tree bc calc pacman-contrib archlinux-contrib reuild-detector arch-install-scripts dosfstools exfat-utils jq
+dash vim neovim lf fzf tmux git rsync openssh openbsd-netcat udisks2 zip unzip unrar-free tree bc calc pacman-contrib archlinux-contrib reuild-detector arch-install-scripts dosfstools exfat-utils jq
 ### system configuration
 networkmanager brightnessctl tlp ufw firejail cronie bluez-utils bluetui efibootmgr sbctl
 
@@ -407,7 +407,7 @@ pipewire pipewire-alsa pipewire-pulse pipewire-jack noise-suppression-for-voice 
 adobe-source-code-pro-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-font-awesome ttf-nerd-fonts-symbols
 
 ### file viewer
-swayimg zathura zathura-pdf-mupdf bat catimg
+swayimg zathura zathura-pdf-mupdf bat catimg chafa gnome-epub-thumbnailer poppler ffmpegthumbnailer
 
 ### touch typing in a terminal
 ttyper
@@ -416,7 +416,7 @@ ttyper
 mpv ncmpcpp mpd mpc
 
 ### multi-media editor
-ffmpeg ffmpegthumbnailer python-mutagen imagemagick mediainfo perl-image-exiftool perl-rename
+ffmpeg python-mutagen imagemagick mediainfo perl-image-exiftool perl-rename
 kdenlive gimp
 
 ### virtualization
