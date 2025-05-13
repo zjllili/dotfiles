@@ -19,7 +19,8 @@ show_img(){
 
 case "$(file -Lb --mime-type -- "$1")" in
     image/*xcf)
-        exiftool "$1" | "$PAGER"
+        convert "$1" -flatten -quality 20 "$CACHE".jpg
+        show_img "$CACHE".jpg "$2" "$3"
         ;;
     image/*)
         show_img "$1" "$2" "$3"
