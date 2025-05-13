@@ -28,11 +28,23 @@ case "$(file -Lb --mime-type -- "$1")" in
     audio/*)
         mediainfo "$1"
         ;;
+    application/zip)
+        zipinfo "$1" | "$PAGER"
+        ;;
+    application/*tar|application/*zip*|application/zstd|application/*xz)
+        tar vvtf "$1" | "$PAGER"
+        ;;
     */pdf)
         /usr/bin/pdftotext -l 10 -nopgbrk -q -- "$1" -
         ;;
     text/*)
         bat --color always --style="plain" "$1"
+        ;;
+    application/octet-stream)
+        file -b "$1"
+        ;;
+    *)
+        cat "$1"
         ;;
 esac
 

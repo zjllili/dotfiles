@@ -84,6 +84,7 @@ map xm $mediainfo $f | less -i
 map xe $exiftool $f | less -i
 map xs $swayimg -r
 map xf $file -L $fx | less -i
+map xF $file -L --mime-type $fx | less -i
 
 map xR $~/.local/bin/rename-dlp $fx
 map xL $~/.local/bin/rename-lowercase $fx

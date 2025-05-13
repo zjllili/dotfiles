@@ -14,6 +14,12 @@ cmd open &{{
         video/*|audio/*)
             mpv --loop $fx
             ;;
+        application/zip)
+            lf -remote "send $id \$zipinfo \$f | less -i"
+            ;;
+        application/*tar|application/*zip*|application/zstd|application/*xz)
+            lf -remote "send $id \$tar vvtf \$f | less -i"
+            ;;
         */pdf|*/epub)
             zathura $fx
             ;;
@@ -23,12 +29,11 @@ cmd open &{{
         text/html)
             firejail firefox $fx
             ;;
-        text/*)
+        text/*|*/json)
             lf -remote "send $id \$$EDITOR \$fx"
-            #footclient nvim $fx
             ;;
-        *)
-            for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done
-            ;;
+        #*)
+        #    for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done
+        #    ;;
     esac
 }}
