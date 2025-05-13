@@ -4,10 +4,14 @@
 # previewer for lf
 # @depends chafa
 
-# move temp file to memory instead of writting to disk
-CACHE_DIR="/tmp/$USER"
-CACHE="/tmp/$USER/lf-scope"
-[ -d "$CACHE_DIR" ] || mkdir -m 700 "$CACHE"
+## move temp file to memory instead of writting to disk
+#CACHE_DIR="/tmp/$USER"
+#[ -d "$CACHE_DIR" ] || mkdir -m 700 "$CACHE"
+#CACHE="/tmp/$USER/lf-scope"
+
+## save a cache file for faster preview
+[ -d "$HOME/.cache/lf" ] || mkdir "$HOME/.cache/lf"
+
 
 show_img(){
     if [ "$XDG_SESSION_TYPE" != "tty" ]; then
@@ -19,15 +23,22 @@ show_img(){
 
 case "$(file -Lb --mime-type -- "$1")" in
     image/*xcf)
-        convert "$1" -flatten -quality 20 "$CACHE".jpg
-        show_img "$CACHE".jpg "$2" "$3"
+        # create a cache for every file, if 2 files have the same size+name+last_modified_date, it has the same hash
+        # DO NOT preview the cache directory `.cache/lf/` otherwise it never stops growing
+        # `shasum` is faster than other `sha*sum`
+        CACHE="$HOME/.cache/lf/$(stat --printf '%s%n%Y' "$(readlink -f "$1")" | shasum | cut -d' ' -f1)"
+        [ -f "${CACHE}.jpg" ] || convert "$1" -flatten -quality 30 "${CACHE}.jpg"
+        show_img "${CACHE}.jpg" "$2" "$3"
         ;;
     image/*)
+        CACHE="$HOME/.cache/lf/$(stat --printf '%s%n%Y' "$(readlink -f "$1")" | shasum | cut -d' ' -f1)"
+        [ -f "${CACHE}.jpg" ] || convert "$1" -quality 30 "${CACHE}.jpg"
         show_img "$1" "$2" "$3"
         ;;
     video/*)
-        /usr/bin/ffmpegthumbnailer -i "$1" -s 240 -q 5 -o "$CACHE"
-        show_img "$CACHE" "$2" "$3"
+        CACHE="$HOME/.cache/lf/$(stat --printf '%s%n%Y' "$(readlink -f "$1")" | shasum | cut -d' ' -f1)"
+        [ -f "${CACHE}.jpg" ] || /usr/bin/ffmpegthumbnailer -i "$1" -s 480 -q 5 -o "${CACHE}.jpg"
+        show_img "${CACHE}.jpg" "$2" "$3"
         ;;
     audio/*)
         mid3v2 -l "$1"
@@ -35,11 +46,14 @@ case "$(file -Lb --mime-type -- "$1")" in
         mediainfo "$1"
         ;;
     application/epub+zip)
-        /usr/bin/gnome-epub-thumbnailer "$1" "$CACHE".png
+        CACHE="$HOME/.cache/lf/$(stat --printf '%s%n%Y' "$(readlink -f "$1")" | shasum | cut -d' ' -f1)"
+        [ -f "${CACHE}.png" ] || /usr/bin/gnome-epub-thumbnailer "$1" "$CACHE".png
         show_img "$CACHE".png "$2" "$3"
         ;;
     application/pdf)
-        /usr/bin/pdftoppm -f 1 -l 1 -singlefile -jpeg "$1" "$CACHE"
+        CACHE="$HOME/.cache/lf/$(stat --printf '%s%n%Y' "$(readlink -f "$1")" | shasum | cut -d' ' -f1)"
+        # `pdftoppm` already adds `.jpg` extension, don't duplicate
+        [ -f "${CACHE}.jpg" ] || /usr/bin/pdftoppm -f 1 -l 1 -singlefile -jpeg "$1" "$CACHE"
         show_img "$CACHE".jpg "$2" "$3"
         ;;
     application/zip)
