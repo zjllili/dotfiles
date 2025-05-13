@@ -15,6 +15,9 @@ show_img(){
 }
 
 case "$(file -Lb --mime-type -- "$1")" in
+    image/*xcf)
+        exiftool "$1" | "$PAGER"
+        ;;
     image/*)
         show_img "$1" "$2" "$3"
         ;;
