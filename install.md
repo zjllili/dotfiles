@@ -455,6 +455,9 @@ cyrus-sasl-xoauth2-git
 
 ### themes
 adwaita-qt5 adwaita-qt5 fcitx5-skin-fluentdark-git
+
+### etc
+wshowkeys-mao-git
 ```
 
 ### [example] compile and install

@@ -32,7 +32,7 @@ alias whatis="whatis -l"
 alias sync="~/.local/bin/sync-notify"
 
 ## GUI
-alias wshowkeys="wshowkeys -a bottom -b '#11111188'"
+alias wshowkeys="wshowkeys -a bottom -b '#11111188' -F 'SourceCodePro 28'"
 
 ## hardware
 alias du="du -h -d 1"
