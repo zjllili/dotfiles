@@ -6,7 +6,7 @@
 ln            # LINK
 di          󰝰  # DIR
 fi            # FILE
-ex             # EXEC or             # ORPHAN
+or             # ORPHAN
 tw             # STICKY_OTHER_WRITABLE
 ow             # OTHER_WRITABLE
 st             # STICKY
@@ -38,6 +38,7 @@ ex             # EXEC
 *.ppt       󰈧
 *.pptx      󰈧
 *.odp       󰈧
+*.qcow2     󰋊
 
 *.tar       
 *.tgz       
@@ -154,6 +155,9 @@ ex             # EXEC
 *.toml      
 *.db        
 *.sql       
+*.sqlite    
+*.sqlite2   
+*.sqlite3   
 *.dump      
 
 *.js        
