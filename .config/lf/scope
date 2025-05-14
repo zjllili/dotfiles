@@ -62,6 +62,9 @@ case "$(file -Lb --mime-type -- "$1")" in
     application/*tar|application/*zip*|application/zstd|application/*xz)
         tar vvtf "$1" | "$PAGER"
         ;;
+    application/*opendocument*)
+        odt2txt "$1";
+        ;;
     text/html)
         w3m "$1"
         ;;

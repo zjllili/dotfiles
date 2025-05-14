@@ -407,7 +407,7 @@ pipewire pipewire-alsa pipewire-pulse pipewire-jack noise-suppression-for-voice 
 adobe-source-code-pro-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-font-awesome ttf-nerd-fonts-symbols
 
 ### file viewer
-swayimg zathura zathura-pdf-mupdf bat catimg chafa gnome-epub-thumbnailer poppler ffmpegthumbnailer
+swayimg zathura zathura-pdf-mupdf bat catimg chafa gnome-epub-thumbnailer poppler ffmpegthumbnailer odt2txt
 
 ### touch typing in a terminal
 ttyper
