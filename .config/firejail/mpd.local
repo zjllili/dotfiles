@@ -2,5 +2,6 @@
 # @since 2023,2024
 
 noblacklist ${HOME}/mus/*
+noblacklist ${HOME}/.local/state/mpd.log
 include blacklist-common.local
 include blacklist-gpg.local
