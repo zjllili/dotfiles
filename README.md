@@ -1,11 +1,11 @@
-## How Do I Setup Arch Linux?
+## My Arch Install
 [install.md](./install.md)
 
-## What Is This Repository?
-<img src="./misc/screenshot01.png" alt="drawing" width="480"/>
-<img src="./misc/screenshot02.png" alt="drawing" width="480"/>
+## What Is This?
+<img src="./misc/screenshot01.png" alt="drawing" width="320"/>
+<img src="./misc/screenshot02.png" alt="drawing" width="320"/>
 
-## How To Use This Repository?
+## How To Use?
 ```sh
 # Clone this repository on codeberg
 git clone https://codeberg.org/unixchad/dotfiles
@@ -20,9 +20,11 @@ A few software need manually setup:
 - Software whose config files located outside of the `$HOME`
 - Software listed in `./.stow-local-ignore`
 
-## Software I Use
-- Distro:               Arch Linux
-- Shell:                bash
+## Software I Use Everyday
+```
+- Distro:               arch
+- Default Shell:        dash
+- Login Shell:          bash
 - Window Manager:       sway
 - Status bar:           i3blocks
 - Terminal Emulator:    foot
@@ -36,9 +38,11 @@ A few software need manually setup:
 - Rss Feeder:           newsboat
 - Calender:             calcurse
 - Todo:                 taskwarrior
+```
 
 If you wanna konw more, dig into my [config files](./.config) and
-[scripts](.local/bin), or check my videos if you speak Chinese:
+[scripts](.local/bin), many of which I've also covered in my videos, check it
+if you speak Chinese:
 
 ## My Chinese Video Channel
 [unixchad at bilibili](https://space.bilibili.com/34569411)
