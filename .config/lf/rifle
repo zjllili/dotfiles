@@ -15,7 +15,7 @@ cmd open &{{
             mpv --loop $fx
             ;;
         audio/*)
-            footclient mpv --loop $fx
+            [ "$XDG_SESSION_TYPE" = "tty" ] && mpv --loop $fx || footclient mpv --loop $fx
             ;;
         */pdf|*/epub*)
             zathura $fx
