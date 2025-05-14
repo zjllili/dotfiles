@@ -110,9 +110,9 @@ map gl $clear; git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Cre
 ## commands
 cmd toggle-preview %{{
     if [ "$lf_preview" = true ]; then
-        lf -remote "send $id :set preview false; set ratios 1:5"
+        lf -remote "send $id :set preview false; set ratios 1:7"
     else
-        lf -remote "send $id :set preview true; set ratios 1:2:3"
+        lf -remote "send $id :set preview true; set ratios 1:3:4"
     fi
 }}
 
