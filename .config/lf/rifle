@@ -11,8 +11,11 @@ cmd open &{{
         image/*)
             [ "$XDG_SESSION_TYPE" = "tty" ] && mpv --loop $fx || swayimg $fx
             ;;
-        video/*|audio/*)
+        video/*)
             mpv --loop $fx
+            ;;
+        audio/*)
+            footclient mpv --loop $fx
             ;;
         */pdf|*/epub*)
             zathura $fx
