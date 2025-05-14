@@ -123,6 +123,7 @@ aur.list
 !.config/lf/colors
 !.config/lf/teleport.conf
 !.config/lf/local.conf
+!.config/lf/icons
 !.config/mpd/
 !.config/mpd/mpd.conf
 !.config/mpv/

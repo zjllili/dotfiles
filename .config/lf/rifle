@@ -17,7 +17,7 @@ cmd open &{{
         */pdf|*/epub*)
             zathura $fx
             ;;
-		doc|docx|xls|xlsx|odt|ppt|pptx)
+		application/*opendocument*|*officedocument*)
             libreoffice $fx
             ;;
         application/zip)
@@ -29,7 +29,7 @@ cmd open &{{
         text/html)
             firejail firefox $fx
             ;;
-        text/*|*/json)
+        text/*|*/json|inode/x-empty)
             lf -remote "send $id \$$EDITOR \$fx"
             ;;
         #*)
