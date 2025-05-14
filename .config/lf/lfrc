@@ -10,12 +10,18 @@ source ~/.config/lf/rifle
 source ~/.config/lf/teleport.conf
 source ~/.config/lf/local.conf
 
-set promptfmt "\033[44m%u@%h\033[00m \033[40m%w/%f"
+#set promptfmt "\033[44m%u@%h\033[00m \033[40m%w/%f"
 set numberfmt "\033[32m"
 set borderfmt "\033[34m"
 set cursoractivefmt "\033[30;43m"
 set cursorparentfmt "\033[30;46m"
-#set cursorpreviewfmt "\033[37m"
+set cursorpreviewfmt "\033[01;40m"
+set timefmt "2006-01-02 15:04"
+set copyfmt "\033[7;32m"
+set cutfmt "\033[7;31m"
+set selectfmt "\033[7;35m"
+set rulerfmt "%a| %p| \033[7;31m %m \033[0m| \033[7;32m %c \033[0m| \033[7;35m %s \033[0m| \033[7;34m %f \033[0m| %i/%t"
+set statfmt "\033[32m%p\033[0m| %c| %u| %g| %S| %t| -> %l"
 
 set shell /usr/bin/sh
 set shellopts '-eu'
@@ -60,12 +66,12 @@ map a :rename
 map A :rename; cmd-end
 map I :rename; cmd-home
 map r push A<c-u>
-map o :push %touch<space>
-map O :push %mkdir<space>
 map w $$SHELL
-map i $less "$f"
+map i $bat --color always --style plain "$f"
+
 map U !du -csh $fx
 map E &footclient nvim $f
+map Y $printf '%s' "$fx" | wl-copy
 
 map gr cd /
 map gh cd ~
@@ -96,6 +102,9 @@ map xR $~/.local/bin/rename-dlp $fx
 map xL $~/.local/bin/rename-lowercase $fx
 map xS $~/.local/bin/rename-space $fx
 map xI $~/.local/bin/rename-title-id3v2 $fx
+
+## Git
+map gl $clear; git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 
 ## commands
 cmd toggle-preview %{{
@@ -167,6 +176,22 @@ cmd link %{{
 }}
 map P :link
 
+cmd touch %{{
+    IFS=" "
+    file="$*"
+    touch -- "$file"
+    lf -remote "send $id select \"$(printf '%s' "$file" | sed 's/\\/\\\\/g;s/"/\\"/g')\""
+}}
+map o push :touch<space>
+
+cmd mkdir %{{
+    IFS=" "
+    file="$*"
+    mkdir -p -- "$file"
+    lf -remote "send $id select \"$(printf '%s' "$file" | sed 's/\\/\\\\/g;s/"/\\"/g')\""
+}}
+map O push :mkdir<space>
+
 cmd on-cd &{{
     bash -c '
     # display git repository status in your prompt
@@ -181,13 +206,13 @@ cmd on-cd &{{
     GIT_PS1_SHOWCOLORHINTS=1        # display in color
 
     git=$(__git_ps1 " %s")
-    # set promptfmt "\033[44m%u@%h\033[00m \033[40m%w/%f"
     fmt="\033[44m%u@%h\033[00m \033[40m%w/%f$git\033[0m"
     lf -remote "send $id set promptfmt \"$fmt\""
     '
 }}
+on-cd
 
 cmd lf-mirror &{{
     footclient lf
 }}
-map xl lf-mirror
+map N lf-mirror
