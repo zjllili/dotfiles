@@ -33,7 +33,7 @@ cmd open &{{
             firejail firefox $fx
             ;;
         text/*|*/json|inode/x-empty)
-            lf -remote "send $id \$$EDITOR \$fx"
+            lf -remote "send $id \$$EDITOR -p \$fx"
             ;;
         #*)
         #    for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done
