@@ -104,6 +104,9 @@ map zd :{{
     set dironly!
 }}
 
+map zf :{{
+    set dirfirst!
+}}
 cmap <tab> cmd-menu-complete
 cmap <backtab> cmd-menu-complete-back
 
