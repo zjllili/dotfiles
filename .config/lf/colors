@@ -19,29 +19,34 @@ di      01;39   # DIR
 #ex      01;32   # EXEC
 #fi      00      # FILE
 
-.git/       00;90
-*.gitignore 00;90
-*.stow-local-ignore 00;90
-LICENSE.*   00;94
+.git/       00;94
+*.gitignore 00;94
+*.stow-local-ignore 00;94
+LICENSE.*   00;99
 
 *.example   00;96
 *.backup    00;90
 
+*.mpdignore 00;93
+*.hook      00;93
 *config     00;93
+*.config    00;93
+*.rules     00;93
 *.conf      00;93
 *.ini       00;93
 *.conf      00;93
 *.yaml      00;93
 *.toml      00;93
+*.css       00;93
 
 
-*.gpg       00;99
-*.key       00;99
-*.sig       00;99
-*.asc       00;99
-*.rev       00;99
-*.pub       00;99
-*.sec       00;99
+*.gpg       00;91
+*.key       00;93
+#*.sig       00;93
+#*.asc       00;93
+*.rev       00;93
+*.pub       00;93
+*.sec       00;93
 *.xcf       00;93
 *.kdenlive  00;93
 *.pdf       00;95

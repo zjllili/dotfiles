@@ -18,6 +18,18 @@ su             # SETUID
 sg             # SETGID
 ex             # EXEC
 
+LICENSE.*   
+*.list      
+.git/       
+*.gitignore 
+*.stow-local-ignore 
+*.mpdignore 
+*.bashrc    
+*.bash_profile 
+*.profile   
+*.inputrc   
+*.config    
+*.rules     
 /etc        
 /home       󰋜
 /mnt        󰋊
@@ -29,7 +41,7 @@ ex             # EXEC
 ~/doc       󱧶
 ~/doc/git/  
 ~/doc/code/ 
-~/doc/note/ 󰣞
+~/doc/note/ 󰠮
 ~/mus       󱍙
 ~/pic       󰉏
 ~/vid       󱜗
@@ -44,11 +56,12 @@ ex             # EXEC
 ~/.gnupg    󰢬
 ~/.ssh      󰢬
 .gpg/       󰉐
+.gnupg/     󰉐
 
 *.gpg       
 *.key       󰌆
-*.sig       󰌆
-*.asc       󰌆
+*.sig       󱜥
+*.asc       󱜥
 *.rev       󰌆
 *.pub       󰌆
 *.sec       󰌆
