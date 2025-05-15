@@ -26,6 +26,7 @@ A few software need manually setup:
 - Login Shell:          bash
 - Window Manager:       sway
 - Status bar:           i3blocks
+- Launcher:             wmenu
 - Terminal Emulator:    foot
 - Editor:               neovim
 - Email Client:         neomutt + isync
