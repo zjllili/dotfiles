@@ -96,6 +96,14 @@ map st :{{
     set reverse!
 }}
 
+map zc :{{
+    set dircounts!
+    calcdirsize
+}}
+map zd :{{
+    set dironly!
+}}
+
 cmap <tab> cmd-menu-complete
 cmap <backtab> cmd-menu-complete-back
 
