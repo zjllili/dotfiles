@@ -121,20 +121,20 @@ signal=3
 
 [microphone]
 command= i3blocks-microphone
-interval=once
+interval=60
 signal=2
 separator_block_width=0
 
 [volume]
 command= i3blocks-volume
-interval=once
+interval=60
 signal=1
 
 [bluetooth]
 command= i3blocks-bluetooth
 # use udev rules to refresh this i3blocks module
 # `dotfiles/etc/udev/rules.d/99-i3blocks-bluetooth.`
-interval=once
+interval=60
 signal=10
 separator_block_width=0
 
