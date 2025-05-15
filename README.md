@@ -2,8 +2,7 @@
 [install.md](./install.md)
 
 ## What Is This?
-<img src="./misc/screenshot01.png" alt="drawing" width="320"/>
-<img src="./misc/screenshot02.png" alt="drawing" width="320"/>
+<img src="./misc/screenshot03.png" alt="drawing" width="720"/>
 
 ## How To Use?
 ```sh
