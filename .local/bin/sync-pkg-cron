@@ -14,8 +14,8 @@ current_time=$(date +%s)
 UPDATE_FREQUENCY=604800 # in seconds, 7d
 
 sync_pkg() {
-    rsync -avh --delete --progress /var/cache/pacman/pkg/ $HOME/pkg/pacman/
-    rsync -avh --delete --progress $HOME/.cache/yay/ $HOME/pkg/yay/
+    rsync -avh --delete-after --progress /var/cache/pacman/pkg/ $HOME/pkg/pacman/
+    rsync -avh --delete-after --progress $HOME/.cache/yay/ $HOME/pkg/yay/
     echo "$(date): synced" > $LOG_CACHE
 }
 
