@@ -147,7 +147,7 @@ bindsym $mod+Control+r exec swaymsg "output * bg ~/.local/share/wallpaper fill"
 bindsym $mod+Shift+e exec ~/.local/bin/swayexit
 bindsym $mod+Shift+q exec ~/.local/bin/swayhibe
 # clipboard & bookmarks
-bindsym $mod+b exec ~/.local/bin/wclip
+bindsym $mod+z exec ~/.local/bin/wclip
 bindsym $mod+a exec ~/.local/bin/wbookmark
 bindsym $mod+Shift+a exec ~/.local/bin/wbookmark-record
 # notification
