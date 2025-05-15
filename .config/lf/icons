@@ -18,6 +18,33 @@ su             # SETUID
 sg             # SETGID
 ex             # EXEC
 
+/etc        
+/home       󰋜
+/mnt        󰋊
+/opt        󰻂
+/srv        
+/root       󰴉
+
+~           󰋜
+~/doc       󱧶
+~/doc/git/  
+~/doc/code/ 
+~/doc/note/ 󰣞
+~/mus       󱍙
+~/pic       󰉏
+~/vid       󱜗
+~/dls       󰉍
+~/smb       󰡰
+~/mnt       󰋊
+~/pkg       󱧼
+~/.config   󱂀
+~/.cache    󰪻
+~/.local    󱉮
+
+~/.gnupg    󰢬
+~/.ssh      󰢬
+.gpg/       󰉐
+
 *.gpg       
 *.key       󰌆
 *.sig       󰌆
@@ -202,3 +229,7 @@ ex             # EXEC
 *.diff      󰅩
 *.go        
 *.rss       󰅩
+
+*.AppImage  
+*.exe       
+*.apk       󰀲
