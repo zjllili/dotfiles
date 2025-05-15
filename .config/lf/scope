@@ -62,6 +62,13 @@ case "$(file -Lb --mime-type -- "$1")" in
     application/*tar|application/*zip*|application/zstd|application/*xz)
         tar vvtf "$1" | "$PAGER"
         ;;
+    application/x-bittorrent)
+        /usr/bin/transmission-show "$1" | "$PAGER"
+        ;;
+    application/x-iso*)
+        # `iso-info` command from `libcdio`
+        iso-info "$1" | "$PAGER"
+        ;;
     application/*opendocument*)
         odt2txt "$1";
         ;;
