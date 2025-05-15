@@ -116,6 +116,7 @@ aur.list
 !.config/i3blocks/
 !.config/i3blocks/config
 !.config/i3blocks/config-2
+!.config/lesskey
 !.config/lf/
 !.config/lf/lfrc
 !.config/lf/scope
