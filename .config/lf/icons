@@ -39,6 +39,8 @@ ex             # EXEC
 *.pptx      󰈧
 *.odp       󰈧
 *.qcow2     󰋊
+*.torrent   
+*.iso       󰻂
 
 *.tar       
 *.tgz       
