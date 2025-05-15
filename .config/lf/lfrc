@@ -117,7 +117,7 @@ map A :rename; cmd-end
 map I :rename; cmd-home
 map r push A<c-u>
 map w $$SHELL
-map i $bat --color always --style plain "$f"
+map i $bat --color always --style plain,changes "$f"
 
 map U !du -csh $fx
 map E &footclient nvim $f
