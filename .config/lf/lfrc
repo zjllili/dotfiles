@@ -47,6 +47,13 @@ set drawbox
 ## unmap
 map ','
 map '.'
+map "'"
+map '"'
+map ';'
+map m
+map t
+map '['
+map ']'
 
 ## built-in
 map <c-n> half-down
@@ -106,6 +113,7 @@ map E &footclient nvim $f
 map Y $printf '%s' "$fx" | wl-copy
 
 map gr cd /
+map g/ cd /
 map gh cd ~
 map ge cd /etc
 map gu cd /usr
