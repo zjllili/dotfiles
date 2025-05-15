@@ -57,6 +57,7 @@ map J half-down
 map K half-up
 map zp toggle-preview
 map ` !true
+map F :filter
 
 cmap <tab> cmd-menu-complete
 cmap <backtab> cmd-menu-complete-back
