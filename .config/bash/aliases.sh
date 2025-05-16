@@ -69,7 +69,7 @@ alias fglf=" fzf --bind=ctrl-j:preview-down,ctrl-k:preview-up --preview 'git log
 
 # abbreviation
 ## directory
-alias .r=". ~/.bash_profile && . ~/.bashrc"
+alias .r=". ~/.profile && . ~/.bashrc"
 alias ..="cd .."
 alias ...="cd ../.."
 
