@@ -20,14 +20,17 @@ display_volume_level = yes
 display_bitrate = yes
 external_editor = nvim
 use_console_editor = yes
+regular_expressions = extended
+media_library_column_width_ratio_two = 1:2
+media_library_column_width_ratio_three = 3:3:2
 
 # lyrics
 follow_now_playing_lyrics = yes
-fetch_lyrics_for_current_song_in_background = yes
+fetch_lyrics_for_current_song_in_background = no
 
 ### color ###
 main_window_color = 188
-##005577
 current_item_prefix = $(yellow)$r
 current_item_inactive_column_prefix = $(7)$r
 selected_item_prefix = $4
+playlist_disable_highlight_delay = 0
