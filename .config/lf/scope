@@ -27,12 +27,17 @@ case "$(file -Lb --mime-type -- "$1")" in
         # DO NOT preview the cache directory `.cache/lf/` otherwise it never stops growing
         # `shasum` is faster than other `sha*sum`
         CACHE="$HOME/.cache/lf/$(stat --printf '%s%n%Y' "$(readlink -f "$1")" | shasum | cut -d' ' -f1)"
-        [ -f "${CACHE}.jpg" ] || convert "$1" -flatten -quality 30 "${CACHE}.jpg"
+        [ -f "${CACHE}.jpg" ] || convert "$1" -flatten -quality 50 "${CACHE}.jpg"
         show_img "${CACHE}.jpg" "$2" "$3"
         ;;
+    #image/gif)
+    #    CACHE="$HOME/.cache/lf/$(stat --printf '%s%n%Y' "$(readlink -f "$1")" | shasum | cut -d' ' -f1)"
+    #    [ -f "${CACHE}.jpg" ] || convert "$1"[0] -quality 50 "${CACHE}.jpg"
+    #    show_img "$1" "$2" "$3"
+    #    ;;
     image/*)
-        CACHE="$HOME/.cache/lf/$(stat --printf '%s%n%Y' "$(readlink -f "$1")" | shasum | cut -d' ' -f1)"
-        [ -f "${CACHE}.jpg" ] || convert "$1" -quality 30 "${CACHE}.jpg"
+        #CACHE="$HOME/.cache/lf/$(stat --printf '%s%n%Y' "$(readlink -f "$1")" | shasum | cut -d' ' -f1)"
+        #[ -f "${CACHE}.jpg" ] || convert "$1" -quality 50 "${CACHE}.jpg"
         show_img "$1" "$2" "$3"
         ;;
     video/*)
@@ -42,8 +47,8 @@ case "$(file -Lb --mime-type -- "$1")" in
         ;;
     audio/*)
         mid3v2 -l "$1"
-        echo ---
-        mediainfo "$1"
+        #echo ---
+        #mediainfo "$1"
         ;;
     application/epub+zip)
         CACHE="$HOME/.cache/lf/$(stat --printf '%s%n%Y' "$(readlink -f "$1")" | shasum | cut -d' ' -f1)"
