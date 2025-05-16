@@ -8,7 +8,7 @@ MAIL_DIR="$HOME/doc/mail"
 icon="󰇮"
 color="#ffffff"
 
-result="$(find "$MAIL_DIR"/*/INBOX/new/ -type f | wc -l)"
+result="$(find "$MAIL_DIR"/*/{INBOX,Junk}/new/ -type f | wc -l)"
 
 [ "$result" -eq 0 ] && color="#888888"
 
