@@ -17,7 +17,7 @@ set smartcase       " search case insensitive; if upper exists sensitive;
 
 set number
 set relativenumber
-set cc=80
+set cc=78
 set cursorline
 set cursorcolumn
 match ExtraWhitespace /\s\+$/ " space at the end of lines
@@ -71,13 +71,20 @@ map <leader>H :TSToggle highlight<CR>
 " don't comment on new line
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-" git
 augroup git
     autocmd!
     " Enable spell check for Git commit
     autocmd FileType gitcommit setlocal spell spelllang=en_us
     " Set column count to 72 for Git commit
     autocmd FileType gitcommit setlocal cc=72
+augroup END
+
+augroup mutt
+    autocmd!
+    " spell check
+    autocmd BufRead,BufNewFile /tmp/neomutt-* setlocal spell spelllang=en_us
+    " column width
+    autocmd BufRead,BufNewFile /tmp/neomutt-* setlocal cc=72
 augroup END
 
 " vim-plug
