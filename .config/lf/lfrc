@@ -113,7 +113,8 @@ map D delete
 map a :rename
 map A :rename; cmd-end
 map I :rename; cmd-home
-map r push A<c-u>
+map r push a<c-u>
+map R push A<c-u>
 map w $$SHELL
 map i $bat --color always --style plain,changes --pager 'less -R' "$f"
 
