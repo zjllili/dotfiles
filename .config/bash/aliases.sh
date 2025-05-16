@@ -129,7 +129,7 @@ alias pd="pactree -d1"
 alias pv="pactree -rd1"
 
 ## git
-alias gs="git status"
+alias gs="git status -s 2>/dev/null"
 alias gsh="git show"
 
 alias gb="git branch"
