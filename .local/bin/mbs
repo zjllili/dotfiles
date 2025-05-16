@@ -2,4 +2,5 @@
 # @author nate zhou
 # @since 2025
 
-mbsync -a && [ "$(pgrep -x i3blocks)" ] && pkill -SIGRTMIN+18 i3blocks
+mbsync -a
+pkill -SIGRTMIN+18 i3blocks
