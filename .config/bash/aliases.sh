@@ -54,7 +54,7 @@ alias ,,="~/.local/bin/teleport-genesis-search"
 ### fzf text editor
 alias fvi="fzf --bind='enter:execute(nvim {+}),ctrl-j:preview-down,ctrl-k:preview-up'"
 ### fzf image preview
-alias fimg="find -type f \( -name "*.png" -o -name "*.jpeg" -o -name "*.jpg" -o -name "*.webp" \) | fzf --bind=ctrl-j:preview-down,ctrl-k:preview-up --preview 'catimg -w100 {}' --preview-window=90%:bottom: --bind='enter:execute(swayimg {})'"
+alias fimg="find -type f \( -name '*.png' -o -name '*.jpeg' -o -name '*.jpg' -o -name '*.webp' \) | fzf --bind=ctrl-j:preview-down,ctrl-k:preview-up --preview 'catimg -w100 {}' --preview-window=90%:bottom: --bind='enter:execute(swayimg {})'"
 ### fzf directory preview
 alias ftree="realpath * | fzf --bind=ctrl-j:preview-down,ctrl-k:preview-up --prompt='ftree: ' --reverse --preview 'tree -L1 {}'"
 ### fzf package info preview
@@ -72,9 +72,6 @@ alias fglf=" fzf --bind=ctrl-j:preview-down,ctrl-k:preview-up --preview 'git log
 alias .r=". ~/.bash_profile && . ~/.bashrc"
 alias ..="cd .."
 alias ...="cd ../.."
-
-alias ?="pwd"
-alias ??="realpath"
 
 alias Gi="cd /run/media/$USER/ && pwd"
 

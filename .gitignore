@@ -49,8 +49,10 @@ aur.list
 
 !.inputrc
 !.bashrc
+!.zshrc
 !.bash_aliases
 !.bash_profile
+!.profile
 !.config/bash/
 !.config/bash/aliases.sh
 !.config/bash/teleport.sh
