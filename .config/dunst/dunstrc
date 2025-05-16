@@ -55,7 +55,7 @@
     background = "#111111"
     foreground = "#dddddd"
     frame_color= "#00435e"
-    timeout = 5
+    timeout = 7
 
 [urgency_normal]
     background = "#111111"
