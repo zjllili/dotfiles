@@ -62,6 +62,7 @@ macro attach,compose \cb "<pipe-entry> urlscan<Enter>" "call urlscan to extract 
  set sort_aux=last-date-received
 
 ## sidebar
+set sidebar_width=20
 set sidebar_visible # comment to disable sidebar by default
 set sidebar_short_path
 set sidebar_folder_indent
