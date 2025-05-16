@@ -12,8 +12,8 @@ folder-hook 'account1' 'source ~/.config/mutt/account1'
 folder-hook 'account2' 'source ~/.config/mutt/account2'
 
 ## switch accounts (Fn)
-macro index <f2> "<enter-command>unmailboxes *<enter><enter-command>source ~/.config/mutt/account1<enter><sync-mailbox><change-folder>!<enter>"
-macro index <f3> "<enter-command>unmailboxes *<enter><enter-command>source ~/.config/mutt/account2<enter><sync-mailbox><change-folder>!<enter>"
+macro index ,1 "<enter-command>unmailboxes *<enter><enter-command>source ~/.config/mutt/account1<enter><sync-mailbox><change-folder>!<enter>"
+macro index ,2 "<enter-command>unmailboxes *<enter><enter-command>source ~/.config/mutt/account2<enter><sync-mailbox><change-folder>!<enter>"
 ## update offline mail (Shift+u)
 macro index,pager U "<sync-mailbox><enter-command>unset wait_key<enter><shell-escape>mbsync -a<enter><enter-command>set wait_key<enter>" "Sync Mailbox"
 
