@@ -27,7 +27,7 @@ set dirfirst true
 set relativenumber true
 set truncatepct 50
 set watch true
-set ratios 1:3:4
+set ratios 1:1
 set icons true
 set drawbox
 
