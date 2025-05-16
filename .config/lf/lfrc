@@ -130,7 +130,6 @@ map gd cd /dev
 map go cd /opt
 map gv cd /var
 map gm cd /mnt
-map gs cd /srv
 map gt cd /tmp
 
 map W $~/.local/bin/setwall $f
@@ -154,6 +153,7 @@ map xI $~/.local/bin/rename-title-id3v2 $fx
 
 ## Git
 map gl $clear; git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+map gs $clear; git status -v | less -i
 
 ## commands
 cmd toggle-preview %{{
