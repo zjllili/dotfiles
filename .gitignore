@@ -178,7 +178,6 @@ aur.list
 !.config/ttyper/language/built-in
 !.config/tmux/
 !.config/tmux/tmux.conf
-!.config/tmux/tmux.fancy.conf
 !.config/vim/
 !.config/vim/vimrc
 !.config/wget/
