@@ -54,6 +54,7 @@ unmailboxes *
 set spoolfile = "+INBOX"
 unset record # outlook and gmail auto saves sent to here
 set trash = "+Deleted" # delete mails will be saved to here
+set postponed = "+Drafts"
 mailboxes "=INBOX" "=Drafts" "=Sent" "=Junk" "=Deleted" "=Archive"
 
 ## check for all IMAP folders
