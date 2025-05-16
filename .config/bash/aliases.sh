@@ -94,7 +94,7 @@ alias reboot="systemctl reboot"
 
 ## cli/tui
 alias vim="nvim"
-alias mutt="$HOME/.local/bin/mutt-i3blocks"
+alias mutt="neomutt"
 
 alias tsk="task";
 alias twt="taskwarrior-tui"
