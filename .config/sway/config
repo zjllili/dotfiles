@@ -140,20 +140,26 @@ bindsym $mod+Return exec $term
 bindsym $mod+Shift+Return exec $term -T "Floating Term"
 bindsym $mod+Control+Return exec $term -T "Scratchpad Tmux" $HOME/.local/bin/tmuxd
 bindsym $mod+r exec $term lf
-bindsym $mod+CONTROL+m exec $term neomutt
+bindsym $mod+CONTROL+e exec $term neomutt
+bindsym $mod+CONTROL+m exec $term ncmpcpp
+bindsym $mod+CONTROL+b exec $term bluetui
+bindsym $mod+CONTROL+p exec $term pulsemixer
+bindsym $mod+CONTROL+t exec $term btop
+bindsym $mod+CONTROL+c exec $term calcurse
+bindsym $mod+CONTROL+n exec $term news
+bindsym $mod+CONTROL+w exec $term taskwarrior-tui
 
 bindsym $mod+Shift+r reload
 bindsym $mod+Control+r exec swaymsg "output * bg ~/.local/share/wallpaper fill"
 bindsym $mod+Shift+e exec ~/.local/bin/swayexit
 bindsym $mod+Shift+q exec ~/.local/bin/swayhibe
 # clipboard & bookmarks
-bindsym $mod+z exec ~/.local/bin/wclip
-bindsym $mod+a exec ~/.local/bin/wbookmark
-bindsym $mod+Shift+a exec ~/.local/bin/wbookmark-record
+bindsym $mod+c exec ~/.local/bin/wclip
+bindsym $mod+b exec ~/.local/bin/wbookmark
+bindsym $mod+Shift+b exec ~/.local/bin/wbookmark-record
 # notification
-bindsym $mod+n exec "dunstctl history-pop"
-bindsym $mod+Shift+n exec "dunstctl close"
-bindsym $mod+CONTROL+n exec "dunstctl close-all"
+bindsym $mod+Shift+n exec "dunstctl history-pop"
+bindsym $mod+n exec "dunstctl close"
 bindsym $mod+backspace exec "dunstctl close-all"
 # swaylock is configured at ~/.config/swaylock/config
 bindsym $mod+Shift+CONTROL+l exec "swaylock"
@@ -172,7 +178,7 @@ bindsym $mod+Shift+minus exec wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 2%- &&  wp
 bindsym $mod+Shift+equal exec wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 2%+ &&  wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | sed 's/[^0-9]//g; s/^0//' > $wobfifo && pkill -SIGRTMIN+2 i3blocks
 bindsym $mod+Shift+m exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle && pkill -SIGRTMIN+2 i3blocks
 
-bindsym $mod+CONTROL+p exec mpc toggle
+bindsym $mod+CONTROL+space exec mpc toggle
 
 ## take a screenshot with a selected part
 bindsym $mod+g exec ~/.local/bin/wshot
@@ -180,7 +186,7 @@ bindsym $mod+Shift+g exec ~/.local/bin/wshot-geo
 ## take a screenshot with all monitors
 bindsym $mod+CONTROL+g exec grim && notify-send -u low -r 88 "Screenshot taken on all outputs"
 ## color picker
-bindsym $mod+Shift+p exec ~/.local/bin/wpicker
+#bindsym $mod+CONTROL+c exec ~/.local/bin/wpicker
 # seat cursor
 #bindsym $mod+grave seat - cursor set 0 0
 bindsym $mod+slash seat - cursor set 9999 9999
@@ -327,7 +333,7 @@ bindsym $mod+CONTROL+8 move container to workspace number 8; workspace number 8
 bindsym $mod+CONTROL+9 move container to workspace number 9; workspace number 9
 bindsym $mod+CONTROL+0 move container to workspace number 10:0; workspace number 10:0
 
-#bindsym $mod+tab workspace back_and_forth
+bindsym $mod+tab workspace back_and_forth
 bindsym $mod+comma workspace prev_on_output
 bindsym $mod+period workspace next_on_output
 bindsym $mod+Shift+comma move container to workspace prev_on_output
@@ -353,21 +359,19 @@ assign [title="_placeholder_window2"] workspace =
 workspace - output DP-1
 workspace = output eDP-1
 # use i3blocks as a GUI crontab to execute swaymaxd
-bindsym $mod+CONTROL+f exec "~/.local/bin/swaymaxd"
+bindsym $mod+grave exec "~/.local/bin/swaymaxd"
 bindsym $mod+f exec "~/.local/bin/swaymax"
 
 bindsym $mod+Shift+space floating toggle
-bindsym $mod+Shift+c resize set width 1580 px, resize set height 860 px, move position center
-bindsym $mod+CONTROL+c move position center
+bindsym $mod+Shift+c move position center
 bindsym $mod+Shift+t sticky toggle
 bindsym $mod+space focus mode_toggle
 
 bindsym $mod+p focus parent
-bindsym $mod+c focus child
+bindsym $mod+Shift+p focus child
 
 bindsym $mod+Shift+s move scratchpad
-bindsym $mod+tab scratchpad show
-bindsym $mod+CONTROL+tab exec $HOME/.local/bin/swaypad
+bindsym $mod+a scratchpad show
 
 bindsym $mod+y resize shrink width 30px
 bindsym $mod+u resize grow height 30px
