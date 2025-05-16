@@ -33,7 +33,7 @@ signal=7
 
 [mutt]
 command= i3blocks-mutt
-interval=60
+interval=once
 signal=18
 separator_block_width=0
 

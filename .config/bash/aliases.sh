@@ -95,7 +95,6 @@ alias reboot="systemctl reboot"
 ## cli/tui
 alias vim="nvim"
 alias mutt="neomutt"
-alias mbs="mbsync -a && pkill -SIGRTMIN+18 i3blocks"
 
 alias tsk="task";
 alias twt="taskwarrior-tui"

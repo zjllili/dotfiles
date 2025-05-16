@@ -3,19 +3,7 @@
 # @since 2023,2024,2025
 
 set editor = "nvim"
-
 source ~/.config/mutt/unixchad.neomuttrc
-source "~/.config/mutt/account1"
-source "~/.config/mutt/account2"
-
-folder-hook 'account1' 'source ~/.config/mutt/account1'
-folder-hook 'account2' 'source ~/.config/mutt/account2'
-
-## switch accounts (Fn)
-macro index ,1 "<enter-command>unmailboxes *<enter><enter-command>source ~/.config/mutt/account1<enter><sync-mailbox><change-folder>!<enter>"
-macro index ,2 "<enter-command>unmailboxes *<enter><enter-command>source ~/.config/mutt/account2<enter><sync-mailbox><change-folder>!<enter>"
-## update offline mail (Shift+u)
-macro index,pager U "<sync-mailbox><enter-command>unset wait_key<enter><shell-escape>mbsync -a<enter><enter-command>set wait_key<enter>" "Sync Mailbox"
 
 # GPG encryption and signature
 set crypt_use_gpgme=yes
@@ -26,7 +14,25 @@ set crypt_autosign = no
 set crypt_autoencrypt = no
 set crypt_autopgp = yes
 
-## vim-like keybindings
+## group conversation
+set sort=threads
+set sort=reverse-date
+set sort_aux=last-date-received
+
+## sidebar
+set sidebar_width=20
+set sidebar_visible
+set sidebar_short_path
+set sidebar_folder_indent
+set sidebar_format = "%B %* [%?N?%N / ?%S]"
+set mail_check_stats
+
+## auto read html messages in w3m
+set mailcap_path = ~/.config/mutt/mailcap
+auto_view text/html
+
+
+## keybindings
 bind pager,browser		    h			exit
 bind attach,alias			h			exit
 bind pager				    l			view-attachments
@@ -48,39 +54,22 @@ bind pager				    H			display-toggle-weed
 bind attach,index,pager 	\CD 		next-page
 bind attach,index,pager 	\CU 		previous-page
 
-## read html messages in w3m
-set mailcap_path = ~/.config/mutt/mailcap
-auto_view text/html
-
-## view urls in a browser with ctrl+b
-macro index,pager \cb "<pipe-message> urlscan<Enter>" "call urlscan to extract URLs out of a message"
-macro attach,compose \cb "<pipe-entry> urlscan<Enter>" "call urlscan to extract URLs out of a message"
-
-## group conversation
- set sort=threads
- set sort=reverse-date
- set sort_aux=last-date-received
-
-## sidebar
-set sidebar_width=20
-set sidebar_visible # comment to disable sidebar by default
-set sidebar_short_path
-set sidebar_folder_indent
-set sidebar_format = "%B %* [%?N?%N / ?%S]"
-set mail_check_stats
+### sidebar
 bind index,pager \CK sidebar-prev
 bind index,pager \CJ sidebar-next
 bind index,pager \CL sidebar-open
-## toggle side bar (Shift+b)
-bind index,pager B sidebar-toggle-visible
+bind index,pager \CB sidebar-toggle-visible
 
+### sync offline mail nc (Shift+S)
+macro index,pager S "<sync-mailbox><enter-command>unset wait_key<enter><shell-escape>$HOME/.local/bin/mbs<enter><enter-command>set wait_key<enter>" "Sync Mailbox"
 
-## Allow mutt to open a new IMAP connection automatically
-#unset imap_passive
+# account
+source "~/.config/mutt/account1"
+source "~/.config/mutt/account2"
 
-## keep the IMAP connection alive by polling intermittently (in seconds)
-#set imap_keepalive = 300
+folder-hook 'account1' 'source ~/.config/mutt/account1'
+folder-hook 'account2' 'source ~/.config/mutt/account2'
 
-## How often to check for new mail (in seconds)
-#set mail_check = 120
-
+## switch accounts (,+1)
+macro index ,1 "<enter-command>unmailboxes *<enter><enter-command>source ~/.config/mutt/account1<enter><sync-mailbox><change-folder>!<enter>"
+macro index ,2 "<enter-command>unmailboxes *<enter><enter-command>source ~/.config/mutt/account2<enter><sync-mailbox><change-folder>!<enter>"
