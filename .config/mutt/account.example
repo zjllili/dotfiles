@@ -50,6 +50,8 @@ set folder = "~/doc/mail/account1"
 #set folder = "imaps://outlook.office365.com"
 unmailboxes *
 set spoolfile = "+INBOX"
+# unset sent dir because outlook and gmail auto saves it
+unset record
 mailboxes "=INBOX" "=Drafts" "=Sent" "=Junk" "=Deleted" "=Archive"
 
 ## check for all IMAP folders
