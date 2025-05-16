@@ -134,6 +134,7 @@ aur.list
 !.config/mutt/muttrc
 !.config/mutt/mailcap
 !.config/mutt/account.example
+!.config/mutt/account.md
 !.config/mutt/unixchad.neomuttrc
 !.config/ncmpcpp/
 !.config/ncmpcpp/bindings
