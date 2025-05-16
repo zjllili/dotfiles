@@ -9,6 +9,6 @@ icon=""
 echo "<b>$icon</b>" "$usage"%
 
 case $BLOCK_BUTTON in
-    3) notify-send -u low -r 3301 "$icon $(basename $0)" "$(mpstat | awk 'NR > 2{print $4 "\t" $6 "\t" $13}')"
+    3) notify-send -u low -r 3301 -t 15000 "$icon $(basename $0)" "$(ps axch -o cmd:20,%cpu --sort=-%cpu | head)"
         ;;
 esac
