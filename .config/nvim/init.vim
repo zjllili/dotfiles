@@ -71,15 +71,12 @@ map <leader>H :TSToggle highlight<CR>
 " don't comment on new line
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-" Enable spell check for Git commit
-augroup git_commit_spell
+" git
+augroup git
     autocmd!
+    " Enable spell check for Git commit
     autocmd FileType gitcommit setlocal spell spelllang=en_us
-augroup END
-
-" Set column count to 72 for Git commit
-augroup git_commit_cc
-    autocmd!
+    " Set column count to 72 for Git commit
     autocmd FileType gitcommit setlocal cc=72
 augroup END
 
