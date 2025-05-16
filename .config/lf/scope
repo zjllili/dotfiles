@@ -73,10 +73,10 @@ case "$(file -Lb --mime-type -- "$1")" in
         odt2txt "$1";
         ;;
     text/html)
-        w3m "$1"
+        firejail --net=none w3m "$1"
         ;;
     text/*)
-        bat --color always --style="plain,changes" "$1"
+        bat --color always --style="plain" "$1"
         ;;
     application/octet-stream)
         file -b "$1"
