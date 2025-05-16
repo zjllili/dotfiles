@@ -20,7 +20,7 @@ color tree          bold  white     color233    # arrow in threads (`-->')
 
 color hdrdefault          white     color233
 color header              white     color233       "^(Date)"
-color header              white     color4      "^(Subject)"
+color header              white     blue      "^(Subject)"
 
 # body -----------------------------------------------------------------
 
