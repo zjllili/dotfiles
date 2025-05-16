@@ -18,7 +18,7 @@ echo
 echo "$color"
 
 case $BLOCK_BUTTON in
-    3) notify-send -u low -r 3301 "$icon $(basename $0)" "$(lsblk -rpo 'name,type,size,label,mountpoint,fstype,tran' | grep 'usb' | sed 's/\ +/\ /')"
+    3) notify-send -u low -r 3301 "$icon $(basename $0)" "$(lsblk -rpo 'name,type,size,fstype,tran' | grep 'usb' | sed 's/\ +/\ /; s/usb*//')"
         ;;
     1) pkill -SIGRTMIN +16 i3blocks &
         ;;
