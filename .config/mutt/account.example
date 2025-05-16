@@ -23,6 +23,8 @@
 ## 5. open url in browser and enter password, copy the code from the last part
 ##    of the URL and enter for mutt_oauth2.py # 6. run neomutt, `~/.gnupg/gpg.conf`
 
+#set pgp_sign_as=0x123456789
+
 ## IMAP
 #set imap_user = "<user>@outlook.com"
 set imap_user = "<user>@outlook.com"
@@ -63,15 +65,3 @@ mailboxes "=INBOX" "=Drafts" "=Sent" "=Junk" "=Deleted" "=Archive"
 #set message_cachedir = "~/.cache/mutt/account1/bodies"
 
 #set certificate_file = "~/.cache/mutt/account1/certificates"
-
-# GPG Signature
-set crypt_use_gpgme=yes
-set postpone_encrypt = yes
-set pgp_self_encrypt = yes
-set crypt_use_pka = no
-set crypt_autosign = no
-set crypt_autoencrypt = no
-set crypt_autopgp = yes
-# choose a public key to sign, check key id with below:
-# `gpg --keyid-format 0xLONG -K --fingerprint`
-#set pgp_sign_as=0x123456789

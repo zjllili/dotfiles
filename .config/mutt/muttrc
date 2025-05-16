@@ -17,6 +17,15 @@ macro index <f3> "<enter-command>unmailboxes *<enter><enter-command>source ~/.co
 ## update offline mail (Shift+u)
 macro index,pager U "<sync-mailbox><enter-command>unset wait_key<enter><shell-escape>mbsync -a<enter><enter-command>set wait_key<enter>" "Sync Mailbox"
 
+# GPG encryption and signature
+set crypt_use_gpgme=yes
+set postpone_encrypt = yes
+set pgp_self_encrypt = yes
+set crypt_use_pka = no
+set crypt_autosign = no
+set crypt_autoencrypt = no
+set crypt_autopgp = yes
+
 ## vim-like keybindings
 bind pager,browser		    h			exit
 bind attach,alias			h			exit
@@ -73,3 +82,4 @@ bind index,pager B sidebar-toggle-visible
 
 ## How often to check for new mail (in seconds)
 #set mail_check = 120
+
