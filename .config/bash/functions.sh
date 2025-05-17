@@ -57,3 +57,8 @@ osc7_cwd() {
     printf '\e]7;file://%s%s\e\\' "${HOSTNAME}" "${encoded}"
 }
 PROMPT_COMMAND=${PROMPT_COMMAND:+${PROMPT_COMMAND%;}; }osc7_cwd
+
+lfcd() {
+    cd "$(command lf -print-last-dir "$@")"
+}
+bind '"\C-o":"lfcd\C-m"'
