@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/usr/bin/env bash
 # @author nate zhou
 # @since 2025
 # i3blocks module to count unread emails in mutt
@@ -8,6 +8,7 @@ MAIL_DIR="$HOME/doc/mail"
 icon="󰇮"
 color="#ffffff"
 
+# brace expansion is not POSIX-compliant
 result="$(find "$MAIL_DIR"/*/{INBOX,Junk}/new/ -type f | wc -l)"
 
 [ "$result" -eq 0 ] && color="#888888"
