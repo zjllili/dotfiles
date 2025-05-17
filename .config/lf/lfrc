@@ -27,7 +27,7 @@ set dirfirst true
 set relativenumber true
 set truncatepct 50
 set watch true
-set ratios 1:2
+set ratios 1:2:3
 set icons true
 set drawbox
 
@@ -161,9 +161,9 @@ map gs $clear; git status -v | less -i
 ## commands
 cmd toggle-preview %{{
     if [ "$lf_preview" = true ]; then
-        lf -remote "send $id :set preview false; set ratios 1:999; set info size:time"
+        lf -remote "send $id :set preview false; set ratios 1:5 set info size:time"
     else
-        lf -remote "send $id :set preview true; set ratios 1:2"
+        lf -remote "send $id :set preview true; set ratios 1:2:3"
     fi
 }}
 
