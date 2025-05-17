@@ -9,7 +9,7 @@ cmd open &{{
             gimp $fx
             ;;
         image/*)
-            [ "$XDG_SESSION_TYPE" = "tty" ] && mpv --loop $fx || swayimg $fx
+            [ "$XDG_SESSION_TYPE" = "tty" ] && mpv --loop $fx || SWAYSOCK=/dev/null swayimg $fx
             ;;
         video/*)
             mpv --loop $fx

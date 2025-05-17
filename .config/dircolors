@@ -1,18 +1,7 @@
 # vim:ft=dircolors
-# Configuration file for dircolors, a utility to help you set the
-# LS_COLORS environment variable used by GNU ls with the --color option.
-# Copyright (C) 1996-2024 Free Software Foundation, Inc.
-# Copying and distribution of this file, with or without modification,
-# are permitted provided the copyright notice and this notice are preserved.
-#
-# The keywords COLOR, OPTIONS, and EIGHTBIT (honored by the
-# slackware version of dircolors) are recognized but ignored.
-# Global config options can be specified before TERM or COLORTERM entries
-# ===================================================================
-# Terminal filters
-# ===================================================================
-# Below are TERM or COLORTERM entries, which can be glob patterns, which
-# restrict following config to systems with matching environment variables.
+# @author nate zhou
+# @since 2025
+
 COLORTERM ?*
 TERM Eterm
 TERM ansi
@@ -39,23 +28,9 @@ TERM terminator
 TERM tmux*
 TERM vt100
 TERM xterm*
-# ===================================================================
-# Basic file attributes
-# ===================================================================
-# Below are the color init strings for the basic file types.
-# One can use codes for 256 or more colors supported by modern terminals.
-# The default color codes use the capabilities of an 8 color terminal
-# with some additional attributes as per the following codes:
-# Attribute codes:
-# 00=none 01=bold 04=underscore 05=blink 07=reverse 08=concealed
-# Text color codes:
-# 30=black 31=red 32=green 33=yellow 34=blue 35=magenta 36=cyan 37=white
-# Background color codes:
-# 40=black 41=red 42=green 43=yellow 44=blue 45=magenta 46=cyan 47=white
-#NORMAL 00 # no color code at all
-#FILE 00 # regular file: use no color at all
+
 RESET 0 # reset to "normal" color
-DIR 01;40 # directory
+DIR 01;34 # directory
 LINK 01;36 # symbolic link. (If you set this to 'target' instead of a
  # numerical value, the color is as for the file pointed to.)
 MULTIHARDLINK 00 # regular file with more than one link
@@ -74,15 +49,6 @@ OTHER_WRITABLE 34;42 # dir that is other-writable (o+w) and not sticky
 STICKY 37;44 # dir with the sticky bit set (+t) and not other-writable
 # This is for files with execute permission:
 EXEC 01;32
-# ===================================================================
-# File extension attributes
-# ===================================================================
-# List any file extensions like '.gz' or '.tar' that you would like ls
-# to color below. Put the suffix, a space, and the color init string.
-# (and any comments you want to add after a '#').
-# Suffixes are matched case insensitively, but if you define different
-# init strings for separate cases, those will be honored.
-#
 # If you use DOS-style suffixes, you may want to uncomment the following:
 #.cmd 01;32 # executables (bright green)
 #.exe 01;32
@@ -147,59 +113,60 @@ EXEC 01;32
 .zip 01;31
 .zoo 01;31
 .zst 01;31
+
 # image formats
-.avif 01;33
-.jpg 01;33
-.jpeg 01;33
-.mjpg 01;33
-.mjpeg 01;33
-.gif 01;33
-.bmp 01;33
-.pbm 01;33
-.pgm 01;33
-.ppm 01;33
-.tga 01;33
-.xbm 01;33
-.xpm 01;33
-.tif 01;33
-.tiff 01;33
-.png 01;33
-.svg 01;33
-.svgz 01;33
-.mng 01;33
-.pcx 01;33
-.mov 01;33
-.mpg 01;33
-.mpeg 01;33
-.m2v 01;33
-.mkv 01;33
-.webm 01;33
-.webp 01;33
-.ogm 01;33
-.mp4 01;33
-.m4v 01;33
-.mp4v 01;33
-.vob 01;33
-.qt 01;33
-.nuv 01;33
-.wmv 01;33
-.asf 01;33
-.rm 01;33
-.rmvb 01;33
-.flc 01;33
-.avi 01;33
-.fli 01;33
-.flv 01;33
-.gl 01;33
-.dl 01;33
-.xcf 01;33
-.xwd 01;33
-.yuv 01;33
-.cgm 01;33
-.emf 01;33
-# https://wiki.xiph.org/MIME_Types_and_File_Extensions
-.ogv 01;35
-.ogx 01;35
+.avif 00;33
+.jpg 00;33
+.jpeg 00;33
+.mjpg 00;33
+.mjpeg 00;33
+.gif 00;95
+.bmp 00;33
+.pbm 00;33
+.pgm 00;33
+.ppm 00;33
+.tga 00;33
+.xbm 00;33
+.xpm 00;33
+.tif 00;33
+.tiff 00;33
+.png 00;33
+.svg 00;33
+.svgz 00;33
+.mng 00;33
+.pcx 00;33
+.mov 00;33
+.mpg 00;33
+.mpeg 00;33
+.m2v 00;33
+.mkv 00;95
+.webm 00;95
+.webp 00;95
+.ogm 00;33
+.mp4 00;95
+.m4v 00;95
+.mp4v 00;95
+.vob 00;33
+.qt 00;33
+.nuv 00;33
+.wmv 00;33
+.asf 00;33
+.rm 00;33
+.rmvb 00;33
+.flc 00;33
+.avi 00;33
+.fli 00;33
+.flv 00;33
+.gl 00;33
+.dl 00;33
+.xcf 00;96
+.xwd 00;33
+.yuv 00;33
+.cgm 00;33
+.emf 00;33
+.ogv 00;35
+.ogx 00;35
+
 # audio formats
 .aac 00;36
 .au 00;36
@@ -213,15 +180,16 @@ EXEC 01;32
 .ogg 00;36
 .ra 00;36
 .wav 00;36
-# https://wiki.xiph.org/MIME_Types_and_File_Extensions
 .oga 00;36
 .opus 00;36
 .spx 00;36
 .xspf 00;36
+
 # backup files
 *~ 00;90
 *# 00;90
 .bak 00;90
+*.backup 00;90
 .crdownload 00;90
 .dpkg-dist 00;90
 .dpkg-new 00;90
@@ -239,6 +207,46 @@ EXEC 01;32
 .ucf-dist 00;90
 .ucf-new 00;90
 .ucf-old 00;90
-#
-# Subsequent TERM or COLORTERM entries, can be used to add / override
-# config specific to those matching environment variables.
+
+*.gitignore 00;93
+*.stow-local-ignore 00;93
+*.mpdignore 00;93
+
+*.example   00;96
+
+*.hook      00;93
+*config     00;93
+*.config    00;93
+*.rules     00;93
+*.conf      00;93
+*.ini       00;93
+*.conf      00;93
+*.yaml      00;93
+*.toml      00;93
+*.css       00;93
+*.html      00;96
+
+# gpg
+*.gpg       00;91
+*.key       00;93
+*.sig       00;93
+*.asc       00;93
+*.rev       00;93
+*.pub       00;93
+*.sec       00;93
+
+*.kdenlive  00;96
+*.pdf       00;95
+*.epub      00;95
+*.doc       00;94
+*.docx      00;94
+*.odt       00;94
+*.xls       00;92
+*.xlsx      00;92
+*.ods       00;92
+*.ppt       00;95
+*.pptx      00;95
+*.odp       00;95
+*.qcow2     00;91
+*.torrent   00;92
+*.iso       00;95

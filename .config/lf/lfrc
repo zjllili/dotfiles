@@ -7,10 +7,10 @@ source ~/.config/lf/rifle
 source ~/.config/lf/teleport.conf
 source ~/.config/lf/local.conf
 
-set numberfmt "\033[32m"
-set borderfmt "\033[34m"
-set cursoractivefmt "\033[30;43m"
-set cursorparentfmt "\033[30;46m"
+set numberfmt "\033[90m"
+set borderfmt "\033[90m"
+set cursoractivefmt "\033[37;104m"
+set cursorparentfmt "\033[30;43m"
 set timefmt "2006-01-02 15:04"
 set copyfmt "\033[7;32m"
 set cutfmt "\033[7;31m"
@@ -261,7 +261,7 @@ cmd on-cd &{{
     GIT_PS1_SHOWCOLORHINTS=1        # display in color
 
     git=$(__git_ps1 " %s")
-    fmt="\033[44m%u@%h\033[00m \033[40m%d%f$git\033[0m"
+    fmt="\033[104m%u@%h\033[00m \033[40m%d%f$git\033[0m"
     lf -remote "send $id set promptfmt \"$fmt\""
     '
 }}
