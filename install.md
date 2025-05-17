@@ -384,7 +384,7 @@ nmcli device wifi connect <ssid> password <password> hidden yes
 ## 2.5 install user packages
 ```markdown
 ### basic tools
-dash zsh vim neovim lf fzf tmux git rsync openssh openbsd-netcat udisks2 zip unzip unrar-free tree bc calc pacman-contrib archlinux-contrib reuild-detector arch-install-scripts dosfstools exfat-utils jq
+dash vim neovim lf fzf tmux git rsync openssh openbsd-netcat udisks2 zip unzip unrar-free tree bc calc pacman-contrib archlinux-contrib reuild-detector arch-install-scripts dosfstools exfat-utils jq
 ### system configuration
 networkmanager brightnessctl tlp ufw firejail cronie bluez-utils bluetui efibootmgr sbctl
 
@@ -711,12 +711,11 @@ HandlePowerKey=hibernate
         - `:set hintstyle.fg none`
         - `:set hintstyle.outline all`
 
-### 2.6.17 change default shell & login shell
+### 2.6.17 change default shell
 ```sh
 # a pacman [HOOK](etc/pacman.d/hooks/default-shell-symlink.hook) is needed to
 # reassign symlink after every bash upgrade
 sudo ln -sf /usr/bin/dash /usr/bin/sh
-chsh -s /usr/bin/zsh
 ```
 
 # 3.0 restore files from a backup media
