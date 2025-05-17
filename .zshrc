@@ -3,6 +3,7 @@
 # @since 2025
 
 autoload -U colors && colors
+source $HOME/.profile
 
 # enable programmable completion
 autoload -U compinit
