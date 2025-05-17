@@ -39,7 +39,7 @@ separator_block_width=0
 
 [newsboat]
 command= i3blocks-newsboat
-interval=once
+interval=60
 signal=5
 
 [task]
