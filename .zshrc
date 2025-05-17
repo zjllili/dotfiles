@@ -7,7 +7,9 @@ source $HOME/.profile
 
 # enable programmable completion
 autoload -U compinit
+# arrow-key driven completion menu
 zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' # case insensitive
 zmodload zsh/complist
 compinit
 _comp_options+=(globdots)
@@ -33,39 +35,48 @@ setopt inc_append_history
 
 setopt autocd		# Automatically cd into typed directory.
 
-[ -f "$HOME/.config/dircolors" ] && source <(dircolors "$HOME/.config/dircolors")
-
 # Change cursor shape for different vi modes.
 function zle-keymap-select () {
     case $KEYMAP in
-        vicmd) echo -ne '\e[1 q';;      # block
-        viins|main) echo -ne '\e[5 q';; # beam
+        vicmd) echo -ne '\e[2 q';; # block
+        viins|main) echo -ne '\e[6 q';; # regular
     esac
 }
 zle -N zle-keymap-select
+
+# initiate `vi insert` as keymap
 zle-line-init() {
-    zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
-    echo -ne "\e[5 q"
+    zle -K viins
 }
 zle -N zle-line-init
-echo -ne '\e[5 q' # Use beam shape cursor on startup.
-preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
-# Edit line in vim with ctrl-e:
-autoload edit-command-line; zle -N edit-command-line
-bindkey '^e' edit-command-line
-bindkey -M vicmd '^[[P' vi-delete-char
-bindkey -M vicmd '^e' edit-command-line
-bindkey -M visual '^[[P' vi-delete
+echo -ne '\e[6 q' # regular cursor on startup.
+preexec() { echo -ne '\e[6 q' ;} # regular cursor for each new prompt.
 
+# line editor v in normal mode
+autoload edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd 'v' edit-command-line
+
+[ -f "$HOME/.config/dircolors" ] && source <(dircolors "$HOME/.config/dircolors")
+
+[ -f "/usr/share/git/completion/git-prompt.sh" ] && . /usr/share/git/completion/git-prompt.sh
+GIT_PS1_SHOWDIRTYSTATE=1        # + for staged, * if unstaged
+GIT_PS1_SHOWSTASHSTATE=1        # $ if something is stashed.
+GIT_PS1_SHOWUNTRACKEDFILES=1    # % if there are untracked files
+GIT_PS1_SHOWUPSTREAM=1 	        # <, >, <> behind, ahead, or diverged from upstream.
+GIT_PS1_STATESEPARATOR=" " 	    # separator between branch name and state symbols
+GIT_PS1_DESCRIBE_STYLE=1 	    # show commit relative to tag or branch, when detached HEAD
+GIT_PS1_SHOWCOLORHINTS=1        # display in color
+setopt PROMPT_SUBST
 if [ ! $UID -eq 0 ]; then
     if [ -n "$SSH_CONNECTION" ]; then
-        PS1="%{$bg[yellow]%}%n@%M%{$reset_color%} %B%{$bg[black]%}%~%{$reset_color%}%b $ "
+        PS1='%{$bg[magenta]%}%n@%m%{$reset_color%} %B%{$bg[black]%}%~$(__git_ps1 " %s")%{$reset_color%} \$ '
     else
-        PS1="%{$bg[blue]%}%n@%M%{$reset_color%} %B%{$bg[black]%}%~%{$reset_color%}%b $ "
+        PS1='%{$bg[blue]%}%n@%m%{$reset_color%} %B%{$bg[black]%}%~$(__git_ps1 " %s")%b%{$reset_color%} \$ '
     fi
 else
-        PS1="%{$bg[red]%}%n@%M%{$reset_color%} %B%{$bg[black]%}%~%{$reset_color%}%b $ "
+        PS1='%{$bg[red]%}%n@%m%{$reset_color%} %B%{$bg[black]%}%~$(__git_ps1 " %s")%b%{$reset_color%} \$ '
 fi
 
 # gpg with pinentry-curses and pinentry-tty
