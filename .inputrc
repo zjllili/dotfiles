@@ -23,8 +23,6 @@ $endif
 
 Control-j: menu-complete
 Control-k: menu-complete-backward
-# replace completed part as `...` for filenames with similar prefix
-set completion-prefix-display-length 2
 set completion-ignore-case on
 # treat underscores and hyphens equally
 set completion-map-case on
