@@ -12,6 +12,7 @@ alias help=run-help
 autoload -U compinit # enable programmable completion
 zstyle ':completion:*' menu select # arrow-key driven
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' # case insensitive
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS} # dircolors
 zmodload zsh/complist
 compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump
 _comp_options+=(globdots)
