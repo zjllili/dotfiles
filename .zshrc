@@ -5,10 +5,13 @@
 autoload -U colors && colors
 source $HOME/.profile
 
-# enable programmable completion
-autoload -U compinit
-# arrow-key driven completion menu
-zstyle ':completion:*' menu select
+# bash like help
+autoload -Uz run-help
+(( ${+aliases[run-help]} )) && unalias run-help
+alias help=run-help
+
+autoload -U compinit # enable programmable completion
+zstyle ':completion:*' menu select # arrow-key driven
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' # case insensitive
 zmodload zsh/complist
 compinit
@@ -35,11 +38,11 @@ setopt inc_append_history
 
 setopt autocd		# Automatically cd into typed directory.
 
-# Change cursor shape for different vi modes.
+# vi indicator cursor
 function zle-keymap-select () {
     case $KEYMAP in
-        vicmd) echo -ne '\e[2 q';; # block
-        viins|main) echo -ne '\e[6 q';; # regular
+        vicmd) echo -ne '\e[2 q';; # normal mode
+        viins|main) echo -ne '\e[6 q';; # insert mode
     esac
 }
 zle -N zle-keymap-select
@@ -50,8 +53,8 @@ zle-line-init() {
 }
 zle -N zle-line-init
 
-echo -ne '\e[6 q' # regular cursor on startup.
-preexec() { echo -ne '\e[6 q' ;} # regular cursor for each new prompt.
+echo -ne '\e[6 q' # insert mode cursor on start up
+preexec() { echo -ne '\e[6 q' ;} # insert mode  cursor for new prompt
 
 # line editor v in normal mode
 autoload edit-command-line
