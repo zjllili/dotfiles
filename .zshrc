@@ -3,7 +3,6 @@
 # @since 2025
 
 autoload -U colors && colors
-source $HOME/.profile
 
 # bash like help
 autoload -Uz run-help
@@ -14,7 +13,7 @@ autoload -U compinit # enable programmable completion
 zstyle ':completion:*' menu select # arrow-key driven
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' # case insensitive
 zmodload zsh/complist
-compinit
+compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump
 _comp_options+=(globdots)
 
 ZSH_CONFIG="$HOME/.config/bash"
@@ -33,8 +32,8 @@ source <(fzf --zsh)
 
 HISTSIZE=2000
 SAVEHIST=40000
-HISTFILE="$HOME/.local/state/zsh/history"
 setopt inc_append_history
+zstyle ':completion:*' cache-path "$XDG_CACHE_HOME"/zsh/zcompdump
 
 setopt autocd		# Automatically cd into typed directory.
 

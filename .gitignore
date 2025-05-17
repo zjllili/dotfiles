@@ -53,6 +53,7 @@ aur.list
 !.bash_aliases
 !.bash_profile
 !.profile
+!.zprofile
 !.config/bash/
 !.config/bash/aliases.sh
 !.config/bash/teleport.sh
