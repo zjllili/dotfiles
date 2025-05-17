@@ -8,10 +8,10 @@ Cd() {
 }
 
 # read help with a pager
-help() {
-    help_output=$(command help "$@")
-    [ "$?" -eq 0 ] && echo "$help_output" | /usr/bin/less -i
-}
+#help() {
+#    help_output=$(command help "$@")
+#    [ "$?" -eq 0 ] && echo "$help_output" | /usr/bin/less -i
+#}
 
 # avoid nested lf
 lf() {
