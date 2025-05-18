@@ -13,6 +13,10 @@ lf() {
     [ -z "$LF_LEVEL" ] && /usr/bin/lf "$@" || exit &>/dev/null
 }
 
+lfcd() {
+    cd "$(command lf -print-last-dir "$@")"
+}
+
 # print the 16 terminal colors
 colors() {
     for i in {0..15}; do
@@ -38,8 +42,4 @@ pll() {
 ## list build date
 pld() {
     pacman -Qi "$@" | grep -e '^Build Date' -e '^Version'
-}
-
-lfcd() {
-    cd "$(command lf -print-last-dir "$@")"
 }

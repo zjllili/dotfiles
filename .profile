@@ -3,7 +3,7 @@
 # @since 2023,2024,2025
 # bash specific profile
 
-. $HOME/.config/shell/profile.sh
+[ -f $HOME/.config/shell/profile.sh ] && . $HOME/.config/shell/profile.sh
 
 [[ -n "$BASH_VERSION" && -f "$HOME/.bashrc" ]] && . "$HOME/.bashrc"
 

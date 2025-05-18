@@ -8,10 +8,8 @@
 [ -d "$HOME/.local/bin" ] && PATH="$HOME/.local/bin:${PATH}"
 [ -d "$HOME/.local/sbin" ] && PATH="$HOME/.local/sbin:${PATH}"
 
-# manpage with bat
 [ -x /usr/bin/bat ] && export MANROFFOPT="-c" && export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
-# ENVIRONMENT VARIABLES
 export TERM=xterm-256color
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8 # locale
@@ -50,16 +48,15 @@ export QT_QPA_PLATFORMTHEME=qt5ct # qt theme
 export QT_STYLE_OVERRIDE=adwaita-dark # qt theme
 export GTK_THEME=Adwaita-dark # for firejail'ed libreoffice theme
 
-### WAYLAND ###
 export WLR_DRM_NO_ATOMIC=1 # fix sway terminal freezes
 #export ELECTRON_OZONE_PLATFORM_HINT=wayland # electron, disabled to run in xwayland for fcitx5 support
 #export WLR_NO_HARDWARE_CURSORS=1 # external monitor cursor on nvidia
 
-### IME ###
 # fcitx
 #export GTK_IM_MODULE=wayland
 #export XMODIFIERS=@im=fcitx
 #export QT_IM_MODULE="wayland;fcitx;ibus"
+
 # ibus
 #export GTK_IM_MODULE=ibus
 #export XMODIFIERS=@im=ibus

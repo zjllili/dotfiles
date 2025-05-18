@@ -4,11 +4,11 @@
 # update newsboat unread count for i3blocks
 
 update() {
-    $HOME/.local/bin/newsboat-num-cron --now
+    $HOME/.local/bin/newsboat-num-cron --now >/dev/null
     pkill -SIGRTMIN+5 i3blocks
 }
 
 # update count on exit, interrupted or terminated
 trap update EXIT INT TERM
 
-command newsboat
+command newsboat -q
