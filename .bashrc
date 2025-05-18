@@ -2,42 +2,41 @@
 # @author nate zhou
 # @since 2023,2024,2025
 
-# If not running interactively, don't do anything
-case $- in
+case $- in # If not running interactively, don't do anything
     *i*) ;;
       *) return;;
 esac
-# enable programmable completion
-if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
-fi
 
-BASH_CONFIG="$HOME/.config/bash"
-[ -f "$BASH_CONFIG/aliases.sh" ] && . "$BASH_CONFIG/aliases.sh"
-[ -f "$BASH_CONFIG/teleport.sh" ] && . "$BASH_CONFIG/teleport.sh"
-[ -f "$BASH_CONFIG/functions.sh" ] && . "$BASH_CONFIG/functions.sh"
-
-### SHELL OPTIONS ###
-set -o vi
-bind -m vi-command 'Control-l: clear-screen'
-bind -m vi-insert 'Control-l: clear-screen'
-
-eval "$(fzf --bash)"
-
-HISTCONTROL=ignoreboth      # ignore identical or empty lines in history
-HISTSIZE=2000
-HISTFILESIZE=40000
-
-shopt -s histappend         # append instead of overwrite history
-shopt -s autocd             # auto cd when entering a path
-shopt -s globstar           # enable "**" wildcard for more subdir
-shopt -s checkwinsize       # check window size after each command
+[ -f "/usr/share/bash-completion/bash_completion" ] && . /usr/share/bash-completion/bash_completion
 
 [ -f "$HOME/.config/dircolors" ] && eval $(dircolors "$HOME/.config/dircolors")
+
+SHELL_CONFIG="$HOME/.config/shell" # general shell configs
+[ -f "$SHELL_CONFIG/aliases.sh" ] && . "$SHELL_CONFIG/aliases.sh"
+[ -f "$SHELL_CONFIG/teleport.sh" ] && . "$SHELL_CONFIG/teleport.sh"
+[ -f "$SHELL_CONFIG/functions.sh" ] && . "$SHELL_CONFIG/functions.sh"
+
+BASH_CONFIG="$HOME/.config/bash" # bash specifc configs
+[ -f "$BASH_CONFIG/aliases.sh" ] && . "$BASH_CONFIG/aliases.sh"
+[ -f "$BASH_CONFIG/functions.sh" ] && . "$BASH_CONFIG/functions.sh"
+
+set -o vi
+eval "$(fzf --bash)"
+
+bind -m vi-command 'Control-l: clear-screen'
+bind -m vi-insert 'Control-l: clear-screen'
+bind '"\C-o":"lfcd\C-m"' # .config/shell/functions.sh
+
+HISTSIZE=2000
+HISTFILESIZE=40000
+HISTCONTROL=ignoreboth      # ignore identical or empty lines in history
+shopt -s histappend         # append instead of overwrite history
+
+shopt -s globstar           # enable "**" wildcard for more subdir
+
+shopt -s checkwinsize       # check window size after each command
+
+shopt -s autocd             # auto cd by typing path
 
 [ -f "/usr/share/git/completion/git-prompt.sh" ] && . /usr/share/git/completion/git-prompt.sh
 GIT_PS1_SHOWDIRTYSTATE=1        # + for staged, * if unstaged
@@ -50,17 +49,14 @@ GIT_PS1_SHOWCOLORHINTS=1        # display in color
 
 if [ ! $UID -eq 0 ]; then
     if [ -n "$SSH_CONNECTION" ]; then
-        PS1='\[\033[30;103m\]\u@\h\[\033[00;00m\] \[\033[01;40m\]\w\[\033[01;92m\]$(__git_ps1 " (%s)")\[\033[00;00m\] \$ '
+        PS1='\[\033[30;103m\]\u@\h\[\033[00;00m\] \[\033[01;40m\]\w$(__git_ps1 " %s")\[\033[00;00m\] \$ '
     else
-        PS1='\[\033[00;104m\]\u@\h\[\033[00;00m\] \[\033[01;40m\]\w\[\033[01;92m\]$(__git_ps1 " %s")\[\033[00;00m\] \$ '
+        PS1='\[\033[00;104m\]\u@\h\[\033[00;00m\] \[\033[01;40m\]\w$(__git_ps1 " %s")\[\033[00;00m\] \$ '
     fi
 else
-        PS1='\[\033[30;107m\]\u@\h\[\033[00;00m\] \[\033[01;40m\]\w\[\033[01;92m\]$(__git_ps1 " (%s)")\[\033[00;00m\] \$ '
+        PS1='\[\033[30;107m\]\u@\h\[\033[00;00m\] \[\033[01;40m\]\w$(__git_ps1 " %s")\[\033[00;00m\] \$ '
 fi
 
 export PS4='+ ${LINENO}: '
 
-# gpg with pinentry-curses and pinentry-tty
-export GPG_TTY=$(tty)
-
-bind '"\C-o":"lfcd\C-m"'
+export GPG_TTY=$(tty) # TUI pinentry, need be set for each pts

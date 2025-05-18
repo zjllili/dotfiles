@@ -48,20 +48,26 @@ aur.list
 !usr/local/share/kbd/keymaps/us-custom.map.gz
 
 !.inputrc
+!.profile
 !.bashrc
-!.zshrc
 !.bash_aliases
 !.bash_profile
-!.profile
-!.zprofile
 !.config/bash/
+!.config/bash/aliases.sh
 !.config/bash/functions.sh
+
+!.zprofile
+!.zshrc
 !.config/zsh/
-!.config/zsh/functions.sh
+!.config/zsh/aliases.zsh
+!.config/zsh/functions.zsh
+
 !.config/shell/
 !.config/shell/aliases.sh
-!.config/shell/teleport.sh
+!.config/shell/functions.sh
+!.config/shell/profile.sh
 !.config/shell/teleport.conf
+!.config/shell/teleport.sh
 
 !.ssh/
 !.ssh/config.example

@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 # @author nate zhou
 # @since 2025
-# generate keybindings for bash aliases and ranger & lf
+# generate teleporting keybindings for bash/zsh aliases and ranger & lf
 
 set +x
 author="nate zhou"
 year="2025"
 
-TELEPORT_CONF="$HOME/.config/bash/teleport.conf"
-TELEPORT_BASH="$HOME/.config/bash/teleport.sh"
+TELEPORT_CONF="$HOME/.config/shell/teleport.conf"
+TELEPORT_BASH="$HOME/.config/shell/teleport.sh"
 TELEPORT_RANGER="$HOME/.config/ranger/teleport.conf"
 TELEPORT_LF="$HOME/.config/lf/teleport.conf"
 
