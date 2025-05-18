@@ -55,10 +55,13 @@ aur.list
 !.profile
 !.zprofile
 !.config/bash/
-!.config/bash/aliases.sh
-!.config/bash/teleport.sh
-!.config/bash/teleport.conf
 !.config/bash/functions.sh
+!.config/zsh/
+!.config/zsh/functions.sh
+!.config/shell/
+!.config/shell/aliases.sh
+!.config/shell/teleport.sh
+!.config/shell/teleport.conf
 
 !.ssh/
 !.ssh/config.example
