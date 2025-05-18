@@ -52,7 +52,7 @@ GIT_PS1_SHOWCOLORHINTS=1        # display in color
 
 if [ ! $UID -eq 0 ]; then
     if [ -n "$SSH_CONNECTION" ]; then
-        PS1='%{$(tpub setab 9)%}%n@%m%{$reset_color%} %B%{$bg[black]%}%1~$(__git_ps1 " %s")%{$reset_color%} \$ '
+        PS1='%{$(tput setab 9)%}%n@%m%{$reset_color%} %B%{$bg[black]%}%1~$(__git_ps1 " %s")%{$reset_color%} \$ '
     else
         PS1='%{$(tput setab 12)%}%n@%m%{$reset_color%} %B%{$bg[black]%}%1~$(__git_ps1 " %s")%b%{$reset_color%} \$ '
     fi
