@@ -35,7 +35,6 @@ set preview true
 set sixel true
 set previewer ~/.config/lf/scope
 
-# bindings
 ## unmap
 map ','
 map '.'
@@ -134,6 +133,7 @@ map go cd /opt
 map gv cd /var
 map gm cd /mnt
 map gt cd /tmp
+map gi cd /run/media/
 
 map W $~/.local/bin/setwall $f
 
