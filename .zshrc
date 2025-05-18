@@ -26,8 +26,6 @@ ZSH_CONFIG="$HOME/.config/zsh" # zsh specifc configs
 set -o vi
 source <(fzf --zsh)
 
-bindkey '\t' menu-complete # reduce <tab> keystrokes
-bindkey '^n' menu-complete
 bindkey -M menuselect '^p' vi-up-line-or-history
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
@@ -77,3 +75,4 @@ ZSH_HIGHLIGHT_STYLES[arg0]=fg=white,bold # like echo
 #bindkey '^w' forward-word
 #bindkey '^b' backward-word
 #fpath=(path/to/zsh-completions/src $fpath)
+
