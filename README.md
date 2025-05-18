@@ -24,10 +24,11 @@ A few software need manually setup:
 ```
 - Distro:               arch
 - Default Shell:        dash
-- Login Shell:          bash
+- Interactive Shell:    bash/zsh
 - Window Manager:       sway
 - Status bar:           i3blocks
 - Launcher:             wmenu
+- Notification:         dunst
 - Terminal Emulator:    foot
 - Editor:               neovim
 - Email Client:         neomutt + isync
