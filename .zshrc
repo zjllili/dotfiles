@@ -74,12 +74,12 @@ GIT_PS1_SHOWCOLORHINTS=1        # display in color
 setopt PROMPT_SUBST
 if [ ! $UID -eq 0 ]; then
     if [ -n "$SSH_CONNECTION" ]; then
-        PS1='%{$bg[magenta]%}%n@%m%{$reset_color%} %B%{$bg[black]%}%~$(__git_ps1 " %s")%{$reset_color%} \$ '
+        PS1='%{$(tpub setab 9)%}%n@%m%{$reset_color%} %B%{$bg[black]%}%~$(__git_ps1 " %s")%{$reset_color%} \$ '
     else
-        PS1='%{$bg[blue]%}%n@%m%{$reset_color%} %B%{$bg[black]%}%~$(__git_ps1 " %s")%b%{$reset_color%} \$ '
+        PS1='%{$(tput setab 12)%}%n@%m%{$reset_color%} %B%{$bg[black]%}%~$(__git_ps1 " %s")%b%{$reset_color%} \$ '
     fi
 else
-        PS1='%{$bg[red]%}%n@%m%{$reset_color%} %B%{$bg[black]%}%~$(__git_ps1 " %s")%b%{$reset_color%} \$ '
+        PS1='%{$(tput setab 11)%}%n@%m%{$reset_color%} %B%{$bg[black]%}%~$(__git_ps1 " %s")%b%{$reset_color%} \$ '
 fi
 
 # gpg with pinentry-curses and pinentry-tty
@@ -106,8 +106,8 @@ add-zsh-hook -Uz chpwd chpwd-osc7-pwd
 #bindkey '^b' backward-word
 #fpath=(path/to/zsh-completions/src $fpath)
 
-#source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 #ZSH_HIGHLIGHT_STYLES[suffix-alias]=fg=white,underline
 #ZSH_HIGHLIGHT_STYLES[precommand]=fg=yellow # like sudo
-#ZSH_HIGHLIGHT_STYLES[arg0]=fg=white # like echo
+ZSH_HIGHLIGHT_STYLES[arg0]=fg=yellow # like echo
 #ZSH_HIGHLIGHT_STYLES[path]=fg=white,underline # filenames
