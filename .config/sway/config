@@ -113,7 +113,6 @@ exec swayidle -w \
          timeout 900 'swaylock' \
          timeout 960 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
          before-sleep 'swaylock'
-exec sleep 3 && $term -T "Scratchpad Tmux" tmux
 exec "clsd"
 exec "gammastep -O 5000"
 exec "fcitx5 -d"
