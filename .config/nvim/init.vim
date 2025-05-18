@@ -28,6 +28,10 @@ set statusline+=%f\ %h%m%r%=\ %{FugitiveStatusline()}\ %-8.(%l,%c%)\ %P
 nnoremap c "_c
 " ex mode type Q as q!
 cnoremap Q q!
+" <c-f> for pathname suggestion
+inoremap <C-f> <C-x><C-f>
+" tab to accept the suggestion
+inoremap <expr> <Tab> pumvisible() ? "\<C-y>" : "\<Tab>"
 
 set expandtab		" expand tab input with spaces
 set tabstop=4		" spaces per tab
