@@ -21,9 +21,9 @@ set recolor-reverse-video true
 set statusbar-basename
 set adjust-open width
 
-set default-bg rgba(0,0,0,0)
+set default-bg "#111111"
 set statusbar-bg "#005577"
-set recolor-lightcolor rgba(17,17,17,0.93)
+set recolor-lightcolor "#111111"
 set recolor-darkcolor "#cccccc"
 set highlight-fg '#005577'
 

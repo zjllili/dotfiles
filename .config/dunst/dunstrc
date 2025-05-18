@@ -8,7 +8,7 @@
     width = 270
     height = (0, 600)
     origin = top-right
-    offset = 4x1
+    offset = 3x1
     scale = 0
     notification_limit = 30
     indicate_hidden = yes
@@ -52,20 +52,20 @@
     per_monitor_dpi = false
 
 [urgency_low]
-    background = "#111111e6"
+    background = "#111111"
     foreground = "#dddddd"
     frame_color= "#00435e"
     timeout = 7
 
 [urgency_normal]
-    background = "#111111e6"
+    background = "#111111"
     foreground = "#dddddd"
     frame_color = "#00435e"
     timeout = 12
     override_pause_level = 15
 
 [urgency_critical]
-    background = "#111111e6"
+    background = "#111111"
     foreground = "#ffffff"
     frame_color = "#e6da00"
     timeout = 0

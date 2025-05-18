@@ -35,7 +35,7 @@ bar {
     strip_workspace_numbers yes
 
 	colors {
-    background #000000e6
+    background #000000
     #workspace color    border  backgr  text
     focused_workspace  #005577 #005577 #eeeeee
     active_workspace   #333333 #333333 #eeeeee
@@ -73,7 +73,7 @@ mouse_warping none
 
 floating_modifier $mod
 
-gaps inner 2
+#gaps inner 2
 #gaps outer -2
 #smart_gaps on
 for_window [title="Floating Term"] floating enable, resize set width 800 px, resize set height 600 px, border pixel 2
