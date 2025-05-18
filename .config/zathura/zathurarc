@@ -17,11 +17,14 @@ set scroll-step 30
 set scroll-hstep 10
 set recolor true
 set recolor-keephue true
+set recolor-reverse-video true
 set statusbar-basename
-set default-bg "#111111"
+set adjust-open width
+
+set default-bg rgba(0,0,0,0)
 set statusbar-bg "#005577"
-set recolor-lightcolor "#111111"
-set recolor-darkcolor "#dddddd"
+set recolor-lightcolor rgba(17,17,17,0.93)
+set recolor-darkcolor "#cccccc"
 set highlight-fg '#005577'
 
 map I recolor
@@ -31,3 +34,5 @@ map P print
 map i zoom in
 map o zoom out
 map b toggle_statusbar
+
+map w adjust_window width

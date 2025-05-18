@@ -5,7 +5,7 @@ include /etc/sway/config.d/*
 # Mod4=super Mod1=alt
 set $mod Mod4
 set $term /usr/bin/footclient
-set $menu wmenu-run -f "SourceCodePro Medium 13" -i -N 111111 -S 005577 -s ffffff -M 6f3f89 -m ffffff | xargs swaymsg exec --
+set $menu wmenu-run -f "SourceCodePro Medium 13" -i -N 111111 -S 005577 -s eeeeee -M 6f3f89 -m eeeeee | xargs swaymsg exec --
 set $wmenu ~/.local/bin/wmenu-color
 set $bookmarks ~/.local/bin/share/bookmarks
 set $wobfifo /tmp/wob.fifo
@@ -23,7 +23,7 @@ bar {
 	font pango:Source Code Pro normal 11
 	tray_output none
 	tray_padding 0
-    status_edge_padding 0
+    status_edge_padding 2
 	separator_symbol ""
 	# disable scroll up/down/right/left
 	bindsym button4 nop
@@ -35,22 +35,22 @@ bar {
     strip_workspace_numbers yes
 
 	colors {
-    background #000000
+    background #000000e6
     #workspace color    border  backgr  text
-    focused_workspace  #005577 #005577 #ffffff
-    active_workspace   #333333 #333333 #ffffff
-    inactive_workspace #000000 #000000 #ffffff
-    urgent_workspace   #e6da00 #e6da00 #ffffff
-    binding_mode       #333333 #005577 #ffffff
+    focused_workspace  #005577 #005577 #eeeeee
+    active_workspace   #333333 #333333 #eeeeee
+    inactive_workspace #000000cc #000000cc #eeeeee
+    urgent_workspace   #e6da00 #e6da00 #eeeeee
+    binding_mode       #333333 #005577 #eeeeee
 	}
 }
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
-client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.focused          #4c7899 #285577 #eeeeee #2e9ef4   #285577
+client.focused_inactive #333333 #5f676a #eeeeee #484e50   #5f676a
 client.unfocused        #333333 #222222 #888888 #292d2e   #222222
-client.urgent           #2f343a #e6da00 #ffffff #e6da00   #e6da00
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+client.urgent           #2f343a #e6da00 #eeeeee #e6da00   #e6da00
+client.placeholder      #000000 #0c0c0c #eeeeee #000000   #0c0c0c
 
 font pango:monospace 10
 titlebar_padding 1
@@ -73,7 +73,9 @@ mouse_warping none
 
 floating_modifier $mod
 
-#gaps inner 2
+gaps inner 2
+#gaps outer -2
+#smart_gaps on
 for_window [title="Floating Term"] floating enable, resize set width 800 px, resize set height 600 px, border pixel 2
 for_window [title="Scratchpad Tmux"]  move scratchpad
 for_window [app_id=swayimgapp] border pixel 0
@@ -352,8 +354,8 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+f fullscreen
 # mimic maximize
 workspace_auto_back_and_forth yes
-for_window [title="_placeholder_window1"] mark "_placeholder_window1"
-for_window [title="_placeholder_window2"] mark "_placeholder_window2"
+for_window [title="_placeholder_window1"] mark "_placeholder_window1" , border pixel 0
+for_window [title="_placeholder_window2"] mark "_placeholder_window2" , border pixel 0
 assign [title="_placeholder_window1"] workspace -
 assign [title="_placeholder_window2"] workspace =
 workspace - output DP-1
