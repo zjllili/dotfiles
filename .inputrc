@@ -35,7 +35,7 @@ set colored-stats on
 
 # set visible-stats
 set visible-stats On
-# faster completion
+# reduce <tab> keystrokes
 set show-all-if-unmodified on
 set show-all-if-ambiguous on
 

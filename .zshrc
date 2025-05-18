@@ -26,6 +26,9 @@ ZSH_CONFIG="$HOME/.config/zsh" # zsh specifc configs
 set -o vi
 source <(fzf --zsh)
 
+bindkey '\t' menu-complete # reduce <tab> keystrokes
+bindkey '^n' menu-complete
+bindkey -M menuselect '^p' vi-up-line-or-history
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
