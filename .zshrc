@@ -8,8 +8,8 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' # case insensitive
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS} # dircolors
 zstyle ':completion:*' cache-path "$XDG_CACHE_HOME"/zsh/zcompdump
 zmodload zsh/complist
-compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump
-_comp_options+=(globdots)
+compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump # move cache out of home
+_comp_options+=(globdots) # glob hidden files
 
 autoload -U colors && colors
 [ -f "$HOME/.config/dircolors" ] && source <(dircolors "$HOME/.config/dircolors")
@@ -64,15 +64,5 @@ fi
 export GPG_TTY=$(tty) # TUI pinentry, need be set for each pts
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
-ZSH_HIGHLIGHT_STYLES[arg0]=fg=white,bold # like echo
-#ZSH_HIGHLIGHT_STYLES[precommand]=fg=yellow # like sudo
-#ZSH_HIGHLIGHT_STYLES[suffix-alias]=fg=white,underline
-#ZSH_HIGHLIGHT_STYLES[path]=fg=white,underline # filenames
-
-#source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
-#bindkey '^l' autosuggest-accept
-#bindkey '^l' autosuggest-accept
-#bindkey '^w' forward-word
-#bindkey '^b' backward-word
-#fpath=(path/to/zsh-completions/src $fpath)
-
+ZSH_HIGHLIGHT_STYLES[arg0]=fg=green,bold # like echo
+ZSH_HIGHLIGHT_STYLES[precommand]=fg=yellow,bold # like sudo
