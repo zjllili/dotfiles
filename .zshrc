@@ -41,9 +41,11 @@ bindkey -s '^o' 'lfcd\n'  # .config/shell/functions.sh
 
 HISTSIZE=2000
 SAVEHIST=40000
-setopt inc_append_history
+HISTCONTROL=ignoreboth      # ignore identical or empty lines in history
+setopt inc_append_history share_history
 
 setopt autocd		# auto cd by typing path
+#setopt auto_menu menu_complete # reduce tap pressing for completion
 
 setopt PROMPT_SUBST
 
