@@ -67,10 +67,10 @@ map <leader>f :FZF<CR>
 map <leader>g :G<CR>
 map <leader>dx :Gdiffsplit<CR>
 map <leader>dv :Gvdiffsplit<CR>
-map <leader><Tab> :NERDTreeToggle<CR>
 map <leader>ct :ColorizerToggle<CR>
 map <leader>cr :ColorizerReloadAllBuffers<CR>
 map <leader>H :TSToggle highlight<CR>
+map <leader>o :LfNewTab<CR>
 
 " don't comment on new line
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -93,12 +93,14 @@ augroup END
 
 " vim-plug
 call plug#begin()
-"Plug 'ap/vim-css-color' " CSS color preview
-Plug 'norcalli/nvim-colorizer.lua' " better color support
-Plug 'tpope/vim-fugitive' " Git integration
-Plug 'preservim/nerdtree'
+Plug 'norcalli/nvim-colorizer.lua'
+Plug 'tpope/vim-fugitive'
 Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'ptzz/lf.vim'
+Plug 'voldikss/vim-floaterm'
 call plug#end()
+let g:floaterm_width=0.95
+let g:floaterm_height=0.95
 
 " nvim-colorizer
 set termguicolors
