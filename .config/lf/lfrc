@@ -6,6 +6,7 @@ source ~/.config/lf/rifle
 source ~/.config/lf/teleport.conf
 source ~/.config/lf/local.conf
 
+set promptfmt "\033[104m%u@%h\033[00m \033[40m%d%f\033[0m"
 set numberfmt "\033[90m"
 set borderfmt "\033[90m"
 set cursoractivefmt "\033[37;104m"
