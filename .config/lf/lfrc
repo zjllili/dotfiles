@@ -2,7 +2,6 @@
 # @author nate zhou
 # since 2025
 
-source ~/.config/lf/scope
 source ~/.config/lf/rifle
 source ~/.config/lf/teleport.conf
 source ~/.config/lf/local.conf
