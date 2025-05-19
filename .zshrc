@@ -2,6 +2,11 @@
 # @author nate zhou
 # @since 2025
 
+case $- in # check shell options
+    *i*) ;; # interactive shell
+      *) return;; # don't do anything
+esac
+
 autoload -U compinit # enable programmable completion
 zstyle ':completion:*' menu select # arrow-key driven
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' # case insensitive

@@ -2,9 +2,9 @@
 # @author nate zhou
 # @since 2023,2024,2025
 
-case $- in # If not running interactively, don't do anything
-    *i*) ;;
-      *) return;;
+case $- in # check shell options
+    *i*) ;; # interactive shell
+      *) return;; # don't do anything
 esac
 
 [ -f "/usr/share/bash-completion/bash_completion" ] && . /usr/share/bash-completion/bash_completion
