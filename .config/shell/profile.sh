@@ -40,6 +40,11 @@ export ANDROID_SDK_HOME="$XDG_CONFIG_HOME/android"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export GOPATH="$XDG_DATA_HOME/go"
 export GOMODCACHE="$XDG_CACHE_HOME/go/mod"
+export NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history"
+export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
+export PYTHON_HISTORY="$XDG_STATE_HOME/python_history"
+export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
+export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
 export GRIM_DEFAULT_DIR="$HOME/tmp"
 
 export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket # ssh-agent
