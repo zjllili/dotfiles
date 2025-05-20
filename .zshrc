@@ -16,6 +16,7 @@ zmodload zsh/complist
 compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump # move cache out of home
 _comp_options+=(globdots) # glob hidden files
 
+
 autoload -U colors && colors
 [ -f "$HOME/.config/dircolors" ] && source <(dircolors "$HOME/.config/dircolors")
 
@@ -38,6 +39,11 @@ bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 bindkey -s '^o' 'lfcd\n'  # .config/shell/functions.sh
+
+# line editor v in normal mode
+autoload edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd 'v' edit-command-line
 
 HISTSIZE=2000
 SAVEHIST=40000

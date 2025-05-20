@@ -24,13 +24,13 @@ function zle-keymap-select () { # vi indicator cursor
 zle -N zle-keymap-select
 
 # initiate `vi insert` as keymap
-zle-line-init() {
+function zle-line-init() {
     zle -K viins
 }
 zle -N zle-line-init
 
-echo -ne '\e[6 q' # insert mode cursor on start up
-preexec() { echo -ne '\e[6 q' ;} # insert mode  cursor for new prompt
+#echo -ne '\e[6 q' # insert mode cursor on start up
+#preexec() { echo -ne '\e[6 q' ;} # insert mode  cursor for new prompt
 
 # line editor v in normal mode
 autoload edit-command-line
