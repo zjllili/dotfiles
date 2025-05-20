@@ -433,7 +433,7 @@ yt-dlp transmission-cli httrack
 newsboat task taskwarrior-tui calcurse neomutt isync
 
 ### coding
-jdk-openjdk openjdk-src code
+jdk-openjdk openjdk-src code nodejs npm
 
 ### themes
 gnome-themes-extra
