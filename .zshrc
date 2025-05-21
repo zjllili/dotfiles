@@ -12,6 +12,9 @@ zstyle ':completion:*' menu select # arrow-key driven
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' # case insensitive
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS} # dircolors
 zstyle ':completion:*' cache-path "$XDG_CACHE_HOME"/zsh/zcompdump
+zstyle ':completion:*:processes' command 'NOCOLORS=1 ps -U $(whoami)|sed "/ps/d"' # all process owned by $USER, instead of current session
+zstyle ':completion:*:processes' sort false # remain correct PID order
+zstyle ':completion:*:processes-names' command 'NOCOLORS=1 ps xho command|sed "s/://g"' # more process name with `killall`
 zmodload zsh/complist
 compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump # move cache out of home
 _comp_options+=(globdots) # glob hidden files
