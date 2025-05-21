@@ -3,13 +3,13 @@
 # @since 2025
 
 tty_count="$(w -h | wc -l )"
-color="#ffffff"
+color="#d397f8"
 [ "$tty_count" -eq 1 ] && color="#888888"
 
 icon=""
-# ` `(U+2009) is the Thin Space
 
-echo "$icon" "$tty_count"
+# ` `(U+2009) is the Thin Space
+echo "<span foreground='#d397f8'>$icon</span>" "$tty_count "
 echo
 echo "$color"
 

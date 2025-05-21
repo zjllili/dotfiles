@@ -4,6 +4,12 @@
 
 result="$(uptime -p | sed 's/up //; s/ week\(s\)\?/w/; s/ day\(s\)\?/d/; s/ hour\(s\)\?/h/; s/[0-9]* minute.*//; s/,//g; s/ $//; s/ / /;')"
 icon=""
+color="#d397f8"
+
+# ` `(U+2009) is the Thin Space
+[ -n "$result"  ] && echo "$icon" "$result" || echo "$icon <1h"
+echo
+echo "$color"
 
 case $BLOCK_BUTTON in
     3) notify-send -u low -r 3301 "$icon $(basename $0)" "$(uptime -p | cut -d' ' -f2-)"
@@ -11,6 +17,3 @@ case $BLOCK_BUTTON in
     1) pkill -SIGRTMIN+9 &
         ;;
 esac
-
-# ` `(U+2009) is the Thin Space
-[ -n "$result"  ] && echo "$icon" "$result" || echo "$icon <1h"

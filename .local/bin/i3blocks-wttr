@@ -9,15 +9,14 @@ current_time="$(date +%s)"
 
 #result="$(sed 's/^.//; s/ // ; s/\+//' $WTTR_CACHE)"
 result="$(sed 's/ //; s/\+//' $WTTR_CACHE)"
-color="#eeeeee"
-#icon="󰅟"
+color="#bbccdd"
 
 (( current_time - update_time > 86400 )) && result=""
+[ -z "$result" ] && icon="<span foreground='#888888'>󰅟</span>"
 
 echo "$icon""$result"
 echo ""
 
-[ -z "$result" ] && color="#888888"
 
 echo "$color"
 

@@ -6,6 +6,7 @@
 set -x
 wobfifo="/tmp/wob.fifo"
 level="$(brightnessctl | awk '/%/{gsub("[()]", "", $4); print $4}')"
+color="#d397f8"
 
 case $level in
     [0-9]%) icon="󱩎" ;;
@@ -22,7 +23,9 @@ case $level in
 esac
 
 # ` `(U+2009) is the Thin Space
-echo "$icon" "$level"
+echo "$icon" "$level "
+echo
+echo "$color"
 
 case $BLOCK_BUTTON in
     1) pkill -SIGRTMIN+3 i3blocks &

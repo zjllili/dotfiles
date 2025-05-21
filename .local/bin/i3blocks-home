@@ -2,12 +2,17 @@
 # @author nate zhou
 # @since 2025
 
-usage="$(command df /home | awk 'NR==2 {print $5}')"
+usage="$(command df /home | awk 'NR==2 {print $5}' | tr -d '%')"
 
 icon=""
 
+color="#beed5f"
+[ "$usage" -ge 95 ] && color="#888888"
+
 # ` `(U+2009) is the Thin Space
-echo "$icon" "$usage"
+echo "<span foreground='#beed5f'>$icon</span>" "$usage"%
+echo
+echo "$color"
 
 case $BLOCK_BUTTON in
     3) notify-send -u low -r 3301 "$icon $(basename $0)" "$(df -h -x tmpfs -x efivarfs -x devtmpfs | awk 'NR=2 {print $6 "\t" $2 "\t" $4}' | grep -ve '^/run' -ve '^/opt' -ve '^/mnt')"

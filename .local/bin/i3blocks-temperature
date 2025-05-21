@@ -5,6 +5,8 @@
 policy=/sys/devices/platform/asus-nb-wmi/throttle_thermal_policy
 mode=""
 temperature="$(cat /sys/devices/platform/coretemp.0/hwmon/hwmon*/temp1_input)"
+color="#bbccdd"
+[ "$temperature" -gt 90000 ] && color="#888888"
 
 case "$temperature" in
     [0-9]|[1-2][0-9]000) icon="" ;;
@@ -14,7 +16,9 @@ case "$temperature" in
 esac
 
 # ` `(U+2009) is the Thin Space
-echo "$icon" "${temperature::-3}""<small>℃</small>"
+echo "<span foreground='#bbccdd'>$icon</span>" "${temperature::-3}""<small>℃</small>"
+echo
+echo "$color"
 
 # only enable click if file exist
 if [ -e $policy ]; then

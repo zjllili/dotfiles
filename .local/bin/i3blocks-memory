@@ -6,9 +6,13 @@
 usage="$(command free | awk '/Mem:/ {printf "%.0f\n", $3/$2 * 100}')"
 
 icon=""
+color="#bbccdd"
+[ "$usage" -ge 95 ] && color="#888888"
 
 # ` `(U+2009) is the Thin Space
-echo "$icon" "$usage""%"
+echo "<span foreground='#bbccdd'>$icon</span>" "$usage% "
+echo
+echo "$color"
 
 case $BLOCK_BUTTON in
     3) notify-send -u low -r 3301 -t 15000 "$icon $(basename $0)" "$(ps axch -o cmd:20,%mem --sort=-%mem | head)"

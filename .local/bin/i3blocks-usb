@@ -7,13 +7,13 @@
 result="$(lsblk -o 'tran' | grep usb | wc -l)"
 
 icon=""
-color="#ffffff"
+color="#beed5f"
 
 [ "$result" -eq 0 ] || [ -z "$result" ] && color="#888888"
 
 
 # ` `(U+2009) is the Thin Space
-echo "<b>$icon</b>" "$result"
+echo "<span foreground='#beed5f'>$icon</span>" "$result "
 echo
 echo "$color"
 

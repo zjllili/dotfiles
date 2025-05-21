@@ -3,15 +3,15 @@
 # @since 2025
 
 status="$(cat /sys/class/net/w*/operstate 2>/dev/null)"
-color="#eeeeee"
+color="#4db7ed"
 
 level="$(awk '/^\s*w/ {print int($3 * 100 / 70)"%"}' /proc/net/wireless)"
 
-[ "$status" = "up" ] && icon="󰖩" || icon="󰖪" color="#888888" level=""
+[ "$status" = "up" ] && icon="󰖩" || icon="󰖪" level=""
 
 
 # ` `(U+2009) is the Thin Space
-echo "<b>$icon</b>" "$level"
+echo "$icon" "$level "
 echo
 echo "$color"
 

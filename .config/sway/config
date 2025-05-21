@@ -35,7 +35,7 @@ bar {
     strip_workspace_numbers yes
 
 	colors {
-    background #000000
+    background #111111
     #workspace color    border  backgr  text
     focused_workspace  #005577 #005577 #eeeeee
     active_workspace   #333333 #333333 #eeeeee
@@ -46,7 +46,7 @@ bar {
 }
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #4c7899 #285577 #eeeeee #2e9ef4   #285577
+client.focused          #4c7899 #285577 #eeeeee #333333   #2e9ef4
 client.focused_inactive #333333 #5f676a #eeeeee #484e50   #5f676a
 client.unfocused        #333333 #222222 #888888 #292d2e   #222222
 client.urgent           #2f343a #e6da00 #eeeeee #e6da00   #e6da00
@@ -56,7 +56,7 @@ font pango:monospace 10
 titlebar_padding 1
 titlebar_border_thickness 0
 #default_border pixel 1
-for_window [class=".*"] border pixel 3
+for_window [class=".*"] border pixel 2
 
 default_orientation auto
 

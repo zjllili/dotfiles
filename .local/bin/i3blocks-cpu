@@ -5,8 +5,13 @@
 usage="$(mpstat --dec=0 | awk 'NR==4 {print 100 - $NF}')"
 
 icon=""
+color="#bbccdd"
+[ "$usage" -ge 90 ] && color="#888888"
 
-echo "<b>$icon</b>" "$usage"%
+# ` `(U+2009) is the Thin Space
+echo "<b><span foreground='#bbccdd'>$icon</span></b>" "$usage% "
+echo
+echo "$color"
 
 case $BLOCK_BUTTON in
     3) notify-send -u low -r 3301 -t 15000 "$icon $(basename $0)" "$(ps axch -o cmd:20,%cpu --sort=-%cpu | head)"

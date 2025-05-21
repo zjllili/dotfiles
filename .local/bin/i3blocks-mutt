@@ -6,7 +6,7 @@
 MAIL_DIR="$HOME/doc/mail"
 
 icon="󰇮"
-color="#ffffff"
+color="#4db7ed"
 
 # brace expansion is not POSIX-compliant
 result="$(find "$MAIL_DIR"/*/{INBOX,Junk}/new/ -type f | wc -l)"
@@ -14,7 +14,7 @@ result="$(find "$MAIL_DIR"/*/{INBOX,Junk}/new/ -type f | wc -l)"
 [ "$result" -eq 0 ] && color="#888888"
 
 # ` `(U+2009) is the Thin Space
-echo "$icon" "$result"
+echo "<span foreground='#4db7ed'>$icon</span>" "$result "
 echo
 echo "$color"
 

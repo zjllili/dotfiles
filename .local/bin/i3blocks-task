@@ -5,12 +5,12 @@
 result="$(task count +ACTIVE)"
 
 icon="󰅎"
-color="#ffffff"
+color="#4db7ed"
 
 [ "$result" -eq 0 ] || [ -z "$result" ] && color="#888888"
 
 # ` `(U+2009) is the Thin Space
-echo "$icon" "$result"
+echo "<span foreground='#4db7ed'>$icon</span>" "$result "
 echo
 echo "$color"
 

@@ -4,33 +4,33 @@
 
 # Global properties
 separator=true
-separator_block_width=3
+separator_block_width=12
 markup=pango
-color=#eeeeee
-background=#00435e
-border=#00435e
 
 # use i3blocks to do cronjob
 [swaymaxd]
 command= swaymaxd>/dev/null
 interval=60
 
-# modules
 [mpdd]
 command= i3blocks-mpdd
 # -2 will respawn the command as soon as it terminates
 interval=-2
 
+# modules
+########
 [mpd]
 command= i3blocks-mpd
 interval=once
 signal=8
 
+########
 [wttr]
 command= i3blocks-wttr
 interval=once
 signal=7
 
+########
 [mutt]
 command= i3blocks-mutt
 interval=60
@@ -41,6 +41,7 @@ separator_block_width=0
 command= i3blocks-newsboat
 interval=60
 signal=5
+separator_block_width=0
 
 [task]
 command= i3blocks-task
@@ -53,6 +54,7 @@ command= i3blocks-calcurse
 interval=once
 signal=6
 
+########
 [pacman]
 command= i3blocks-pacman
 interval=once
@@ -70,6 +72,7 @@ command= i3blocks-uptime
 interval=900
 signal=9
 
+########
 [usb]
 command= i3blocks-usb
 # use udev rules to refresh this i3blocks module
@@ -89,6 +92,7 @@ command= i3blocks-home
 interval=60
 signal=13
 
+########
 [memory]
 command= i3blocks-memory
 interval=5
@@ -103,6 +107,7 @@ separator_block_width=0
 command= i3blocks-temperature
 interval=5
 
+########
 [wifi]
 command= i3blocks-wifi
 interval=10
@@ -114,10 +119,12 @@ command= i3blocks-ethernet
 interval=10
 signal=11
 
+########
 [brightness]
 command= i3blocks-brightness
 interval=once
 signal=3
+separator_block_width=0
 
 [microphone]
 command= i3blocks-microphone
@@ -130,6 +137,7 @@ command= i3blocks-volume
 interval=60
 signal=1
 
+########
 [bluetooth]
 command= i3blocks-bluetooth
 # use udev rules to refresh this i3blocks module
@@ -143,6 +151,7 @@ command= i3blocks-battery
 interval=5
 signal=12
 
+########
 [time]
 command= i3blocks-time
 interval=5

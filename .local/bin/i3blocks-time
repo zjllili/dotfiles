@@ -3,9 +3,12 @@
 # @since 2025
 
 #icon="󰥔"
+color="#bbccdd"
 
 # ` `(U+2009) is the Thin Space
 echo "$(date '+%b-%d <small>%a</small> %H:%M')"
+echo
+echo "$color"
 
 case $BLOCK_BUTTON in
     3) $HOME/.local/bin/wcal
