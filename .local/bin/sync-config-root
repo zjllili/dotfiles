@@ -3,5 +3,5 @@
 # @since 2025
 
 sudo rsync -a --delete-after --progress $HOME/doc/heart/{.profile,.bashrc,.inputrc,.stow-local-ignore} /root/heart
-sudo rsync -a --delete-after --progress $HOME/doc/heart/.config/bash/{aliases.sh,functions.sh} /root/heart/.config/bash
+sudo rsync -a --delete-after --progress $HOME/doc/heart/.config/bash/{aliases.bash,functions.bash} /root/heart/.config/bash
 sudo rsync -a --delete-after --progress $HOME/doc/heart/.config/{fzf,lf,tmux,vim,dircolors} /root/heart/.config
