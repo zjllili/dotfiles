@@ -17,8 +17,8 @@ SHELL_CONFIG="$HOME/.config/shell" # general shell configs
 [ -f "$SHELL_CONFIG/functions.sh" ] && . "$SHELL_CONFIG/functions.sh"
 
 BASH_CONFIG="$HOME/.config/bash" # bash specifc configs
-[ -f "$BASH_CONFIG/aliases.sh" ] && . "$BASH_CONFIG/aliases.sh"
-[ -f "$BASH_CONFIG/functions.sh" ] && . "$BASH_CONFIG/functions.sh"
+[ -f "$BASH_CONFIG/aliases.bash" ] && . "$BASH_CONFIG/aliases.bash"
+[ -f "$BASH_CONFIG/functions.bash" ] && . "$BASH_CONFIG/functions.bash"
 
 set -o vi
 eval "$(fzf --bash)"

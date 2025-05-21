@@ -53,8 +53,8 @@ aur.list
 !.bash_aliases
 !.bash_profile
 !.config/bash/
-!.config/bash/aliases.sh
-!.config/bash/functions.sh
+!.config/bash/aliases.bash
+!.config/bash/functions.bash
 
 !.zprofile
 !.zshrc
