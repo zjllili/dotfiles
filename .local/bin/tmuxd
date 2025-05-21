@@ -3,11 +3,4 @@
 # @since 2025
 # spawn a termux window in scratchpad if there isn't one already
 
-if swaymsg -t get_tree | grep "_Scratchpad_Tmux"; then
-    exit 0 # don't do anything if already have window in scratchpad
-else
-    # in `sway/config`:
-    # for_window [title="Scratchpad Tmux"]  move scratchpad
-    # if there's a tmux session attch it; else start new session
-    tmux attach || tmux
-fi
+swaymsg -t get_tree | grep "_Scratchpad_Tmux" || tmux attach || tmux

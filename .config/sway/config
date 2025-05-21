@@ -372,7 +372,7 @@ bindsym $mod+p focus parent
 bindsym $mod+Shift+p focus child
 
 bindsym $mod+Shift+s move scratchpad
-bindsym $mod+a exec $term -T "_Scratchpad_Tmux" $HOME/.local/bin/tmuxd , scratchpad show
+bindsym $mod+a scratchpad show
 
 bindsym $mod+y resize shrink width 30px
 bindsym $mod+u resize grow height 30px
