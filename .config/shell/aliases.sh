@@ -42,6 +42,7 @@ alias iostat="iostat -t 2"
 alias vim="nvim"
 alias fvi="fzf --bind='enter:execute(nvim {+}),ctrl-j:preview-down,ctrl-k:preview-up'"
 alias mutt="neomutt"
+alias tmux="tmux attach || tmux"
 alias tsk="task";
 alias twt="taskwarrior-tui"
 alias mpv="mpv --loop"
