@@ -5,11 +5,19 @@
 
 MAIL_DIR="$HOME/doc/mail"
 
+MBSYNC_CACHE="${XDG_CACHE_HOME}/mbsync-cron"
+update_time="$(stat -c "%Y" "$MBSYNC_CACHE")"
+current_time="$(date +%s)"
+UPDATE_FREQUENCY=3600 # in seconds, 7200s = 2H
+
 icon="󰇮"
 color="#4db7ed"
 
 # brace expansion is not POSIX-compliant
 result="$(find "$MAIL_DIR"/*/{INBOX,Junk}/new/ -type f | wc -l)"
+
+# test time passed since last sync
+(( current_time - update_time > UPDATE_FREQUENCY )) && result="!"
 
 [ "$result" -eq 0 ] && color="#888888"
 
