@@ -2,6 +2,7 @@
 [install.md](./install.md)
 
 ## What Is This?
+<img src="./misc/screenshot02.png" alt="drawing" width="480"/>
 <img src="./misc/screenshot03.png" alt="drawing" width="480"/>
 <img src="./misc/screenshot04.png" alt="drawing" width="480"/>
 
