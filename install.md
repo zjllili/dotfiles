@@ -392,7 +392,7 @@ networkmanager brightnessctl tlp ufw firejail cronie bluez-utils bluetui efiboot
 btop ncdu iftop sysstat smartmontools
 
 ### file sharing
-android-file-transfer samba
+android-file-transfer samba qrtool
 
 ### web browser
 w3m firefox firefox-dark-reader firefox-tridactyl firefox-ublock-origin
