@@ -35,6 +35,8 @@ ZSH_CONFIG="$HOME/.config/zsh" # zsh specifc configs
 set -o vi
 source <(fzf --zsh)
 
+set -0 # spelling correction
+
 bindkey -M menuselect '^p' vi-up-line-or-history
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
