@@ -33,7 +33,7 @@ ZSH_CONFIG="$HOME/.config/zsh" # zsh specifc configs
 [ -f "$ZSH_CONFIG/functions.zsh" ] && . "$ZSH_CONFIG/functions.zsh"
 
 set -o vi
-source <(fzf --zsh)
+source <(/usr/bin/fzf --zsh)
 
 set -0 # spelling correction
 

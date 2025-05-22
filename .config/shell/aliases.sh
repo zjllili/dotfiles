@@ -40,6 +40,7 @@ alias free="free -h"
 alias iostat="iostat -t 2"
 
 alias vim="nvim"
+alias fzf="FZF_LEVEL=1 /usr/bin/fzf --preview 'scope {}' --bind=ctrl-j:preview-down,ctrl-k:preview-up --reverse"
 alias fvi="fzf --bind='enter:execute(nvim {+}),ctrl-j:preview-down,ctrl-k:preview-up'"
 alias mutt="neomutt"
 alias tsk="task";
@@ -49,7 +50,6 @@ alias ncmpcpp="ncmpcpp -q"
 alias newsboat="newsboat -q"
 
 alias wmenu="wmenu -f 'SourceCodePro Medium 13' -i -S 6f3f89 -s ffffff -M 6f3f89 -m ffffff"
-alias fzf="/usr/bin/fzf --bind=ctrl-j:preview-down,ctrl-k:preview-up --reverse --color=16 --preview-window=65%:wrap:border-sharp: --preview 'bat --color=always --style=plain,changes {}'"
 alias ,,="~/.local/bin/teleport-genesis-search"
 
 alias heartstow='cd ~/doc/heart && stow --adopt -t ~ . && cd - &>/dev/null && echo "heart is stowed"'
@@ -106,17 +106,16 @@ alias glf="git log --follow -p"
 alias glfa="git log --follow -p --graph --abbrev-commit --show-signature"
 alias gls="git log --show-signature"
 alias gla="git log --graph --all --name-only --abbrev-commit --show-signature"
-alias fgl="git log | grep '^commit ' | cut -d' ' -f2 | fzf --bind=ctrl-j:preview-down,ctrl-k:preview-up --preview 'git show {} | bat --color=always --style=plain,changes ' --preview-window=90% | wl-copy"
-alias fglf=" fzf --bind=ctrl-j:preview-down,ctrl-k:preview-up --preview 'git log --follow -p {} | bat --color=always --style=plain,changes' "
+alias fgl="git log | grep '^commit ' | cut -d' ' -f2 | /usr/bin/fzf --bind=ctrl-j:preview-down,ctrl-k:preview-up --preview 'git show {} | bat --color=always --style=plain,changes ' --preview-window=90% | wl-copy"
+alias fglf=" /usr/bin/fzf --bind=ctrl-j:preview-down,ctrl-k:preview-up --preview 'git log --follow -p {} | bat --color=always --style=plain,changes' "
 
 alias sw="sway --unsupported-gpu"
 alias vm="virt-manager"
 alias wshowkeys="wshowkeys -a bottom -b '#11111188' -F 'SourceCodePro 28'"
 
-alias fimg="find -type f \( -name '*.png' -o -name '*.jpeg' -o -name '*.jpg' -o -name '*.webp' \) | fzf --bind=ctrl-j:preview-down,ctrl-k:preview-up --preview 'catimg -w100 {}' --preview-window=90%:bottom: --bind='enter:execute(swayimg {})'"
-alias ftree="realpath * | fzf --bind=ctrl-j:preview-down,ctrl-k:preview-up --prompt='ftree: ' --reverse --preview 'tree -L1 {}'"
-alias fpinfo="pacman -Qq | fzf --bind=ctrl-j:preview-down,ctrl-k:preview-up --prompt='package info: ' --preview-window=70%:bottom: --preview 'pacman -Qi {}'"
-alias fpcache="pacman -Qq | fzf --bind=ctrl-j:preview-down,ctrl-k:preview-up --prompt='package cache: ' --preview-window=70%:bottom: --preview 'ls /var/cache/pacman/pkg/{}-[0-9]*.pkg.tar.zst'"
+alias ftree="realpath * | /usr/bin/fzf --bind=ctrl-j:preview-down,ctrl-k:preview-up --prompt='ftree: ' --reverse --preview 'tree -L1 {}'"
+alias fpinfo="pacman -Qq | /usr/bin/fzf --bind=ctrl-j:preview-down,ctrl-k:preview-up --prompt='package info: ' --preview-window=70%:bottom: --preview 'pacman -Qi {}'"
+alias fpcache="pacman -Qq | /usr/bin/fzf --bind=ctrl-j:preview-down,ctrl-k:preview-up --prompt='package cache: ' --preview-window=70%:bottom: --preview 'ls /var/cache/pacman/pkg/{}-[0-9]*.pkg.tar.zst'"
 
 alias ttypers="ttyper -w 10 -l symbol"
 alias ttyperb="ttyper -w 25 -l bash"

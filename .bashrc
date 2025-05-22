@@ -21,7 +21,7 @@ BASH_CONFIG="$HOME/.config/bash" # bash specifc configs
 [ -f "$BASH_CONFIG/functions.bash" ] && . "$BASH_CONFIG/functions.bash"
 
 set -o vi
-eval "$(fzf --bash)"
+eval "$(/usr/bin/fzf --bash)"
 
 bind -m vi-command 'Control-l: clear-screen'
 bind -m vi-insert 'Control-l: clear-screen'
