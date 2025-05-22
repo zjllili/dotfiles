@@ -109,7 +109,7 @@ alias gla="git log --graph --all --name-only --abbrev-commit --show-signature"
 alias fgl="git log | grep '^commit ' | cut -d' ' -f2 | /usr/bin/fzf --bind=ctrl-j:preview-down,ctrl-k:preview-up --preview 'git show {} | bat --color=always --style=plain,changes ' --preview-window=90% | wl-copy"
 alias fglf=" /usr/bin/fzf --bind=ctrl-j:preview-down,ctrl-k:preview-up --preview 'git log --follow -p {} | bat --color=always --style=plain,changes' "
 
-alias sw="sway --unsupported-gpu"
+alias sw="ssh-agent sway --unsupported-gpu"
 alias vm="virt-manager"
 alias wshowkeys="wshowkeys -a bottom -b '#11111188' -F 'SourceCodePro 28'"
 
