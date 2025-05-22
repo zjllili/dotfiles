@@ -37,6 +37,7 @@ set expandtab		" expand tab input with spaces
 set tabstop=4		" spaces per tab
 set shiftwidth=4	" spaces per indentation level
 set smartindent		" aware indentations for newline insert
+set splitbelow splitright " new split position
 
 " keybindings
 " move focus to next split instead of resizing
