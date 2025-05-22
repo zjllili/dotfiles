@@ -32,7 +32,7 @@ cmd open &{{
         text/html)
             firejail firefox $fx
             ;;
-        text/*|*/json|inode/x-empty)
+        text/*|*/json|inode/x-empty|application/javascript)
             lf -remote "send $id \$$EDITOR -p \$fx"
             ;;
         #*)
