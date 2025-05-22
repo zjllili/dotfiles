@@ -570,7 +570,12 @@ PasswordAuthentication no
 systemctl enable --now sshd.service
 ```
 
-#### 2.6.8.1 import ssh pub key (on nuc11)
+#### 2.6.8.1 enable ssh-agent
+```sh
+systemctl enable --now --user ssh-agent.service
+```
+
+#### 2.6.8.2 import ssh pub key (on nuc11)
 ```sh
 # entering the directory where the pub key locates
 cd ~/.ssh
