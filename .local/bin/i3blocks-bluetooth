@@ -9,6 +9,9 @@ color="#beed5f"
 
 level=$(bluetoothctl info | grep -m1 'Battery Percentage' | awk -F'[()]' '{print $2}')
 
+[ "$level" -lt 20 ] && color="#fd971f"
+[ "$level" -lt 10 ] && color="#cc241d"
+
 [ -z "$level" ] && icon="󰂲" || level=$level%
 
 

@@ -15,7 +15,7 @@ interval=60
 # a workaround for gpg-agent ENV issue in cronie
 [mbs]
 command= mbs
-interval=900
+interval=1800
 
 [mpdd]
 command= i3blocks-mpdd

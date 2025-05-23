@@ -7,7 +7,7 @@ usage="$(command df /home | awk 'NR==2 {print $5}' | tr -d '%')"
 icon=""
 
 color="#beed5f"
-[ "$usage" -ge 95 ] && color="#888888"
+[ "$usage" -ge 95 ] && color="#fd971f"
 
 # ` `(U+2009) is the Thin Space
 echo "<span foreground='#beed5f'>$icon</span>" "$usage"%

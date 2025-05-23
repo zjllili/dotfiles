@@ -15,6 +15,8 @@ case "$temperature" in
     [7-9][0-9]000) icon="" ;;
 esac
 
+[ "$level" -gt 90 ] && color="#cc241d"
+
 # ` `(U+2009) is the Thin Space
 echo "<span foreground='#bbccdd'>$icon</span>" "${temperature::-3}""<small>℃</small>"
 echo
