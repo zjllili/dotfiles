@@ -12,6 +12,11 @@ markup=pango
 command= swaymaxd>/dev/null
 interval=60
 
+# a workaround for gpg-agent ENV issue in cronie
+[mbs]
+command= mbs
+interval=900
+
 [mpdd]
 command= i3blocks-mpdd
 # -2 will respawn the command as soon as it terminates

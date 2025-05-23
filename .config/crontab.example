@@ -6,9 +6,10 @@
 */15 * * * * $HOME/.local/sbin/clsd
 */15 * * * * $HOME/.local/bin/sync-config-cron
 
-# i3blocks-mutt
-@reboot $HOME/.local/bin/mbs
-*/15 * * * * $HOME/.local/bin/mbs
+# disable due to ENV issuse with gpg-agent,  use i3blocks as a workaround
+# offline mail
+#@reboot $HOME/.local/bin/mbs
+#*/15 * * * * $HOME/.local/bin/mbs
 
 # i3blocks-wttr
 @reboot $HOME/.local/bin/updw
