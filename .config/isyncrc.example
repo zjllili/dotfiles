@@ -12,7 +12,7 @@ IMAPAccount account1
 Host outlook.office365.com
 Port 993
 User <user1>@outlook.com
-PassCmd "/usr/share/neomutt/oauth2/mutt_oauth2.py --decryption-pipe 'gpg --decrypt --pinentry-mode default' -t ~/.cache/mutt/oauth-account1"
+PassCmd "/usr/share/neomutt/oauth2/mutt_oauth2.py -t ~/.cache/mutt/oauth-account1"
 TLSType IMAPS
 AuthMechs XOAUTH2
 
