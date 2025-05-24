@@ -35,13 +35,13 @@ bar {
     strip_workspace_numbers yes
 
 	colors {
-    background #111111
+    background #111111e6
     #workspace color    border  backgr  text
     focused_workspace  #005577 #005577 #eeeeee
     active_workspace   #333333 #333333 #eeeeee
-    inactive_workspace #000000cc #000000cc #eeeeee
+    inactive_workspace #111111e6 #111111e6 #eeeeee
     urgent_workspace   #e6da00 #e6da00 #eeeeee
-    binding_mode       #333333 #005577 #eeeeee
+    binding_mode       #005577 #005577 #eeeeee
 	}
 }
 
@@ -57,6 +57,7 @@ titlebar_padding 1
 titlebar_border_thickness 0
 #default_border pixel 1
 for_window [class=".*"] border pixel 2
+for_window [app_id="code-oss"] opacity 0.95
 
 default_orientation auto
 
