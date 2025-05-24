@@ -42,6 +42,6 @@ fi
 tar -cvf - "$1" | gpg -c --cipher-algo "$CIPHER_ALGO" --output "$1".tar.gpg --passphrase "$gpg_passphrase1"
 
 # clear passphrase cache in memory
-gpg-connect-agent reloadagent /bye
+#gpg-connect-agent reloadagent /bye
 
 [ "$XDG_SESSION_TYPE" != "tty" ] && notify-send -u low -r 1099 "$(basename $0)" "$msg"

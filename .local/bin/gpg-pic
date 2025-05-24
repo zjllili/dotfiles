@@ -38,4 +38,4 @@ else
 fi
 
 # clean cached passphrase
-gpg-connect-agent reloadagent /bye
+#gpg-connect-agent reloadagent /bye

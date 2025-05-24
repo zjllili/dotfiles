@@ -29,4 +29,4 @@ fi
     echo "$gpg_passphrase" | gpg --batch --passphrase-fd 0 -d "$1" | mpv - --loop --no-resume-playback
 
 # clean cached passphrase
-gpg-connect-agent reloadagent /bye
+#gpg-connect-agent reloadagent /bye

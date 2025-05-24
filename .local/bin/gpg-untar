@@ -8,7 +8,7 @@
 source $HOME/.local/bin/wmenu-color 2>/dev/null
 
 if [ "$XDG_SESSION_TYPE" = "tty" ]; then
-    gpg --pinentry-mode loopback -d "$1" | tar -xvf -  && gpg-connect-agent reloadagent /bye
+    gpg --pinentry-mode loopback -d "$1" | tar -xvf -  ##&& gpg-connect-agent reloadagent /bye
     exit 0
 fi
 
@@ -23,4 +23,4 @@ echo "$gpg_passphrase" | gpg --batch --passphrase-fd 0 -d "$1" | tar -xvf - && m
 
 [ "$XDG_SESSION_TYPE" != "tty" ] && notify-send -u normal "$(basename $0)" "$msg"
 
-gpg-connect-agent reloadagent /bye
+#gpg-connect-agent reloadagent /bye

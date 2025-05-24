@@ -33,4 +33,4 @@ fi
 #gpg --pinentry-mode loopback -d $1 | less
 
 # clean cached passphrase
-gpg-connect-agent reloadagent /bye > /dev/null
+#gpg-connect-agent reloadagent /bye > /dev/null

@@ -36,4 +36,4 @@ echo "$gpg_passphrase1" | gpg --batch --passphrase-fd 0 -c --cipher-algo "$CIPHE
 [ "$XDG_SESSION_TYPE" != "tty" ] && notify-send -u low -r 1284 "$(basename $0)" "$msg"
 
 # clean cached passphrase
-gpg-connect-agent reloadagent /bye > /dev/null
+#gpg-connect-agent reloadagent /bye > /dev/null
