@@ -7,7 +7,7 @@ usage="$(command free | awk '/Mem:/ {printf "%.0f\n", $3/$2 * 100}')"
 
 icon=""
 color="#bbccdd"
-[ "$usage" -ge 95 ] && color="#888888"
+[ "$usage" -ge 95 ] && color="#cc241d"
 
 # ` `(U+2009) is the Thin Space
 echo "<span foreground='#bbccdd'>$icon</span>" "$usage% "

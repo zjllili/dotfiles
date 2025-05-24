@@ -6,7 +6,7 @@ usage="$(mpstat --dec=0 | awk 'NR==4 {print 100 - $NF}')"
 
 icon=""
 color="#bbccdd"
-[ "$usage" -ge 90 ] && color="#888888"
+[ "$usage" -ge 90 ] && color="#cc241d"
 
 # ` `(U+2009) is the Thin Space
 echo "<b><span foreground='#bbccdd'>$icon</span></b>" "$usage% "
