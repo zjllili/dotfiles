@@ -3,7 +3,6 @@
 // @since 2023,2024,2025
 
 {
-    "extensions.autoUpdate": false,
     "redhat.telemetry.enabled": false,
     // use system keymap, fixing vscodevim not using the swapped ESC and CAPSLOCK on Linux
     "keyboard.dispatch": "keyCode",
@@ -35,5 +34,10 @@
     "window.titleBarStyle": "native",
     "window.customTitleBarVisibility": "never",
     "workbench.iconTheme": "vs-minimal",
+
+    "workbench.colorCustomizations":{
+        "editor.background": "#111111e6"
+
+    },
     "workbench.activityBar.location": "hidden"
 }
