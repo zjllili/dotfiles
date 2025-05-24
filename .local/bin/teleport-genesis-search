@@ -8,7 +8,7 @@
 # silent bash's complaining when running in tmux
 source $HOME/.local/bin/wmenu-color 2>/dev/null
 
-TELEPORT_CONF="$HOME/.config/bash/teleport.conf"
+TELEPORT_CONF="$HOME/.config/shell/teleport.conf"
 
 if [ "$XDG_SESSION_TYPE" = "wayland" ] && [ ! -n "$TMUX" ]; then
     grep '^[^#]' "$TELEPORT_CONF" | wmenu-color "-p[$(basename $0)]" "-l 9"
