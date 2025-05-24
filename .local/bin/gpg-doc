@@ -25,10 +25,10 @@ fi
 
 if [[ $1 == *".epub.gpg" || $1 == *".pdf.gpg" ]]; then
     # ebooks with zathura
-    echo "$gpg_passphrase" | gpg --batch --passphrase-fd 0 -d "$1" | zathura -
+    echo "$gpg_passphrase" | gpg --no-symkey-cache --batch --passphrase-fd 0 -d "$1" | zathura -
 else
     # plain text with less
-    echo "$gpg_passphrase" | gpg --batch --passphrase-fd 0 -d "$1" | less
+    echo "$gpg_passphrase" | gpg --no-symkey-cache --batch --passphrase-fd 0 -d "$1" | less
 fi
 #gpg --pinentry-mode loopback -d $1 | less
 

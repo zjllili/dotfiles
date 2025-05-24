@@ -31,7 +31,7 @@ if [ "$gpg_passphrase1" != "$gpg_passphrase2" ]; then
     exit 1
 fi
 
-echo "$gpg_passphrase1" | gpg --batch --passphrase-fd 0 -c --cipher-algo "$CIPHER_ALGO" "$1" && msg="encryption done" || msg="encryption failed"
+echo "$gpg_passphrase1" | gpg --no-symkey-cache --batch --passphrase-fd 0 -c --cipher-algo "$CIPHER_ALGO" "$1" && msg="encryption done" || msg="encryption failed"
 
 [ "$XDG_SESSION_TYPE" != "tty" ] && notify-send -u low -r 1284 "$(basename $0)" "$msg"
 

@@ -19,7 +19,7 @@ if [ "$#" -eq 0 ]; then
 fi
 
 if [ "$XDG_SESSION_TYPE" = "tty" ]; then
-    tar -cvf - "$1" | gpg -c --cipher-algo aes-256 --output "$1".tar.gpg
+    tar -cvf - "$1" | gpg --no-symkey-cache -c --cipher-algo aes-256 --output "$1".tar.gpg
     exit 0
 fi
 
@@ -39,7 +39,7 @@ fi
 
 # tar -cvf - sends the output to the standard output intead of writing to a file on disk
 #tar --pinentry-mode loopback -cvf - $1 | gpg -c --cipher-algo aes-256 --output $1.tar.gpg
-tar -cvf - "$1" | gpg -c --cipher-algo "$CIPHER_ALGO" --output "$1".tar.gpg --passphrase "$gpg_passphrase1"
+tar -cvf - "$1" | gpg --no-symkey-cache -c --cipher-algo "$CIPHER_ALGO" --output "$1".tar.gpg --passphrase "$gpg_passphrase1"
 
 # clear passphrase cache in memory
 #gpg-connect-agent reloadagent /bye

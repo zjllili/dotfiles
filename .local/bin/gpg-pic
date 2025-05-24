@@ -32,9 +32,9 @@ if  [ -z "$gpg_passphrase" ]; then
 fi
 
 if [[ $1 == *".pdf.gpg" ]]; then
-    echo "$gpg_passphrase" | gpg --batch --passphrase-fd 0 -d "$1" | zathura -
+    echo "$gpg_passphrase" | gpg --no-symkey-cache --batch --passphrase-fd 0 -d "$1" | zathura -
 else
-    echo "$gpg_passphrase" | gpg --batch --passphrase-fd 0 -d "$1" | mpv - --loop --no-resume-playback
+    echo "$gpg_passphrase" | gpg --no-symkey-cache --batch --passphrase-fd 0 -d "$1" | mpv - --loop --no-resume-playback
 fi
 
 # clean cached passphrase
