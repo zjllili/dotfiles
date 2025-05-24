@@ -8,6 +8,9 @@ Cd() {
     cd "$(dirname $1)"
 }
 
+gcd() {
+    cd $(git rev-parse --show-toplevel)
+}
 # avoid nested lf
 lf() {
     [ -z "$LF_LEVEL" ] && /usr/bin/lf "$@" || exit &>/dev/null
