@@ -28,6 +28,7 @@ interval=-2
 command= i3blocks-mpd
 interval=once
 signal=8
+separator_block_width=10
 
 ########
 [wttr]
