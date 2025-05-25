@@ -3,4 +3,7 @@
 # @since 2025
 # menu colorscheme, to be sourced by other scripts
 
-wmenu -f "SourceCodePro medium 13" -S 005577 -s ffffff -M 005577 -m ffffff -N 111111 "$@"
+color_pink="b16286"
+color_white="eeeeee"
+
+wmenu -f "SourceCodePro medium 13" -S $color_pink -s $color_white -M $color_pink -m $color_white -N 111111 "$@"
