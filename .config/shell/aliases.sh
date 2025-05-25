@@ -119,3 +119,5 @@ alias fpcache="pacman -Qq | /usr/bin/fzf --bind=ctrl-j:preview-down,ctrl-k:previ
 
 alias ttypers="ttyper -w 10 -l symbol"
 alias ttyperb="ttyper -w 25 -l bash"
+
+alias transmission-cli="transmission-cli -w $HOME/dls"
