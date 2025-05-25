@@ -2,9 +2,9 @@
 # @since 2023,2024
 
 color listnormal_unread  color13 default
-color listfocus          white   color12
-color listfocus_unread   white   color12
-color info               default color12
+color listfocus          white   color14
+color listfocus_unread   white   color14
+color info               default color14
 color article            default default
 
 # movement

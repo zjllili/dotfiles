@@ -30,8 +30,8 @@ fetch_lyrics_for_current_song_in_background = no
 
 ### color ###
 main_window_color = 188
-current_item_prefix = $(blue)$r
-current_item_inactive_column_prefix = $/r$(end)
+current_item_prefix = $(cyan)$r
+current_item_inactive_column_prefix = $(blue)$r
 selected_item_prefix = $4
 playlist_disable_highlight_delay = 0
 
