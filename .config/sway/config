@@ -2,10 +2,12 @@
 # @since 2023,2024,2025
 
 include /etc/sway/config.d/*
+include ~/.config/sway/colors
+
 # Mod4=super Mod1=alt
 set $mod Mod4
 set $term /usr/bin/footclient
-set $menu wmenu-run -f "SourceCodePro Medium 13" -i -N 111111 -S 005577 -s eeeeee -M 6f3f89 -m eeeeee | xargs swaymsg exec --
+set $menu wmenu-run -f "SourceCodePro Medium 13" -i -N $color_black -S $color_pink -s $color_white | xargs swaymsg exec --
 set $wmenu ~/.local/bin/wmenu-color
 set $bookmarks ~/.local/bin/share/bookmarks
 set $wobfifo /tmp/wob.fifo
@@ -35,22 +37,22 @@ bar {
     strip_workspace_numbers yes
 
 	colors {
-    background #111111e6
+    background $color_black_alpha
     #workspace color    border  backgr  text
-    focused_workspace  #005577 #005577 #eeeeee
-    active_workspace   #333333 #333333 #eeeeee
-    inactive_workspace #111111e6 #111111e6 #eeeeee
-    urgent_workspace   #e6da00 #e6da00 #eeeeee
-    binding_mode       #005577 #005577 #eeeeee
+    focused_workspace  $color_pink $color_pink $color_white
+    active_workspace   $color_grey $color_grey $color_white
+    inactive_workspace $color_black_alpha $color_black_alpha $color_white
+    urgent_workspace   $color_yellow $color_yellow $color_white
+    binding_mode       $color_pink $color_pink $color_white
 	}
 }
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #4c7899 #285577 #eeeeee #333333   #2e9ef4
-client.focused_inactive #333333 #5f676a #eeeeee #484e50   #5f676a
-client.unfocused        #333333 #222222 #888888 #292d2e   #222222
-client.urgent           #2f343a #e6da00 #eeeeee #e6da00   #e6da00
-client.placeholder      #000000 #0c0c0c #eeeeee #000000   #0c0c0c
+client.focused          $color_pink $color_pink $color_white $color_grey   $color_pink
+client.focused_inactive $color_grey $color_grey_light $color_white $color_grey_light   $color_grey_light
+client.unfocused        $color_grey $color_black_alpha $color_white $color_grey   $color_black
+client.urgent           $color_grey $color_yellow $color_white $color_yellow   $color_yellow
+client.placeholder      #$color_black #$color_black $color_white #$color_black   #$color_black
 
 font pango:monospace 10
 titlebar_padding 1

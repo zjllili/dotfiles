@@ -1,0 +1,14 @@
+# vim:ft=swayconfig
+# sway/color
+# @author nate zhou
+# @since 2025
+
+set $color_pink "b16286"
+set $color_white "eeeeee"
+
+set $color_grey "333333"
+set $color_grey_light "5f676a"
+set $color_black "111111"
+set $color_black_alpha "111111e6"
+
+set $color_yellow "e6da00"

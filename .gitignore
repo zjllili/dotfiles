@@ -178,6 +178,7 @@ aur.list
 !.config/ranger/commands.py
 !.config/sway/
 !.config/sway/config
+!.config/sway/colors
 !.config/sway/layout.xkb
 !.config/swayimg/
 !.config/swayimg/config
