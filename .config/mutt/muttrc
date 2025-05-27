@@ -33,6 +33,7 @@ auto_view text/html
 
 
 ## keybindings
+# ^G is hardcoded as `abort` and cannot be remaped
 bind pager,browser		    h			exit
 bind attach,alias			h			exit
 bind pager				    l			view-attachments
