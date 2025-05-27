@@ -3,8 +3,6 @@
 # @since 2023,2024,2025
 # general aliases for bash/zsh
 
-[ -x /usr/bin/dircolors ] && [ -r ~/.dircolors ] && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-
 alias rm="rm -I";
 alias cp="cp -i";
 alias mv="mv -i";
