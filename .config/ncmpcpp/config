@@ -28,12 +28,17 @@ media_library_column_width_ratio_three = 3:3:2
 follow_now_playing_lyrics = yes
 fetch_lyrics_for_current_song_in_background = no
 
+# format
+song_columns_list_format = (20)[]{a} (6f)[green]{NE} (50)[cyan]{t|f:Title} (20)[cyan]{b} (7f)[magenta]{l}
+
 ### color ###
 main_window_color = 188
 current_item_prefix = $(cyan)$r
 current_item_inactive_column_prefix = $(blue)$r
 selected_item_prefix = $4
 playlist_disable_highlight_delay = 0
+progressbar_color = "cyan"
+progressbar_elapsed_color = "cyan"
 
 now_playing_prefix = $b$(yellow)$r
 now_playing_suffix = $/r$/b$(end)
