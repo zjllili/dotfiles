@@ -458,6 +458,9 @@ adwaita-qt5 adwaita-qt5 fcitx5-skin-fluentdark-git
 
 ### etc
 wshowkeys-mao-git
+
+### fix
+lf-git code-marketplace
 ```
 
 ### [example] compile and install
