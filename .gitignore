@@ -79,6 +79,10 @@ aur.list
 !.local/bin/*
 !.local/share/
 !.local/share/lockscreen
+!.local/share/nvim
+!.local/share/nvim/site
+!.local/share/nvim/site/autoload
+!.local/share/nvim/site/autoload/plug.vim
 !.mozilla
 !.mozilla/chrome
 !.mozilla/chrome/userChrome.css
