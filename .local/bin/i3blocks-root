@@ -2,14 +2,16 @@
 # @author nate zhou
 # @since 2025
 
+. $HOME/.local/bin/colors.sh
+
 usage="$(command df / | awk 'NR==2 {print $5}' | tr -d '%')"
 
 icon="🗁"
-color="#beed5f"
-[ "$usage" -ge 95 ] && color="#fd971f"
+color="$color15"
+[ "$usage" -ge 95 ] && color="$color3"
 
 # ` `(U+2009) is the Thin Space
-echo "<span foreground='#beed5f'>$icon</span>" "$usage% "
+echo "<span foreground=\"$color6\">$icon</span>" "$usage% "
 echo
 echo "$color"
 

@@ -2,18 +2,20 @@
 # @author nate zhou
 # @since 2025
 
+. $HOME/.local/bin/colors.sh
+
 icon=""
-color="#beed5f"
+color="$color15"
 # sed: remove parentheses`()`, trailing spaces and symbols, and ampersand `&` because `&` break pango
 title="$(mpc current -f "[%title%]" | cut -c1-40 | sed 's/([^()]*)//g; s/[[:space:],.{[]*$//; s/[&]//g')"
-[ -z "$title" ] && color="#888888"
+[ -z "$title" ] && color="$separator"
 
 # ` `(U+2009) is the Thin Space
-echo "<span foreground='#beed5f'>$icon</span>" "<small>$title</small>"
+echo "<span foreground=\"$separator\">[</span><span foreground=\"$color6\">$icon</span>" "<small>$title</small><span foreground=\"$separator\">]</span>"
 echo
 
 if [[ -z "$title" || "$(mpc status | sed -n '2p' )" =~ '[paused]' ]]; then
-    color="#888888"
+    color="$separator"
 fi
 
 echo "$color"

@@ -3,9 +3,9 @@
 # @since 2025
 
 # Global properties
-separator=true
-separator_block_width=12
+separator_block_width=0
 markup=pango
+color=#ffffff
 
 # use i3blocks to do cronjob
 [swaymaxd]
@@ -28,7 +28,6 @@ interval=-2
 command= i3blocks-mpd
 interval=once
 signal=8
-separator_block_width=10
 
 ########
 [wttr]
@@ -41,19 +40,16 @@ signal=7
 command= i3blocks-mutt
 interval=60
 signal=18
-separator_block_width=0
 
 [newsboat]
 command= i3blocks-newsboat
 interval=60
 signal=5
-separator_block_width=0
 
 [task]
 command= i3blocks-task
 interval=60
 signal=15
-separator_block_width=0
 
 [calcurse]
 command= i3blocks-calcurse
@@ -65,13 +61,11 @@ signal=6
 command= i3blocks-pacman
 interval=once
 signal=4
-separator_block_width=0
 
 [login]
 command= i3blocks-login
 interval=60
 signal=14
-separator_block_width=0
 
 [uptime]
 command= i3blocks-uptime
@@ -85,12 +79,10 @@ command= i3blocks-usb
 # `dotfiles/etc/udev/rules.d/99-i3blocks-usb.`
 interval=once
 signal=16
-separator_block_width=0
 
 [root]
 command= i3blocks-root
 interval=60
-separator_block_width=0
 signal=13
 
 [home]
@@ -102,12 +94,10 @@ signal=13
 [memory]
 command= i3blocks-memory
 interval=5
-separator_block_width=0
 
 [cpu]
 command= i3blocks-cpu
 interval=5
-separator_block_width=0
 
 [temperature]
 command= i3blocks-temperature
@@ -118,7 +108,6 @@ interval=5
 command= i3blocks-wifi
 interval=10
 signal=11
-separator_block_width=0
 
 [ethernet]
 command= i3blocks-ethernet
@@ -130,13 +119,11 @@ signal=11
 command= i3blocks-brightness
 interval=once
 signal=3
-separator_block_width=0
 
 [microphone]
 command= i3blocks-microphone
 interval=60
 signal=2
-separator_block_width=0
 
 [volume]
 command= i3blocks-volume
@@ -150,7 +137,6 @@ command= i3blocks-bluetooth
 # `dotfiles/etc/udev/rules.d/99-i3blocks-bluetooth.`
 interval=60
 signal=10
-separator_block_width=0
 
 [battery]
 command= i3blocks-battery

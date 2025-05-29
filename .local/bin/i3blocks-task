@@ -2,15 +2,17 @@
 # @author nate zhou
 # @since 2025
 
+. $HOME/.local/bin/colors.sh
+
 result="$(task count +ACTIVE)"
 
 icon="󰅎"
-color="#4db7ed"
+color="$color11"
 
-[ "$result" -eq 0 ] || [ -z "$result" ] && color="#888888"
+[ "$result" -eq 0 ] || [ -z "$result" ] && color="$separator"
 
 # ` `(U+2009) is the Thin Space
-echo "<span foreground='#4db7ed'>$icon</span>" "$result "
+echo "<span foreground=\"$color6\">$icon</span>" "$result "
 echo
 echo "$color"
 

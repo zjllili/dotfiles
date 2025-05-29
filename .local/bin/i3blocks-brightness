@@ -2,11 +2,12 @@
 # @author nate
 # @since 2025
 
+. $HOME/.local/bin/colors.sh
+
 #exec_always "$HOME"/.local/bin/wobd
 set -x
 wobfifo="/tmp/wob.fifo"
 level="$(brightnessctl | awk '/%/{gsub("[()]", "", $4); print $4}')"
-color="#d397f8"
 
 case $level in
     [0-9]%) icon="󱩎" ;;
@@ -23,9 +24,7 @@ case $level in
 esac
 
 # ` `(U+2009) is the Thin Space
-echo "$icon" "$level "
-echo
-echo "$color"
+echo "<span foreground=\"$separator\">[</span><span foreground=\"$color9\">$icon</span>" "$level<span foreground=\"$separator\">]</span>"
 
 case $BLOCK_BUTTON in
     1) pkill -SIGRTMIN+3 i3blocks &

@@ -2,20 +2,21 @@
 # @author nate zhou
 # @since 2025
 
+. $HOME/.local/bin/colors.sh
+
 BAT="BAT1"
 POWER="/sys/class/power_supply"
 
 status="$(cat $POWER/$BAT/status)"
 level="$(cat $POWER/$BAT/capacity)"
-color="#beed5f"
 
 case "$status" in
     "Discharging")
         case "$level" in
-            [0-5]) icon="󰂎" color="#cc241d";;
-            [6-9]) icon="󰁺" color="#cc241d";;
-            1[0-9]) icon="󰁻" color="#fd971f";;
-            2[0-9]) icon="󰁼" color="#fd971f";;
+            [0-5]) icon="󰂎" color11="#cc241d";;
+            [6-9]) icon="󰁺" color11="#cc241d";;
+            1[0-9]) icon="󰁻" color11="#fd971f";;
+            2[0-9]) icon="󰁼" color11="#fd971f";;
             3[0-9]) icon="󰁽";;
             4[0-9]) icon="󰁽";;
             5[0-9]) icon="󰁾";;
@@ -34,11 +35,8 @@ case "$status" in
         ;;
 esac
 
-
 # ` `(U+2009) is the Thin Space
-echo "<span foreground='#beed5f'>$icon</span>" "$level"%
-echo
-echo "$color"
+echo "<span foreground=\"$color6\">$icon</span>" "$level"%"<span foreground=\"$separator\">]</span>"
 
 case $BLOCK_BUTTON in
     3) notify-send -u low -r 3301 "$icon $(basename $0)" "$status $level%\n$(upower -i /org/freedesktop/UPower/devices/battery_$BAT | grep  'time to empty:' | sed -E 's/[ \t]+/ /g')"
