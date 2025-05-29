@@ -13,7 +13,7 @@ wobfifo="/tmp/wob.fifo"
 [ -z "$muted" ] && icon="" color="$color15" || icon="" color="$separator"
 
 # ` `(U+2009) is the Thin Space
-echo "<span foreground=\"$separator\">[</span><span foreground=\"$color9\">$icon</span>" "$volume% "
+echo "<span foreground=\"$color9\">$icon</span>" "$volume% "
 echo
 echo "$color"
 

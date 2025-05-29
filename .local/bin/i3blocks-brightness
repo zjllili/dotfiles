@@ -24,7 +24,7 @@ case $level in
 esac
 
 # ` `(U+2009) is the Thin Space
-echo "<span foreground=\"$separator\">[</span><span foreground=\"$color9\">$icon</span>" "$level<span foreground=\"$separator\">]</span>"
+echo "<span foreground=\"$separator\">[</span><span foreground=\"$color9\">$icon</span>" "$level "
 
 case $BLOCK_BUTTON in
     1) pkill -SIGRTMIN+3 i3blocks &
