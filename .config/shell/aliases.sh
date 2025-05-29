@@ -109,7 +109,7 @@ alias fglf=" /usr/bin/fzf --bind=ctrl-j:preview-down,ctrl-k:preview-up --preview
 
 alias sw="ssh-agent sway --unsupported-gpu"
 alias vm="virt-manager"
-alias wshowkeys="wshowkeys -a bottom -b '#11111188' -F 'SourceCodePro 20'"
+alias wshowkeys="firejail --noprofile --net=none --nosound --novideo --no3d --nodbus wshowkeys -a bottom -b '#11111188' -F 'SourceCodePro 20'"
 
 alias ftree="realpath * | /usr/bin/fzf --bind=ctrl-j:preview-down,ctrl-k:preview-up --prompt='ftree: ' --reverse --preview 'tree -L1 {}'"
 alias fpinfo="pacman -Qq | /usr/bin/fzf --bind=ctrl-j:preview-down,ctrl-k:preview-up --prompt='package info: ' --preview-window=70%:bottom: --preview 'pacman -Qi {}'"
