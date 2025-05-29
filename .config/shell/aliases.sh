@@ -3,6 +3,8 @@
 # @since 2023,2024,2025
 # general aliases for bash/zsh
 
+command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
+
 alias rm="rm -I";
 alias cp="cp -i";
 alias mv="mv -i";
@@ -37,7 +39,6 @@ alias lsblk="lsblk -o name,mountpoints,type,size"
 alias free="free -h"
 alias iostat="iostat -t 2"
 
-alias vim="nvim"
 alias fzf="FZF_LEVEL=1 /usr/bin/fzf --preview 'scope {}' --bind=ctrl-j:preview-down,ctrl-k:preview-up --reverse"
 alias fvi="fzf --bind='enter:execute(nvim {+}),ctrl-j:preview-down,ctrl-k:preview-up'"
 alias mutt="neomutt"
