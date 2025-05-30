@@ -100,7 +100,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'ptzz/lf.vim'
 Plug 'voldikss/vim-floaterm'
-Plug 'neoclide/coc.nvim'
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 call plug#end()
 let g:floaterm_width=0.95
 let g:floaterm_height=0.95
