@@ -41,6 +41,7 @@ alias iostat="iostat -t 2"
 
 alias fzf="FZF_LEVEL=1 /usr/bin/fzf --preview 'scope {}' --bind=ctrl-j:preview-down,ctrl-k:preview-up --reverse"
 alias fvi="fzf --bind='enter:execute(nvim {+}),ctrl-j:preview-down,ctrl-k:preview-up'"
+alias jvi="vim /usr/lib/jvm/default/lib/src.zip"
 alias mutt="neomutt"
 alias tsk="task";
 alias twt="taskwarrior-tui"
