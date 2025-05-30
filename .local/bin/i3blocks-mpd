@@ -4,7 +4,7 @@
 
 . $HOME/.local/bin/colors.sh
 
-icon=""
+icon="󰝚"
 color="$color15"
 # sed: remove parentheses`()`, trailing spaces and symbols, and ampersand `&` because `&` break pango
 title="$(mpc current -f "[%title%]" | cut -c1-40 | sed 's/([^()]*)//g; s/[[:space:],.{[]*$//; s/[&]//g')"
