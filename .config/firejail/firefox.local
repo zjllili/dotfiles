@@ -25,7 +25,6 @@ read-only ${HOME}/vid/unixchad
 whitelist ${HOME}/vid/unixchat
 read-only ${HOME}/vid/unixchat
 
-whitelist /usr/share/doc/arch-wiki
-read-only /usr/share/doc/arch-wiki
+whitelist /usr/share/doc/
 
 novideo
