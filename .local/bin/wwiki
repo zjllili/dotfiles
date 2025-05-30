@@ -14,9 +14,13 @@ else
     WIKI_PATH="$WIKI_PATH_LOCAL"
 fi
 
-selected_page="$(find "$WIKI_PATH" -type f | wmenu-color -l 6 -i -p "$(basename "$0"): ")"
-
-# don't do anything if exiting wmenu without any input
-if  [ -n "$selected_page" ]; then
-    firefox file://"$selected_page"
+if [ "$XDG_SESSION_TYPE" != "tty" ]; then
+    selected_page="$(find "$WIKI_PATH" -type f | wmenu-color -l 6 -i -p "$(basename "$0"): ")"
+    # don't do anything if exiting wmenu without any input
+    [ -n "$selected_page" ] && firefox file://"$selected_page"
+else
+    selected_page="$(find "$WIKI_PATH" -type f | fzf --preview 'scope {}' --bind=ctrl-j:preview-down,ctrl-k:preview-up --reverse)"
+    # don't do anything if exiting wmenu without any input
+    [ -n "$selected_page" ] && w3m file://"$selected_page"
 fi
+
