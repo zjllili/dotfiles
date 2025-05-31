@@ -4,7 +4,7 @@
 
 . $HOME/.local/bin/colors.sh
 
-result="$(task count +ACTIVE)"
+result="$(task count start:today)"
 
 icon="󰅎"
 
