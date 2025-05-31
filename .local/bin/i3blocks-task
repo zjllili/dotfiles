@@ -7,7 +7,6 @@
 result="$(task count +ACTIVE)"
 
 icon="󰅎"
-color="$color11"
 
 [ "$result" -eq 0 ] || [ -z "$result" ] && color="$separator"
 
