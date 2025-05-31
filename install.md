@@ -430,7 +430,7 @@ fcitx5 fcitx5-chinese-addons fcitx5-configtool fcitx5-gtk fcitx5-qt fcitx5-anthy
 yt-dlp transmission-cli httrack
 
 ### personal tools
-newsboat task taskwarrior-tui calcurse neomutt isync
+newsboat task calcurse neomutt isync
 
 ### coding
 jdk-openjdk openjdk-src openjdk-doc xorg-xwayland code nodejs npm
