@@ -5,6 +5,10 @@
 
 command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
 
+# the current shell will not return when sway exits
+# no one can have the current tty access in case sway crashes
+alias sw="exec ssh-agent sway --unsupported-gpu"
+
 alias rm="rm -I";
 alias cp="cp -i";
 alias mv="mv -i";
@@ -109,7 +113,6 @@ alias gla="git log --graph --all --name-only --abbrev-commit --show-signature"
 alias fgl="git log | grep '^commit ' | cut -d' ' -f2 | /usr/bin/fzf --bind=ctrl-j:preview-down,ctrl-k:preview-up --preview 'git show {} | bat --color=always --style=plain,changes ' --preview-window=90% | wl-copy"
 alias fglf=" /usr/bin/fzf --bind=ctrl-j:preview-down,ctrl-k:preview-up --preview 'git log --follow -p {} | bat --color=always --style=plain,changes' "
 
-alias sw="ssh-agent sway --unsupported-gpu"
 alias vm="virt-manager"
 alias wshowkeys="firejail --noprofile --net=none --nosound --novideo --no3d --nodbus wshowkeys -a bottom -b '#11111188' -F 'SourceCodePro 20'"
 
