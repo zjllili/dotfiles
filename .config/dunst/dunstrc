@@ -8,7 +8,7 @@
     width = 270
     height = (0, 600)
     origin = top-right
-    offset = 3x1
+    offset = 0x0
     scale = 0
     notification_limit = 30
     indicate_hidden = yes
@@ -17,7 +17,7 @@
     padding = 4
     horizontal_padding = 6
     frame_width = 2
-    gap_size = 4
+    gap_size = 2
     separator_color = frame
     sort = update
     font = SourceCodePro 12.5
@@ -52,20 +52,20 @@
     per_monitor_dpi = false
 
 [urgency_low]
-    background = "#111111e6"
+    background = "#111111"
     foreground = "#dddddd"
     frame_color= "#8ce10b"
     timeout = 7
 
 [urgency_normal]
-    background = "#111111e6"
+    background = "#111111"
     foreground = "#dddddd"
     frame_color = "#8ce10b"
     timeout = 12
     override_pause_level = 15
 
 [urgency_critical]
-    background = "#111111e6"
+    background = "#111111"
     foreground = "#ffffff"
     frame_color = "#e6da00"
     timeout = 0
