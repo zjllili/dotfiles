@@ -22,8 +22,8 @@ color="$color15"
 (( current_time - update_time > 86400 )) && result=""
 [ -z "$result" ] && icon="<span foreground=\"$separator\">󰅟</span>"
 
-icon="<span foreground=\"$color9\">󰅟</span> "
-echo "<span foreground=\"$separator\">[</span>$icon""$result<span foreground=\"$separator\">]</span>"
+icon="󰅟"
+echo "<span foreground=\"$separator\">[</span><span foreground=\"$color9\">$icon</span> ""$result<span foreground=\"$separator\">]</span>"
 echo ""
 
 
