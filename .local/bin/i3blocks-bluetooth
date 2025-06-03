@@ -21,7 +21,7 @@ echo "<span foreground=\"$separator\">[</span><span foreground=\"$color6\">$icon
 echo
 
 case $BLOCK_BUTTON in
-    3) notify-send -u low -r 3301 "$icon $(basename $0)" "$level% $(bluetoothctl info | grep 'Name: ' | cut -d' ' -f2-)"
+    3) notify-send -u low -r 3301 "$icon $(basename $0)" "$level $(bluetoothctl info | grep 'Name: ' | cut -d' ' -f2-)"
         ;;
     1) pkill -SIGRTMIN+10 >/dev/null &
         ;;
