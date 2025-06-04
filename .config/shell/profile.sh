@@ -53,7 +53,7 @@ export QT_QPA_PLATFORMTHEME=qt5ct # qt theme
 export QT_STYLE_OVERRIDE=adwaita-dark # qt theme
 export GTK_THEME=Adwaita-dark # for firejail'ed libreoffice theme
 
-#export WLR_DRM_NO_ATOMIC=1 # fix sway terminal freezes
+export WLR_DRM_NO_ATOMIC=1 # fix sway terminal freezes
 export ELECTRON_OZONE_PLATFORM_HINT=wayland # electron, disabled to run in xwayland for fcitx5 support
 #export WLR_NO_HARDWARE_CURSORS=1 # external monitor cursor on nvidia
 
