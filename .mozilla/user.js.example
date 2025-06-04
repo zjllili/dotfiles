@@ -10,6 +10,7 @@ user_pref("font.name.serif.x-western", "JetBrains Mono"); // font
 user_pref("extensions.activeThemeID", "firefox-compact-dark@mozilla.org"); // theme
 user_pref("browser.search.region", "US"); //region
 user_pref("browser.region.update.region", "US");
+user_pref("sidebar.visibility", "hide-sidebar"); // hide sidebar
 user_pref("full-screen-api.ignore-widgets", true); // full screen restrict to firefox window
 user_pref("browser.tabs.closeWindowWithLastTab", false); // last tab
 user_pref("browser.newtab.extensionControlled", true); // new tab
