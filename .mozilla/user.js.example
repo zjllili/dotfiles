@@ -3,7 +3,7 @@
 // @author nate zhou
 // @since 2023,2024,2025
 
-user_pref("layout.css.devPixelsPerPx", "0.85");
+user_pref("layout.css.devPixelsPerPx", "0.95");
 // enable userChrome.css
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 user_pref("font.name.serif.x-western", "JetBrains Mono"); // font

@@ -11,7 +11,7 @@ title="$(mpc current -f "[%title%]" | cut -c1-40 | sed 's/([^()]*)//g; s/[[:spac
 [ -z "$title" ] && color="$separator"
 
 # ` `(U+2009) is the Thin Space
-echo "<span foreground=\"$separator\">[</span><span foreground=\"$color6\">$icon</span>" "<small><span font=\"Narrow\">$title</span></small><span foreground=\"$separator\">]</span>"
+echo "<span foreground=\"$separator\">[</span><span foreground=\"$color6\">$icon</span>" "<span font=\"Narrow 11\">$title</span><span foreground=\"$separator\">]</span>"
 echo
 
 if [[ -z "$title" || "$(mpc status | sed -n '2p' )" =~ '[paused]' ]]; then

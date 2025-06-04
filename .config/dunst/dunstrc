@@ -20,7 +20,7 @@
     gap_size = 2
     separator_color = frame
     sort = update
-    font = SourceCodePro 12.5
+    font = SourceCodePro 14
     line_height = 0
     markup = full
     format = "<b>%s</b>\n%b"
