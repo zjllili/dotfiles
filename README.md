@@ -27,7 +27,7 @@ A few software need manually setup:
 - Default Shell:            dash
 - Interactive Shell:        bash/zsh
 - Terminlal Multiplexer:    tmux
-- WM/Compositor:            sway
+- WM/Compositor:            river
 - Status bar:               i3blocks
 - Launcher:                 wmenu
 - Notification:             dunst

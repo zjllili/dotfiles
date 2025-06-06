@@ -1,0 +1,87 @@
+#!/usr/bin/sh
+# @author nate zhou
+# @since 2025
+# river/bindings
+
+mod=Mod1    # Mod1=Alt, Mod4=Super
+
+# basic
+#riverctl map normal ${mod}+Shift e exit
+
+riverctl map normal $mod Return spawn "footclient"
+
+riverctl map normal $mod d spawn "wmenu-run -f \"SourceCodePro Medium 14\" -i -N \"$background\" -S \"$color9\" -s \"$background\""
+
+riverctl map normal ${mod}+Shift+Control l spawn "swaylock"
+
+riverctl map normal $mod space spawn "fcitx5-remote -t && notify-send -u normal -r 3289 -t 1100 $(fcitx5-remote -n)"
+
+# windows management
+riverctl map normal $mod q close
+riverctl map normal $mod f toggle-fullscreen
+riverctl map normal ${mod}+Shift space toggle-float
+
+# window navigation
+riverctl map normal $mod j focus-view next
+riverctl map normal $mod k focus-view next
+
+# window movement
+riverctl map normal ${mod}+Shift j swap next
+riverctl map normal ${mod}+Shift k swap next
+
+# workspace navigation
+riverctl map normal $mod Period focus-output next
+riverctl map normal $mod Comma focus-output previous
+
+# workspace movement
+riverctl map normal ${mod}+Shift Period send-to-output next
+riverctl map normal ${mod}+Shift Comma send-to-output previous
+
+# bring focus to the top of the layout stack
+riverctl map normal $mod z zoom
+
+# adjust ratio
+riverctl map normal $mod h send-layout-cmd rivertile "main-ratio -0.05"
+riverctl map normal $mod l send-layout-cmd rivertile "main-ratio +0.05"
+
+# adjust main count
+riverctl map normal ${mod}+Shift h send-layout-cmd rivertile "main-count +1"
+riverctl map normal ${mod}+Shift l send-layout-cmd rivertile "main-count -1"
+
+# move floating window
+riverctl map normal $mod y move left 100
+riverctl map normal $mod u move down 100
+riverctl map normal $mod i move up 100
+riverctl map normal $mod o move right 100
+
+# resize views
+riverctl map normal ${mod} y resize horizontal -100
+riverctl map normal ${mod} u resize vertical 100
+riverctl map normal ${mod} i resize vertical -100
+riverctl map normal ${mod} o resize horizontal 100
+
+# mouse
+riverctl map-pointer normal $mod BTN_LEFT move-view
+riverctl map-pointer normal $mod BTN_RIGHT resize-view
+riverctl map-pointer normal $mod BTN_MIDDLE toggle-float
+
+# tags
+for i in $(seq 1 9)
+do
+    tags=$((1 << ($i - 1)))
+    riverctl map normal $mod $i set-focused-tags $tags
+    riverctl map normal ${mod}+Shift $i set-view-tags $tags
+    riverctl map normal ${mod}+Control $i toggle-focused-tags $tags
+    riverctl map normal ${mod}+Shift+Control $i toggle-view-tags $tags
+done
+
+# Super+0 to focus all tags
+# Super+Shift+0 to tag focused view with all tags
+all_tags=$(((1 << 32) - 1))
+riverctl map normal $mod 0 set-focused-tags $all_tags
+riverctl map normal ${mod}+Shift 0 set-view-tags $all_tags
+
+riverctl map normal ${mod}+Control y  send-layout-cmd rivertile "main-location left"
+riverctl map normal ${mod}+Control u  send-layout-cmd rivertile "main-location bottom"
+riverctl map normal ${mod}+Control i    send-layout-cmd rivertile "main-location top"
+riverctl map normal ${mod}+Control o send-layout-cmd rivertile "main-location right"

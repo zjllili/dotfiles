@@ -180,6 +180,11 @@ aur.list
 !.config/ranger/rifle.conf
 !.config/ranger/scope.sh
 !.config/ranger/commands.py
+!.config/river/
+!.config/river/autostart
+!.config/river/bindings
+!.config/river/init
+!.config/river/layout.xkb
 !.config/sway/
 !.config/sway/config
 !.config/sway/colors

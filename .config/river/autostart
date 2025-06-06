@@ -1,0 +1,21 @@
+#!/usr/bin/sh
+# @author nate zhou
+# @since 2025
+# river/autostart
+
+#riverctl spawn "$HOME/.local/bin/foots" # foot server
+riverctl spawn "foot --server"
+
+riverctl spawn "swaybg -i $HOME/.local/share/wallpaper -m fill"
+
+riverctl spawn "wl-paste --watch cliphist store"
+
+riverctl spawn "fcitx5 -d"
+
+riverctl spawn "gammastep -O 5000"
+
+riverctl spawn "swayidle -w timeout 600 'brightnessctl set 4% -s' resume 'brightnessctl -r' timeout 900 'swaylock'"
+
+riverctl spawn "$HOME/.local/bin/wobd" # wob daemon
+
+riverctl spawn "$HOME/.local/sbin/clsd"
