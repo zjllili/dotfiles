@@ -26,3 +26,35 @@ riverctl border-color-unfocused 0x586e75
 
 # server side decorations(ssd)
 riverctl rule-add -app-id firefox ssd   # fix border
+
+# scratchpad
+# The scratchpad will live on an unused tag. Which tags are used depends on your
+# config, but rivers default uses the first 9 tags.
+scratch_tag=$((1 << 20 ))
+
+# Toggle the scratchpad with Super+P
+riverctl map normal Super P toggle-focused-tags ${scratch_tag}
+
+# Send windows to the scratchpad with Super+Shift+P
+riverctl map normal Super+Shift P set-view-tags ${scratch_tag}
+
+# Set spawn tagmask to ensure new windows don't have the scratchpad tag unless
+# explicitly set.
+all_but_scratch_tag=$(( ((1 << 32) - 1) ^ $scratch_tag ))
+riverctl spawn-tagmask ${all_but_scratch_tag}
+
+# sticky
+all_tags=$(((1 << 32) - 1))
+sticky_tag=$((1 << 31))
+all_but_sticky_tag=$(( $all_tags ^ $sticky_tag ))
+
+riverctl map normal Super S toggle-view-tags $sticky_tag
+riverctl spawn-tagmask ${all_but_sticky_tag}
+
+# modify the normal keybind to always select the sticky tag
+for i in $(seq 1 9)
+do
+    tags=$((1 << ($i - 1)))
+    # Super+[1-9] to focus tag [0-8]
+    riverctl map normal Super $i set-focused-tags $(($sticky_tag + $tags))
+done
