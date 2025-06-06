@@ -1,3 +1,6 @@
+# @author nate zhou
+# @since 2025
+# i3bar-river/config.toml
 # The status generator command.
 # Optional: with no status generator the bar will display only tags and layout name.
 # command = "your command here"
@@ -6,15 +9,15 @@
 command = "i3blocks"
 background = "000000ff"
 color = "#ffffffff"
-separator = "#9a8a62ff"
+separator = "#888888ff"
 tag_fg = "#d79921ff"
-tag_bg = "#282828ff"
+tag_bg = "#000000ff"
 tag_focused_fg = "#1d2021ff"
-tag_focused_bg = "#689d68ff"
+tag_focused_bg = "#b16286ff"
 tag_urgent_fg = "#282828ff"
 tag_urgent_bg = "#cc241dff"
 tag_inactive_fg = "#d79921ff"
-tag_inactive_bg = "#282828ff"
+tag_inactive_bg = "#000000ff"
 
 # The font and various sizes
 font = "SourceCodePro 13"
