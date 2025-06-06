@@ -126,6 +126,8 @@ aur.list
 !.config/gtk-3.0/settings.ini
 !.config/gtk-4.0/
 !.config/gtk-4.0/settings.ini
+!.config/i3bar-river/
+!.config/i3bar-river/config.toml
 !.config/isyncrc.example
 !.config/i3status/
 !.config/i3status/config

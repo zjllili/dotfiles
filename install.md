@@ -398,7 +398,7 @@ android-file-transfer samba qrtool
 w3m firefox firefox-dark-reader firefox-tridactyl firefox-ublock-origin
 
 ### window manager/wayland compositor suite
-foot river wlr-randr swaybg swayidle swaylock i3blocks wmenu wtype wl-clipboard cliphist dunst gammastep slurp grim wf-recorder wl-mirror wob
+foot river wlr-randr swaybg swayidle swaylock i3bar-river-git i3blocks wmenu wtype wl-clipboard cliphist dunst gammastep slurp grim wf-recorder wl-mirror wob
 
 ### audio server
 pipewire pipewire-alsa pipewire-pulse pipewire-jack noise-suppression-for-voice pulsemixer
