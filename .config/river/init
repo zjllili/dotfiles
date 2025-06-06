@@ -23,3 +23,6 @@ riverctl set-repeat 30 200
 # color
 riverctl border-color-focused 0xb16286
 riverctl border-color-unfocused 0x586e75
+
+# server side decorations(ssd)
+riverctl rule-add -app-id firefox ssd   # fix border
