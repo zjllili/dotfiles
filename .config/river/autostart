@@ -5,8 +5,7 @@
 
 killall -q foot swayidle wobd wl-paste
 
-#riverctl spawn "$HOME/.local/bin/foots" # foot server
-riverctl spawn "foot --server"
+riverctl spawn "$HOME/.local/bin/foots" # foot server
 
 riverctl spawn "swaybg -i $HOME/.local/share/wallpaper -m fill"
 
