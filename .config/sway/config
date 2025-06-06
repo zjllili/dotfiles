@@ -137,36 +137,35 @@ mode $mode_space {
     bindsym h exec swaymsg mode "default" && fcitx5-remote -s hangul && notify-send -u normal -r 3289 -t 1100 "$(fcitx5-remote -n)"
 }
 
-bindsym $mod+q kill
-bindsym $mod+delete kill
-bindsym $mod+d exec $menu
-bindsym $mod+Return exec $term
-bindsym $mod+Shift+Return exec $term -T "_Floating_Term"
-bindsym $mod+Control+Return exec $term -T "_Scratchpad_Tmux" $HOME/.local/bin/tmuxd
-bindsym $mod+r exec $term lf
-bindsym $mod+CONTROL+e exec $term neomutt
-bindsym $mod+CONTROL+m exec $term ncmpcpp
-bindsym $mod+CONTROL+b exec $term bluetui
-bindsym $mod+CONTROL+p exec $term pulsemixer
-bindsym $mod+CONTROL+t exec $term btop
-bindsym $mod+CONTROL+c exec $term calcurse
-bindsym $mod+CONTROL+n exec $term news
-bindsym $mod+CONTROL+w exec $term taskwarrior-tui
+bindsym --no-repeat $mod+q kill
+bindsym --no-repeat $mod+d exec $menu
+bindsym --no-repeat $mod+Return exec $term
+bindsym --no-repeat $mod+Shift+Return exec $term -T "_Floating_Term"
+bindsym --no-repeat $mod+Control+Return exec $term -T "_Scratchpad_Tmux" $HOME/.local/bin/tmuxd
+bindsym --no-repeat $mod+r exec $term lf
+bindsym --no-repeat $mod+CONTROL+e exec $term neomutt
+bindsym --no-repeat $mod+CONTROL+m exec $term ncmpcpp
+bindsym --no-repeat $mod+CONTROL+b exec $term bluetui
+bindsym --no-repeat $mod+CONTROL+p exec $term pulsemixer
+bindsym --no-repeat $mod+CONTROL+t exec $term btop
+bindsym --no-repeat $mod+CONTROL+c exec $term calcurse
+bindsym --no-repeat $mod+CONTROL+n exec $term news
+bindsym --no-repeat $mod+CONTROL+w exec $term taskwarrior-tui
 
-bindsym $mod+Shift+r reload
-bindsym $mod+Control+r exec swaymsg "output * bg ~/.local/share/wallpaper fill"
-bindsym $mod+Shift+e exec ~/.local/bin/swayexit
-bindsym $mod+Shift+q exec ~/.local/bin/swayhibe
+bindsym --no-repeat $mod+Shift+r reload
+bindsym --no-repeat $mod+Control+r exec swaymsg "output * bg ~/.local/share/wallpaper fill"
+bindsym --no-repeat $mod+Shift+e exec ~/.local/bin/swayexit
+bindsym --no-repeat $mod+Shift+q exec ~/.local/bin/swayhibe
 # clipboard & bookmarks
-bindsym $mod+c exec ~/.local/bin/wclip
-bindsym $mod+b exec ~/.local/bin/wbookmark
-bindsym $mod+Shift+b exec ~/.local/bin/wbookmark-record
+bindsym --no-repeat $mod+c exec ~/.local/bin/wclip
+bindsym --no-repeat $mod+b exec ~/.local/bin/wbookmark
+bindsym --no-repeat $mod+Shift+b exec ~/.local/bin/wbookmark-record
 # notification
-bindsym $mod+Shift+n exec "dunstctl history-pop"
-bindsym $mod+n exec "dunstctl close"
-bindsym $mod+backspace exec "dunstctl close-all"
+bindsym --no-repeat $mod+Shift+n exec "dunstctl history-pop"
+bindsym --no-repeat $mod+n exec "dunstctl close"
+bindsym --no-repeat $mod+backspace exec "dunstctl close-all"
 # swaylock is configured at ~/.config/swaylock/config
-bindsym $mod+Shift+CONTROL+l exec "swaylock"
+bindsym --no-repeat $mod+Shift+CONTROL+l exec "swaylock"
 # adjust window gaps
 bindsym $mod+CONTROL+minus exec "swaymsg gaps inner current minus 2"
 bindsym $mod+CONTROL+equal exec "swaymsg gaps inner current plus 2"
@@ -185,15 +184,15 @@ bindsym $mod+Shift+m exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle && pkill 
 bindsym $mod+CONTROL+space exec mpc toggle
 
 ## take a screenshot with a selected part
-bindsym $mod+g exec ~/.local/bin/wshot
-bindsym $mod+Shift+g exec ~/.local/bin/wshot-geo
+bindsym --no-repeat $mod+g exec ~/.local/bin/wshot
+bindsym --no-repeat $mod+Shift+g exec ~/.local/bin/wshot-geo
 ## take a screenshot with all monitors
-bindsym $mod+CONTROL+g exec grim && notify-send -u low -r 88 "Screenshot taken on all outputs"
+bindsym --no-repeat $mod+CONTROL+g exec grim && notify-send -u low -r 88 "Screenshot taken on all outputs"
 ## color picker
 #bindsym $mod+CONTROL+c exec ~/.local/bin/wpicker
 # seat cursor
 #bindsym $mod+grave seat - cursor set 0 0
-bindsym $mod+slash seat - cursor set 9999 9999
+bindsym --no-repeat $mod+slash seat - cursor set 9999 9999
 # wtype
 #bindsym Control+e exec wtype -k 'Escape'
 
@@ -288,71 +287,71 @@ mode $mode_apostrophe {
 }
 
 # managing windows
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym --no-repeat $mod+h focus left
+bindsym --no-repeat $mod+j focus down
+bindsym --no-repeat $mod+k focus up
+bindsym --no-repeat $mod+l focus right
 
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym --no-repeat $mod+Shift+h move left
+bindsym --no-repeat $mod+Shift+j move down
+bindsym --no-repeat $mod+Shift+k move up
+bindsym --no-repeat $mod+Shift+l move right
 
-bindsym $mod+CONTROL+h mark swap, focus left, swap container with mark swap
-bindsym $mod+CONTROL+j mark swap, focus down, swap container with mark swap
-bindsym $mod+CONTROL+k mark swap, focus up, swap container with mark swap
-bindsym $mod+CONTROL+l mark swap, focus right, swap container with mark swap
+bindsym --no-repeat $mod+CONTROL+h mark swap, focus left, swap container with mark swap
+bindsym --no-repeat $mod+CONTROL+j mark swap, focus down, swap container with mark swap
+bindsym --no-repeat $mod+CONTROL+k mark swap, focus up, swap container with mark swap
+bindsym --no-repeat $mod+CONTROL+l mark swap, focus right, swap container with mark swap
 
-bindsym $mod+1 workspace number 1
-bindsym $mod+2 workspace number 2
-bindsym $mod+3 workspace number 3
-bindsym $mod+4 workspace number 4
-bindsym $mod+5 workspace number 5
-bindsym $mod+6 workspace number 6
-bindsym $mod+7 workspace number 7
-bindsym $mod+8 workspace number 8
-bindsym $mod+9 workspace number 9
+bindsym --no-repeat $mod+1 workspace number 1
+bindsym --no-repeat $mod+2 workspace number 2
+bindsym --no-repeat $mod+3 workspace number 3
+bindsym --no-repeat $mod+4 workspace number 4
+bindsym --no-repeat $mod+5 workspace number 5
+bindsym --no-repeat $mod+6 workspace number 6
+bindsym --no-repeat $mod+7 workspace number 7
+bindsym --no-repeat $mod+8 workspace number 8
+bindsym --no-repeat $mod+9 workspace number 9
 # Strip workspace numbers for workspace 10, only display the name
 # applys to any workspace that has a name of the form "[n][:][NAME]"
-bindsym $mod+0 workspace 10:0
+bindsym --no-repeat $mod+0 workspace 10:0
 
-bindsym $mod+CONTROL+1 move container to workspace number 1
-bindsym $mod+CONTROL+2 move container to workspace number 2
-bindsym $mod+CONTROL+3 move container to workspace number 3
-bindsym $mod+CONTROL+4 move container to workspace number 4
-bindsym $mod+CONTROL+5 move container to workspace number 5
-bindsym $mod+CONTROL+6 move container to workspace number 6
-bindsym $mod+CONTROL+7 move container to workspace number 7
-bindsym $mod+CONTROL+8 move container to workspace number 8
-bindsym $mod+CONTROL+9 move container to workspace number 9
-bindsym $mod+CONTROL+0 move container to workspace number 10:0
+bindsym --no-repeat $mod+CONTROL+1 move container to workspace number 1
+bindsym --no-repeat $mod+CONTROL+2 move container to workspace number 2
+bindsym --no-repeat $mod+CONTROL+3 move container to workspace number 3
+bindsym --no-repeat $mod+CONTROL+4 move container to workspace number 4
+bindsym --no-repeat $mod+CONTROL+5 move container to workspace number 5
+bindsym --no-repeat $mod+CONTROL+6 move container to workspace number 6
+bindsym --no-repeat $mod+CONTROL+7 move container to workspace number 7
+bindsym --no-repeat $mod+CONTROL+8 move container to workspace number 8
+bindsym --no-repeat $mod+CONTROL+9 move container to workspace number 9
+bindsym --no-repeat $mod+CONTROL+0 move container to workspace number 10:0
 
-bindsym $mod+Shift+1 move container to workspace number 1; workspace number 1
-bindsym $mod+Shift+2 move container to workspace number 2; workspace number 2
-bindsym $mod+Shift+3 move container to workspace number 3; workspace number 3
-bindsym $mod+Shift+4 move container to workspace number 4; workspace number 4
-bindsym $mod+Shift+5 move container to workspace number 5; workspace number 5
-bindsym $mod+Shift+6 move container to workspace number 6; workspace number 6
-bindsym $mod+Shift+7 move container to workspace number 7; workspace number 7
-bindsym $mod+Shift+8 move container to workspace number 8; workspace number 8
-bindsym $mod+Shift+9 move container to workspace number 9; workspace number 9
-bindsym $mod+Shift+0 move container to workspace number 10:0; workspace number 10:0
+bindsym --no-repeat $mod+Shift+1 move container to workspace number 1; workspace number 1
+bindsym --no-repeat $mod+Shift+2 move container to workspace number 2; workspace number 2
+bindsym --no-repeat $mod+Shift+3 move container to workspace number 3; workspace number 3
+bindsym --no-repeat $mod+Shift+4 move container to workspace number 4; workspace number 4
+bindsym --no-repeat $mod+Shift+5 move container to workspace number 5; workspace number 5
+bindsym --no-repeat $mod+Shift+6 move container to workspace number 6; workspace number 6
+bindsym --no-repeat $mod+Shift+7 move container to workspace number 7; workspace number 7
+bindsym --no-repeat $mod+Shift+8 move container to workspace number 8; workspace number 8
+bindsym --no-repeat $mod+Shift+9 move container to workspace number 9; workspace number 9
+bindsym --no-repeat $mod+Shift+0 move container to workspace number 10:0; workspace number 10:0
 
-bindsym $mod+tab workspace back_and_forth
-bindsym $mod+comma workspace prev_on_output
-bindsym $mod+period workspace next_on_output
-bindsym $mod+Shift+comma move container to workspace prev_on_output
-bindsym $mod+Shift+period move container to workspace next_on_output
+bindsym --no-repeat $mod+tab workspace back_and_forth
+bindsym --no-repeat $mod+comma workspace prev_on_output
+bindsym --no-repeat $mod+period workspace next_on_output
+bindsym --no-repeat $mod+Shift+comma move container to workspace prev_on_output
+bindsym --no-repeat $mod+Shift+period move container to workspace next_on_output
 
-bindsym $mod+CONTROL+comma focus output left
-bindsym $mod+CONTROL+period focus output right
+bindsym --no-repeat $mod+CONTROL+comma focus output left
+bindsym --no-repeat $mod+CONTROL+period focus output right
 
-bindsym $mod+x splitv
-bindsym $mod+v splith
+bindsym --no-repeat $mod+x splitv
+bindsym --no-repeat $mod+v splith
 
-bindsym $mod+s layout toggle stacking split
-bindsym $mod+t layout toggle tabbed split
-bindsym $mod+e layout toggle split
+bindsym --no-repeat $mod+s layout toggle stacking split
+bindsym --no-repeat $mod+t layout toggle tabbed split
+bindsym --no-repeat $mod+e layout toggle split
 
 bindsym $mod+Shift+f fullscreen
 # mimic maximize
@@ -364,19 +363,19 @@ assign [title="_placeholder_window2"] workspace =
 workspace - output DP-1
 workspace = output eDP-1
 # use i3blocks as a GUI crontab to execute swaymaxd
-bindsym $mod+grave exec "~/.local/bin/swaymaxd"
-bindsym $mod+f exec "~/.local/bin/swaymax"
+bindsym --no-repeat $mod+grave exec "~/.local/bin/swaymaxd"
+bindsym --no-repeat $mod+f exec "~/.local/bin/swaymax"
 
-bindsym $mod+Shift+space floating toggle
-bindsym $mod+Shift+c move position center
-bindsym $mod+Shift+t sticky toggle
-bindsym $mod+z focus mode_toggle
+bindsym --no-repeat $mod+Shift+space floating toggle
+bindsym --no-repeat $mod+Shift+c move position center
+bindsym --no-repeat $mod+Shift+t sticky toggle
+bindsym --no-repeat $mod+z focus mode_toggle
 
-bindsym $mod+p focus parent
-bindsym $mod+Shift+p focus child
+bindsym --no-repeat $mod+p focus parent
+bindsym --no-repeat $mod+Shift+p focus child
 
-bindsym $mod+Shift+s move scratchpad
-bindsym $mod+a scratchpad show
+bindsym --no-repeat $mod+Shift+s move scratchpad
+bindsym --no-repeat $mod+a scratchpad show
 
 bindsym $mod+y resize shrink width 30px
 bindsym $mod+u resize grow height 30px
