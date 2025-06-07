@@ -5,12 +5,15 @@
 
 mod=Mod4    # Mod1=Alt, Mod4=Super
 wobfifo="/tmp/wob.fifo"
+term="footclient"
 
 # basic
 #riverctl map normal ${mod}+Shift e exit
 riverctl map normal ${mod}+Shift r spawn "$HOME/.config/river/init"
 
 riverctl map normal $mod Return spawn "footclient"
+
+riverctl map normal $mod r spawn "$term lf"
 
 riverctl map normal $mod d spawn "wmenu-run -f \"SourceCodePro Medium 14\" -i -N \"$background\" -S \"$color9\" -s \"$background\""
 
