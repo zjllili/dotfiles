@@ -8,6 +8,7 @@ wobfifo="/tmp/wob.fifo"
 
 # basic
 #riverctl map normal ${mod}+Shift e exit
+riverctl map normal ${mod}+Shift r spawn "$HOME/.config/river/init"
 
 riverctl map normal $mod Return spawn "footclient"
 

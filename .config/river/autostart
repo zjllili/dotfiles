@@ -3,7 +3,7 @@
 # @since 2025
 # river/autostart
 
-killall -q foot swayidle wobd wl-paste
+killall -q i3bar-river swaybg swayidle wl-paste fcitx5 gammastep wobd
 
 riverctl spawn "i3bar-river"
 
@@ -11,13 +11,13 @@ riverctl spawn "$HOME/.local/bin/foots" # foot server
 
 riverctl spawn "swaybg -i $HOME/.local/share/wallpaper -m fill"
 
+riverctl spawn "swayidle -w timeout 600 'brightnessctl set 4% -s' resume 'brightnessctl -r' timeout 900 'swaylock'"
+
 riverctl spawn "wl-paste --watch cliphist store"
 
 riverctl spawn "fcitx5 -d"
 
 riverctl spawn "gammastep -O 5000"
-
-riverctl spawn "swayidle -w timeout 600 'brightnessctl set 4% -s' resume 'brightnessctl -r' timeout 900 'swaylock'"
 
 riverctl spawn "$HOME/.local/bin/wobd" # wob daemon
 
