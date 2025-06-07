@@ -3,6 +3,7 @@
 
 ## What Is This?
 <img src="./misc/screenshot01.png" alt="drawing" width="480"/>
+<img src="./misc/screenshot02.png" alt="drawing" width="480"/>
 <img src="./misc/screenshot03.png" alt="drawing" width="480"/>
 <img src="./misc/screenshot04.png" alt="drawing" width="480"/>
 
@@ -24,24 +25,24 @@ A few software need manually setup:
 ## Software I Use Everyday
 ```
 - Default Shell:            dash
-- Interactive Shell:        bash/zsh
+- Interactive Shell:        zsh & bash
 - Terminlal Multiplexer:    tmux
-- WM/Compositor:            river
-- Status bar:               i3blocks
+- WM/Compositor:            river & sway
+- Status bar:               river-i3bar & i3blocks
 - Launcher:                 wmenu
 - Notification:             dunst
 - Terminal Emulator:        foot
 - Editor:                   neovim
-- Email Client:             neomutt/isync
+- Email Client:             neomutt & isync
 - File manager:             lf
-- Music player:             ncmpcpp
+- Music player:             ncmpcpp & mpd
 - Video player:             mpv
 - Image Viewer:             swayimg
 - Ebook Reader:             zathura
 - Rss Feeder:               newsboat
 - Calender:                 calcurse
 - Todo:                     taskwarrior
-- Virtulization             kvm/qemu/libvirt
+- Virtulization             kvm & qemu & libvirt
 ```
 
 ## Chinese Video Channel
