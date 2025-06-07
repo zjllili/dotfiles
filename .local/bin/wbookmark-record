@@ -6,4 +6,4 @@
 
 source $HOME/.local/bin/wmenu-color 2>/dev/null
 
-cat ~/.local/share/bookmarks/bookmarks-record | grep -vE "^#|^[[:space:]]*$" | wmenu-color -p "$(basename $0) " -l 6 | awk ' {sub(/[^|]*\|/, ""); print}' | xargs wtype
+cat ~/.local/share/bookmarks/bookmarks-record | grep -vE "^#|^[[:space:]]*$" | wmenu-color -p "$(basename $0) " -l 6 | awk ' {sub(/[^|]*\|/, ""); print}' | wl-copy
