@@ -7,12 +7,12 @@
 
 # Colors
 command = "i3blocks"
-background = "000000ff"
+background = "#427b58ff"
 color = "#ffffffff"
 separator = "#888888ff"
 tag_fg = "#d79921ff"
-tag_bg = "#000000ff"
-tag_focused_fg = "#1d2021ff"
+tag_bg = "#427b58ff"
+tag_focused_fg = "#000000ff"
 tag_focused_bg = "#b16286ff"
 tag_urgent_fg = "#282828ff"
 tag_urgent_bg = "#cc241dff"
@@ -36,7 +36,7 @@ blocks_overlap = 0.0
 # Misc
 position = "top" # either "top" or "bottom"
 layer = "top" # one of "top", "overlay", "bottom" or "background"
-hide_inactive_tags = true
+hide_inactive_tags = false
 invert_touchpad_scrolling = true
 show_tags = true
 show_layout_name = true

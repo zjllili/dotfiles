@@ -6,6 +6,7 @@
 separator_block_width=0
 markup=pango
 color=#ffffff
+background=#000000
 
 # use i3blocks to do cronjob
 [swaymaxd]
