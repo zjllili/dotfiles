@@ -20,6 +20,8 @@ riverctl spawn "wlr-randr --output eDP-1 --custom-mode 1920x1080@60.000Hz --pos 
 # input
 riverctl set-repeat 30 200
 
+riverctl hide-cursor timeout 3000
+
 # color
 riverctl border-color-focused 0xb16286
 riverctl border-color-unfocused 0x586e75
