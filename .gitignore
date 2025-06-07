@@ -190,6 +190,10 @@ aur.list
 !.config/sway/
 !.config/sway/config
 !.config/sway/colors
+!.config/sway/bar
+!.config/sway/autostart
+!.config/sway/bindings
+!.config/sway/modes
 !.config/sway/layout.xkb
 !.config/swayimg/
 !.config/swayimg/config
