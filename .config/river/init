@@ -22,6 +22,8 @@ riverctl set-repeat 30 200
 
 riverctl hide-cursor timeout 3000
 
+riverctl input "pointer-10248-260-ASUF1204:00_2808:0104_Touchpad" tap enabled
+
 # color
 riverctl border-color-focused 0xb16286
 riverctl border-color-unfocused 0x586e75
