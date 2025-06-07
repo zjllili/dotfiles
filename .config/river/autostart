@@ -3,7 +3,7 @@
 # @since 2025
 # river/autostart
 
-killall -q i3bar-river swaybg swayidle wl-paste fcitx5 gammastep wobd dunst
+killall -q i3bar-river mpc swaybg swayidle wl-paste fcitx5 gammastep wobd dunst
 
 riverctl spawn "i3bar-river"
 
