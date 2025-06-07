@@ -30,6 +30,8 @@ riverctl border-color-unfocused 0x586e75
 
 # server side decorations(ssd)
 riverctl rule-add -app-id firefox ssd   # fix border
+riverctl rule-add -app-id gimp ssd   # fix border
+riverctl rule-add -app-id swayimg ssd   # fix border
 
 # scratchpad
 # The scratchpad will live on an unused tag. Which tags are used depends on your
