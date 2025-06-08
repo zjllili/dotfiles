@@ -21,6 +21,7 @@ riverctl spawn "wlr-randr --output eDP-1 --custom-mode 1920x1080@60.000Hz --pos 
 riverctl set-repeat 30 200
 
 riverctl hide-cursor timeout 3000
+riverctl hide-cursor when-typing enabled
 
 riverctl input "pointer-10248-260-ASUF1204:00_2808:0104_Touchpad" tap enabled
 
