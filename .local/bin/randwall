@@ -11,7 +11,8 @@ refresh_bg() {
     cp -f $random_wallpaper "$WALLPAPER_PATH";
     # refresh swaybg
     # without SWAYSOCK variable, swaymsg couldn't connect to the socket running from a cron job
-    SWAYSOCK=/run/user/$(id -u)/sway-ipc.$(id -u).$(pgrep -x sway).sock swaymsg "output * bg \"$WALLPAPER_PATH\" fill"
+    pgrep sway && SWAYSOCK=/run/user/$(id -u)/sway-ipc.$(id -u).$(pgrep -x sway).sock swaymsg "output * bg \"$WALLPAPER_PATH\" fill"
+    pgrep river && riverctl spawn "swaybg -i $HOME/.local/share/wallpaper -m fill"
 }
 
 # kill live wallpaper if it's is running

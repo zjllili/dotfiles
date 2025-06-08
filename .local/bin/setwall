@@ -12,5 +12,7 @@ then
     killall -e "mpvpaper"
 fi
 
-#i3-msg restart;
-swaymsg "output * bg ~/.local/share/wallpaper fill"
+# restart swaybg
+killall swaybg
+pgrep river>/dev/null && riverctl spawn "swaybg -i $HOME/.local/share/wallpaper -m fill"
+pgrep sway >/dev/null  && swaymsg "output * bg ~/.local/share/wallpaper fill"
