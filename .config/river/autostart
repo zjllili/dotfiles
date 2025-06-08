@@ -3,24 +3,27 @@
 # @since 2025
 # river/autostart
 
-killall -q i3bar-river mpc swaybg swayidle wl-paste fcitx5 gammastep wobd dunst mbsync
-
-riverctl spawn "i3bar-river"
-
-riverctl spawn "$HOME/.local/bin/foots" # foot server
+# restart
+killall -q  swaybg
 
 riverctl spawn "swaybg -i $HOME/.local/share/wallpaper -m fill"
 
-riverctl spawn "swayidle -w timeout 600 'brightnessctl set 4% -s' resume 'brightnessctl -r' timeout 900 'swaylock'"
-
-riverctl spawn "wl-paste --watch cliphist store"
-
-riverctl spawn "fcitx5 -d"
-
-riverctl spawn "gammastep -O 5000"
-
-riverctl spawn "$HOME/.local/bin/wobd" # wob daemon
-
-riverctl spawn "dunst"
+# restart decided by scripts
+riverctl spawn "$HOME/.local/bin/foots" # foot server
 
 riverctl spawn "$HOME/.local/sbin/clsd"
+
+# start if not running
+pgrep 'i3bar-river' || riverctl spawn "i3bar-river"
+
+pgrep 'swayidle' || riverctl spawn "swayidle -w timeout 600 'brightnessctl set 4% -s' resume 'brightnessctl -r' timeout 900 'swaylock'"
+
+pgrep "gammastep">/dev/null || riverctl spawn "gammastep -O 5000"
+
+pgrep -f 'wl-paste --watch cliphist store' || riverctl spawn "wl-paste --watch cliphist store"
+
+pgrep -f 'fcitx5 -d'>/dev/null || riverctl spawn "fcitx5 -d"
+
+pgrep 'dunst' || riverctl spawn "dunst"
+
+pgrep 'wob'>/dev/null || riverctl spawn "$HOME/.local/bin/wobd" # wob daemon
