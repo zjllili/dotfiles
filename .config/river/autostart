@@ -4,7 +4,7 @@
 # river/autostart
 
 # restart
-killall -q  swaybg fcitx5
+killall -q  swaybg fcitx5 mpc
 
 riverctl spawn "swaybg -i $HOME/.local/share/wallpaper -m fill"
 riverctl spawn "fcitx5 -d"
