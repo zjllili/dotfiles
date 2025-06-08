@@ -55,11 +55,11 @@ riverctl map normal ${mod}+Shift space toggle-float
 
 # window navigation
 riverctl map normal $mod j focus-view next
-riverctl map normal $mod k focus-view next
+riverctl map normal $mod k focus-view previous
 
 # window movement
 riverctl map normal ${mod}+Shift j swap next
-riverctl map normal ${mod}+Shift k swap next
+riverctl map normal ${mod}+Shift k swap previous
 
 # workspace navigation
 riverctl map normal $mod Period focus-output next
