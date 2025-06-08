@@ -4,9 +4,10 @@
 # river/autostart
 
 # restart
-killall -q  swaybg
+killall -q  swaybg fcitx5
 
 riverctl spawn "swaybg -i $HOME/.local/share/wallpaper -m fill"
+riverctl spawn "fcitx5 -d"
 
 # restart decided by scripts
 riverctl spawn "$HOME/.local/bin/foots" # foot server
@@ -21,8 +22,6 @@ pgrep 'swayidle' || riverctl spawn "swayidle -w timeout 600 'brightnessctl set 4
 pgrep "gammastep">/dev/null || riverctl spawn "gammastep -O 5000"
 
 pgrep -f 'wl-paste --watch cliphist store' || riverctl spawn "wl-paste --watch cliphist store"
-
-pgrep -f 'fcitx5 -d'>/dev/null || riverctl spawn "fcitx5 -d"
 
 pgrep 'dunst' || riverctl spawn "dunst"
 
