@@ -15,7 +15,7 @@ tag_bg = "#427b58ff"
 tag_focused_fg = "#000000ff"
 tag_focused_bg = "#b16286ff"
 tag_urgent_fg = "#282828ff"
-tag_urgent_bg = "#cc241dff"
+tag_urgent_bg = "#b16286ff"
 tag_inactive_fg = "#d79921ff"
 tag_inactive_bg = "#000000ff"
 
