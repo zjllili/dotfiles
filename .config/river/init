@@ -34,6 +34,16 @@ riverctl border-width 3
 # server side decorations(ssd)
 riverctl rule-add -app-id "*" ssd   # fix border for every window
 
+# tags
+for i in $(seq 1 9)
+do
+    tags=$((1 << ($i - 1)))
+    riverctl map normal $mod $i set-focused-tags $tags
+    riverctl map normal ${mod}+Shift $i set-view-tags $tags
+    riverctl map normal ${mod}+Control $i toggle-focused-tags $tags
+    riverctl map normal ${mod}+Shift+Control $i toggle-view-tags $tags
+done
+
 # scratchpad
 # The scratchpad will live on an unused tag. Which tags are used depends on your
 # config, but rivers default uses the first 9 tags.
