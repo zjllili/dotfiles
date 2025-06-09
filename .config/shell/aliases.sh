@@ -125,3 +125,5 @@ alias ttypers="ttyper -w 10 -l symbol"
 alias ttyperb="ttyper -w 25 -l bash"
 
 alias transmission-cli="transmission-cli -w $HOME/dls"
+
+alias resshagent="systemctl restart --user ssh-agent.service"
