@@ -17,7 +17,7 @@ riverctl spawn "$HOME/.local/sbin/clsd"
 # start if not running
 pgrep 'i3bar-river' || riverctl spawn "i3bar-river"
 
-pgrep 'swayidle' || riverctl spawn "swayidle -w timeout 600 'brightnessctl set 4% -s' resume 'brightnessctl -r' timeout 900 'swaylock'"
+pgrep 'swayidle' || riverctl spawn "swayidle -w timeout 600 'brightnessctl set 4% -s' resume 'brightnessctl -r' timeout 900 'swaylock' before-sleep 'swaylock'"
 
 pgrep "gammastep">/dev/null || riverctl spawn "gammastep -O 5000"
 
