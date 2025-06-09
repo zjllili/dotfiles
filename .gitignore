@@ -189,6 +189,7 @@ aur.list
 !.config/river/bindings
 !.config/river/init
 !.config/river/layout.xkb
+!.config/river/modes
 !.config/sway/
 !.config/sway/config
 !.config/sway/colors

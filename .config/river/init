@@ -6,6 +6,7 @@
 . $HOME/.local/bin/colors.sh    # source colorscheme
 . $HOME/.config/river/bindings
 . $HOME/.config/river/autostart
+. $HOME/.config/river/modes
 
 # window manager
 riverctl default-layout rivertile

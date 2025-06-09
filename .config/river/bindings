@@ -51,7 +51,7 @@ riverctl map normal ${mod}+Shift m spawn "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ 
 # windows management
 riverctl map normal $mod q close
 riverctl map normal $mod f toggle-fullscreen
-riverctl map normal ${mod}+Shift space toggle-float
+riverctl map normal ${mod}+Shift f toggle-float
 
 # window navigation
 riverctl map normal $mod j focus-view next
