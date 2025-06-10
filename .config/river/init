@@ -18,6 +18,12 @@ riverctl keyboard-layout-file "$HOME/.config/river/layout.xkb"
 # output
 riverctl spawn "wlr-randr --output eDP-1 --custom-mode 1920x1080@60.000Hz --pos 0,0 --output DP-1 --custom-mode 1920x1080@60.000Hz --pos -1920,0"
 
+riverctl focus-output left
+riverctl send-layout-cmd rivertile "main-location right"
+
+riverctl focus-output right
+riverctl send-layout-cmd rivertile "main-location left"
+
 # input
 riverctl set-repeat 30 200
 
