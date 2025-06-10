@@ -19,6 +19,8 @@ riverctl map normal $mod d spawn "wmenu-run -f \"SourceCodePro Medium 14\" -i -N
 
 riverctl map normal ${mod}+Shift+Control l spawn "swaylock"
 
+riverctl map normal ${mod}+Shift+Control h spawn "$HOME/.local/bin/swayhibe"
+
 riverctl map normal ${mod}+Shift e spawn "$HOME/.local/bin/riverexit"
 
 riverctl map normal $mod space spawn "fcitx5-remote -t && notify-send -u normal -r 3289 -t 1100 $(fcitx5-remote -n)"
