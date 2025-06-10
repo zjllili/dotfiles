@@ -7,6 +7,7 @@
 killall -q  swaybg fcitx5 mpc
 
 riverctl spawn "swaybg -i $HOME/.local/share/wallpaper -m fill"
+
 riverctl spawn "fcitx5 -d"
 
 # restart decided by scripts
@@ -19,10 +20,10 @@ pgrep 'i3bar-river' || riverctl spawn "i3bar-river"
 
 pgrep 'swayidle' || riverctl spawn "swayidle -w timeout 600 'brightnessctl set 4% -s' resume 'brightnessctl -r' timeout 900 'swaylock' before-sleep 'swaylock'"
 
-pgrep "gammastep">/dev/null || riverctl spawn "gammastep -O 5000"
+pgrep "gammastep" || riverctl spawn "gammastep -O 5000"
 
 pgrep -f 'wl-paste --watch cliphist store' || riverctl spawn "wl-paste --watch cliphist store"
 
 pgrep 'dunst' || riverctl spawn "dunst"
 
-pgrep 'wob'>/dev/null || riverctl spawn "$HOME/.local/bin/wobd" # wob daemon
+pgrep 'wob' || riverctl spawn "$HOME/.local/bin/wobd" # wob daemon
