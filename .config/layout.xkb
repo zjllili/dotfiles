@@ -1,7 +1,7 @@
 # @author nate zhou
-# @since 2023,2024
+# @since 2023,2024,2025
 
-# used by sway to swap keys
+# used by sway/river to swap keys
 
 xkb_keymap {
     xkb_keycodes { include "evdev+aliases(qwerty)" };
