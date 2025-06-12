@@ -63,7 +63,7 @@ bindsym $mod+m exec "$HOME/.local/bin/audio sink --mute"
 
 # source
 bindsym $mod+Shift+minus exec "$HOME/.local/bin/audio source --minus"
-bindsym $mod+Shift+equal exec "$HOME/.local/bin/audio source --minus"
+bindsym $mod+Shift+equal exec "$HOME/.local/bin/audio source --plus"
 bindsym $mod+Shift+m exec "$HOME/.local/bin/audio source --mute"
 
 bindsym $mod+CONTROL+space exec mpc toggle
