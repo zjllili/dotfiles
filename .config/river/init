@@ -30,7 +30,9 @@ riverctl set-repeat 30 200
 riverctl hide-cursor timeout 3000
 riverctl hide-cursor when-typing enabled
 
-riverctl input "pointer-10248-260-ASUF1204:00_2808:0104_Touchpad" tap enabled
+for i in $(riverctl list-inputs | grep -i touchpad); do
+    riverctl input "$i" tap enabled
+done
 
 # border
 riverctl border-color-focused 0xb16286
