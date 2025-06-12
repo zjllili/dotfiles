@@ -22,27 +22,33 @@ A few software need manually setup:
 - Software whose config files located outside of the `$HOME`
 - Software listed in `./.stow-local-ignore`
 
-## Software I Use Everyday
+## Software Recommendation
 ```
-- Default Shell:            dash
-- Interactive Shell:        zsh & bash
+- /usr/bin/sh:              dash
+- Login Shell:              zsh
 - Terminlal Multiplexer:    tmux
-- WM/Compositor:            river & sway
-- Status bar:               river-i3bar & i3blocks
-- Launcher:                 wmenu
-- Notification:             dunst
 - Terminal Emulator:        foot
+- Audio Server:             pipewire
+- WM/Compositor:            river
+- Status bar:               i3bar-river & i3blocks
+- Application Launcher:     wmenu
+- Fuzzy Finder:             fzf
+- Notification Daemon:      dunst
 - Editor:                   neovim
-- Email Client:             neomutt & isync
+- Email:                    neomutt & isync
 - File manager:             lf
 - Music player:             ncmpcpp & mpd
 - Video player:             mpv
 - Image Viewer:             swayimg
-- Ebook Reader:             zathura
+- Ebook Reader:             zathura & mupdf plugin
 - Rss Feeder:               newsboat
 - Calender:                 calcurse
 - Todo:                     taskwarrior
-- Virtulization             kvm & qemu & libvirt
+- Virtulization:            kvm & qemu & libvirt
+- Privacy/Security:         gpg & firejail & cryptsetup & sbctl
+- Firefox Extension:        tridactyl & darkreader & ublock origin
+- Downloader:               transmission-cli & yt-dlp & httrack
+- Dotfiles Manager:         stow & git
 ```
 
 ## Chinese Video Channel
