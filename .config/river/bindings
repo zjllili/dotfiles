@@ -12,6 +12,7 @@ term="footclient"
 riverctl map normal ${mod}+Shift r spawn "$HOME/.config/river/init"
 
 riverctl map normal $mod Return spawn "footclient"
+riverctl map normal Mod1 Return spawn "foot"
 
 riverctl map normal Control+Shift Return spawn "footclient -T Scratchpad_Tmux $HOME/.local/bin/tmuxd"
 
