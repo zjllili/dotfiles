@@ -26,8 +26,6 @@ riverctl map normal ${mod}+Shift+Control h spawn "$HOME/.local/bin/swayhibe"
 riverctl map normal ${mod}+Shift e spawn "$HOME/.local/bin/riverexit"
 
 riverctl map normal $mod space spawn "fcitx5-remote -t && notify-send -u normal -r 3289 -t 1100 $(fcitx5-remote -n)"
-riverctl map normal ${mod}+Control p spawn "fcitx5-remote -s pinyin && notify-send -u normal -r 3289 -t 1100 $(fcitx5-remote -n)"
-riverctl map normal ${mod}+Control a spawn "fcitx5-remote -s anthy && notify-send -u normal -r 3289 -t 1100 $(fcitx5-remote -n)"
 
 riverctl map normal $mod b spawn "$HOME/.local/bin/wbookmark"
 riverctl map normal ${mod}+Shift b spawn "$HOME/.local/bin/wbookmark-record"
