@@ -41,6 +41,8 @@ riverctl map normal ${mod}+Control g spawn "grim && notify-send -u low -r 88 \"S
 riverctl map normal $mod n spawn "dunstctl close"
 riverctl map normal ${mod}+Shift n spawn "dunstctl history-pop"
 
+riverctl map normal $mod p spawn "mpc toggle"
+
 riverctl map -repeat normal $mod bracketleft spawn "$HOME/.local/bin/bright --minus"
 riverctl map -repeat normal $mod bracketright spawn "$HOME/.local/bin/bright --plus"
 
