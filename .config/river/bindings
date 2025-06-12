@@ -44,13 +44,13 @@ riverctl map normal ${mod}+Shift n spawn "dunstctl history-pop"
 riverctl map -repeat normal $mod bracketleft spawn "$HOME/.local/bin/bright --minus"
 riverctl map -repeat normal $mod bracketright spawn "$HOME/.local/bin/bright --plus"
 
-riverctl map -repeat normal $mod minus spawn "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%- && wpctl get-volume @DEFAULT_AUDIO_SINK@ | sed 's/[^0-9]//g; s/^0//' > $wobfifo && pkill -SIGRTMIN+1 i3blocks"
-riverctl map -repeat normal $mod equal spawn "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+ && wpctl get-volume @DEFAULT_AUDIO_SINK@ | sed 's/[^0-9]//g; s/^0//' > $wobfifo && pkill -SIGRTMIN+1 i3blocks"
-riverctl map normal $mod m spawn "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && pkill -SIGRTMIN+1 i3blocks"
+riverctl map -repeat normal $mod minus spawn "$HOME/.local/bin/audio sink --minus"
+riverctl map -repeat normal $mod equal spawn "$HOME/.local/bin/audio sink --plus"
+riverctl map normal $mod m spawn "$HOME/.local/bin/audio sink --mute"
 
-riverctl map -repeat normal ${mod}+Shift minus spawn "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 2%- &&  wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | sed 's/[^0-9]//g; s/^0//' > $wobfifo && pkill -SIGRTMIN+2 i3blocks"
-riverctl map -repeat normal ${mod}+Shift equal spawn "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 2%+ &&  wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | sed 's/[^0-9]//g; s/^0//' > $wobfifo && pkill -SIGRTMIN+2 i3blocks"
-riverctl map normal ${mod}+Shift m spawn "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle && pkill -SIGRTMIN+2 i3blocks"
+riverctl map -repeat normal ${mod}+Shift minus spawn "$HOME/.local/bin/audio source --minus"
+riverctl map -repeat normal ${mod}+Shift equal spawn "$HOME/.local/bin/audio source --plus"
+riverctl map normal ${mod}+Shift m spawn "$HOME/.local/bin/audio source --mute"
 
 # windows management
 riverctl map normal $mod q close

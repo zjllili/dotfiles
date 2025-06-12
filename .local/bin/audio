@@ -1,0 +1,50 @@
+#!/usr/bin/sh
+# @author nate zhou
+# @since 2025
+# @depends wireplumber
+# change volume of pipewire sinks/sources
+
+wobfifo="/tmp/wob.fifo"
+
+[ "$1" = "sink" ] && target="@DEFAULT_AUDIO_SINK@"
+[ "$1" = "source" ] && target="@DEFAULT_AUDIO_SOURCE@"
+
+blocks_reload() {
+    [ "$1" = "sink"  ] && pkill -SIGRTMIN+1 i3blocks
+    [ "$1" = "source" ] && pkill -SIGRTMIN+2 i3blocks
+}
+
+volume_minus() {
+    wpctl set-volume "$target" 1%- && \
+        wpctl get-volume "$target" | \
+        sed 's/[^0-9]//g; s/^0//' > "$wobfifo" && \
+        blocks_reload "$1"
+}
+
+volume_plus() {
+    wpctl set-volume "$target" 1%+ && \
+        wpctl get-volume "$target" | \
+        sed 's/[^0-9]//g; s/^0//' > "$wobfifo" && \
+        blocks_reload "$1"
+}
+
+volume_mute() {
+    wpctl set-mute "$target" toggle && wpctl get-volume "$target" | sed 's/[^0-9]//g; s/^0//' > "$wobfifo"
+    blocks_reload "$1"
+}
+
+case "$2" in
+    --minus)
+        volume_minus "$1"
+        ;;
+    --plus)
+        volume_plus "$1"
+        ;;
+    --mute)
+        volume_mute "$1"
+        ;;
+    *)
+        echo "invalid arguments"
+        echo "audio sink|source --{minus|plus|mute}"
+        ;;
+esac
