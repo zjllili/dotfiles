@@ -4,8 +4,8 @@
 # @since 2025
 
 mod=Mod4
-mode_fcitx="[p]inyin [a]nthy" mode_wmenu="[w[w]iki w[h]eart w[b]ook [a]mount [f]locks [p]off w[m]ulti w[s]ink w[j]doc"
-mode_wtype="wtype"
+mode_fcitx="[p]inyin [a]nthy"
+mode_wmenu="[w[w]iki w[h]eart w[b]ook [a]mount [f]locks [p]off w[m]ulti w[s]ink w[j]doc"
 
 riverctl declare-mode "$mode_fcitx"
 riverctl map normal ${mod}+Shift space enter-mode "$mode_fcitx"
@@ -30,25 +30,3 @@ riverctl map "$mode_wmenu" None p spawn "riverctl enter-mode normal && $HOME/.lo
 riverctl map "$mode_wmenu" None m spawn "riverctl enter-mode normal && $HOME/.local/bin/wmulti"
 riverctl map "$mode_wmenu" None s spawn "riverctl enter-mode normal && $HOME/.local/bin/wsink"
 riverctl map "$mode_wmenu" None j spawn "riverctl enter-mode normal && $HOME/.local/bin/wjdoc"
-
-riverctl declare-mode "$mode_wtype"
-riverctl map normal $mod apostrophe enter-mode "$mode_wtype"
-riverctl map "$mode_wtype" $mod apostrophe enter-mode normal
-riverctl map "$mode_wtype" None space enter-mode normal
-riverctl map "$mode_wtype" None Escape enter-mode normal
-riverctl map --repeat "$mode_wtype" None h spawn "wtype -k Left"
-riverctl map --repeat "$mode_wtype" None j spawn "wtype -k Down"
-riverctl map --repeat "$mode_wtype" None k spawn "wtype -k Up"
-riverctl map --repeat "$mode_wtype" None l spawn "wtype -k Right"
-riverctl map "$mode_wtype" None 1 spawn "wtype -k F1 && riverctl enter-mode normal"
-riverctl map "$mode_wtype" None 2 spawn "wtype -k F2 && riverctl enter-mode normal"
-riverctl map "$mode_wtype" None 3 spawn "wtype -k F3 && riverctl enter-mode normal"
-riverctl map "$mode_wtype" None 4 spawn "wtype -k F4 && riverctl enter-mode normal"
-riverctl map "$mode_wtype" None 5 spawn "wtype -k F5 && riverctl enter-mode normal"
-riverctl map "$mode_wtype" None 6 spawn "wtype -k F6 && riverctl enter-mode normal"
-riverctl map "$mode_wtype" None 7 spawn "wtype -k F7 && riverctl enter-mode normal"
-riverctl map "$mode_wtype" None 8 spawn "wtype -k F8 && riverctl enter-mode normal"
-riverctl map "$mode_wtype" None 9 spawn "wtype -k F9 && riverctl enter-mode normal"
-riverctl map "$mode_wtype" None 0 spawn "wtype -k F10 && riverctl enter-mode normal"
-riverctl map "$mode_wtype" None minus spawn "wtype -k F11 && riverctl enter-mode normal"
-riverctl map "$mode_wtype" None equal spawn "wtype -k F12 && riverctl enter-mode normal"
