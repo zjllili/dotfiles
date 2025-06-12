@@ -22,7 +22,7 @@ riverctl focus-output left
 riverctl send-layout-cmd rivertile "main-location right"
 
 riverctl focus-output right
-riverctl send-layout-cmd rivertile "main-location left"
+riverctl send-layout-cmd rivertile "main-location right"
 
 # input
 riverctl set-repeat 30 200
