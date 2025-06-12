@@ -8,8 +8,6 @@ killall -q  swaybg fcitx5 mpc
 
 riverctl spawn "swaybg -i $HOME/.local/share/wallpaper -m fill"
 
-riverctl spawn "fcitx5 -d"
-
 # restart decided by scripts
 riverctl spawn "$HOME/.local/bin/foots" # foot server
 
@@ -28,4 +26,5 @@ pgrep 'dunst' || riverctl spawn "dunst"
 
 pgrep 'wob' || riverctl spawn "$HOME/.local/bin/wobd" # wob daemon
 
-#pgrep -f 'footclient -T Scratchpad_Tmux' || riverctl spawn "footclient -T Scratchpad_Tmux $HOME/.local/bin/tmuxd"
+#pgrep -f 'footclient -T Scratchpad_Tmux' || riverctl spawn "footclient -T Scratchpad_Tmux $HOME/.local/bin/tmuxd" # disabled for not obeying window rules, start manually instead
+#riverctl spawn "fcitx5 -d" # disabled for conflicting with wtype
