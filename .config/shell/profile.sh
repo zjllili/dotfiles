@@ -7,6 +7,7 @@
 
 [ -d "$HOME/.local/bin" ] && PATH="$HOME/.local/bin:${PATH}"
 [ -d "$HOME/.local/sbin" ] && PATH="$HOME/.local/sbin:${PATH}"
+[ -d "/usr/share/neomutt/oauth2" ] && PATH="/usr/share/neomutt/oauth2:${PATH}"
 
 [ -x /usr/bin/bat ] && export MANROFFOPT="-c" && export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
