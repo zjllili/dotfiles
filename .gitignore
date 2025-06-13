@@ -197,6 +197,8 @@ aur.list
 !.config/sway/autostart
 !.config/sway/bindings
 !.config/sway/modes
+!.config/swayidle/
+!.config/swayidle/config
 !.config/swayimg/
 !.config/swayimg/config
 !.config/swaylock/
