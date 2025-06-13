@@ -19,10 +19,10 @@ riverctl keyboard-layout-file "$HOME/.config/layout.xkb"
 riverctl spawn "$HOME/.local/bin/wlr-output"
 
 riverctl focus-output left
-riverctl send-layout-cmd rivertile "main-location right"
+riverctl send-layout-cmd rivertile "main-location left"
 
 riverctl focus-output right
-riverctl send-layout-cmd rivertile "main-location right"
+riverctl send-layout-cmd rivertile "main-location left"
 
 # input
 riverctl set-repeat 30 200
