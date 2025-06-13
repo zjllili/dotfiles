@@ -20,7 +20,7 @@ riverctl map normal $mod r spawn "$term lf"
 
 riverctl map normal $mod d spawn "wmenu-run -f \"SourceCodePro Medium 14\" -i -N \"$background\" -S \"$color9\" -s \"$background\""
 
-riverctl map normal ${mod}+Shift+Control l spawn "swaylock"
+riverctl map -release normal ${mod}+Shift+Control l spawn "swaylock"
 
 riverctl map normal ${mod}+Shift+Control h spawn "$HOME/.local/bin/swayhibe"
 
@@ -55,7 +55,9 @@ riverctl map -repeat normal ${mod}+Shift equal spawn "$HOME/.local/bin/audio sou
 riverctl map normal ${mod}+Shift m spawn "$HOME/.local/bin/audio source --mute"
 
 # windows management
-riverctl map normal $mod q close
+riverctl map  normal $mod q "" # don't send 'q'
+riverctl map -release normal $mod q close
+
 riverctl map normal $mod f toggle-fullscreen
 riverctl map normal ${mod}+Shift f toggle-float
 
