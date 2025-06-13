@@ -453,6 +453,9 @@ yay
 ### xoauth2 for isync
 cyrus-sasl-xoauth2-git
 
+### river
+lswt
+
 ### themes
 adwaita-qt5 adwaita-qt5 fcitx5-skin-fluentdark-git
 
