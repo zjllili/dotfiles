@@ -41,6 +41,7 @@ riverctl border-width 3
 
 # window rules
 riverctl rule-add -app-id "*" ssd   # fix border for every window
+riverctl rule-add -app-id "file-*" -title "Export Image as *" float # GIMP
 
 # tags
 for i in $(seq 1 9)
