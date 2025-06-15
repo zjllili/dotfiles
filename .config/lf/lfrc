@@ -153,6 +153,7 @@ map xR $~/.local/bin/rename-dlp $fx
 map xL $~/.local/bin/rename-lowercase $fx
 map xS $~/.local/bin/rename-space $fx
 map xI $~/.local/bin/rename-title-id3v2 $fx
+map xT $~/.local/bin/id3seq $fx
 
 ## Git
 map gl $clear; git log --graph --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %s' --abbrev-commit
