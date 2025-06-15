@@ -1,10 +1,16 @@
 #!/usr/bin/sh
 # @author nate zhou
 # @since 2024,2025
-# depends on python-mutagen for unicode and CJK support
+# @depends python-mutagen
 # add title tags to audio files, using the file name except the extension
 
-echo "Only perform on music that has empty title id3 tags."
+
+cat << _EOF_
+USAGE: $(basename "$0") FILES...
+add title tags using the file name excluding the extension
+_EOF_
+
+read -p "continue?(y/n)" choice && [ $choice = 'y' ] || exit 0
 
 add_title() {
     file="$1"
