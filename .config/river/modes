@@ -46,6 +46,7 @@ riverctl map "$mode_apostrophe" None c spawn "$HOME/.local/bin/wcal && riverctl 
 riverctl declare-mode "$mode_wtype"
 riverctl map normal $mod semicolon spawn "riverctl enter-mode $mode_wtype && riverctl killall fcitx5"
 riverctl map "$mode_wtype" $mod semicolon enter-mode normal riverctl map "$mode_wtype" None space enter-mode normal
+riverctl map "$mode_wtype" None space enter-mode normal
 riverctl map "$mode_wtype" None Escape enter-mode normal
 riverctl map -repeat "$mode_wtype" None h spawn "wtype -k Left"
 riverctl map -repeat "$mode_wtype" None j spawn "wtype -k Down"
