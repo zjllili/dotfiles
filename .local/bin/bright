@@ -5,11 +5,11 @@
 wobfifo="/tmp/wob.fifo"
 
 bright_minus() {
-    brightnessctl set 1%- | grep 'Current brightness' | tr '()' ' ' | cut -d' ' -f5 | sed 's/%//' > $wobfifo  && pkill -SIGRTMIN+3 i3blocks
+    brightnessctl set 1%- | grep 'Current brightness' | tr '()' ' ' | cut -d' ' -f5 | sed 's/%//' > $wobfifo  && kill -38 "$(cat /tmp/sbar)"; pkill -SIGRTMIN+3 i3blocks
 }
 
 brigt_plus() {
-    brightnessctl set 1%+ | grep 'Current brightness' | tr '()' ' ' | cut -d' ' -f5 | sed 's/%//' > $wobfifo  && pkill -SIGRTMIN+3 i3blocks
+    brightnessctl set 1%+ | grep 'Current brightness' | tr '()' ' ' | cut -d' ' -f5 | sed 's/%//' > $wobfifo  && kill -38 "$(cat /tmp/sbar)"; pkill -SIGRTMIN+3 i3blocks
 }
 
 while [ -n "$1" ]; do

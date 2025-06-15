@@ -25,6 +25,7 @@ else
     echo "" > "$LOG_CACHE"
 fi
 wc -w "$LOG_CACHE" | awk '{print $1}' > "$NUM_CACHE"
+kill -40 $(cat /tmp/sbar)
 pkill -SIGRTMIN+4 i3blocks
 }
 

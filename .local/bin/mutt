@@ -4,6 +4,7 @@
 # update neomutt unread count for i3blocks
 
 update() {
+    kill -41 $(cat /tmp/sbar)
     pkill -SIGRTMIN+18 i3blocks
 }
 

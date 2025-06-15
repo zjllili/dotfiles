@@ -4,5 +4,5 @@
 
 MBSYNC_CACHE="${XDG_CACHE_HOME}/mbsync-cron"
 
-/usr/bin/mbsync -qqa && touch "$MBSYNC_CACHE" && pkill -SIGRTMIN+18 i3blocks
+/usr/bin/mbsync -qqa && touch "$MBSYNC_CACHE" && kill -41 $(cat /tmp/sbar); pkill -SIGRTMIN+18 i3blocks
 

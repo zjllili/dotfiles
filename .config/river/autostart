@@ -4,7 +4,7 @@
 # river/autostart
 
 # restart
-killall -q  swaybg fcitx5 mpc
+killall -q  swaybg fcitx5 mpc dam
 
 riverctl spawn "swaybg -i $HOME/.local/share/wallpaper -m fill"
 
@@ -14,7 +14,8 @@ riverctl spawn "$HOME/.local/bin/foots" # foot server
 riverctl spawn "$HOME/.local/sbin/clsd"
 
 # start if not running
-pgrep 'i3bar-river' || riverctl spawn "i3bar-river"
+#pgrep 'i3bar-river' || riverctl spawn "i3bar-river"
+pgrep '$HOME/.local/bin/sbar dam' || riverctl spawn "$HOME/.local/bin/damblocks | dam"
 
 pgrep 'swayidle' || riverctl spawn "swayidle"
 

@@ -4,8 +4,6 @@
 
 . $HOME/.local/bin/colors.sh
 
-#exec_always "$HOME"/.local/bin/wobd
-set -x
 wobfifo="/tmp/wob.fifo"
 level="$(brightnessctl | awk '/%/{gsub("[()]", "", $4); print $4}')"
 

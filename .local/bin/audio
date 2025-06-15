@@ -10,8 +10,8 @@ wobfifo="/tmp/wob.fifo"
 [ "$1" = "source" ] && target="@DEFAULT_AUDIO_SOURCE@"
 
 blocks_reload() {
-    [ "$1" = "sink"  ] && pkill -SIGRTMIN+1 i3blocks
-    [ "$1" = "source" ] && pkill -SIGRTMIN+2 i3blocks
+    [ "$1" = "sink"  ] && kill -36 "$(cat /tmp/sbar)"; pkill -SIGRTMIN+1 i3blocks
+    [ "$1" = "source" ] && kill -37 "$(cat /tmp/sbar)"; pkill -SIGRTMIN+2 i3blocks
 }
 
 volume_minus() {
