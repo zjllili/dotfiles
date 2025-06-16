@@ -4,7 +4,7 @@
 # river/autostart
 
 # restart
-killall -q  swaybg fcitx5 mpc dam
+killall -q swaybg fcitx5 mpc
 
 riverctl spawn "swaybg -i $HOME/.local/share/wallpaper -m fill"
 
@@ -15,7 +15,7 @@ riverctl spawn "$HOME/.local/sbin/clsd"
 
 # start if not running
 #pgrep 'i3bar-river' || riverctl spawn "i3bar-river"
-pgrep '$HOME/.local/bin/sbar dam' || riverctl spawn "$HOME/.local/bin/damblocks | dam"
+pgrep 'dam' || riverctl spawn "$HOME/.local/bin/damblocks | dam"
 
 pgrep 'swayidle' || riverctl spawn "swayidle"
 
@@ -27,5 +27,6 @@ pgrep 'dunst' || riverctl spawn "dunst"
 
 pgrep 'wob' || riverctl spawn "$HOME/.local/bin/wobd" # wob daemon
 
+riverctl spawn "fcitx5 -d" # conflicts with wtype
+
 #pgrep -f 'footclient -T Scratchpad_Tmux' || riverctl spawn "footclient -T Scratchpad_Tmux $HOME/.local/bin/tmuxd" # disabled for not obeying window rules, start manually instead
-#riverctl spawn "fcitx5 -d" # disabled for conflicting with wtype

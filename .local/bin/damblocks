@@ -57,7 +57,7 @@ update_bluetooth() {
 }
 
 update_volume() {
-    status="$(wpctl get-volume @DEFAULT_AUDIO_SINK@)"
+    status="$(wpctl get-volume @DEFAULT_AUDIO_SINK@ 2>/dev/null)"
     volume="$(echo $status | sed 's/[^0-9]*//g; s/^0//' )"
     muted="$(echo $status | grep 'MUTED')"
     [ -z "$muted" ] && icon="" || icon=""
@@ -65,7 +65,7 @@ update_volume() {
 }
 
 update_microphone() {
-    status="$(wpctl get-volume @DEFAULT_AUDIO_SOURCE@)"
+    status="$(wpctl get-volume @DEFAULT_AUDIO_SOURCE@ 2>/dev/null)"
     mic="$(echo $status | sed 's/[^0-9]*//g; s/^0//' )"
     muted="$(echo $status | grep 'MUTED')"
     [ -z "$muted" ] && icon="" || icon=""
@@ -193,11 +193,8 @@ update_calcurse() {
 update_wttr() {
     WTTR_CACHE="$HOME/.cache/wttr"
     WTTR_CACHE2="$HOME/.cache/wttr2"
-    update_time="$(stat -c "%Y" "$WTTR_CACHE")"
-    current_time="$(date +%s)"
     #result="$(sed 's/^[^0-9+-]*//; s/ //g; s/\+//' $WTTR_CACHE)"
     result="$(sed 's/ //g; s/\+//' $WTTR_CACHE)"
-    (( current_time - update_time > 86400 )) && result=""
     [ -z "$result" ] && icon="<span foreground=\"$separator\">󰅟</span>"
     #icon="󰅟"
     wttr="$result"
