@@ -54,7 +54,7 @@ alias mpv="mpv --loop"
 alias ncmpcpp="ncmpcpp -q"
 alias newsboat="newsboat -q"
 
-alias wmenu="wmenu -f 'SourceCodePro Medium 13' -i -S 6f3f89 -s ffffff -M 6f3f89 -m ffffff"
+alias wmenu="$HOME/.local/bin/wmenu-color"
 alias ,,="~/.local/bin/teleport-genesis-search"
 
 alias heartstow='cd ~/doc/heart && stow --adopt -t ~ . && cd - &>/dev/null && echo "heart is stowed"'
