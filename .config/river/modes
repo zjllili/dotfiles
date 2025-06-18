@@ -5,7 +5,7 @@
 
 mod=Mod4
 mode_fcitx="[p]inyin [a]nthy"
-mode_wmenu="[w[w]iki w[h]eart w[b]ook [a]mount [f]locks [p]off w[m]ulti w[s]ink w[j]doc"
+mode_wmenu="[w[w]iki w[h]eart w[b]ook [a]mount [f]locks [p]off w[m]ulti w[s]ink w[j]doc w[e]moji"
 mode_apostrophe="enable[t]ap disable[T]ap clip[h]ist-wipe [l]supdates d[w] w[c]al"
 mode_wtype="[hjkl]arrorws"
 
@@ -32,6 +32,7 @@ riverctl map "$mode_wmenu" None p spawn "riverctl enter-mode normal && $HOME/.lo
 riverctl map "$mode_wmenu" None m spawn "riverctl enter-mode normal && $HOME/.local/bin/wmulti"
 riverctl map "$mode_wmenu" None s spawn "riverctl enter-mode normal && $HOME/.local/bin/wsink"
 riverctl map "$mode_wmenu" None j spawn "riverctl enter-mode normal && $HOME/.local/bin/wjdoc"
+riverctl map "$mode_wmenu" None e spawn "riverctl enter-mode normal && $HOME/.local/bin/wemoji"
 
 riverctl declare-mode "$mode_apostrophe"
 riverctl map normal $mod apostrophe enter-mode "$mode_apostrophe"
