@@ -398,7 +398,7 @@ android-file-transfer samba qrtool
 w3m firefox firefox-dark-reader firefox-tridactyl firefox-ublock-origin
 
 ### window manager/wayland compositor suite
-foot river wlr-randr swaybg swayidle swaylock i3blocks wmenu wtype wl-clipboard cliphist dunst gammastep slurp grim wf-recorder wl-mirror wob
+foot river wlr-randr swaybg swayidle swaylock wmenu wtype wl-clipboard cliphist dunst gammastep slurp grim wf-recorder wl-mirror wob
 
 ### audio server
 pipewire pipewire-alsa pipewire-pulse pipewire-jack noise-suppression-for-voice pulsemixer
@@ -454,7 +454,7 @@ yay
 cyrus-sasl-xoauth2-git
 
 ### river
-lswt river-shifttags-git i3bar-river (dam)
+lswt river-shifttags-git
 
 ### themes
 adwaita-qt5 adwaita-qt5 fcitx5-skin-fluentdark-git
@@ -472,6 +472,12 @@ lf-git code-marketplace
     makepkg
     sudo pacman -U yay-*.pkg.tar.zst
 ```
+
+## 2.5.2 local builds
+dam
+    - https://github.com/gnuunixchad/dam
+    - https://codeberg.org/unixchad/dam
+    - https://codeberg.org/sewn/dam
 
 ## 2.6 config softwares
 ### 2.6.-1 sbctl (secure boot)
