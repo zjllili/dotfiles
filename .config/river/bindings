@@ -18,7 +18,7 @@ riverctl map normal Control+Shift Return spawn "footclient -T Scratchpad_Tmux $H
 
 riverctl map normal $mod r spawn "$term lf"
 
-riverctl map normal $mod d spawn "wmenu-run -f \"SourceCodePro Medium 14\" -i -N \"$background\" -S \"$color9\" -s \"$background\""
+riverctl map normal $mod d spawn "wmenu-run -f \"SourceCodePro Medium 13\" -i -N \"$background\" -S \"$color9\" -s \"$background\""
 
 riverctl map -release normal ${mod}+Shift+Control l spawn "swaylock"
 
