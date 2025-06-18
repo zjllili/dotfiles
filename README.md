@@ -30,7 +30,7 @@ A few software need manually setup:
 - Terminal Emulator:        foot
 - Audio Server:             pipewire
 - WM/Compositor:            river
-- Status bar:               i3bar-river & i3blocks
+- Status bar:               dam & damblocks
 - Application Launcher:     wmenu
 - Fuzzy Finder:             fzf
 - Notification Daemon:      dunst
