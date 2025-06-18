@@ -153,6 +153,12 @@ update_uptime() {
     [ -n "$result" ] && uptime="$icon $result" || uptime="$icon ≤1h"
 }
 
+update_ttylogin() {
+    tty_count="$(w -h | wc -l )"
+    icon=""
+    ttylogin="$icon$tty_count"
+}
+
 update_pacman() {
     result="$(cat $HOME/.cache/checkupdates-cron.num)"
     icon=""
@@ -205,7 +211,7 @@ update_volume; update_microphone; update_brightness; update_pacman; update_newsb
 
 display () {
     # ` `(U+2009) is the Thin Space
-    printf "%s" "[$wttr][$calcurse $newsboat $mutt][$pacman $uptime][$root $home][$memory $cpu $temperature][$wifi $ethernet][$brightness $microphone $volume][$battery $bluetooth][$time]"
+    printf "%s" "[$wttr][$calcurse $newsboat $mutt][$pacman $ttylogin $uptime][$root $home][$memory $cpu $temperature][$wifi $ethernet][$brightness $microphone $volume][$battery $bluetooth][$time]"
 }
 
 # SIGNALLING
@@ -242,6 +248,7 @@ do
 		[ $((sec % 60)) -eq 0 ] && update_root
 		#[ $((sec % 60)) -eq 0 ] && update_usb
 		[ $((sec % 900)) -eq 0 ] && update_uptime
+		[ $((sec % 60)) -eq 0 ] && update_ttylogin
 		[ $((sec % 60)) -eq 0 ] && update_mutt
 
 		# how often the display updates ( 5 seconds )
