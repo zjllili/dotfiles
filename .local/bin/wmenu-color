@@ -5,4 +5,4 @@
 
 . $HOME/.local/bin/colors.sh
 
-wmenu -f "SourceCodePro medium 13" -S "$color9" -s "$background" -M "$color9" -m "$background" -N 111111 "$@"
+wmenu -i -f "SourceCodePro medium 13" -S "$color9" -s "$background" -M "$color9" -m "$background" -N 111111 "$@"
