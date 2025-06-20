@@ -3,4 +3,4 @@
 # @since 2025
 # spawn a termux window in scratchpad if there isn't one already
 
-swaymsg -t get_tree | grep "_Scratchpad_Tmux" || tmux attach || tmux
+pgrep -x tmux || tmux attach || tmux
