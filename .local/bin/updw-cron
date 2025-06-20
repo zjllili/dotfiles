@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # @author nate zhou
 # @since 2024,2025
-# updw-cron, update dunst weather with crontab for i3blocks
+# updw-cron, update dunst weather with crontab for my status bar
 # @depends: libnotify, dunst, cronie, dw*, updw*
 # running with dmenu/wmenu is recommended
 
@@ -46,8 +46,7 @@ if [ -f "$HOME/.cache/city" ]; then
             msg="updw done"
             #notify-send -u low -r 22 "$msg"
             echo $msg
-            kill -44 $(cat /tmp/sbar)
-            pkill -SIGRTMIN+7 i3blocks
+            kill -44 $(cat /tmp/$USER/damblocks); pkill -SIGRTMIN+7 i3blocks
         else
             msg="updw failed, check network ?"
             #notify-send -u low -r 21 "$msg"

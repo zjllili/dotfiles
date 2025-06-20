@@ -2,7 +2,7 @@
 # @ author nate zhou
 # @ since 2024,2025
 # check available pacman packages and write the number to a cache file
-# for i3status
+# for my status bar
 # @depends pacman-contrib, dunst, cronie, lsupdates*
 
 LOG_CACHE="$HOME/.cache/checkupdates-cron.log"
@@ -25,8 +25,7 @@ else
     echo "" > "$LOG_CACHE"
 fi
 wc -w "$LOG_CACHE" | awk '{print $1}' > "$NUM_CACHE"
-kill -40 $(cat /tmp/sbar)
-pkill -SIGRTMIN+4 i3blocks
+kill -40 $(cat /tmp/$USER/damblocks); pkill -SIGRTMIN+4 i3blocks
 }
 
 while [ -n "$1" ]; do

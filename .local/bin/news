@@ -1,11 +1,11 @@
 #!/usr/bin/sh
 # @author nate zhou
 # @since 2025
-# update newsboat unread count for i3blocks
+# update newsboat unread count for my status bar
 
 update() {
     $HOME/.local/bin/newsboat-num-cron --now >/dev/null
-    pkill -SIGRTMIN+5 i3blocks
+    kill -42 $(cat /tmp/$USER/damblocks);pkill -SIGRTMIN+5 i3blocks
 }
 
 # update count on exit, interrupted or terminated

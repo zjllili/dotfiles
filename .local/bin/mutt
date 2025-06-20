@@ -1,11 +1,10 @@
 #!/usr/bin/sh
 # @author nate zhou
 # @since 2025
-# update neomutt unread count for i3blocks
+# update neomutt unread count for my status bar
 
 update() {
-    kill -41 $(cat /tmp/sbar)
-    pkill -SIGRTMIN+18 i3blocks
+    kill -41 $(cat /tmp/$USER/damblocks); pkill -SIGRTMIN+18 i3blocks
 }
 
 # update count on exit, interrupted or terminated
