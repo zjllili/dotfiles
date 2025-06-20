@@ -54,26 +54,6 @@ do
     riverctl map normal ${mod}+Control $i toggle-view-tags $tags
 done
 
-# scratchpad
-# The scratchpad will live on an unused tag. Which tags are used depends on your
-# config, but rivers default uses the first 9 tags.
-scratch_tag=$((1 << 20 ))
-
-# Toggle the scratchpad
-riverctl map normal $mod a toggle-focused-tags ${scratch_tag}
-
-# Send windows to the scratchpad
-riverctl map normal ${mod}+Shift a set-view-tags ${scratch_tag}
-
-# Scratchpad_Tmux rules
-riverctl rule-add -app-id footclient -title Scratchpad_Tmux tags ${scratch_tag}
-riverctl rule-add -app-id footclient -title Scratchpad_Tmux float
-
-# Set spawn tagmask to ensure new windows don't have the scratchpad tag unless
-# explicitly set.
-all_but_scratch_tag=$(( ((1 << 32) - 1) ^ $scratch_tag ))
-riverctl spawn-tagmask ${all_but_scratch_tag}
-
 # sticky
 all_tags=$(((1 << 32) - 1))
 sticky_tag=$((1 << 31))
