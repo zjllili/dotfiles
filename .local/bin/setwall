@@ -14,5 +14,5 @@ fi
 
 # restart swaybg
 killall swaybg
-pgrep river>/dev/null && riverctl spawn "swaybg -i $HOME/.local/share/wallpaper -m fill"
-pgrep sway >/dev/null  && swaymsg "output * bg ~/.local/share/wallpaper fill"
+pgrep -x river>/dev/null && riverctl spawn "swaybg -i $HOME/.local/share/wallpaper -m fill"
+pgrep -x sway >/dev/null  && swaymsg "output * bg ~/.local/share/wallpaper fill"
