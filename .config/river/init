@@ -58,19 +58,3 @@ riverctl map normal $mod 0 set-focused-tags $((1 << (10 - 1)))
 riverctl map normal ${mod}+Shift 0 set-view-tags $((1 << (10 - 1)))
 riverctl map normal Control 0 toggle-focused-tags $((1 << (10 - 1)))
 riverctl map normal ${mod}+Control 0 toggle-view-tags $((1 << (10 - 1)))
-
-# sticky
-all_tags=$(((1 << 32) - 1))
-sticky_tag=$((1 << 31))
-all_but_sticky_tag=$(( $all_tags ^ $sticky_tag ))
-
-riverctl map normal $mod S toggle-view-tags $sticky_tag
-riverctl spawn-tagmask ${all_but_sticky_tag}
-
-# modify the normal keybind to always select the sticky tag
-for i in $(seq 1 9)
-do
-    tags=$((1 << ($i - 1)))
-    # $mod+[1-90] to focus tag [0-9]
-    riverctl map normal $mod $i set-focused-tags $(($sticky_tag + $tags))
-done
