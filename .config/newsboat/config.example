@@ -1,7 +1,7 @@
 # @author nate zhou
 # @since 2023,2024
 
-color listnormal_unread  color13 default
+color listnormal_unread  color9 default
 color listfocus          white   color14
 color listfocus_unread   white   color14
 color info               default color14
@@ -17,6 +17,7 @@ bind-key G end
 bind-key S save-all
 bind-key ^p halfpageup
 bind-key ^n halfpagedown
+bind-key m mark-feed-read
 
 save-path ~/doc/newsboat
 
