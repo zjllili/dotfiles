@@ -9,8 +9,8 @@
 . $HOME/.config/river/modes
 
 # window manager
-riverctl default-layout rivertile
-rivertile -view-padding 6 -outer-padding 6 -main-ratio 0.50 &
+riverctl default-layout rivercarro
+rivercarro -per-tag -no-smart-gaps -inner-gaps 5 -outer-gaps 5 -main-ratio 0.50 &
 
 # remap key
 riverctl keyboard-layout-file "$HOME/.config/layout.xkb"
@@ -19,10 +19,10 @@ riverctl keyboard-layout-file "$HOME/.config/layout.xkb"
 riverctl spawn "$HOME/.local/bin/wlr-output"
 
 riverctl focus-output left
-riverctl send-layout-cmd rivertile "main-location left"
+riverctl send-layout-cmd rivercarro "main-location left"
 
 riverctl focus-output right
-riverctl send-layout-cmd rivertile "main-location left"
+riverctl send-layout-cmd rivercarro "main-location left"
 
 # input
 riverctl set-repeat 30 200
