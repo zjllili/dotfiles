@@ -109,15 +109,14 @@ riverctl map-pointer normal $mod BTN_LEFT move-view
 riverctl map-pointer normal $mod BTN_RIGHT resize-view
 riverctl map-pointer normal $mod BTN_MIDDLE toggle-float
 
-# tags
-# Super+0 to focus all tags
-# Super+Shift+0 to tag focused view with all tags
+# all tags
 all_tags=$(((1 << 32) - 1))
-riverctl map normal $mod 0 set-focused-tags $all_tags
-riverctl map normal ${mod}+Shift 0 set-view-tags $all_tags
+riverctl map normal $mod a set-focused-tags $all_tags
+riverctl map normal ${mod}+Shift a set-view-tags $all_tags
 
 riverctl map normal $mod tab focus-previous-tags
 
+# layout management
 riverctl map normal ${mod}+Control h  send-layout-cmd rivercarro "main-location left"
 riverctl map normal ${mod}+Control j  send-layout-cmd rivercarro "main-location bottom"
 riverctl map normal ${mod}+Control k    send-layout-cmd rivercarro "main-location top"
