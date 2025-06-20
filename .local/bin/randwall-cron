@@ -7,7 +7,7 @@
 # 0 * * * * $HOME/.local/bin/randwall-cron
 
 WALLPAPER_PATH="$HOME/.local/share/wallpaper"
-date_last_bg="$(stat "$WALLPAPER_PATH" | grep "^Modify:" | awk '{print $2}')"
+date_last_bg="$(stat "$WALLPAPER_PATH" 2>/dev/null | grep "^Modify:" | awk '{print $2}')"
 date_today="$(date -I)"
 
 refresh_bg() {
@@ -16,7 +16,8 @@ refresh_bg() {
     cp -f $random_wallpaper "$WALLPAPER_PATH";
     # refresh swaybg
     # without SWAYSOCK variable, swaymsg couldn't connect to the socket running from a cron job
-    SWAYSOCK=/run/user/$(id -u)/sway-ipc.$(id -u).$(pgrep -x sway).sock swaymsg "output * bg \"$WALLPAPER_PATH\" fill"
+    pgrep -x sway && SWAYSOCK=/run/user/$(id -u)/sway-ipc.$(id -u).$(pgrep -x sway).sock swaymsg "output * bg \"$WALLPAPER_PATH\" fill"
+    pgrep -x river && riverctl spawn "swaybg -i $HOME/.local/share/wallpaper -m fill"
 }
 
 # don't do anything if mpvpaper is running
