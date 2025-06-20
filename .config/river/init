@@ -10,7 +10,7 @@
 
 # window manager
 riverctl default-layout rivercarro
-rivercarro -per-tag -no-smart-gaps -inner-gaps 5 -outer-gaps 5 -main-ratio 0.50 &
+rivercarro -per-tag -no-smart-gaps -inner-gaps 6 -outer-gaps 6 -main-ratio 0.50 &
 
 # remap key
 riverctl keyboard-layout-file "$HOME/.config/layout.xkb"
