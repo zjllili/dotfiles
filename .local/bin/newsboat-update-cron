@@ -13,6 +13,7 @@ UPDATE_FREQUENCY=14400 # 4H
 
 update_newsboat() {
     /usr/bin/newsboat -x reload
+    $HOME/.local/bin/newsboat-num-cron --now
 }
 
 if [ ! -f "$NEWS_CACHE" ]; then
