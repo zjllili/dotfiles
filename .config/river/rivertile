@@ -3,6 +3,8 @@
 # @author nate zhou
 # @since 2025
 
+mod=Mod4    # Mod1=Alt, Mod4=Super
+
 riverctl default-layout rivertile
 rivertile -view-padding 6 -outer-padding 6 -main-ratio 0.50 &
 
