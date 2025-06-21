@@ -190,6 +190,8 @@ aur.list
 !.config/river/bindings
 !.config/river/init
 !.config/river/modes
+!.config/river/rivertile
+!.config/river/rivercarro
 !.config/sway/
 !.config/sway/config
 !.config/sway/colors

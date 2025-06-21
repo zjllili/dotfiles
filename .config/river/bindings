@@ -84,14 +84,6 @@ riverctl map normal ${mod}+Shift Comma spawn "riverctl send-to-output -current-t
 # bring focus to the top of the layout stack
 riverctl map normal $mod z zoom
 
-# adjust ratio
-riverctl map -repeat normal $mod h send-layout-cmd rivercarro "main-ratio -0.05"
-riverctl map -repeat normal $mod l send-layout-cmd rivercarro "main-ratio +0.05"
-
-# adjust main count
-riverctl map normal ${mod}+Shift h send-layout-cmd rivercarro "main-count +1"
-riverctl map normal ${mod}+Shift l send-layout-cmd rivercarro "main-count -1"
-
 # move floating window
 riverctl map normal $mod y move left 100
 riverctl map normal $mod u move down 100
@@ -115,10 +107,3 @@ riverctl map normal $mod a set-focused-tags $all_tags
 riverctl map normal ${mod}+Shift a set-view-tags $all_tags
 
 riverctl map normal $mod tab focus-previous-tags
-
-# layout management
-riverctl map normal ${mod}+Control h  send-layout-cmd rivercarro "main-location left"
-riverctl map normal ${mod}+Control j  send-layout-cmd rivercarro "main-location bottom"
-riverctl map normal ${mod}+Control k    send-layout-cmd rivercarro "main-location top"
-riverctl map normal ${mod}+Control l send-layout-cmd rivercarro "main-location right"
-riverctl map normal ${mod}+Control m send-layout-cmd rivercarro "main-location monocle"
