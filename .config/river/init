@@ -4,8 +4,8 @@
 # river/init
 
 . $HOME/.local/bin/colors.sh    # source colorscheme
-. $HOME/.config/river/bindings
 . $HOME/.config/river/autostart
+. $HOME/.config/river/bindings
 . $HOME/.config/river/modes
 
 # remap key
