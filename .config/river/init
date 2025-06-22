@@ -47,11 +47,6 @@ do
     riverctl map normal Control $i toggle-focused-tags $tags
     riverctl map normal ${mod}+Control $i toggle-view-tags $tags
 done
-# tag 10
-riverctl map normal $mod 0 set-focused-tags $((1 << (10 - 1)))
-riverctl map normal ${mod}+Shift 0 set-view-tags $((1 << (10 - 1)))
-riverctl map normal Control 0 toggle-focused-tags $((1 << (10 - 1)))
-riverctl map normal ${mod}+Control 0 toggle-view-tags $((1 << (10 - 1)))
 
 # scratchpad
 # The scratchpad will live on an unused tag. Which tags are used depends on your
