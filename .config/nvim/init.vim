@@ -17,7 +17,7 @@ set smartcase       " search case insensitive; if upper exists sensitive;
 
 set number
 set relativenumber
-set cc=78
+set cc=80
 set cursorline
 set cursorcolumn
 match ExtraWhitespace /\s\+$/ " space at the end of lines
@@ -90,7 +90,7 @@ augroup mutt
     " spell check
     autocmd BufRead,BufNewFile /tmp/neomutt-* setlocal spell spelllang=en_us
     " column width
-    autocmd BufRead,BufNewFile /tmp/neomutt-* setlocal cc=72
+    autocmd BufRead,BufNewFile /tmp/neomutt-* setlocal cc=80
 augroup END
 
 " vim-plug
