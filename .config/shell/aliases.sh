@@ -8,7 +8,7 @@ command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
 # the current shell will not return when sway exits
 # no one can have the current tty access in case sway crashes
 alias sw="exec ssh-agent sway --unsupported-gpu"
-alias rv="exec ssh-agent river"
+alias rv="exec ssh-agent river -no-xwayland"
 
 alias rm="rm -I";
 alias cp="cp -i";
