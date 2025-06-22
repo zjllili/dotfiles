@@ -43,8 +43,10 @@ case "$2" in
     --mute)
         volume_mute "$1"
         ;;
+    reload)
+        blocks_reload "$1"
+        ;;
     *)
-        echo "invalid arguments"
-        echo "audio sink|source --{minus|plus|mute}"
+        echo "Usage: audio <sink|source> <--minus | --plus | --mute | reload>"
         ;;
 esac
