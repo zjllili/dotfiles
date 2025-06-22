@@ -59,10 +59,6 @@ riverctl map normal $mod s toggle-focused-tags ${scratch_tag}
 # Send windows to the scratchpad
 riverctl map normal ${mod}+Shift s set-view-tags ${scratch_tag}
 
-# Scratchpad_Tmux rules
-riverctl rule-add -app-id footclient -title Scratchpad_Tmux tags ${scratch_tag}
-riverctl rule-add -app-id footclient -title Scratchpad_Tmux float
-
 # Set spawn tagmask to ensure new windows don't have the scratchpad tag unless
 # explicitly set.
 all_but_scratch_tag=$(( ((1 << 32) - 1) ^ $scratch_tag ))
