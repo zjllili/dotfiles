@@ -168,6 +168,10 @@ update_pacman() {
 
 update_mutt() {
     MAIL_DIR="$HOME/doc/mail"
+    MBSYNC_CACHE="${XDG_CACHE_HOME}/mbsync-cron"
+    UPDATE_MUTT_FREQUENCY=1800 # in seconds
+    update_mutt_time="$(stat -c "%Y" "$MBSYNC_CACHE")"
+    current_time="$(date +%s)"
     count=0
     icon="󰇮"
     # Loop through each mailbox directory
@@ -182,6 +186,7 @@ update_mutt() {
             done
         fi
     done
+    [ $((current_time - update_mutt_time)) -gt 86400 ] && count="?"
     mutt="$icon$count"
 }
 
@@ -199,9 +204,9 @@ update_calcurse() {
 
 update_wttr() {
     WTTR_CACHE="$HOME/.cache/wttr"
-    update_time="$(stat -c "%Y" "$WTTR_CACHE")"
+    update_wttr_time="$(stat -c "%Y" "$WTTR_CACHE")"
     current_time="$(date +%s)"
-    [ $((current_time - update_time)) -gt 86400 ] && result=""
+    [ $((current_time - update_wttr_time)) -gt 86400 ] && result=""
     result="$(sed 's/ //g; s/\+//' $WTTR_CACHE)"
     [ -z "$result" ] && icon="󰅟"
     wttr="$result"
