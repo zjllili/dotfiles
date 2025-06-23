@@ -1,18 +1,12 @@
 #!/usr/bin/sh
 # @author nate zhou
 # @since 2023,2024,2025
-# set wallpaper for i3wm/sway
+# set wallpaper with swaybg
 
-# in ranger, '@` and type 'setwall` or `:shell setwall %s` will set the current selection as the new wallpaper
-cp -f "$1" $HOME/.local/share/wallpaper;
+[ ! -d "$1" ] && ln -sf "$(realpath $1)" $HOME/.local/share/wallpaper;
 
-# kill live wallpaper if it's is running
-if pgrep -x "mpvpaper" > /dev/null
-then
-    killall -e "mpvpaper"
-fi
+pgrep -x "mpvpaper" > /dev/null && killall -e "mpvpaper"
 
-# restart swaybg
 killall swaybg
 pgrep -x river>/dev/null && riverctl spawn "swaybg -i $HOME/.local/share/wallpaper -m fill"
 pgrep -x sway >/dev/null  && swaymsg "output * bg ~/.local/share/wallpaper fill"
