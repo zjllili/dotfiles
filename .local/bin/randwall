@@ -1,24 +1,10 @@
 #!/usr/bin/sh
 # @author nate zhou
 # @since 2024,2025
-# random wallpaper
+# set random wallpaper with swaybg
 
 WALLPAPER_PATH="$HOME/.local/share/wallpaper"
 
-refresh_bg() {
-    random_wallpaper=$(find $HOME/pic/wallpapers -type f | grep -e earth -e photography -e spolight -e collection| grep -e .jpeg -e .jpg -e .png -e .gif | shuf -n 1)
-    # set the selected image as sway background
-    cp -f $random_wallpaper "$WALLPAPER_PATH";
-    # refresh swaybg
-    # without SWAYSOCK variable, swaymsg couldn't connect to the socket running from a cron job
-    pgrep -x sway && SWAYSOCK=/run/user/$(id -u)/sway-ipc.$(id -u).$(pgrep -x sway).sock swaymsg "output * bg \"$WALLPAPER_PATH\" fill"
-    pgrep -x river && riverctl spawn "swaybg -i $HOME/.local/share/wallpaper -m fill"
-}
+random_wallpaper=$(find $HOME/pic/wallpapers -type f | shuf -n 1)
 
-# kill live wallpaper if it's is running
-if pgrep -x "mpvpaper" > /dev/null
-then
-    killall -e "mpvpaper"
-fi
-
-refresh_bg
+$HOME/.local/bin/setwall "$random_wallpaper"
