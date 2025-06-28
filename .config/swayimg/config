@@ -15,18 +15,27 @@ app_id = swayimg
 window = #111111
 transparency = #111111
 scale = optimal
-fixed = yes
-antialiasing = yes
-slideshow = no
-slideshow_time = 3
+position = center
+antialiasing = mks13
+loop = yes
 history = 1
 preload = 1
+
+[slideshow]
+time = 3
+window = auto
+transparency = #000000ff
+scale = fit
+position = center
+antialiasing = mks13
 
 [gallery]
 size = 200
 cache = 100
+preload = yes
+pstore = no
 fill = no
-antialiasing = yes
+antialiasing = mks13
 window = #111111
 background = #111111
 select = #005577
@@ -35,9 +44,9 @@ shadow = #000000
 
 [list]
 order = alpha
-loop = yes
 recursive = no
 all = yes
+fsmon = yes
 
 [font]
 name = SourceCodePro
@@ -56,6 +65,12 @@ top_right = index
 bottom_left = scale,frame
 bottom_right = status
 
+[info.slideshow]
+top_left = none
+top_right = none
+bottom_left = none
+bottom_right = dir,status
+
 [info.gallery]
 top_left = none
 top_right = none
@@ -72,9 +87,9 @@ Shift+n = next_dir
 comma = prev_frame
 period = next_frame
 c = skip_file
-Shift+s = slideshow
 a = animation
-Return = mode
+Return = mode gallery
+s = mode slideshow
 h = step_left 10
 l = step_right 10
 k = step_up 10
@@ -97,7 +112,6 @@ z = zoom fit
 f = zoom fill
 0 = zoom real
 BackSpace = zoom optimal
-Alt+s = scale
 r = rotate_left
 R = rand_file
 Ctrl +r = rotate_right
@@ -119,6 +133,23 @@ Shift+ScrollDown = next_file
 Alt+ScrollUp = prev_frame
 Alt+ScrollDown = next_frame
 
+[keys.slideshow]
+F1 = help
+Home = first_file
+End = last_file
+Prior = prev_file
+Next = next_file
+Shift+r = rand_file
+Shift+d = prev_dir
+d = next_dir
+Space = pause
+i = info
+f = fullscreen
+Return = mode
+s = mode
+Escape = exit
+q = exit
+
 [keys.gallery]
 Shift + question = help
 g = first_file
@@ -130,7 +161,8 @@ j = step_down
 p = page_up
 n = page_down
 c = skip_file
-Return = mode
+Return = mode viewer
+s = mode slideshow
 Shift + a = antialiasing
 r = reload
 m = info
@@ -140,3 +172,11 @@ Shift+w = exec ~/.local/bin/setwall "%";
 Shift+y = exec cp "%" ~/tmp;
 Escape = exit
 q = exit
+# Mouse
+ScrollLeft = step_right
+ScrollRight = step_left
+ScrollUp = step_up
+ScrollDown = step_down
+Ctrl+ScrollUp = thumb +20
+Ctrl+ScrollDown = thumb -20
+MouseLeft = mode viewer
