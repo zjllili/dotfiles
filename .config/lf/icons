@@ -33,9 +33,10 @@ LICENSE.*   
 /etc        
 /home       󰋜
 /mnt        󰋊
-/opt        󰻂
 /srv        
 /root       󰴉
+/tmp        󰪺
+/var/tmp    󰪺
 
 ~           󰋜
 ~/doc       󱧶
