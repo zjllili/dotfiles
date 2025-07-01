@@ -2,7 +2,7 @@
 # @author nate zhou
 # @since 2024,2025
 
-NEWS_CACHE="$HOME/.local/share/newsboat/cache.db"
+NEWS_CACHE="$HOME/.cache/newsboat.num"
 
 # modified time in seconds since the Epoch
 update_time=$(stat -c "%Y" "$NEWS_CACHE")
@@ -12,8 +12,7 @@ current_time=$(date +%s)
 UPDATE_FREQUENCY=14400 # 4H
 
 update_newsboat() {
-    /usr/bin/newsboat -x reload
-    $HOME/.local/bin/newsboat-num-cron --now
+    /usr/bin/newsboat -x reload && $HOME/.local/bin/newsboat-num-cron --now
 }
 
 if [ ! -f "$NEWS_CACHE" ]; then
