@@ -23,6 +23,9 @@ cmd open &{{
 		application/*opendocument*|*officedocument*)
             libreoffice $fx
             ;;
+        application/gzip)
+            lf -remote "send $id \$zless \$f"
+            ;;
         application/zip)
             lf -remote "send $id \$zipinfo \$f | less -i"
             ;;

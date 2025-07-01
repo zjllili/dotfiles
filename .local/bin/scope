@@ -53,6 +53,9 @@ case "$(file -Lb --mime-type -- "$1")" in
     application/zip)
         zipinfo "$1" | "$PAGER"
         ;;
+    application/gzip)
+        zless "$1" | "$PAGER"
+        ;;
     application/*tar|application/*zip*|application/zstd|application/*xz)
         tar vvtf "$1" | "$PAGER"
         ;;
