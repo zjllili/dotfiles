@@ -172,7 +172,7 @@ update_mutt() {
     UPDATE_MUTT_FREQUENCY=1800 # in seconds
     update_mutt_time="$(stat -c "%Y" "$MBSYNC_CACHE")"
     current_time="$(date +%s)"
-    count=0
+    mutt_count=0
     icon="󰇮"
     # Loop through each mailbox directory
     for mailbox in "$MAIL_DIR"/*; do
@@ -181,13 +181,14 @@ update_mutt() {
             for folder in "$mailbox/INBOX" "$mailbox/Junk"; do
                 if [ -d "$folder/new" ]; then
                     # Count the number of files in the 'new' directory
-                    count=$(($count + $(find "$folder/new" -type f | wc -l)))
+                    mutt_count=$(($mutt_count + $(find "$folder/new" -type f | wc -l)))
                 fi
             done
         fi
     done
-    [ $((current_time - update_mutt_time)) -gt 86400 ] && count="?"
-    mutt="$icon$count"
+    [ $((current_time - update_mutt_time)) -gt 86400 ] && icon="󱏣"
+    [ "$mutt_count" -gt 0 ] && icon="󰛏"
+    mutt="$icon$mutt_count"
 }
 
 update_newsboat() {
