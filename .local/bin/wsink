@@ -17,4 +17,4 @@ fi
 
 pactl set-default-sink "$selected_sink"
 
-kill -36 "$(cat /tmp/$USER/damblocks)"; pkill -SIGRTMIN+1 i3blocks
+kill -36 "$(cat /tmp/$USER/damblocks)";

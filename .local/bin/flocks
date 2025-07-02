@@ -48,5 +48,5 @@ echo $selected_uuid
 if [[ $selected == *"crypto_LUKS"* ]] ; then
     f_unmount && f_lock && send_msg
 else
-    udisksctl unmount -b "$selected_partition" && send_msg && pkill -SIGRTMIN +16 i3blocks &
+    udisksctl unmount -b "$selected_partition" && send_msg
 fi

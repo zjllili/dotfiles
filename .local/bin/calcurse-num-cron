@@ -9,7 +9,7 @@ DAY="28" # for the given range of days to print events
 
 update_num() {
     calcurse -d "$DAY" | grep '^[0-9]' | wc -l  > "$NUM"
-    kill -43 $(cat /tmp/$USER/damblocks); pkill -SIGRTMIN+6 i3blocks
+    kill -43 $(cat /tmp/$USER/damblocks);
 }
 
 if [ ! -f "$NUM" ]; then

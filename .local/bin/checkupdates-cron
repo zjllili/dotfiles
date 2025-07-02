@@ -25,7 +25,7 @@ else
     echo "" > "$LOG_CACHE"
 fi
 wc -w "$LOG_CACHE" | awk '{print $1}' > "$NUM_CACHE"
-kill -40 $(cat /tmp/$USER/damblocks); pkill -SIGRTMIN+4 i3blocks
+kill -40 $(cat /tmp/$USER/damblocks);
 }
 
 while [ -n "$1" ]; do

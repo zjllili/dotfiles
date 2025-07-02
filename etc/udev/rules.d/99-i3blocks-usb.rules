@@ -1,6 +1,0 @@
-# udev rules to refresh i3blocks-usb module
-# @author nate zhou
-# @since 2025
-# whenever a usb block device is added or removed
-ACTION=="add", SUBSYSTEMS=="usb", SUBSYSTEM=="block", RUN+="/usr/bin/pkill -SIGRTMIN+16 i3blocks"
-ACTION=="remove", SUBSYSTEMS=="usb", SUBSYSTEM=="block", RUN+="/usr/bin/pkill -SIGRTMIN+16 i3blocks"

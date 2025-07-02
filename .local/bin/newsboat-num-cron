@@ -10,7 +10,7 @@ update_num() {
     result="$(newsboat -x print-unread)"
     [[ "$result" =~ ^[0-9] ]] && echo "$result" | cut -d' ' -f1 > "$NUM" || echo "$result"
     #echo "$result" | cut -d' ' -f1 > "$NUM"
-    kill -42 $(cat /tmp/$USER/damblocks); pkill -SIGRTMIN+5 i3blocks
+    kill -42 $(cat /tmp/$USER/damblocks);
 }
 
 if [ ! -f "$NUM" ]; then

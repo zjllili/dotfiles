@@ -5,7 +5,7 @@
 
 update() {
     $HOME/.local/bin/newsboat-num-cron --now >/dev/null
-    kill -42 $(cat /tmp/$USER/damblocks);pkill -SIGRTMIN+5 i3blocks
+    kill -42 $(cat /tmp/$USER/damblocks);
 }
 
 # update count on exit, interrupted or terminated
