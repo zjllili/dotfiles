@@ -128,14 +128,7 @@ aur.list
 !.config/gtk-4.0/
 !.config/gtk-4.0/settings.ini
 !.config/gtk-4.0/gtk.css
-!.config/i3bar-river/
-!.config/i3bar-river/config.toml
 !.config/isyncrc.example
-!.config/i3status/
-!.config/i3status/config
-!.config/i3blocks/
-!.config/i3blocks/config
-!.config/i3blocks/config-2
 !.config/lesskey
 !.config/lf/
 !.config/lf/lfrc
@@ -192,13 +185,6 @@ aur.list
 !.config/river/modes
 !.config/river/rivertile
 !.config/river/rivercarro
-!.config/sway/
-!.config/sway/config
-!.config/sway/colors
-!.config/sway/bar
-!.config/sway/autostart
-!.config/sway/bindings
-!.config/sway/modes
 !.config/swayidle/
 !.config/swayidle/config
 !.config/swayimg/
@@ -218,8 +204,6 @@ aur.list
 !.config/vim/vimrc
 !.config/wget/
 !.config/wget/wgetrc
-!.config/wikiman/
-!.config/wikiman/wikiman.conf
 !.config/wob/
 !.config/wob/wob.ini
 !.config/yt-dlp/
