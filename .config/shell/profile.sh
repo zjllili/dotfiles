@@ -31,6 +31,8 @@ export XDG_CACHE_HOME="$HOME/.cache"        # analogous to /var/cache
 export XDG_DATA_HOME="$HOME/.local/share"   # analogous to /usr/share
 export XDG_STATE_HOME="$HOME/.local/state"
 
+export INPUTRC="$XDG_CONFIG_HOME/readline/inputrc"
+
 export PARALLEL_HOME="$XDG_CONFIG_HOME/parallel"
 export CALCHISTFILE="$XDG_CACHE_HOME/calc_history"
 export CUDA_CACHE_PATH="$XDG_HOME_HOME/nv"
