@@ -1,6 +1,16 @@
 # [distros]
-https://archlinux.org/feeds/news/ archlinux
-https://www.archlinuxcn.org/feed/ archlinuxcn
-https://micronews.debian.org/feeds/feed.rss
-# [f-droid]
-https://f-droid.org/feed.xml
+https://archlinux.org/feeds/news/ ~ArchLinux archlinux distro
+https://www.archlinuxcn.org/feed/ ~ArchLinuxCN archlinux distro
+https://micronews.debian.org/feeds/feed.rss ~Debian distro
+
+# [software]
+https://codeberg.org/river/river/releases.rss ~river git river
+https://codeberg.org/sewn/dam.rss ~dam git river
+https://sr.ht/~novakane/rivercarro/feed.rss ~rivercarro git river
+https://gitlab.com/akumar-xyz/river-shifttags.atom ~river-shifttags git river
+
+https://github.com/gokcehan/lf/releases.atom ~lf git tui
+
+https://codeberg.org/dnkl/foot/releases.rss ~foot git gui
+https://codeberg.org/adnano/wmenu.rss ~wmenu git gui
+https://github.com/artemsen/swayimg/releases.atom ~swayimg git gui
