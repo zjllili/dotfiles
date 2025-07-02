@@ -19,6 +19,9 @@ A few software need manually setup:
 - Software whose config files located outside of the `$HOME`
 - Software listed in `./.stow-local-ignore`
 
+> [!NOTE]
+> For software I don't use anymore, check the git tags.
+
 ## Software Recommendation
 ```
 - /usr/bin/sh:              dash
