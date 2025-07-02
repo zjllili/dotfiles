@@ -53,6 +53,8 @@ bindkey -M vicmd 'v' edit-command-line
 HISTSIZE=2000
 SAVEHIST=40000
 setopt INC_APPEND_HISTORY #SHARE_HISTORY
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_EXPIRE_DUPS_FIRST
 
 setopt autocd		# auto cd by typing path
 #setopt auto_menu menu_complete # reduce tap pressing for completion
