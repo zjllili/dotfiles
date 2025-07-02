@@ -7,6 +7,8 @@ color listfocus_unread   white   color14
 color info               default color14
 color article            default default
 
+datetime-format "%Y-%m-%d"
+
 # movement
 bind-key h quit
 bind-key j down
