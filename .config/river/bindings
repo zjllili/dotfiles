@@ -84,18 +84,6 @@ riverctl map normal ${mod}+Shift p send-to-output previous
 # bring focus to the top of the layout stack
 riverctl map normal $mod z zoom
 
-# move floating window
-riverctl map normal $mod y move left 100
-riverctl map normal $mod u move down 100
-riverctl map normal $mod i move up 100
-riverctl map normal $mod o move right 100
-
-# resize views
-riverctl map normal ${mod}+Shift y resize horizontal -100
-riverctl map normal ${mod}+Shift u resize vertical 100
-riverctl map normal ${mod}+Shift i resize vertical -100
-riverctl map normal ${mod}+Shift o resize horizontal 100
-
 # mouse
 riverctl map-pointer normal $mod BTN_LEFT move-view
 riverctl map-pointer normal $mod BTN_RIGHT resize-view
