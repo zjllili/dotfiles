@@ -1,11 +1,9 @@
 # isyncrc
 # @author nate zhou
 # @since 2025
-# 1. allow pop in mail server settings
-# 2. install an XOAUTH2 SASL plugin, like: `yay -S cyrus-sasl-xoauth2-git`
-# 3. cronjob example:
-#    @reboot mbsync -a && pkill -SIGRTMIN+18 i3blocks
-#    */15 * * * * mbsync -a && pkill -SIGRTMIN+18 i3blocks
+# 1. Allow `pop` in mail server/provider settings
+# 2. Install an XOAUTH2 SASL plugin, e.g. `cyrus-sasl-xoauth2-git`
+# 3. Run mbsync in damblocks as a cronjob to avoid gpg-agent ENV issues
 
 ## Account1
 IMAPAccount account1
@@ -34,11 +32,11 @@ Sync All
 Create Near
 SyncState *
 
-## Account 2
+## Account2
 IMAPAccount account2
 Host outlook.office365.com
 Port 993
-User <user2>@outlook.com
+User gnuunixchad@outlook.com
 PassCmd "/usr/share/neomutt/oauth2/mutt_oauth2.py --decryption-pipe 'gpg --decrypt --pinentry-mode default' -t ~/.cache/mutt/oauth-account2"
 TLSType IMAPS
 AuthMechs XOAUTH2
