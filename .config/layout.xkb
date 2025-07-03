@@ -1,7 +1,7 @@
+# vim.ft:conf
 # @author nate zhou
 # @since 2023,2024,2025
-
-# used by sway/river to swap keys
+# remap keys
 
 xkb_keymap {
     xkb_keycodes { include "evdev+aliases(qwerty)" };

@@ -1,3 +1,8 @@
+# vim.ft:conf
+# yt-dlp/config
+# @author nate zhou
+# @since 2025
+
 --cookies-from-browser firefox
 --embed-metadata
 -o "%(title).200s.%(ext)s"
