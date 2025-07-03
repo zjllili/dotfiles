@@ -16,7 +16,7 @@ riverctl map normal Mod1 Return spawn "foot"
 
 riverctl map normal Control+Shift Return spawn "footclient -T Scratchpad_Tmux $HOME/.local/bin/tmuxd"
 
-riverctl map normal $mod r spawn "$term lf"
+riverctl map normal $mod e spawn "$term lf"
 
 riverctl map normal $mod d spawn "wmenu-run -f \"SourceCodePro Medium 13\" -i -N \"$background\" -S \"$color9\" -s \"$background\""
 
