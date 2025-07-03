@@ -60,36 +60,43 @@ map F :filter
 map sa :{{
     set sortby atime
     set info size:atime
+    set reverse!
     top
 }}
 map sc :{{
     set sortby ctime
     set info size:ctime
+    set reverse!
     top
 }}
 map se :{{
     set sortby ext
     set info size:time
+    set reverse!
     top
 }}
 map sn :{{
     set sortby natural
     set info size:time
+    set reverse!
     top
 
 }}
 map ss :{{
     set sortby size
     set info size:time
+    set reverse!
     top
 }}
 map st :{{
     set sortby time
     set info size:time
+    set reverse!
     top
 }}
 
 map zc :{{
+    set dircounts!
     calcdirsize
 }}
 map zd :{{
