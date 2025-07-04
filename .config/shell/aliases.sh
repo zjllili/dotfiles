@@ -42,7 +42,7 @@ alias ncdu="ncdu -x --hide-hidden"
 alias df="df -h -x tmpfs -x efivarfs -x devtmpfs"
 alias lsblk="lsblk -o name,mountpoints,type,size"
 alias free="free -h"
-alias iostat="iostat -t 2"
+alias iostat="iostat -ht 2"
 
 alias fzf="FZF_LEVEL=1 /usr/bin/fzf --preview 'scope {}' --bind=ctrl-j:preview-down,ctrl-k:preview-up --reverse"
 alias fvi="fzf --bind='enter:execute(nvim {+}),ctrl-j:preview-down,ctrl-k:preview-up'"
