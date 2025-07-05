@@ -1,5 +1,5 @@
 # @author nate zhou
-# @since 2023,2024
+# @since 2023,2024,2025
 
 # use neovim as diff tool
 [diff]
@@ -8,8 +8,8 @@
     cmd = nvim -d $LOCAL $REMOTE
 
 [user]
-	email = noreply
-	name = nobody
+#	email = gnuunixchad@outlook.com
+#	name = nate zhou
 #[http]
 #	proxy = 127.0.0.1:PORT
 #[https]
