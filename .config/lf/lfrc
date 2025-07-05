@@ -293,3 +293,11 @@ cmd extract %{{
     lf -remote "send clear"
 }}
 map xx extract
+
+cmd rotate %{{
+    printf "rotate degree?: "
+    read line
+    convert -rotate "$line" "$f" "$f"
+    lf -remote "send clear"
+}}
+map xr rotate
