@@ -49,6 +49,7 @@ riverctl map -repeat normal $mod bracketright spawn "$HOME/.local/bin/bright --p
 
 riverctl map -repeat normal $mod minus spawn "$HOME/.local/bin/audio sink --minus"
 riverctl map -repeat normal $mod equal spawn "$HOME/.local/bin/audio sink --plus"
+riverctl map normal $mod m spawn "$HOME/.local/bin/audio sink --mute"
 
 riverctl map -repeat normal ${mod}+Shift minus spawn "$HOME/.local/bin/audio source --minus"
 riverctl map -repeat normal ${mod}+Shift equal spawn "$HOME/.local/bin/audio source --plus"
