@@ -1,0 +1,11 @@
+#!/usr/bin/sh
+# @author nate zhou
+# @since 2025
+# mu: print human-readable memory usage by process name
+# Usage: du [OPTION...] [PROCESS NAME...]
+#    -h, --help          print this message
+# With no options mu prints the most momory heavy processes
+
+[ -z "$@" ] && \
+    ps axh -o pid,rss,cmd:20 --sort=-rss | awk '{printf "%s %s %.2f MB\n", $1, $3, $2/1024}' | head -20 | column -t || \
+    ps -o pid,cmd,rss -p $(pidof -x "$@") | awk 'NR==1 {print; next} {printf "%s %s %.2f MB\n", $1, $2, $4/1024}' | column -t
