@@ -2,8 +2,7 @@
 [install.md](./install.md)
 
 ## What Is This?
-<img src="./misc/dwl.png" width="720"/>
-<img src="./misc/river.png" width="720"/>
+<img src="./misc/dwl.png" width="1920"/>
 
 ## How To Use?
 ```sh
@@ -30,7 +29,7 @@ A few software need manually setup:
 - Terminlal Multiplexer:    tmux
 - Terminal Emulator:        foot
 - Audio Server:             pipewire
-- WM/Compositor:            [dwl](https://codeberg.org/unixchad/dwl) & river
+- WM/Compositor:            dwl & river
 - Status bar:               dam & damblocks
 - Application Launcher:     wmenu
 - Fuzzy Finder:             fzf
