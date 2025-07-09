@@ -4,6 +4,7 @@ https://www.archlinuxcn.org/feed/ ~ArchLinuxCN archlinux distro
 https://micronews.debian.org/feeds/feed.rss ~Debian distro
 
 # [software]
+https://codeberg.org/dwl/dwl/releases.rss ~dwl git dwl
 https://codeberg.org/river/river/releases.rss ~river git river
 https://codeberg.org/sewn/dam.rss ~dam git river
 https://sr.ht/~novakane/rivercarro/feed.rss ~rivercarro git river
