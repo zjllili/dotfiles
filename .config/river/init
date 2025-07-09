@@ -81,4 +81,4 @@ do
 done
 
 riverctl default-layout rivercarro
-rivercarro -per-tag -no-smart-gaps -inner-gaps 12 -outer-gaps 12 -main-ratio 0.50 &
+rivercarro -per-tag -no-smart-gaps -inner-gaps 10 -outer-gaps 10 -main-ratio 0.50 &
