@@ -1,4 +1,4 @@
-## My Arch Linux Install
+## <img src="./misc/dot-repo.png" width="24"/> My Arch Linux Install
 [install.md](./install.md)
 
 ## What Is This?
