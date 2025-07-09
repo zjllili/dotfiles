@@ -2,8 +2,8 @@
 [install.md](./install.md)
 
 ## What Is This?
-![dwl](./misc/dwl.png)
-![river](./misc/river.png)
+<img src="./misc/dwl.png" width="720"/>
+<img src="./misc/river.png" width="720"/>
 
 ## How To Use?
 ```sh
