@@ -9,6 +9,7 @@ command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
 # no one can have the current tty access in case sway crashes
 alias sw="exec ssh-agent sway --unsupported-gpu"
 alias rv="exec ssh-agent river -no-xwayland"
+alias dl="exec ssh-agent ${HOME}/.local/bin/damblocks | /usr/local/bin/dwl"
 
 alias rm="rm -I";
 alias cp="cp -i";
