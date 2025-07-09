@@ -474,6 +474,10 @@ lf-git code-marketplace
 ```
 
 ## 2.5.2 local builds
+dwl
+    - https://codeberg.org/unixchad/dwl
+    - https://github.com/gnuunixchad/dwl
+
 dam
     - https://github.com/gnuunixchad/dam
     - https://codeberg.org/unixchad/dam
