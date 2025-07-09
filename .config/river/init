@@ -54,10 +54,10 @@ done
 scratch_tag=$((1 << 20 ))
 
 # Toggle the scratchpad
-riverctl map normal $mod a toggle-focused-tags ${scratch_tag}
+riverctl map normal $mod o toggle-focused-tags ${scratch_tag}
 
 # Send windows to the scratchpad
-riverctl map normal ${mod}+Shift a set-view-tags ${scratch_tag}
+riverctl map normal ${mod}+Shift o set-view-tags ${scratch_tag}
 
 # Set spawn tagmask to ensure new windows don't have the scratchpad tag unless
 # explicitly set.
