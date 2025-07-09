@@ -8,7 +8,7 @@ term="footclient"
 menu="${HOME}/.local/bin/wmenu-run-color"
 tiler="rivercarro"
 
-riverctl map normal $mod d                          spawn "$menu"
+riverctl map normal $mod p                          spawn "$menu"
 riverctl map normal ${mod}+Shift Return             spawn "footclient"
 riverctl map normal $mod r                          spawn "$term lf"
 
