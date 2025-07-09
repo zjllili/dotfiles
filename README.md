@@ -30,7 +30,7 @@ A few software need manually setup:
 - Terminlal Multiplexer:    tmux
 - Terminal Emulator:        foot
 - Audio Server:             pipewire
-- WM/Compositor:            dwl & river
+- WM/Compositor:            [dwl](https://codeberg.org/unixchad/dwl) & river
 - Status bar:               dam & damblocks
 - Application Launcher:     wmenu
 - Fuzzy Finder:             fzf
