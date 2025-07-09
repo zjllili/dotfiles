@@ -63,7 +63,7 @@ riverctl map normal $mod b                          send-layout-cmd "$tiler" "ma
 riverctl map normal ${mod}+Control b                send-layout-cmd "$tiler" "main-location top"
 riverctl map normal $mod m                          send-layout-cmd "$tiler" "main-location monocle"
 
-riverctl map normal ${mod}+Shift space              toggle-float
+riverctl map normal $mod f                          toggle-float
 riverctl map normal $mod e                          toggle-fullscreen
 
 riverctl map normal $mod period                     focus-output next
