@@ -29,7 +29,7 @@ A few software need manually setup:
 - Terminlal Multiplexer:    tmux
 - Terminal Emulator:        foot
 - Audio Server:             pipewire
-- WM/Compositor:            river
+- WM/Compositor:            dwl & river
 - Status bar:               dam & damblocks
 - Application Launcher:     wmenu
 - Fuzzy Finder:             fzf

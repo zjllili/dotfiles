@@ -79,3 +79,6 @@ do
     # Super+[1-9] to focus tag [0-8]
     riverctl map normal Super $i set-focused-tags $(($sticky_tag + $tags))
 done
+
+riverctl default-layout rivercarro
+rivercarro -per-tag -no-smart-gaps -inner-gaps 12 -outer-gaps 12 -main-ratio 0.50 &
