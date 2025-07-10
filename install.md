@@ -454,7 +454,7 @@ yay
 cyrus-sasl-xoauth2-git
 
 ### river
-lswt rivercarro-git
+lswt rivercarro-git river-shifttags-git
 
 ### themes
 adwaita-qt5 adwaita-qt5 fcitx5-skin-fluentdark-git

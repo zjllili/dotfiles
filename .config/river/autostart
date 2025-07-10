@@ -3,13 +3,15 @@
 # @since 2025
 # river/autostart
 
+riverctl spawn "$HOME/.local/bin/wlr-output"
+
 # restart
 killall -q swaybg fcitx5 mpc
 
 riverctl spawn "swaybg -i $HOME/.local/share/wallpaper -m fill"
 
 # restart decided by scripts
-riverctl spawn "$HOME/.local/bin/foots" # foot server
+riverctl spawn "$HOME/.local/bin/foots"
 
 riverctl spawn "$HOME/.local/sbin/clsd"
 
@@ -25,7 +27,7 @@ pgrep -f 'wl-paste --watch cliphist store' || riverctl spawn "wl-paste --watch c
 
 pgrep 'dunst' || riverctl spawn "dunst"
 
-pgrep 'wob' || riverctl spawn "$HOME/.local/bin/wobd" # wob daemon
+pgrep 'wob' || riverctl spawn "$HOME/.local/bin/wobd"
 
 riverctl spawn "fcitx5 -d" # conflicts with wtype
 

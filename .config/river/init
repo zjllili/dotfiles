@@ -11,13 +11,6 @@
 # remap key
 riverctl keyboard-layout-file "$HOME/.config/layout.xkb"
 
-# output
-riverctl spawn "$HOME/.local/bin/wlr-output"
-
-# layout
-. $HOME/.config/river/rivercarro
-#. $HOME/.config/river/rivertile
-
 # input
 riverctl set-repeat 30 200
 
