@@ -64,9 +64,9 @@ riverctl map normal $mod tab                        focus-previous-tags
 riverctl map normal ${mod}+Shift c                  close
 
 riverctl map normal $mod t                          send-layout-cmd "$tiler" "main-location left"
-riverctl map normal ${mod}+Control t                send-layout-cmd "$tiler" "main-location right"
+riverctl map normal ${mod}+Shift t                  send-layout-cmd "$tiler" "main-location right"
 riverctl map normal $mod b                          send-layout-cmd "$tiler" "main-location bottom"
-riverctl map normal ${mod}+Control b                send-layout-cmd "$tiler" "main-location top"
+riverctl map normal ${mod}+Shift b                  send-layout-cmd "$tiler" "main-location top"
 riverctl map normal $mod m                          send-layout-cmd "$tiler" "main-location monocle"
 
 riverctl map normal $mod Space                      toggle-float
