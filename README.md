@@ -18,6 +18,7 @@ A few software need manually setup:
 - Software whose config files named to `*.example` for privacy reasons
 - Software whose config files located outside of the `$HOME`
 - Software listed in `./.stow-local-ignore`
+- Software complied from source, like my build of [dwl](https://codeberg.org/unixchad/dwl)(or on [github](https://github.com/gnuunixchad/dwl)) and [dam](https://codeberg.org/unixchad/damblocks)(or on [github](https://github.com/gnuunixchad/damblocks)).
 
 > [!NOTE]
 > For software I don't use anymore, check the git tags.
