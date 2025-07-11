@@ -232,6 +232,7 @@ cd /root
 dd if=/dev/urandom of=/root/cryptkey bs=1024 count=4
 
 chmod 400 cryptkey
+chattr +i cryptkey
 
 cryptsetup luksAddKey /dev/nvme0n1p3 /root/cryptkey
 
