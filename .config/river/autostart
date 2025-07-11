@@ -16,7 +16,6 @@ riverctl spawn "$HOME/.local/bin/foots"
 riverctl spawn "$HOME/.local/sbin/clsd"
 
 # start if not running
-#pgrep 'i3bar-river' || riverctl spawn "i3bar-river"
 pgrep 'dam' || riverctl spawn "$HOME/.local/bin/damblocks | dam"
 
 pgrep 'swayidle' || riverctl spawn "swayidle"
