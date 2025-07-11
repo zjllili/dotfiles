@@ -1,5 +1,4 @@
-## <img src="./misc/dot-repo.png" width="24"/> My Arch Linux Install
-[install.md](./install.md)
+## <img src="./misc/dot-repo.png" width="24"/> My [Arch Linux Install Guide](./install.md)
 
 ## What Is This?
 <img src="./misc/dwl.png" width="1920"/>
@@ -18,10 +17,14 @@ A few software need manually setup:
 - Software whose config files named to `*.example` for privacy reasons
 - Software whose config files located outside of the `$HOME`
 - Software listed in `./.stow-local-ignore`
-- Software complied from source, like my build of [dwl](https://codeberg.org/unixchad/dwl)(or on [github](https://github.com/gnuunixchad/dwl)) and [dam](https://codeberg.org/unixchad/damblocks)(or on [github](https://github.com/gnuunixchad/damblocks)).
+- Software complied from source, like my build of `dwl`([codeberg](https://codeberg.org/unixchad/dwl)/[github](https://github.com/gnuunixchad/dwl)) and `dam`([codeberg](https://codeberg.org/unixchad/damblocks)/[github](https://github.com/gnuunixchad/damblocks)).
 
 > [!NOTE]
-> For software I don't use anymore, check the git tags.
+> For software I don't use anymore(like `sway`), check the git tags.
+> ```sh
+> git tag
+> git checkout sway
+>```
 
 ## Software Recommendation
 ```
