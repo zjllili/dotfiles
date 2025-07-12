@@ -31,8 +31,10 @@ if  [ -z "$gpg_passphrase" ]; then
     exit 1
 fi
 
-if [[ $1 == *".pdf.gpg" ]]; then
+if [[ "$1" == *".pdf.gpg" ]]; then
     echo "$gpg_passphrase" | gpg --no-symkey-cache --batch --passphrase-fd 0 -d "$1" | zathura -
+elif [[ "$1" == *".gif.gpg" ]]; then
+    echo "$gpg_passphrase" | gpg --no-symkey-cache --batch --passphrase-fd 0 -d "$1" | swayimg -
 else
     echo "$gpg_passphrase" | gpg --no-symkey-cache --batch --passphrase-fd 0 -d "$1" | mpv - --loop --no-resume-playback
 fi
