@@ -138,16 +138,18 @@ map gi cd /run/media/
 map W $~/.local/bin/setwall $f
 
 map xc $~/.local/bin/gpg-cipher $f
+map xe $~/.local/bin/gpg-encrypt $f
 map xd $~/.local/bin/gpg-doc $f
 map xp $~/.local/bin/gpg-pic $f
 map xv $~/.local/bin/gpg-vid $f
 
-map xi $mid3v2 -l $f | less -i
-map xm $mediainfo $f | less -i
-map xe $exiftool $f | less -i
+map mi $mid3v2 -l $f | less -i
+map mm $mediainfo $f | less -i
+map me $exiftool $f | less -i
+map mf $file -L $fx | less -i
+map mF $file -L --mime-type $fx | less -i
+
 map xs $swayimg -r
-map xf $file -L $fx | less -i
-map xF $file -L --mime-type $fx | less -i
 
 map xR $~/.local/bin/rename-dlp $fx
 map xL $~/.local/bin/rename-lowercase $fx
