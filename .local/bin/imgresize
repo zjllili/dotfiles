@@ -1,0 +1,13 @@
+#!/usr/bin/sh
+# @author nate zhou
+# @since 2025
+# resize image to a specific size
+# usage: for in loop `for i in *; do imgdate "$i"; done`
+
+size="1920x1080"
+
+[ "$#" -eq 0 ] && echo "Usage: $(basename $0) [widthxheight] image"
+
+[ "$#" -eq 2 ] && size="$2"
+
+convert "$1" -resize "$size" -background black -quality 100% -gravity center -extent ${size} "new-$1"
