@@ -431,7 +431,7 @@ fcitx5 fcitx5-chinese-addons fcitx5-configtool fcitx5-gtk fcitx5-qt fcitx5-anthy
 yt-dlp transmission-cli httrack
 
 ### personal tools
-newsboat task calcurse neomutt isync
+newsboat task calcurse neomutt isync dict
 
 ### coding
 jdk-openjdk openjdk-src openjdk-doc xorg-xwayland code nodejs npm
@@ -459,6 +459,9 @@ lswt rivercarro-git river-shifttags-git
 
 ### themes
 adwaita-qt5 adwaita-qt5 fcitx5-skin-fluentdark-git
+
+### directories
+dict-gcide dict-wn
 
 ### etc
 wshowkeys-mao-git
