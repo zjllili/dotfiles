@@ -1,12 +1,23 @@
 #!/usr/bin/sh
 # @author nate zhou
 # @since 2025
-# resize images to a specific size
-# usage: for in loop `for i in *; do imgresize "$i"; done`
+# Resize images to a specific size
+# usage: for in loop `for i in *.jpg; do imgresize "$i"; done`
 
 size="1920x1080"
 
-[ "$#" -eq 0 ] && echo "Usage: $(basename $0) [widthxheight] image"
+if [ "$#" -eq 0 ]; then
+    cat <<_EOF_
+Usage: $(basename $0) [widthxheight] image
+
+Resize images to a specific size, the default size is $size
+
+Example:
+for in loop
+    for i in *.jpg; do imgresize "\$i"; done
+_EOF_
+    exit 1
+fi
 
 [ "$#" -eq 2 ] && size="$2"
 
