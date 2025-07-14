@@ -276,7 +276,7 @@ on-cd
 cmd lf-mirror &{{
     footclient lf
 }}
-map M lf-mirror
+map zm lf-mirror
 
 cmd extract %{{
     printf "extract file?(y/n)"
