@@ -1,8 +1,8 @@
 #!/usr/bin/sh
 # @author nate zhou
 # @since 2025
-# resize image to a specific size
-# usage: for in loop `for i in *; do imgdate "$i"; done`
+# resize images to a specific size
+# usage: for in loop `for i in *; do imgresize "$i"; done`
 
 size="1920x1080"
 
