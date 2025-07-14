@@ -30,7 +30,7 @@ colors() {
 
 # offline dictionary with wordnet
 dict() {
-    /usr/bin/dict -d wn "$@" | /usr/bin/less -i -F
+    /usr/bin/dict "$@" | /usr/bin/less -i -F
 }
 
 # package management
