@@ -82,10 +82,9 @@ fi
 
 export GPG_TTY=$(tty) # TUI pinentry, need be set for each pts
 
-[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh ] && { \
-    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh; \
-    ZSH_HIGHLIGHT_STYLES[precommand]=fg=magenta,bold; \
-    ZSH_HIGHLIGHT_STYLES[arg0]=fg=green,bold; \
-    ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=fg=cyan; \
-    ZSH_HIGHLIGHT_STYLES[double-hyphen-option]=fg=cyan; \
-}
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh 2>/dev/null
+ZSH_HIGHLIGHT_STYLES[precommand]=fg=magenta,bold;
+ZSH_HIGHLIGHT_STYLES[arg0]=fg=green,bold;
+ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=fg=cyan;
+ZSH_HIGHLIGHT_STYLES[double-hyphen-option]=fg=cyan;
+ZSH_HIGHLIGHT_STYLES[comment]=fg=8; # comments and unset variables
