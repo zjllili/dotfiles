@@ -7,6 +7,9 @@
 #
 # Example:
 # `gpg -d output.mp4.gpg | mpv -`
+#
+# Images frame will be scaled by ffmpeg if they have multiple size,
+# `./imgresize` can fix this issue.
 
 
 output="output-$(date '+%Y-%m-%d_%H_%M_%S').mp4"
