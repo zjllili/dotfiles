@@ -1,9 +1,9 @@
-## <img src="./misc/dot-repo.png" width="24"/> My [Arch Linux Install Guide](./install.md)
+# <img src="./misc/dot-repo.png" width="24"/> dotfiles
 
-## What Is This?
+## Screenshot
 <img src="./misc/dwl.png" width="1920"/>
 
-## How To Use?
+## Usage
 ```sh
 # Clone this repository on codeberg
 git clone https://codeberg.org/unixchad/dotfiles
@@ -26,7 +26,7 @@ A few software need manually setup:
 > git checkout sway
 >```
 
-## Software Recommendation
+## Software I Use
 ```
 - /usr/bin/sh:              dash
 - Login Shell:              zsh
@@ -51,13 +51,13 @@ A few software need manually setup:
 - Virtulization:            kvm & qemu & libvirt
 - Privacy/Security:         gpg & firejail & cryptsetup & sbctl
 - Firefox Extension:        tridactyl & darkreader & ublock origin
-- Downloader:               transmission-cli & yt-dlp & httrack
+- Downloader:               transmission-cli & yt-dlp & httrack & curl & wget
+- File Sharing:             rsync & ssh & samba & android-file-transfer & qrtool
 - Dotfiles Manager:         stow & git
 ```
 
 ## Chinese Video Channel
-I have dedicated videos for almost every software I use, on how to use and ho
-I configured them:
+I have dedicated videos for almost every software I use:
 
 [unixchad at bilibili](https://space.bilibili.com/34569411)
 
