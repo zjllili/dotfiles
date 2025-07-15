@@ -11,6 +11,7 @@ mode_wtype="[hjkl]arrorws"
 
 riverctl declare-mode resize
 riverctl map normal ${mod}+Control r enter-mode resize
+riverctl map resize ${mod}+Control r enter-mode normal
 riverctl map -repeat resize $mod r enter-mode normal
 riverctl map -repeat resize None Escape enter-mode normal
 riverctl map -repeat resize None space enter-mode normal
@@ -25,8 +26,8 @@ riverctl map -repeat resize None i resize vertical -50
 riverctl map -repeat resize None o resize horizontal 50
 
 riverctl declare-mode "$mode_fcitx"
-riverctl map normal ${mod}+Shift space enter-mode "$mode_fcitx"
-riverctl map "$mode_fcitx" ${mod}+Shift space enter-mode normal
+riverctl map normal ${mod}+Control space enter-mode "$mode_fcitx"
+riverctl map "$mode_fcitx" ${mod}+Control space enter-mode normal
 riverctl map "$mode_fcitx" None Escape enter-mode normal
 riverctl map "$mode_fcitx" None space enter-mode normal
 riverctl map "$mode_fcitx" None p spawn "fcitx5-remote -s pinyin && riverctl enter-mode normal"
@@ -50,6 +51,7 @@ riverctl map "$mode_wmenu" None e spawn "riverctl enter-mode normal && $HOME/.lo
 
 riverctl declare-mode "$mode_z"
 riverctl map normal $mod z enter-mode "$mode_z"
+riverctl map "$mode_z" $mod z enter-mode normal
 riverctl map "$mode_z" $mod apostrophe enter-mode normal
 riverctl map "$mode_z" None space enter-mode normal
 riverctl map "$mode_z" None Escape enter-mode normal
@@ -59,7 +61,8 @@ riverctl map "$mode_z" None w spawn "$HOME/.local/bin/dw && riverctl enter-mode 
 riverctl map "$mode_z" None c spawn "$HOME/.local/bin/wcal && riverctl enter-mode normal"
 
 riverctl declare-mode "$mode_wtype"
-riverctl map normal $mod backslash spawn "riverctl enter-mode $mode_wtype" # && riverctl killall fcitx5"
+riverctl map normal $mod backslash spawn "riverctl enter-mode $mode_wtype && riverctl killall fcitx5"
+riverctl map "$mode_wtype" $mod backslash enter-mode normal
 riverctl map "$mode_wtype" $mod semicolon enter-mode normal riverctl map "$mode_wtype" None space enter-mode normal
 riverctl map "$mode_wtype" None space enter-mode normal
 riverctl map "$mode_wtype" None Escape enter-mode normal
