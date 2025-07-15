@@ -1,6 +1,4 @@
 # <img src="./misc/dot-repo.png" width="24"/> dotfiles
-
-## Screenshot
 <img src="./misc/dwl.png" width="1920"/>
 
 ## Usage
@@ -13,18 +11,12 @@ git clone https://github.com/gnuunixchad/dotfiles
 cd dotfiles
 stow -t ~ . --adopt
 ```
-A few software need manually setup:
-- Software whose config files named to `*.example` for privacy reasons
-- Software whose config files located outside of the `$HOME`
-- Software listed in `./.stow-local-ignore`
-- Software complied from source, like my build of `dwl`([codeberg](https://codeberg.org/unixchad/dwl)/[github](https://github.com/gnuunixchad/dwl)) and `dam`([codeberg](https://codeberg.org/unixchad/damblocks)/[github](https://github.com/gnuunixchad/damblocks)).
-
 > [!NOTE]
-> For software I don't use anymore(like `sway`), check the git tags.
-> ```sh
-> git tag
-> git checkout sway
->```
+> A few software need manually setup:
+> - Software's config named to `*.example` for privacy reasons
+> - Software's config listed in `./.stow-local-ignore`
+> - Software complied from source, e.g. my build of `dwl`([codeberg](https://codeberg.org/unixchad/dwl)/[github](https://github.com/gnuunixchad/dwl)) and `dam`([codeberg](https://codeberg.org/unixchad/damblocks)/[github](https://github.com/gnuunixchad/damblocks)).
+> - For software I don't use anymore(like `sway`), check the git tags.
 
 ## Software I Use
 ```
@@ -68,7 +60,7 @@ Software I use to create videos:
 - Screenshots:      grim + slurp
 - Thumbnails:       gimp + imagemagick
 
-All emails from me will be signed by the same GPG key that I sign commits with  
+All emails from me will be signed by the same GPG key that I sign commits with:
 - Import my key: `gpg --recv-keys 117094DA1AEA0835E4ED0770F7476912AA224CAC`
 - Download or copy at [here](./unixchad.asc)
 
