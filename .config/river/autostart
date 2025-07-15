@@ -3,7 +3,9 @@
 # @since 2025
 # river/autostart
 
+# always
 riverctl spawn "$HOME/.local/bin/wlr-output"
+riverctl spawn "${HOME}/.local/bin/dam-run"
 
 # restart
 killall -q swaybg fcitx5 mpc
@@ -16,8 +18,6 @@ riverctl spawn "$HOME/.local/bin/foots"
 riverctl spawn "$HOME/.local/sbin/clsd"
 
 # start if not running
-pgrep 'dam' || riverctl spawn "$HOME/.local/bin/damblocks | dam"
-
 pgrep 'swayidle' || riverctl spawn "swayidle"
 
 pgrep "gammastep" || riverctl spawn "gammastep -O 5000"
