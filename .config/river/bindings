@@ -27,9 +27,9 @@ riverctl map normal ${mod}+Shift backspace          spawn "$HOME/.local/bin/audi
 riverctl map -repeat normal $mod bracketleft        spawn "$HOME/.local/bin/bright --minus"
 riverctl map -repeat normal $mod bracketright       spawn "$HOME/.local/bin/bright --plus"
 
-riverctl map -release normal ${mod}+Shift+Control l spawn "swaylock"
 riverctl map normal ${mod}+Shift q                  spawn "${HOME}/.local/bin/riverexit"
-riverctl map normal ${mod}+Shift h                  spawn "${HOME}/.local/bin/swayhibe"
+riverctl map normal ${mod}+Shift w                  spawn "swaylock"
+riverctl map normal ${mod}+Shift e                  spawn "${HOME}/.local/bin/swayhibe"
 
 riverctl map normal Control space                   spawn "fcitx5-remote -t && notify-send -u normal -r 3289 -t 1100 $(fcitx5-remote -n)"
 
@@ -79,6 +79,16 @@ riverctl map normal ${mod}+Shift comma              send-to-output previous
 
 riverctl map normal $mod apostrophe                 spawn "river-shifttags --occupied"
 riverctl map normal $mod semicolon                  spawn "river-shifttags --shift -1 --occupied"
+
+riverctl map normal ${mod}+Control h                focus-view left
+riverctl map normal ${mod}+Control j                focus-view down
+riverctl map normal ${mod}+Control k                focus-view up
+riverctl map normal ${mod}+Control l                focus-view right
+
+riverctl map normal ${mod}+Shift h                  swap left
+riverctl map normal ${mod}+Shift j                  swap down
+riverctl map normal ${mod}+Shift k                  swap up
+riverctl map normal ${mod}+Shift l                  swap right
 
 # mouse
 riverctl map-pointer normal $mod BTN_LEFT           move-view
