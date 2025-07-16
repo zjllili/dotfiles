@@ -13,8 +13,8 @@ if [ $choice = "y" ] || [ $choice = "Y" ]; then
 
     crontab -l > "$HEART"/.config/crontab.backup && echo "crontab backup done" || echo "crontab backup failed"
 
-    # censor bookmarks for screen casting
-    grep -n "##############################below-are-private##############################" $HOME/doc/heart/.local/share/bookmarks/bookmarks | cut -d: -f1 | xargs -I {} sed -n '1,{}p' $HOME/doc/heart/.local/share/bookmarks/bookmarks > $HOME/doc/heart/.local/share/bookmarks/bookmarks-record && echo "bookmarks-record updated" || echo "bookmarks-record update failed"
+    # censor address book for screen casting
+    grep -n "##############################below-are-private##############################" $HOME/doc/heart/.local/share/address/address | cut -d: -f1 | xargs -I {} sed -n '1,{}p' $HOME/doc/heart/.local/share/address/address > $HOME/doc/heart/.local/share/address/address-record && echo "address-record updated" || echo "address-record update failed"
 
     # unixchad
     if [ ! -d "$DOTFILES" ]; then
