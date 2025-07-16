@@ -5,7 +5,7 @@
 
 mod=Mod4    # Mod1=Alt, Mod4=Super
 term="footclient"
-menu="${HOME}/.local/bin/wmenu-run-color"
+menu="/usr/local/bin/mew-run"
 tiler="rivercarro"
 
 riverctl map normal ${mod}+Shift r                  spawn "${HOME}/.config/river/init"
