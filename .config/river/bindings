@@ -3,7 +3,7 @@
 # @since 2025
 # river/bindings
 
-mod=Mod4    # Mod1=Alt, Mod4=Super
+mod=Mod1    # Mod1=Alt, Mod4=Super
 term="footclient"
 menu="/usr/local/bin/mew-run"
 tiler="rivercarro"
@@ -27,7 +27,7 @@ riverctl map normal ${mod}+Shift backspace          spawn "$HOME/.local/bin/audi
 riverctl map -repeat normal $mod bracketleft        spawn "$HOME/.local/bin/bright --minus"
 riverctl map -repeat normal $mod bracketright       spawn "$HOME/.local/bin/bright --plus"
 
-riverctl map normal ${mod}+Shift q                  spawn "${HOME}/.local/bin/riverexit"
+riverctl map normal ${mod}+Shift q                  spawn "${HOME}/.local/bin/exitriver"
 riverctl map normal ${mod}+Shift w                  spawn "swaylock"
 riverctl map normal ${mod}+Shift e                  spawn "${HOME}/.local/bin/swayhibe"
 
