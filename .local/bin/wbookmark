@@ -1,9 +1,0 @@
-#!/usr/bin/sh
-# @author nate zhou
-# @since 2025
-# universal wayland bookmark manager
-# @depends wmenu wtype
-
-source $HOME/.local/bin/wmenu-color 2>/dev/null
-
-cat ~/.local/share/bookmarks/bookmarks | grep -vE "^#|^[[:space:]]*$" | wmenu-color -p "$(basename $0) " -l 6 | awk ' {sub(/[^|]*\|/, ""); print}' | wl-copy
