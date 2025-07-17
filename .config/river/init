@@ -13,6 +13,8 @@
 riverctl keyboard-layout -options caps:swapescape us
 
 # input
+riverctl focus-follows-cursor normal
+
 riverctl set-repeat 30 200
 
 riverctl hide-cursor timeout 3000
