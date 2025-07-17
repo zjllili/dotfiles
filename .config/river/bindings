@@ -47,6 +47,8 @@ riverctl map normal ${mod}+Control a                spawn "$HOME/.local/bin/addr
 
 riverctl map normal ${mod}+Shift p                  spawn "mpc toggle"
 
+riverctl map normal $mod b                          spawn "pkill -SIGUSR1 dam"
+
 riverctl map normal $mod j                          focus-view next
 riverctl map normal $mod k                          focus-view previous
 
@@ -66,8 +68,8 @@ riverctl map normal ${mod}+Shift c                  close
 
 riverctl map normal $mod t                          send-layout-cmd "$tiler" "main-location left"
 riverctl map normal ${mod}+Shift t                  send-layout-cmd "$tiler" "main-location right"
-riverctl map normal $mod b                          send-layout-cmd "$tiler" "main-location bottom"
-riverctl map normal ${mod}+Shift b                  send-layout-cmd "$tiler" "main-location top"
+riverctl map normal $mod u                          send-layout-cmd "$tiler" "main-location bottom"
+riverctl map normal ${mod}+Shift u                  send-layout-cmd "$tiler" "main-location top"
 riverctl map normal $mod m                          send-layout-cmd "$tiler" "main-location monocle"
 
 riverctl map normal $mod Space                      toggle-float
