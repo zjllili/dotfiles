@@ -58,6 +58,9 @@ riverctl map normal $mod d                          send-layout-cmd $tiler "main
 riverctl map -repeat normal $mod h                  send-layout-cmd $tiler "main-ratio -0.05"
 riverctl map -repeat normal $mod l                  send-layout-cmd $tiler "main-ratio +0.05"
 
+riverctl map -repeat normal ${mod}+Control minus    send-layout-cmd $tiler "gaps +2"
+riverctl map -repeat normal ${mod}+Control equal    send-layout-cmd $tiler "gaps -2"
+
 riverctl map normal $mod Return                     zoom
 riverctl map normal $mod tab                        focus-previous-tags
 
