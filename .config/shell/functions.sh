@@ -13,7 +13,7 @@ gcd() {
 }
 # avoid nested lf
 lf() {
-    [ -z "$LF_LEVEL" ] && /usr/bin/lf "$@" || exit &>/dev/null
+    [ -z "$LF_LEVEL" ] && command lf "$@" || exit &>/dev/null
 }
 
 lfcd() {
@@ -30,7 +30,7 @@ colors() {
 
 # offline dictionary with wordnet
 dict() {
-    /usr/bin/dict "$@" | /usr/bin/less -i -F
+    command dict "$@" | command less -i -F
 }
 
 # package management
