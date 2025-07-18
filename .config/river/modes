@@ -8,6 +8,7 @@ mode_fcitx="[p]inyin [a]nthy"
 mode_wmenu="[w[w]iki w[h]eart w[b]ook [a]mount [f]locks [p]off w[m]ulti w[s]ink w[j]doc w[e]moji"
 mode_z="enable[t]ap disable[T]ap clip[h]ist-wipe [l]supdates d[w] w[c]al"
 mode_wtype="[hjkl]arrorws"
+wlrctl="[hjkl]cursors [,]left [.]right [m]iddle"
 
 riverctl declare-mode resize
 riverctl map normal ${mod}+Control r enter-mode resize
@@ -86,3 +87,27 @@ riverctl map -repeat "$mode_wtype" None 9 spawn "wtype -k F9 && riverctl enter-m
 riverctl map -repeat "$mode_wtype" None 10 spawn "wtype -k F10 && riverctl enter-mode normal"
 riverctl map -repeat "$mode_wtype" None 11 spawn "wtype -k F11 && riverctl enter-mode normal"
 riverctl map -repeat "$mode_wtype" None 12 spawn "wtype -k F12 && riverctl enter-mode normal"
+
+
+
+riverctl declare-mode "$wlrctl"
+riverctl map normal $mod x enter-mode "$wlrctl"
+riverctl map "$wlrctl" $mod     x       enter-mode normal
+riverctl map "$wlrctl" None     space   enter-mode normal
+riverctl map "$wlrctl" None     Escape  enter-mode normal
+riverctl map -repeat "$wlrctl" None     h       spawn "wlrctl pointer move -90 0"
+riverctl map -repeat "$wlrctl" None     j       spawn "wlrctl pointer move 0 90"
+riverctl map -repeat "$wlrctl" None     k       spawn "wlrctl pointer move 0 -90"
+riverctl map -repeat "$wlrctl" None     l       spawn "wlrctl pointer move 90 0"
+riverctl map -repeat "$wlrctl" Shift    h       spawn "wlrctl pointer move -15 0"
+riverctl map -repeat "$wlrctl" Shift    j       spawn "wlrctl pointer move 0 15"
+riverctl map -repeat "$wlrctl" Shift    k       spawn "wlrctl pointer move 0 -15"
+riverctl map -repeat "$wlrctl" Shift    l       spawn "wlrctl pointer move 15 0"
+
+riverctl map -repeat "$wlrctl" None     comma   spawn "wlrctl pointer click left"
+riverctl map -repeat "$wlrctl" None     period  spawn "wlrctl pointer click right"
+riverctl map -repeat "$wlrctl" Shift    comma   spawn "wlrctl pointer click left"
+riverctl map -repeat "$wlrctl" Shift    period  spawn "wlrctl pointer click right"
+
+riverctl map -repeat "$wlrctl" None     n       spawn "wlrctl pointer scroll 30"
+riverctl map -repeat "$wlrctl" None     p       spawn "wlrctl pointer scroll -30"
