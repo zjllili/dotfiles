@@ -170,6 +170,8 @@ aur.list
 !.config/qt5ct/qt5ct.conf
 !.config/qt6ct/
 !.config/qt6ct/qt6ct.conf
+!.config/qutebrowser/
+!.config/qutebrowser/config.py.example
 !.config/ranger/
 !.config/ranger/colorschemes/
 !.config/ranger/colorschemes/unixchad.py
