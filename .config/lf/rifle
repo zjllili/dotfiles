@@ -33,7 +33,7 @@ cmd open &{{
             lf -remote "send $id \$tar vvtf \$f | less -i"
             ;;
         text/html)
-            firejail firefox $fx
+            $BROWSER $fx
             ;;
         text/*|*/json|inode/x-empty|application/javascript)
             lf -remote "send $id \$$EDITOR -p \$fx"
