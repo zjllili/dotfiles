@@ -32,7 +32,7 @@ c.content.canvas_reading = False
 c.content.geolocation = False
 c.content.webrtc_ip_handling_policy = "default-public-interface-only"
 
-c.content.proxy = "http://localhost:PORT"
+#c.content.proxy = "http://localhost:PORT"
 
 # keybindings #################################################################
 config.bind('zi', 'zoom-in')
