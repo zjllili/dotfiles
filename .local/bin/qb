@@ -1,0 +1,8 @@
+#!/usr/bin/sh
+# @author nate zhou
+# @since 2025
+
+# fix crash on start with
+# wlroots0.19, nvidia-open 575.64
+QTWEBENGINE_CHROMIUM_FLAGS='--disable-gpu' qutebrowser
+
