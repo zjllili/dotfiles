@@ -80,9 +80,9 @@ riverctl map "$dunst" None c spawn "riverctl enter-mode normal && $HOME/.local/b
 
 # wlrctl #######################################################################
 riverctl declare-mode "$wlrctl"
-riverctl map normal $mod backslash enter-mode "$wlrctl"
+riverctl map normal $mod slash enter-mode "$wlrctl"
 
-riverctl map "$wlrctl" $mod backslash enter-mode normal
+riverctl map "$wlrctl" $mod slash enter-mode normal
 riverctl map "$wlrctl" None space     enter-mode normal
 riverctl map "$wlrctl" None Escape    enter-mode normal
 
