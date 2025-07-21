@@ -32,6 +32,7 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias Gi="cd /run/media/$USER/ && pwd"
 
+alias info="info --vi-keys"
 alias less="less -i -F"
 alias bat="bat --style='plain,changes,rule,snip'"
 alias whatis="whatis -l"
