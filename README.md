@@ -47,6 +47,7 @@ spyware when I can.
 - Todo:                     taskwarrior
 - Virtulization:            kvm & qemu & libvirt
 - Privacy/Security:         gpg & firejail & cryptsetup & sbctl
+- Web Browser:              qutebrowser & firefox
 - Firefox Extension:        tridactyl & darkreader & ublock origin
 - Downloader:               transmission-cli & yt-dlp & httrack & curl & wget
 - File Sharing:             rsync & ssh & samba & android-file-transfer & qrtool
