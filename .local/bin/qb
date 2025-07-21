@@ -4,5 +4,5 @@
 
 # fix crash on start with
 # wlroots0.19, nvidia-open 575.64
-QTWEBENGINE_CHROMIUM_FLAGS='--disable-gpu' qutebrowser
+qutebrowser --qt-arg disable-gpu true
 
