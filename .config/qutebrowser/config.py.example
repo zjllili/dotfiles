@@ -25,6 +25,8 @@ c.colors.statusbar.command.bg = '#427b58'
 c.colors.statusbar.normal.fg = '#eeeeee'
 c.colors.statusbar.command.fg = '#eeeeee'
 
+c.content.blocking.enabled = True
+
 # privacy
 c.content.canvas_reading = False
 c.content.geolocation = False
