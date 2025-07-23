@@ -6,7 +6,8 @@
 config.load_autoconfig(False) # ignore GUI settings
 
 # Config ######################################################################
-c.editor.command = ['footclient', 'nvim', '{file}', '-c', 'normal {line}G{column0}l']
+c.editor.command = ['footclient', '-T', 'Floating_Term', 'nvim', '{file}', '-c', 'normal {line}G{column0}l']
+
 c.url.start_pages = 'file:///dev/null'
 c.url.default_page= 'file:///dev/null'
 
