@@ -30,7 +30,7 @@ c.colors.statusbar.command.bg = '#427b58'
 c.colors.statusbar.normal.fg = '#eeeeee'
 c.colors.statusbar.command.fg = '#eeeeee'
 c.colors.hints.bg = '#427b58'
-c.colors.hints.match.fg = '#191919'
+c.colors.hints.match.fg = '#eeeeee'
 
 c.content.fullscreen.window = True # Limit fullscreen to browser window
 
