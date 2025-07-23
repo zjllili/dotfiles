@@ -172,6 +172,8 @@ aur.list
 !.config/qt6ct/qt6ct.conf
 !.config/qutebrowser/
 !.config/qutebrowser/config.py.example
+!.config/qutebrowser/greasemonkey/
+!.config/qutebrowser/greasemonkey/yt-ads.js
 !.config/ranger/
 !.config/ranger/colorschemes/
 !.config/ranger/colorschemes/unixchad.py
