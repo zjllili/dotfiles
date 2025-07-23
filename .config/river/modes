@@ -6,7 +6,7 @@
 mod=Mod1
 
 fcitx="[p]inyin [a]nthy"
-wmenu="[w[w]iki w[h]eart w[b]ook [a]mount [f]locks [p]off w[m]ulti w[s]ink w[j]doc w[e]moji"
+wmenu="[w[w]iki w[h]eart w[b]ook [a]mount [f]locks [p]off w[s]ink w[j]doc w[e]moji"
 dunst="clip[h]ist-wipe [l]supdates d[w] w[c]al"
 wlrctl="[hjkl]cursors [,]left [.]right [m]iddle"
 
@@ -57,7 +57,6 @@ riverctl map "$wmenu" None b spawn "riverctl enter-mode normal && $HOME/.local/b
 riverctl map "$wmenu" None a spawn "riverctl enter-mode normal && $HOME/.local/bin/amount"
 riverctl map "$wmenu" None f spawn "riverctl enter-mode normal && $HOME/.local/bin/flocks"
 riverctl map "$wmenu" None p spawn "riverctl enter-mode normal && $HOME/.local/bin/poff"
-riverctl map "$wmenu" None m spawn "riverctl enter-mode normal && $HOME/.local/bin/wmulti"
 riverctl map "$wmenu" None s spawn "riverctl enter-mode normal && $HOME/.local/bin/wsink"
 riverctl map "$wmenu" None j spawn "riverctl enter-mode normal && $HOME/.local/bin/wjdoc"
 riverctl map "$wmenu" None e spawn "riverctl enter-mode normal && $HOME/.local/bin/wemoji"
