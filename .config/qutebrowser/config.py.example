@@ -42,6 +42,8 @@ c.completion.open_categories = ['filesystem']
 #c.content.proxy = "http://localhost:PORT"
 
 # keybindings #################################################################
+config.bind('cs', 'config-source')
+
 config.bind('zi', 'zoom-in')
 config.bind('zo', 'zoom-out')
 
