@@ -5,8 +5,10 @@
 
 mod=Mod1    # Mod1=Alt, Mod4=Super
 term="footclient"
-tiler="rivercarro"
 menu="${HOME}/.local/bin/wmenu-run-color"
+
+# &>/dev/null is a BASH syntax
+command -v rivercarro >/dev/null 2>&1 && tiler="rivercarro" || tiler="rivertile"
 
 riverctl map normal ${mod}+Shift r                  spawn "${HOME}/.config/river/init"
 riverctl map normal None Caps_Lock                  spawn "$HOME/.local/bin/capslock"
