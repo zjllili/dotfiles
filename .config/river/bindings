@@ -15,6 +15,7 @@ riverctl map normal None Caps_Lock                  spawn "$HOME/.local/bin/caps
 
 riverctl map normal $mod p                          spawn "$menu"
 riverctl map normal ${mod}+Shift Return             spawn "footclient"
+riverctl map normal $mod v                          spawn "footclient -T \"Floating_Term\" abduco -A dvtm"
 riverctl map normal $mod r                          spawn "$term lf"
 
 riverctl map -repeat normal $mod minus              spawn "$HOME/.local/bin/audio sink --minus"
