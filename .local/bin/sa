@@ -1,0 +1,9 @@
+#!/usr/bin/sh
+# @author nate zhou
+# @since 2025
+# choose a key to cache in ssh-agent via dynamic menu
+
+MENU="${HOME}/.local/bin/wmenu-color"
+SSH_HOME="${HOME}/.ssh"
+
+ssh-add ${HOME}/.ssh/"$(ls -L $SSH_HOME | $MENU -l 6)"
