@@ -27,7 +27,7 @@ spyware when I can.
 ```
 - /usr/bin/sh:              dash
 - Login Shell:              zsh
-- Terminlal Multiplexer:    tmux
+- Terminlal Multiplexer:    dvtm + abduco
 - Terminal Emulator:        foot
 - Audio Server:             pipewire
 - WM/Compositor:            dwl & river
