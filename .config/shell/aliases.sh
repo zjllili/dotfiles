@@ -80,10 +80,10 @@ alias epr-zh="firejail --profile=$HOME/.config/firejail/epr-zh.local epr-zh"
 alias p="source $HOME/.local/sbin/prox"
 alias P="getprox";
 
-alias tksv="tmux kill-server"
-alias tlss="tmux list-session"
-alias tkss="tmux kill-session -t"
-alias tat="tmux attach"
+alias ab="abduco"
+alias abc="abduco -c"
+alias aba="abduco -a"
+alias abd="abduco -A dvtm"
 
 alias cksv="sudo checkservices"
 alias ckrb="checkrebuild"
