@@ -3,7 +3,7 @@
 # @since 2023,2024,2025
 # general aliases for bash/zsh
 
-command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
+command -v nvim >/dev/null && [ -z "$DVTM" ] && alias vim="nvim" vimdiff="nvim -d"
 
 # the current shell will not return when sway exits
 # no one can have the current tty access in case sway crashes
