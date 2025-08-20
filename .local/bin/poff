@@ -5,8 +5,6 @@
 # @depends: wmenu, fzf, udisks2
 # @optional: amount, flocks
 
-source $HOME/.local/bin/wmenu-color 2>/dev/null
-
 selected_partion=""
 msg=""
 
