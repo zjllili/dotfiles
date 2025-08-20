@@ -19,7 +19,7 @@ update_time () {
 }
 
 update_battery () {
-    BAT="BAT1"
+    BAT="BAT?"
     POWER="/sys/class/power_supply"
     status="$(cat $POWER/$BAT/status)"
     level="$(cat $POWER/$BAT/capacity)"
