@@ -16,6 +16,10 @@ if [ $choice = "y" ] || [ $choice = "Y" ]; then
     # censor address book for screen casting
     grep -n "##############################below-are-private##############################" $HOME/doc/heart/.local/share/address/address | cut -d: -f1 | xargs -I {} sed -n '1,{}p' $HOME/doc/heart/.local/share/address/address > $HOME/doc/heart/.local/share/address/address-record && echo "address-record updated" || echo "address-record update failed"
 
+    # neomutt & isync OAuth2 tokens
+    [ -d "${HEART}/.cache" ] || mkdir -p "${HEART}/.cache"
+    rsync -av --delete-after "${HOME}/.cache/mutt" "${HEART}/.cache/"
+
     # unixchad
     if [ ! -d "$DOTFILES" ]; then
         git clone "$HEART" "$DOTFILES"
