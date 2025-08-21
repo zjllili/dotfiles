@@ -3,8 +3,6 @@
 # @since 2024,2025
 # wmenu script to take a screenshot with selected output in sway
 
-source $HOME/.local/bin/wmenu-color 2>/dev/null
-
 [ -d "$HOME/tmp" ] || mkdir "$HOME/tmp"
 
 selected_output="$(wlr-randr | grep '^[a-zA-Z0-9]'| wmenu-color -p "wshot: " -l 3 | tr -d '()' | cut -d' ' -f-1 )"
