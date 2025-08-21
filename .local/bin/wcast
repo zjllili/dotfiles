@@ -3,9 +3,7 @@
 # @since 2024,2025
 # use wmenu to select the screen and audio source for screen casting
 
-source $HOME/.local/bin/wmenu-color 2>/dev/null
-
-selected_output="$(wlr-randr | grep '^[^[:space:]]'| wmenu-color -p "$[(basename $0)] " -l 3 | tr -d '()' | cut -d' ' -f-1 )"
+selected_output="$(wlr-randr | grep '^[^[:space:]]'| wmenu-color -p "[$(basename $0)] " -l 3 | tr -d '()' | cut -d' ' -f-1 )"
 
 [ -z "$selected_output" ] && exit 1
 
