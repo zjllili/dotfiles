@@ -13,9 +13,9 @@
 ## 1. generate gpg key `gpg --full-gen-key`
 # https://wiki.archlinux.org/title/Isync#Using_XOAUTH2
 ## 2.a (gpg key pair)"
-##    `/usr/share/neomutt/oauth2/mutt_oauth2.py ~/.cache/mutt_oauth_account1 --verbose --authorize`
+##    `/usr/share/neomutt/oauth2/mutt_oauth2.py --verbose --authorize ~/doc/heart/.cache/mutt_oauth_account1`
 ## 2.b (gpg passphrase)
-##    `/usr/share/neomutt/oauth2/mutt_oauth2.py --verbose --authorize ~/.cache/mutt/oauth-account1 --encryption-pipe 'gpg -c --cipher-algo aes256'`
+##    `/usr/share/neomutt/oauth2/mutt_oauth2.py --verbose --authorize ~/doc/heart/.cache/mutt/oauth-account1 --encryption-pipe 'gpg -c --cipher-algo aes256'`
 ## 3. choose `microsoft` provider, `authcode` OAuth2 flow, `client-secret` can
 ##    be empty
 ## https://blog.gtz.dk/posts/how-to-2famutt/
