@@ -3,7 +3,6 @@
 # @since 2024,2025
 # record pipewire input voice
 
-source $HOME/.local/bin/wmenu-color 2>/dev/null
 
 [ -d "$HOME/tmp" ] || mkdir "$HOME/tmp"
 
