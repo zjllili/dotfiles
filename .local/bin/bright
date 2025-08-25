@@ -2,10 +2,11 @@
 # bright
 # @author nate zhou
 # @since 2025
-wobfifo="/tmp/wob.fifo"
+WOBFIFO="${XDG_RUNTIME_DIR}/wob.fifo"
+BRIGHTNESS="${XDG_RUNTIME_DIR}/brightness.level"
 
 bright_parse() {
-    grep 'Current brightness' | tr '()' ' ' | cut -d' ' -f5 | sed 's/%//' > $wobfifo  && kill -38 "$(cat /tmp/$USER/damblocks)";
+    grep 'Current brightness' | tr '()' ' ' | cut -d' ' -f5 | sed 's/%//' | tee "$WOBFIFO" "$BRIGHTNESS" && kill -38 "$(cat ${XDG_RUNTIME_DIR}/damblocks.pid)";
 }
 
 bright_minus() {
