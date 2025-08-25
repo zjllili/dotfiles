@@ -3,8 +3,10 @@
 # @since 2024,2025
 # used in sway's brightness/volume keybindings
 
-WOBFIFO="/tmp/wob.fifo"
-[ -p "$WOBFIFO" ] || mkfifo "$WOBFIFO"
+WOBFIFO="${XDG_RUNTIME_DIR}/wob.fifo"
+
+[ -f "$WOBFIFO" ] && [ ! -p "$WOBFIFO" ] && rm "$WOBFIFO"
+[ -f "$WOBFIFO" ] || mkfifo "$WOBFIFO"
 
 if pgrep -f "tail -f $WOBFIFO" > /dev/null; then
     pkill -f "tail -f $WOBFIFO"
