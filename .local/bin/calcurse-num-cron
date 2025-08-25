@@ -9,7 +9,7 @@ DAY="28" # for the given range of days to print events
 
 update_num() {
     calcurse -d "$DAY" | grep '^[0-9]' | wc -l  > "$NUM"
-    kill -43 $(cat /tmp/$USER/damblocks);
+    kill -43 $(cat ${XDG_RUNTIME_DIR}/damblocks.pid);
 }
 
 if [ ! -f "$NUM" ]; then

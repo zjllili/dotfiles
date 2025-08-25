@@ -46,7 +46,7 @@ if [ -f "$HOME/.cache/city" ]; then
             msg="updw done"
             #notify-send -u low -r 22 "$msg"
             echo $msg
-            kill -44 $(cat /tmp/$USER/damblocks);
+            kill -44 $(cat ${XDG_RUNTIME_DIR}/damblocks.pid);
         else
             msg="updw failed, check network ?"
             #notify-send -u low -r 21 "$msg"

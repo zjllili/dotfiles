@@ -5,7 +5,7 @@
 
 update() {
     $HOME/.local/bin/newsboat-num-cron --now >/dev/null
-    kill -42 $(cat /tmp/$USER/damblocks);
+    kill -42 $(cat ${XDG_RUNTIME_DIR}/damblocks.pid);
 }
 
 # update count on exit, interrupted or terminated
