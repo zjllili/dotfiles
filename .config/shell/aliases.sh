@@ -28,6 +28,7 @@ alias l.="ls -d .*"
 alias ll.="ls -lh -d --time-style=long-iso .*"
 alias lt="ls -lt --time-style=long-iso"
 alias lx="lsix"
+alias le="ls | grep -o '.[^.]*$' | sort | uniq"
 
 alias ..="cd .."
 alias ...="cd ../.."
