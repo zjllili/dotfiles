@@ -3,7 +3,7 @@
 # @author nate zhou
 # @since 2025
 WOBFIFO="${XDG_RUNTIME_DIR}/wob.fifo"
-BRIGHTNESS="${XDG_RUNTIME_DIR}/brightness.level"
+BRIGHTNESS="${XDG_CACHE_HOME}/brightness.level" # save to XDG_CACHE_DIR for reboot consistency
 
 bright_parse() {
     grep 'Current brightness' | tr '()' ' ' | cut -d' ' -f5 | sed 's/%//' | tee "$WOBFIFO" "$BRIGHTNESS" && kill -38 "$(cat ${XDG_RUNTIME_DIR}/damblocks.pid)";
