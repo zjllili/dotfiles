@@ -32,6 +32,9 @@ cd "$DOTFILES_LOCAL" && stow -R -t $HOME . --adopt
 
 [ -x /usr/bin/zsh ] && chsh -s /usr/bin/zsh
 
+systemctl enable --now --user ssh-agent.service
+
+gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
 
 SSHCONFIG="${HOME}/.ssh/config"
 [ -f "$SSHCONFIG" ] || cp ${SSHCONFIG}.example $SSHCONFIG
