@@ -2,7 +2,7 @@
 # @author nate zhou
 # @since 2025
 
-MBSYNC_CACHE="${XDG_CACHE_HOME}/mbsync-cron"
+MBSYNC_CACHE="${XDG_RUNTIME_DIR}/mbsync-cron"
 
 /usr/bin/mbsync -a && touch "$MBSYNC_CACHE" && kill -41 $(cat ${XDG_RUNTIME_DIR}/damblocks.pid);
 
