@@ -9,6 +9,11 @@ My Arch Installation Guide is moved to [codeberg](https://codeberg.org/unixchad/
 git clone https://codeberg.org/unixchad/dotfiles
 # Or on github
 git clone https://github.com/gnuunixchad/dotfiles
+
+# Create directories if needed to avoid dumping everything in dotfiles directory
+mkdir -p ${HOME}/.local/{share,state}
+mkdir -p ${HOME}/.{cache,config/"Code -OSS"}
+
 # Create symlinks with GNU Stow
 cd dotfiles
 stow -t ~ . --adopt
