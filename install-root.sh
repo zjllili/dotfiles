@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+# @author nate zhou
+# @since 2025
+# Setup user-space softwares
+
+set +x
+
+DOTFILES_LOCAL="/home/nate/doc/heart"
+
+print_err() {
+    local RED='\033[0;31m'
+    local RESET='\033[0m'
+    echo -e ${RED}${1}${RESET}
+}
+
+smbpasswd -a nate
+
+usermod nate -aG kvm,libvirt
+
+useradd -m -G nate termux
+
+mv /root/.bash_profile{,~}
+[ -L "/root/.bashrc" ] || mv /root/.bashrc{,~}
+
+cp -r ${DOTFILES_LOCAL}/{etc,usr} /
+
+timedatectl set-ntp true
+systemctl enable --now systemd-timesyncd.service
+
+ufw allow from 192.168.0.0/16 to any app SSH
+ufw allow from 192.168.0.0/16 to any app CIFS
+ufw allow in on virbr0 from any to any
+ufw enable
+systemctl enable --now ufw.service
+
+firecfg
+
+systemctl enable --now systemd-boot-update.service
+systemctl enable --now bluetooth.service
+systemctl enable --now paccache.timer
+systemctl enable --now tlp.service
+systemctl enable --now smb.service
+
+systemctl enable --now libvirtd
+virsh net-define /etc/libvirt/qemu/networks/default.xml
+sudo virsh net-autostart default
