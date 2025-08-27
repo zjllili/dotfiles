@@ -12,6 +12,7 @@ aur.list
 !unixchad.asc
 !misc/
 !misc/*
+!install-*.sh
 
 !mus/
 !mus/.mpdignore
