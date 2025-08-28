@@ -15,7 +15,7 @@ alias rm="rm -I";
 alias cp="cp -i";
 alias mv="mv -i";
 
-alias ls='ls -LF --color=auto --group-directories-first'
+alias ls='ls -F --color=auto --group-directories-first'
 alias diff="diff --color=auto"
 alias vdiff="nvim -d"
 alias grep="grep --color=auto"
