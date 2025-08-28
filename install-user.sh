@@ -19,7 +19,7 @@ mkdir -p ${HOME}/{dls,doc,mnt,mus,pic,pkg,smb,tmp,vid}
 chmod 700 ${HOME}/{dls,mnt,tmp}
 chmod 705 ${HOME}/pkg
 
-mkdir -p ${HOME}/.{cache,config/'Code - OSS',local/{share,state}}
+mkdir -p ${HOME}/.{cache/mpd,config/'Code - OSS',local/{share,state}}
 
 [ ! -d "$DOTFILES_LOCAL" ] && \
     git clone "${DOTFILES_REMOTE[1]}" $DOTFILES_LOCAL || \
