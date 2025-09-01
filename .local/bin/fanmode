@@ -1,45 +1,83 @@
 #!/usr/bin/sh
 # @author nate zhou
 # @since 2023,2025
-# works on asus laptop with linux>=5.6
+# Print or adjust laptop's fan speed mode.
+set +x
 
-policy=/sys/devices/platform/asus-nb-wmi/throttle_thermal_policy
-# check if the file exists
-if [ ! -e $policy ]; then
-	echo "Not a supported asus laptop." | tee /dev/tty | xargs -I {} notify-send -r 2 -u low "fanmode" {}
-	exit 1
-fi
+# Supported laptop models
+MODELS="Thinkpad, IBM"
 
-value=$(cat $policy)
+POLICY_IBM="/proc/acpi/ibm/fan"
+POLICY_ASUS="/sys/devices/platform/asus-nb-wmi/throttle_thermal_policy"
+
+[ -f "$POLICY_IBM" ] && policy="$POLICY_IBM"
+[ -f "$POLICY_ASUS" ] && policy="$POLICY_ASUS"
+[ -z "$policy" ] && echo "This laptop is not supported." \
+    | tee /dev/tty \
+    | xargs -I {} notify-send -r 2 -u low "$(basename $0)" {} \
+    && exit 0
+
+print_help() {
+    cat <<_EOF_
+SYNOPSIS
+        $(basename $0) [OPTION]
+OPTIONS
+        -g,     get current fan speed mode
+        -h,     print this manual
+        -l,     list supported laptop models
+        [0-9*], set current fan speed level/mode
+_EOF_
+}
+
+notify_mode() {
+    tee /dev/tty | xargs -I {} notify-send -r 2 -u low "fanmode" {}
+}
+
+get_mode() {
+    if [ -f "$POLICY_IBM" ]; then
+        local value="$(grep '^level:' "$policy" | grep -o '[0-9]*')"
+        echo "${value}([0-7])" | notify_mode
+    elif [ -f "$POLICY_ASUS" ]; then
+        local value="$(grep -om1 '[0-9]' $policy)"
+        local mode=""
+        case "$value" in
+            0) mode="auto" ;;
+            1) mode="fast" ;;
+            2) mode="slow" ;;
+        esac
+        echo "${value}(${mode})" | notify_mode
+    fi
+}
+
+set_mode() {
+    if [ -f "$POLICY_IBM" ]; then
+        [ "$1" -gt 7 ] && echo "Invalid value([0-7])" && exit 1
+        echo "level $1" | sudo tee $policy >/dev/null && get_mode
+    elif [ -f "$POLICY_ASUS" ]; then
+        [ "$1" -gt 2 ] && echo "Invalid value([0-2])" && exit 1
+        echo "$1" | sudo tee $policy >/dev/null && get_mode
+    fi
+}
+
 
 if [ $# -eq 0 ]; then
-    echo "Usage: $(basename $0) [mode], 0 default, 1 boost, 2 silent"
-elif [ $# -eq 1 ]; then
-	case $1 in
-		0|1|2)
-			echo "echo $1 | sudo tee $policy > /dev/null"
-			echo "$1" | sudo tee $policy > /dev/null
-			;;
-		*)
-			echo "Invalid argument, only 0,1,2 are allowed."
-			exit 1
-			;;
-	esac
+    get_mode
 else
-	echo "Invalid argument, only zero or one argument allowed"
-	exit 1
+    case $1 in
+        -g)
+            get_mode
+            ;;
+        [0-9]*)
+            set_mode "$1"
+            ;;
+        -l)
+            echo "Supported laptop models: ${MODELS}"
+            ;;
+        -h)
+            print_help
+            ;;
+        *)
+            echo "Invalid argument." && exit 1
+            ;;
+    esac
 fi
-
-value=$(cat $policy)
-
-if [ "$value" -eq 0 ]; then
- 	mode="0 (default)"
-elif [ "$value" -eq 1 ]; then
-	mode="1 (boost)"
-elif [ "$value" -eq 2 ]; then
-	mode="2 (silent)"
-fi
-
-echo $mode
-
-[ "$XDG_SESSION_TYPE" != "tty" ] && notify-send -u low -r 2 "fanmod: $mode"
