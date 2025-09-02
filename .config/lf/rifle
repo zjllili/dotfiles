@@ -23,11 +23,14 @@ cmd open &{{
 		application/*opendocument*|*officedocument*)
             libreoffice $fx
             ;;
+        application/zip)
+            lf -remote "send $id \$zipinfo \$f | less -i"
+            ;;
         application/gzip)
             lf -remote "send $id \$zless \$f"
             ;;
-        application/zip)
-            lf -remote "send $id \$zipinfo \$f | less -i"
+        application/x-7z-compressed)
+            lf -remote "send $id \$7z l \$f | grep -oP '\S+$' | less -i"
             ;;
         application/*tar|application/*zip*|application/zstd|application/*xz)
             lf -remote "send $id \$tar vvtf \$f | less -i"
