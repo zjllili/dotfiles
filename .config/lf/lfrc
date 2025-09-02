@@ -285,9 +285,10 @@ cmd extract %{{
     read choice
     if [ "$choice" = "y" ]; then
         case "$f" in
-        *.tar)  tar xf "$f" ;;
-        *.zip)  unzip "$f" ;;
-        *.gz)   gunzip -k "$f" ;;
+        *.tar) tar xf "$f" ;;
+        *.zip) unzip "$f" ;;
+        *.gz) gunzip -k "$f" ;;
+        *.7z) 7z x "$f" ;;
         *.tar.gz) tar xzf "$f" ;;
         *.tar.bz2) tar xjf "$f" ;;
         *.tar.xz) tar xJf "$f" ;;
