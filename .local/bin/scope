@@ -56,6 +56,9 @@ case "$(file -Lb --mime-type -- "$1")" in
     application/gzip)
         zless "$1" | "$PAGER"
         ;;
+    application/x-7z-compressed)
+        7z l -ba "$1" | grep -oP '\S+$' | "$PAGER"
+        ;;
     application/*tar|application/*zip*|application/zstd|application/*xz)
         tar vvtf "$1" | "$PAGER"
         ;;
