@@ -13,7 +13,7 @@
 riverctl keyboard-layout -options caps:swapescape,altwin:swap_alt_win us
 
 # input
-riverctl focus-follows-cursor normal
+riverctl focus-follows-cursor disabled
 
 riverctl set-repeat 30 200
 
