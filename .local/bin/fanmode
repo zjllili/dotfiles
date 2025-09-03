@@ -5,7 +5,7 @@
 set +x
 
 # Supported laptop models
-MODELS="Thinkpad, IBM"
+MODELS="Thinkpad, ASUS"
 
 POLICY_IBM="/proc/acpi/ibm/fan"
 POLICY_ASUS="/sys/devices/platform/asus-nb-wmi/throttle_thermal_policy"
