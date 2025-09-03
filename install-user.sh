@@ -64,7 +64,7 @@ GPGKEYS="${HOME}/doc/.gpg/gpg-keys"
 [ -d "$GPGKEYS" ] && gpg --import $(realpath $(ls ${GPGKEYS}/*.sec | command fzf --prompt="[gpg]: private key to import"))
 
 CRONTAB="${HOME}/.config/crontab.backup"
-[ -f "$CRONJOB" ] && crontab $CRONTAB || print_err "[crontab]: $CRONTAB doesn't exist"
+[ -f "$CRONTAB" ] && crontab $CRONTAB || print_err "[crontab]: $CRONTAB doesn't exist"
 
-CALCURSE="${HOME}/.config/calcurse/calendar.ical}"
+CALCURSE="${HOME}/.config/calcurse/calendar.ical"
 [ -f "$CALCURSE" ] && calcurse -i $CALCURSE || print_err "[calcurse -i]: $CALCURSE doesn't exist"
