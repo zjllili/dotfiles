@@ -14,6 +14,10 @@ git clone https://github.com/gnuunixchad/dotfiles
 mkdir -p ${HOME}/.local/{share,state}
 mkdir -p ${HOME}/.{cache,config/"Code -OSS"}
 
+# Optionally, run scripts in the root of this repo at your own risk:
+sudo ./install-root.sh
+./install-user.sh
+
 # Create symlinks with GNU Stow
 cd dotfiles
 stow -t ~ . --adopt
