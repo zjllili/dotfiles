@@ -25,7 +25,7 @@ chmod 705 ${HOME}/pkg
 mkdir -p ${HOME}/.{cache/mpd,config/'Code - OSS',local/{share,state/nvim}}
 
 CITY="${HOME}/.cache/city"
-[ -f "$CITY" ] || read -p "Enter your city: " \
+[ ! -f "$CITY" ] || [ -z "$(cat $CITY)" ] && read -p "Enter your city: " \
     && echo "$REPLY" > "$CITY"
 
 [ ! -d "$DOTFILES_LOCAL" ] && \
