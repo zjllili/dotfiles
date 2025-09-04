@@ -13,6 +13,8 @@ print_err() {
     echo -e ${RED}${1}${RESET}
 }
 
+[ ! "$UID" -eq 0 ] && print_err "You must run this script as root." && exit 1
+
 [ -z "$(pdbedit -Lv)" ] && smbpasswd -a nate
 
 usermod nate -aG kvm,libvirt
