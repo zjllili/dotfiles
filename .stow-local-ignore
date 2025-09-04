@@ -10,9 +10,7 @@ boot
 etc
 usr
 install.md
-packages.list
-arch.list
-aur.list
+package-list
 misc
 unixchad.asc
 install-root.sh

@@ -8,7 +8,7 @@ sudoer="$(grep ':1000:1000:' /etc/passwd | cut -d':' -f1)"
 
 DOTFILES_LOCAL="/home/${sudoer}/doc/heart"
 hostname="$(cat /etc/hostname)"
-ARCH_LIST="${DOTFILES_LOCAL}/arch-${hostname}.list"
+ARCH_LIST="${DOTFILES_LOCAL}/package-list/arch-${hostname}.list"
 
 print_err() {
     local RED='\033[0;31m'
