@@ -2,8 +2,7 @@
 # @author nate zhou
 # @since 2025
 # Setup system-wide softwares
-
-set +x
+#set -x
 
 sudoer="$(grep ':1000:1000:' /etc/passwd | cut -d':' -f1)"
 
@@ -20,7 +19,8 @@ print_err() {
 
 pacman --noconfirm -Sy && pacman -S --noconfirm --needed archlinux-keyring
 
-[ -f "$ARCH_LIST" ] && pacman -S --noconfirm --needed $(cat "$ARCH_LIST") 2>/dev/null || print_err "package list not found, no packages installed"
+[ -f "$ARCH_LIST" ] && pacman -S --noconfirm --needed $(cat "$ARCH_LIST") \
+    2>/dev/null || print_err "package list not found, no packages installed"
 
 [ -z "$(pdbedit -Lv)" ] && smbpasswd -a "$sudoer"
 
