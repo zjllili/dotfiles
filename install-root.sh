@@ -8,6 +8,7 @@ set +x
 sudoer="$(grep ':1000:1000:' /etc/passwd | cut -d':' -f1)"
 
 DOTFILES_LOCAL="/home/${sudoer}/doc/heart"
+ARCH_LIST="${DOTFILES_LOCAL}/arch.list"
 
 print_err() {
     local RED='\033[0;31m'
@@ -16,6 +17,10 @@ print_err() {
 }
 
 [ ! "$UID" -eq 0 ] && print_err "You must run this script as root." && exit 1
+
+pacman --noconfirm -Sy && pacman -S --noconfirm --needed archlinux-keyring
+
+[ -f "$ARCH_LIST" ] && pacman -S --noconfirm --needed $(cat "$ARCH_LIST") 2>/dev/null
 
 [ -z "$(pdbedit -Lv)" ] && smbpasswd -a "$sudoer"
 
