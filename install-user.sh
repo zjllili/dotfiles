@@ -14,6 +14,9 @@ print_err() {
     echo -e ${RED}${1}${RESET}
 }
 
+
+[ ! -z "$SUDO_USER" ] && print_err "You can't run this script as root." && exit 1
+
 umask 027
 mkdir -p ${HOME}/{dls,doc,mnt,mus,pic,pkg,smb,tmp,vid}
 chmod 700 ${HOME}/{dls,mnt,tmp}
