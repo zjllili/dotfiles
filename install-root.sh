@@ -37,7 +37,7 @@ ufw allow in on virbr0 from any to any
 ufw enable
 systemctl enable --now ufw.service
 
-firecfg
+firecfg >/dev/null 2>/dev/null && echo "firejail symlink created"
 
 systemctl enable --now systemd-boot-update.service
 systemctl enable --now bluetooth.service
