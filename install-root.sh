@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # @author nate zhou
 # @since 2025
-# Setup user-space softwares
+# Setup system-wide softwares
 
 set +x
 
