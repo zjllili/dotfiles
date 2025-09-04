@@ -88,6 +88,7 @@ alias aba="abduco -a"
 alias abd="abduco -A dvtm"
 
 alias cksv="sudo checkservices"
+alias rskr="sudo systemctl restart archlinux-keyring-wkd-sync.service"
 alias ckrb="checkrebuild"
 alias ckud="$HOME/.local/bin/checkupdates-cron"
 alias ckkn="$HOME/.local/bin/checkkernels"
