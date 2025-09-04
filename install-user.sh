@@ -72,3 +72,6 @@ CRONTAB="${HOME}/.config/crontab.backup"
 
 CALCURSE="${HOME}/.config/calcurse/calendar.ical"
 [ -f "$CALCURSE" ] && calcurse -i $CALCURSE || print_err "[calcurse -i]: $CALCURSE doesn't exist"
+
+read -p "sync-config-root?(y/n): " choice; [ "$choice" = "y" ] || [ "$choice" = "Y"  ] \
+    && ${HOME}/.local/bin/sync-config-root
