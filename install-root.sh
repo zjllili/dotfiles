@@ -5,7 +5,9 @@
 
 set +x
 
-DOTFILES_LOCAL="/home/nate/doc/heart"
+sudoer="$(grep ':1000:1000:' /etc/passwd | cut -d':' -f1)"
+
+DOTFILES_LOCAL="/home/${sudoer}/doc/heart"
 
 print_err() {
     local RED='\033[0;31m'
@@ -15,11 +17,11 @@ print_err() {
 
 [ ! "$UID" -eq 0 ] && print_err "You must run this script as root." && exit 1
 
-[ -z "$(pdbedit -Lv)" ] && smbpasswd -a nate
+[ -z "$(pdbedit -Lv)" ] && smbpasswd -a "$sudoer"
 
-usermod nate -aG kvm,libvirt
+usermod "$sudoer" -aG kvm,libvirt
 
-useradd -m -G nate termux
+useradd -m -G "$sudoer" termux
 
 mv /root/.bash_profile{,~}
 [ -L "/root/.bashrc" ] || mv /root/.bashrc{,~}
