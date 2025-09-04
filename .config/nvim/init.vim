@@ -26,8 +26,6 @@ set statusline+=%f\ %h%m%r%=\ %{FugitiveStatusline()}\ %-8.(%l,%c%)\ %P
 
 " don't yank to clipboard with c
 nnoremap c "_c
-" ex mode type Q as q!
-cnoremap Q q!
 " <c-f> for pathname suggestion
 inoremap <C-f> <C-x><C-f>
 " tab to accept the suggestion
