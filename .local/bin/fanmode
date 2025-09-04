@@ -35,7 +35,7 @@ notify_mode() {
 
 get_mode() {
     if [ -f "$POLICY_IBM" ]; then
-        local value="$(grep '^level:' "$policy" | grep -o '[0-9]*')"
+        local value="$(grep '^level:' "$policy" | grep -o -e '[0-9]*' -e 'auto')"
         echo "${value}([0-7])" | notify_mode
     elif [ -f "$POLICY_ASUS" ]; then
         local value="$(grep -om1 '[0-9]' $policy)"
