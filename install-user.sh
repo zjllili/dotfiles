@@ -33,7 +33,8 @@ mv ${HOME}/.bash_profile{,~}
 
 cd "$DOTFILES_LOCAL" && stow -R -t $HOME . --adopt
 
-[ -x /usr/bin/zsh ] && chsh -s /usr/bin/zsh
+[ -x /usr/bin/zsh ] && grep ":${UID}:${GID}:" /etc/passwd | grep '/usr/bin/zsh'\
+    || chsh -s /usr/bin/zsh
 
 systemctl enable --now --user ssh-agent.service
 
