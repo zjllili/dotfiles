@@ -2,7 +2,7 @@
 # @author nate zhou
 # @since 2025
 # Setup user-space softwares
-set +x
+#set -x
 
 DOTFILES_REMOTE=("https://codeberg.org/unixchad/dotfiles" \
                  "https://github.com/gnuunixchad/dotfiles")
@@ -14,8 +14,8 @@ print_err() {
     echo -e ${RED}${1}${RESET}
 }
 
-
-[ ! -z "$SUDO_USER" ] && print_err "You can't run this script as root." && exit 1
+[ ! -z "$SUDO_USER" ] && print_err "You can't run this script as root." \
+    && exit 1
 
 umask 027
 mkdir -p ${HOME}/{dls,doc,mnt,mus,pic,pkg,smb,tmp,vid}
@@ -66,16 +66,22 @@ QUTEBROWSER="${HOME}/.config/qutebrowser/config.py"
 ISYNC="${HOME}/.config/isyncrc"
 [ -f "$ISYNC" ] || cp ${ISYNC}.example $ISYNC
 
-
 GPGKEYS="${HOME}/doc/.gpg/gpg-keys"
-[ -d "$GPGKEYS" ] && gpg -q --import $(realpath $(ls ${GPGKEYS}/*.pub | command fzf --prompt="[gpg]: public key to import")) && echo "gpg public keys are imported"
-[ -d "$GPGKEYS" ] && gpg -q --import $(realpath $(ls ${GPGKEYS}/*.sec | command fzf --prompt="[gpg]: private key to import")) && echo "gpg secret keys are imported"
+[ -d "$GPGKEYS" ] && gpg -q --import $(realpath $(ls ${GPGKEYS}/*.pub \
+    | command fzf --prompt="[gpg]: public key to import")) \
+    && echo "gpg public keys are imported"
+[ -d "$GPGKEYS" ] && gpg -q --import $(realpath $(ls ${GPGKEYS}/*.sec \
+    | command fzf --prompt="[gpg]: private key to import")) \
+    && echo "gpg secret keys are imported"
 
 CRONTAB="${HOME}/.config/crontab.backup"
-[ -f "$CRONTAB" ] && crontab $CRONTAB || print_err "[crontab]: $CRONTAB doesn't exist"
+[ -f "$CRONTAB" ] && crontab $CRONTAB \
+    || print_err "[crontab]: $CRONTAB doesn't exist"
 
 CALCURSE="${HOME}/.config/calcurse/calendar.ical"
-[ -f "$CALCURSE" ] && calcurse -i $CALCURSE || print_err "[calcurse -i]: $CALCURSE doesn't exist"
+[ -f "$CALCURSE" ] && calcurse -i $CALCURSE \
+    || print_err "[calcurse -i]: $CALCURSE doesn't exist"
 
-read -p "sync-config-root?(y/n): " choice; [ "$choice" = "y" ] || [ "$choice" = "Y"  ] \
+read -p "sync-config-root?(y/n): " choice; [ "$choice" = "y" ] \
+    || [ "$choice" = "Y"  ] \
     && ${HOME}/.local/bin/sync-config-root
