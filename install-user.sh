@@ -64,8 +64,8 @@ ISYNC="${HOME}/.config/isyncrc"
 
 
 GPGKEYS="${HOME}/doc/.gpg/gpg-keys"
-[ -d "$GPGKEYS" ] && gpg --import $(realpath $(ls ${GPGKEYS}/*.pub | command fzf --prompt="[gpg]: public key to import"))
-[ -d "$GPGKEYS" ] && gpg --import $(realpath $(ls ${GPGKEYS}/*.sec | command fzf --prompt="[gpg]: private key to import"))
+[ -d "$GPGKEYS" ] && gpg -q --import $(realpath $(ls ${GPGKEYS}/*.pub | command fzf --prompt="[gpg]: public key to import")) && echo "gpg public keys are imported"
+[ -d "$GPGKEYS" ] && gpg -q --import $(realpath $(ls ${GPGKEYS}/*.sec | command fzf --prompt="[gpg]: private key to import")) && echo "gpg secret keys are imported"
 
 CRONTAB="${HOME}/.config/crontab.backup"
 [ -f "$CRONTAB" ] && crontab $CRONTAB || print_err "[crontab]: $CRONTAB doesn't exist"
