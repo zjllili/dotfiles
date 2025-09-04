@@ -21,7 +21,7 @@ print_err() {
 
 usermod "$sudoer" -aG kvm,libvirt
 
-useradd -m -G "$sudoer" termux
+grep -q '^termux:' /etc/passwd || useradd -m -G "$sudoer" termux
 
 [ -f /root/.bash_profile ] && mv /root/.bash_profile{,~}
 [ -L "/root/.bashrc" ] || mv /root/.bashrc{,~}
