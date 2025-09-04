@@ -75,8 +75,8 @@ GPGKEYS="${HOME}/doc/.gpg/gpg-keys"
     && echo "gpg secret keys are imported"
 
 CRONTAB="${HOME}/.config/crontab.backup"
-[ -f "$CRONTAB" ] && crontab $CRONTAB \
-    || print_err "[crontab]: $CRONTAB doesn't exist"
+[ -f "$CRONTAB" ] || CRONTAB="${HOME}/.config/crontab.example" \
+    && crontab $CRONTAB
 
 CALCURSE="${HOME}/.config/calcurse/calendar.ical"
 [ -f "$CALCURSE" ] && calcurse -i $CALCURSE \
