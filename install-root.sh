@@ -50,6 +50,7 @@ systemctl enable --now paccache.timer
 systemctl enable --now tlp.service
 systemctl enable --now smb.service
 
-systemctl enable --now libvirtd \
+lscpu | grep -q 'Hypervisor vendor:' \
+    || (systemctl enable --now libvirtd \
     && virsh net-define /etc/libvirt/qemu/networks/default.xml \
-    && virsh net-autostart default
+    && virsh net-autostart default)
