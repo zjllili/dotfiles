@@ -13,7 +13,7 @@ print_err() {
     echo -e ${RED}${1}${RESET}
 }
 
-smbpasswd -a nate
+[ -z "$(pdbedit -Lv)" ] && smbpasswd -a nate
 
 usermod nate -aG kvm,libvirt
 
