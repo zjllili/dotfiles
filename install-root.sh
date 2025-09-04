@@ -23,7 +23,7 @@ usermod "$sudoer" -aG kvm,libvirt
 
 useradd -m -G "$sudoer" termux
 
-mv /root/.bash_profile{,~}
+[ -f /root/.bash_profile ] && mv /root/.bash_profile{,~}
 [ -L "/root/.bashrc" ] || mv /root/.bashrc{,~}
 
 cp -r ${DOTFILES_LOCAL}/{etc,usr} /
