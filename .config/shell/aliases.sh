@@ -117,6 +117,8 @@ alias gl="git log --graph --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %s%
 alias gll="git log --graph --all"
 alias gln="git log --graph --abbrev-commit --name-only"
 alias glf="git log --follow -p"
+alias glr="git log --follow --reverse -p"
+alias glra="git log --all --show-signature --follow --reverse -p"
 alias glfa="git log --follow -p --graph --abbrev-commit --show-signature"
 alias gls="git log --show-signature"
 alias gla="git log --graph --all --name-only --abbrev-commit --show-signature"
