@@ -35,6 +35,7 @@ riverctl rule-add -title "Floating_Term" float
 riverctl rule-add -app-id "file-*" float # GIMP file import/export
 riverctl rule-add -app-id "script-fu" float # GIMP gegl operations
 riverctl rule-add -app-id "lighting" -title "Lighting Effects" float # GIMP
+riverctl rule-add -app-id "kdenlive" float # kdenlive file chooser
 
 # tags
 for i in $(seq 1 9)
