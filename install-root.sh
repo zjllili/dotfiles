@@ -32,7 +32,7 @@ grep -q '^termux:' /etc/passwd || useradd -m -G "$sudoer" termux
 [ -f /root/.bash_profile ] && mv /root/.bash_profile{,~}
 [ -L "/root/.bashrc" ] || mv /root/.bashrc{,~}
 
-cp -r ${DOTFILES_LOCAL}/{etc,usr} /
+cp -r --preserve=mode ${DOTFILES_LOCAL}/{etc,usr} /
 
 timedatectl set-ntp true
 systemctl enable --now systemd-timesyncd.service
