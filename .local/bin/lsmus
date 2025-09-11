@@ -3,12 +3,13 @@
 # @since 2024,2025
 # list current playing music with mpc
 
-msg=$(mpc  --format="%artist%\n%title%\n%album% (%date%)" current)
+msg=$(mpc --format="%artist%\n%title%\n%album% (%date%)" current)
+state="[$(mpc status %state%)]"
 
 if [ -n "$msg" ]; then
     echo "$msg"
     if [ "$XDG_SESSION_TYPE" != "tty" ]; then
         [ -z "$msg" ] && title=""
-        notify-send -u low -r 188 -t 9000 "$msg"
+        notify-send -u low -r 188 -t 9000 "$state" "$msg"
     fi
 fi
