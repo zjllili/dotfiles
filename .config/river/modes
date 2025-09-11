@@ -75,6 +75,7 @@ riverctl map "$dunst" None h spawn "riverctl enter-mode normal && cliphist wipe"
 riverctl map "$dunst" None l spawn "riverctl enter-mode normal && $HOME/.local/bin/lsupdates"
 riverctl map "$dunst" None w spawn "riverctl enter-mode normal && $HOME/.local/bin/dw"
 riverctl map "$dunst" None c spawn "riverctl enter-mode normal && $HOME/.local/bin/wcal"
+riverctl map "$dunst" None m spawn "riverctl enter-mode normal && $HOME/.local/bin/lsmus"
 
 
 # wlrctl #######################################################################
