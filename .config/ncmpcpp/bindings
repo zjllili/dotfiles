@@ -20,6 +20,9 @@ def_key ","
 def_key "z"
   toggle_random
 
+def_key "Z"
+  shuffle
+
 def_key "r"
   toggle_repeat
 
@@ -90,8 +93,12 @@ def_key "l"
 
 def_key "ctrl-p"
     page_up
-
 def_key "ctrl-u"
+    page_up
+
+def_key "ctrl-n"
+    page_down
+def_key "ctrl-d"
     page_down
 
 def_key "G"
