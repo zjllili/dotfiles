@@ -33,7 +33,7 @@ riverctl map normal ${mod}+Shift q                  spawn "${HOME}/.local/bin/ex
 riverctl map normal ${mod}+Shift w                  spawn "swaylock"
 riverctl map normal ${mod}+Shift e                  spawn "${HOME}/.local/bin/swayhibe"
 
-riverctl map normal Control space                   spawn "fcitx5-remote -t && notify-send -u normal -r 3289 -t 1100 $(fcitx5-remote -n)"
+riverctl map normal Control space                   spawn "fcitx5-remote -t"
 
 riverctl map normal $mod n                          spawn "dunstctl history-pop"
 riverctl map normal ${mod}+Shift n                  spawn "dunstctl close"
