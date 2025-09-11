@@ -5,6 +5,9 @@
 # my vim-like keybindings for ncursers music player client plus plus
 
 # playback
+def_key "p"
+  pause
+
 def_key "f"
   seek_forward
 
@@ -64,8 +67,11 @@ def_key "S"
   save_playlist
 
 # navigation
-def_key "p"
+def_key "$"
   jump_to_playing_song
+
+def_key "~"
+  jump_to_media_library
 
 def_key "j"
     scroll_down
