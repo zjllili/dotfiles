@@ -150,3 +150,9 @@ def_key "B"
 def_key "space"
   select_item
   scroll_down
+
+def_key "J"
+  move_selected_items_down
+
+def_key "K"
+  move_selected_items_up
