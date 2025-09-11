@@ -12,6 +12,7 @@ read-only ${HOME}/.local/share/nvim
 noblacklist ${HOME}/.config/ranger
 
 noblacklist ${HOME}/doc/code
+noblacklist ${HOME}/doc/git-z
 include blacklist-common.local
 
 novideo
