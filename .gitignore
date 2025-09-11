@@ -31,6 +31,7 @@ package-list
 !etc/pacman.d/hooks/*
 !etc/systemd/
 !etc/systemd/logind.conf
+!etc/systemd/sleep.conf
 !etc/tlp.conf
 !etc/samba/
 !etc/samba/smb.conf.example
