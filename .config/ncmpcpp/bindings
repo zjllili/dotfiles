@@ -1,6 +1,7 @@
+# vim.ft:conf
 # bindings (ncmpcpp)
 # @author nate zhou
-# @since 2023,2024
+# @since 2023,2024,2025
 # my vim-like keybindings for ncursers music player client plus plus
 
 # playback
@@ -8,8 +9,6 @@ def_key "f"
   seek_forward
 def_key "b"
   seek_backward
-def_key "space"
-    pause
 def_key "."
     next
 def_key ","
@@ -31,7 +30,6 @@ def_key "I"
   show_artist_info
 def_key "L"
   show_lyrics
-#
 
 # playlist
 def_key "d"
@@ -101,15 +99,12 @@ def_key "ctrl-l"
   slave_screen
 
 # select
-def_key "K"
-  select_item
-  scroll_up
-def_key "J"
-  select_item
-  scroll_down
 def_key "v"
   reverse_selection
-def_key "V"
+def_key "u"
   remove_selection
 def_key "B"
   select_album
+def_key "space"
+  select_item
+  scroll_down
