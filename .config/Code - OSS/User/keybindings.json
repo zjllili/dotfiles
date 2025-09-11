@@ -22,7 +22,7 @@
     },
 
     {
-        "key": "ctrl+b",
+        "key": "ctrl+b b",
         "command": "-extension.vim_ctrl+b",
         "when": "editorTextFocus && vim.active && vim.use<C-b> && !inDebugRepl && vim.mode != 'Insert'"
     },
@@ -98,12 +98,12 @@
 
 	    // ## vertical split
     {
-        "key": "ctrl+space v",
+        "key": "ctrl+b v",
         "command": "workbench.action.newGroupRight"
     },
         // ## horizontal split
     {
-        "key": "ctrl+space x",
+        "key": "ctrl+b x",
         "command": "workbench.action.newGroupBelow"
     },
         // ## close a split
@@ -162,19 +162,19 @@
 	// ## move editor group's position with `ctrl+k` `h/j/k/l`
 	// m for Move
     {
-        "key": "ctrl+space h",
+        "key": "ctrl+b h",
         "command": "workbench.action.moveActiveEditorGroupLeft"
     },
     {
-        "key": "ctrl+space j",
+        "key": "ctrl+b j",
         "command": "workbench.action.moveActiveEditorGroupDown"
     },
     {
-        "key": "ctrl+space k",
+        "key": "ctrl+b k",
         "command": "workbench.action.moveActiveEditorGroupUp"
     },
     {
-        "key": "ctrl+space l",
+        "key": "ctrl+b l",
         "command": "workbench.action.moveActiveEditorGroupRight"
     },
 
@@ -182,12 +182,12 @@
     	// ## move an editor to another editor group split
 	// ### to next group
     {
-        "key": "ctrl+space n",
+        "key": "ctrl+b n",
         "command": "workbench.action.moveEditorToNextGroup"
     },
     	// ### to previous group
     {
-        "key": "ctrl+space p",
+        "key": "ctrl+b p",
         "command": "workbench.action.moveEditorToPreviousGroup"
     },
 
@@ -195,23 +195,23 @@
     	// #UI
 	// focus on side bar
     {
-        "key": "ctrl+space b",
-        "command": "workbench.action.focusSideBar"
+        "key": "ctrl+b b",
+        "command": "workbench.action.toggleSidebarVisibility"
     },
 
     	// open && focuse console: PROBLEMS
     {
-        "key": "ctrl+space p",
+        "key": "ctrl+b p",
         "command": "workbench.panel.markers.view.focus"
     },
     	// open && focus console: OUTPUT
     {
-        "key": "ctrl+space o",
+        "key": "ctrl+b o",
         "command": "workbench.panel.output.focus"
     },
     	// open && focus console: DEBUG CONSOLE
     {
-        "key": "ctrl+space d",
+        "key": "ctrl+b d",
         "command": "workbench.panel.repl.view.focus"
     },
 
@@ -267,7 +267,7 @@
 
     // # RUN and Debug
     {
-        "key": "ctrl+space r",
+        "key": "ctrl+b r",
         "command": "workbench.action.debug.start",
         "when": "debuggersAvailable && debugState == 'inactive'"
     },
