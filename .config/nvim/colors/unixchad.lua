@@ -201,7 +201,7 @@ hi('@lsp.type.type',          { link = 'Type' })
 hi('@lsp.type.typeParameter', { link = 'TypeDef' })
 hi('@lsp.type.variable',      { link = 'Identifier' })
 
-  hi('ColorColumn',  { bg = '#427b58',                            ctermbg = 'DarkRed' })
+  hi('ColorColumn',  { bg = '#111111',                            ctermbg = 'DarkRed' })
   --hi('CursorColumn', { bg = 'Grey40',                           ctermbg = 'DarkGrey' })
   --hi('CursorLine',   { bg = 'Grey40',                           cterm = { underline = true } })
   hi('CursorLineNr', { fg = 'White', bold = true,                 ctermfg = 'White', cterm = { underline = true } })
