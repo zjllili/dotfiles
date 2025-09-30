@@ -2,8 +2,11 @@
 # @author nate zhou
 # @since 2025
 
-read -p "Sync to the remote IP address: " remote
-[ -z "$remote" ] && ( echo "Invalid IP address, aborted" ; exit 1)
+if [ "$#" -eq 0 ]; then
+    read -p "Sync to the remote IP address: " remote
+    [ -z "$remote" ] && ( echo "Invalid IP address, aborted" ; exit 1)
+else remote="$1"
+fi
 
 echo "rsync -avh --delete-after --progress /home/nate/{doc,mus,pic,vid,pkg} ${remote}:/home/nate";
 
