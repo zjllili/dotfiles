@@ -1,28 +1,47 @@
 dash
 zsh
-dvtm + abduco
+dvtm
+abduco
 foot
 pipewire
-dwl & river
-dam & damblocks
-kanshi & wlr-randr
+dwl
+river
+dam
+damblocks
+kanshi
+wlr-randr
 wmenu
 fzf
 dunst
 neovim
-neomutt & isync
+neomutt
+isync
 lf
-ncmpcpp & mpd
+ncmpcpp
+mpd
 mpv
 swayimg
-zathura & mupdf plugin
+zathura
 newsboat
 calcurse
 taskwarrior
-kvm & qemu & libvirt
-gpg & firejail & cryptsetup & sbctl
-qutebrowser & firefox
-tridactyl & darkreader & ublock origin
-transmission-cli & yt-dlp & httrack & curl & wget
-rsync & ssh & samba & android-file-transfer & qrtool
-stow & git
+kvm
+qemu
+libvirt
+gpg
+firejail
+cryptsetup
+sbctl
+qutebrowser
+firefox
+tridactyl
+darkreader
+transmission-cli
+yt-dlp
+httrack
+curl
+wget
+rsync
+openssh
+stow
+git
