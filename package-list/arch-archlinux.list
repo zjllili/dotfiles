@@ -1,4 +1,3 @@
-
 dash
 zsh
 dvtm
@@ -27,8 +26,10 @@ mupdf plugin
 newsboat
 calcurse
 taskwarrior
-kvm & qemu & libvirt
-gpg & firejail & cryptsetup & sbctl
+gpg
+firejail
+cryptsetup
+sbctl
 qutebrowser
 firefox
 tridactyl
