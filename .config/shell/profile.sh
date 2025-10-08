@@ -63,9 +63,9 @@ export ELECTRON_OZONE_PLATFORM_HINT=wayland # electron, disabled to run in xwayl
 #export WLR_NO_HARDWARE_CURSORS=1 # external monitor cursor on nvidia
 
 # fcitx
-#export GTK_IM_MODULE=wayland
-#export XMODIFIERS=@im=fcitx
-#export QT_IM_MODULE="wayland;fcitx;ibus"
+export GTK_IM_MODULE=wayland
+export XMODIFIERS=@im=fcitx
+export QT_IM_MODULE="wayland;fcitx;ibus"
 
 # ibus
 #export GTK_IM_MODULE=ibus
