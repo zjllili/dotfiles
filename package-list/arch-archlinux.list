@@ -27,7 +27,6 @@ qemu-chardev-spice qemu-audio-spice
 fcitx5 fcitx5-chinese-addons fcitx5-configtool fcitx5-gtk fcitx5-qt fcitx5-anthy
 yt-dlp transmission-cli httrack
 newsboat task calcurse ttyper
-dict
 neomutt isync
 jdk-openjdk openjdk-src openjdk-doc xorg-xwayland nodejs npm
 code
