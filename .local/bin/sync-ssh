@@ -3,13 +3,13 @@
 # @since 2024,2025
 
 #echo;
-echo "rsync -avh --delete-after --progress /home/nate/{doc,mus,pic,vid,pkg} nate@192.168.31.15:/home/nate";
+echo "rsync -avh --delete-after --progress /home/jerry/{doc,mus,pic,vid,pkg} jerry@192.168.31.15:/home/jerry";
 
 #read -p "Do you want to continue? (y/n): " choice
 
 #if [ "$choice" = "y" ] || [ "$choice" = "Y" ]; then
 #	echo "Continuing ..."
-	rsync -avh --delete-after --progress /home/jerry/{doc,mus,pic,vid,pkg} nate@192.168.31.15:/home/jerry;
+	rsync -avh --delete-after --progress /home/jerry/{doc,mus,pic,vid,pkg} jerry@192.168.31.15:/home/jerry;
 #else
 #	echo "rsync is aborted."
 #	exit 0
