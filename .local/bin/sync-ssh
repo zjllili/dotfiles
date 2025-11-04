@@ -9,7 +9,7 @@ echo "rsync -avh --delete-after --progress /home/nate/{doc,mus,pic,vid,pkg} nate
 
 #if [ "$choice" = "y" ] || [ "$choice" = "Y" ]; then
 #	echo "Continuing ..."
-	rsync -avh --delete-after --progress /home/nate/{doc,mus,pic,vid,pkg} nate@192.168.31.15:/home/nate;
+	rsync -avh --delete-after --progress /home/jerry/{doc,mus,pic,vid,pkg} nate@192.168.31.15:/home/jerry;
 #else
 #	echo "rsync is aborted."
 #	exit 0
