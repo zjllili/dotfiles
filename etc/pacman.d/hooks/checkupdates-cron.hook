@@ -6,4 +6,4 @@ Target = *
 [Action]
 Description = Update upgradable package count after upgrade
 When = PostTransaction
-Exec = /usr/bin/bash -c "sudo -u jerry /home/nate/.local/bin/checkupdates-cron --now"
+Exec = /usr/bin/bash -c "sudo -u jerry /home/jerry/.local/bin/checkupdates-cron --now"
